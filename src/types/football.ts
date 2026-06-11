@@ -14,7 +14,7 @@ export interface Standing {
 export interface StandingsGroup {
   stage: string
   type: string
-  group: string // "GROUP_A" … "GROUP_L"
+  group: string | null // null during knockout stage
   table: Standing[]
 }
 
@@ -68,24 +68,17 @@ export interface ScorersResponse {
 export interface Player {
   id: number
   name: string
-  position: string
+  position: string | null
   dateOfBirth: string
   nationality: string
   shirtNumber: number | null
-}
-
-export interface Squad {
-  id: number
-  name: string
-  position: string
-  nationality: string
 }
 
 export interface TeamDetail extends Team {
   founded: number | null
   venue: string | null
   coach: { name: string; nationality: string } | null
-  squad: Squad[]
+  squad: Player[]
 }
 
 export interface CachedResponse<T> {
