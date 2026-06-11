@@ -18,5 +18,7 @@ export function getCache<T>(key: string): T | undefined {
 
 export function isFresh(key: string): boolean {
   const entry = store.get(key)
-  return !!entry && Date.now() <= entry.expiresAt
+  if (!entry) return false
+  if (Date.now() > entry.expiresAt) { store.delete(key); return false }
+  return true
 }

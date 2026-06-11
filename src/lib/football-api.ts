@@ -1,7 +1,7 @@
 const BASE = 'https://api.football-data.org/v4'
 
 export async function footballFetch<T>(path: string): Promise<T> {
-  const key = process.env.FOOTBALL_DATA_API_KEY
+  const key = process.env.FOOTBALL_DATA_API_KEY?.trim()
   if (!key) throw new Error('FOOTBALL_DATA_API_KEY is not set')
 
   const res = await fetch(`${BASE}${path}`, {
