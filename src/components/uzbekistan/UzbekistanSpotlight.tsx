@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useUzbMatches } from '@/hooks/useUzbMatches'
 import type { Match } from '@/types/football'
+import { tlaToFlag } from '@/lib/flag-utils'
 
 function getNextMatch(matches: Match[]) {
   return matches
@@ -39,8 +40,10 @@ export function UzbekistanSpotlight() {
   const nextMatch = getNextMatch(matches)
   const lastMatch = getLastMatch(matches)
 
-  const nextOpponent = nextMatch
-    ? (nextMatch.homeTeam.tla === 'UZB' ? nextMatch.awayTeam : nextMatch.homeTeam)
+  const home = nextMatch?.homeTeam
+  const away = nextMatch?.awayTeam
+  const opponent = nextMatch
+    ? (home?.tla === 'UZB' ? away : home)
     : null
 
   const nextDate = nextMatch
@@ -64,21 +67,32 @@ export function UzbekistanSpotlight() {
 
         {nextMatch && (
           <div className="mb-3 rounded-lg bg-black/10 dark:bg-white/5 p-3">
-            <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">Следующий матч</p>
-            <p className="font-semibold text-sm">
-              Узбекистан vs {nextOpponent?.shortName ?? nextOpponent?.name}
-            </p>
-            <p className="text-xs text-gray-400 mt-0.5">{nextDate}</p>
-            {countdown && (
-              <p className="text-gold font-bold text-sm mt-1">⏱ через {countdown}</p>
-            )}
+            <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">Следующий матч</p>
+            <div className="flex items-center justify-between gap-2">
+              <div className="text-center flex-1">
+                <div className="text-2xl mb-0.5">{tlaToFlag('UZB')}</div>
+                <p className="text-xs font-semibold">Узбекистан</p>
+              </div>
+              <div className="text-center shrink-0 px-2">
+                <p className="text-xs text-gray-400 leading-tight">{nextDate}</p>
+                {countdown && (
+                  <p className="text-gold font-bold text-xs mt-1">⏱ через {countdown}</p>
+                )}
+              </div>
+              <div className="text-center flex-1">
+                <div className="text-2xl mb-0.5">
+                  {opponent?.tla ? tlaToFlag(opponent.tla) : '🏳️'}
+                </div>
+                <p className="text-xs font-semibold">{opponent?.shortName ?? opponent?.name}</p>
+              </div>
+            </div>
           </div>
         )}
 
         {lastMatch && (
           <div>
             <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">Последний результат</p>
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2 flex-wrap">
               <span className="font-semibold text-sm">{lastMatch.homeTeam.shortName}</span>
               <span className="text-gold font-black text-lg">
                 {lastMatch.score.fullTime.home ?? '–'} : {lastMatch.score.fullTime.away ?? '–'}

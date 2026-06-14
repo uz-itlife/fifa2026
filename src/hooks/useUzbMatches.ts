@@ -5,7 +5,11 @@ const fetcher = (url: string) => fetch(url).then(r => r.json())
 
 export function useUzbMatches() {
   const { data, error, isLoading } = useSWR<CachedResponse<MatchesResponse>>(
-    '/api/matches?team=UZB', fetcher, { refreshInterval: 60_000 }
+    '/api/matches', fetcher, { refreshInterval: 60_000 }
   )
-  return { matches: data?.data?.matches ?? [], stale: data?.stale ?? false, isLoading, error }
+  const allMatches = data?.data?.matches ?? []
+  const matches = allMatches.filter(
+    m => m.homeTeam.tla === 'UZB' || m.awayTeam.tla === 'UZB'
+  )
+  return { matches, stale: data?.stale ?? false, isLoading, error }
 }
