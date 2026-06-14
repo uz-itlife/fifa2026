@@ -1,16 +1,22 @@
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import type { StandingsGroup } from '@/types/football'
 import { StandingsTable } from './StandingsTable'
 
 interface Props {
   group: StandingsGroup
   highlight?: boolean
+  index: number
 }
 
-export function GroupCard({ group, highlight }: Props) {
+export function GroupCard({ group, highlight, index }: Props) {
   const letter = (group.group ?? '').replace('GROUP_', '')
   return (
-    <div className={[
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.2, delay: index * 0.03 }}
+      className={[
       'bg-white dark:bg-dark-card rounded-xl p-4 border',
       highlight
         ? 'border-gold shadow-[0_0_12px_rgba(200,168,75,0.2)]'
@@ -23,6 +29,6 @@ export function GroupCard({ group, highlight }: Props) {
         </Link>
       </div>
       <StandingsTable rows={group.table} />
-    </div>
+    </motion.div>
   )
 }

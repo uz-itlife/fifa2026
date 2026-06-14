@@ -19,8 +19,8 @@ export default function GroupsPage() {
       {stale && <StaleDataBanner />}
       <h1 className="text-2xl font-bold mb-6">Групповой этап</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-        {sorted.map(group => (
-          <GroupCard key={group.group ?? Math.random()} group={group} highlight={group.group === 'GROUP_K'} />
+        {sorted.map((group, i) => (
+          <GroupCard key={group.group ?? i} group={group} highlight={group.group === 'GROUP_K'} index={i} />
         ))}
       </div>
     </div>

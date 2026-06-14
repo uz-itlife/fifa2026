@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ThemeProvider } from '@/components/layout/ThemeProvider'
 import { Navbar } from '@/components/layout/Navbar'
+import { PageTransition } from '@/components/layout/PageTransition'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin', 'cyrillic'], variable: '--font-sans' })
@@ -18,7 +19,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
           <Navbar />
           <main className="max-w-7xl mx-auto px-4 py-6 w-full">
-            {children}
+            <PageTransition>
+              {children}
+            </PageTransition>
           </main>
         </ThemeProvider>
       </body>
