@@ -1,4 +1,5 @@
-import Image from 'next/image'
+'use client'
+import { useState } from 'react'
 import { tlaToFlag } from '@/lib/flag-utils'
 
 interface TeamFlagProps {
@@ -11,13 +12,22 @@ interface TeamFlagProps {
 const sizes = { sm: 20, md: 28, lg: 40 }
 
 export function TeamFlag({ tla, name, crest, size = 'md' }: TeamFlagProps) {
+  const [imgFailed, setImgFailed] = useState(false)
   const px = sizes[size]
+
   return (
     <span className="inline-flex items-center gap-2">
-      {crest ? (
-        <Image src={crest} alt={name} width={px} height={px} className="object-contain" />
+      {crest && !imgFailed ? (
+        <img
+          src={crest}
+          alt={name}
+          width={px}
+          height={px}
+          className="object-contain"
+          onError={() => setImgFailed(true)}
+        />
       ) : (
-        <span className="text-lg">{tlaToFlag(tla)}</span>
+        <span style={{ fontSize: px * 0.85 }}>{tlaToFlag(tla)}</span>
       )}
       <span className="font-medium">{name}</span>
     </span>
