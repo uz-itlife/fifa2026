@@ -13,6 +13,8 @@ export async function GET(_: Request, { params }: { params: Promise<{ id: string
     setCache(key, data, 120)
     return NextResponse.json<CachedResponse<Match>>({ data, stale: false })
   } catch {
-    return NextResponse.json({ error: 'Not found' }, { status: 502 })
+    const stale = getCache<Match>(key)
+    if (stale) return NextResponse.json<CachedResponse<Match>>({ data: stale, stale: true })
+    return NextResponse.json({ error: 'Failed to fetch match' }, { status: 502 })
   }
 }

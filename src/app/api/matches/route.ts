@@ -11,7 +11,7 @@ export async function GET(req: Request) {
   if (status) params.set('status', status)
   if (team) params.set('team', team)
   const qs = params.toString() ? `?${params}` : ''
-  const CACHE_KEY = `matches-${qs}`
+  const CACHE_KEY = `matches${qs ? '-' + qs : '-all'}`
 
   const cached = getCache<MatchesResponse>(CACHE_KEY)
   if (cached) return NextResponse.json<CachedResponse<MatchesResponse>>({ data: cached, stale: false })
