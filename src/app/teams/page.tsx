@@ -2,6 +2,7 @@
 import { useStandings } from '@/hooks/useStandings'
 import Link from 'next/link'
 import { tlaToFlag } from '@/lib/flag-utils'
+import { teamRu } from '@/lib/russian-teams'
 
 export default function TeamsPage() {
   const { standings } = useStandings()
@@ -24,12 +25,14 @@ export default function TeamsPage() {
                   src={team.crest}
                   alt=""
                   aria-hidden
-                  className="absolute inset-0 w-full h-full object-cover opacity-[0.12] scale-150 blur-sm pointer-events-none select-none group-hover:opacity-[0.2] transition-opacity"
+                  className="absolute inset-0 w-full h-full object-contain opacity-[0.18] pointer-events-none select-none group-hover:opacity-[0.28] transition-opacity duration-300"
                 />
               )}
               <div className="relative z-10">
                 <div className="text-3xl mb-2">{tlaToFlag(team.tla)}</div>
-                <p className="text-sm font-semibold truncate">{team.shortName}</p>
+                <p className="text-sm font-semibold truncate leading-tight">
+                  {teamRu(team.tla, team.shortName)}
+                </p>
                 <p className="text-xs text-gray-500 mt-1">Группа {team.group}</p>
               </div>
             </div>
