@@ -2,8 +2,8 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useUzbMatches } from '@/hooks/useUzbMatches'
-import type { Match } from '@/types/football'
-import { tlaToFlag } from '@/lib/flag-utils'
+import type { Match, Team } from '@/types/football'
+import { teamRu } from '@/lib/russian-teams'
 
 function getNextMatch(matches: Match[]) {
   return matches
@@ -28,6 +28,29 @@ function buildCountdown(utcDate: string, now: number): string | null {
   return `${m}м`
 }
 
+function TeamBadge({ team, label }: { team: Team; label?: string }) {
+  const name = label ?? teamRu(team.tla, team.shortName)
+  return (
+    <div className="text-center flex-1">
+      {team.crest ? (
+        <img
+          src={team.crest}
+          alt={name}
+          width={44}
+          height={44}
+          className="object-contain mx-auto mb-1"
+          onError={e => { (e.target as HTMLImageElement).style.display = 'none' }}
+        />
+      ) : (
+        <div className="w-11 h-11 mx-auto mb-1 rounded-full bg-white/10 flex items-center justify-center text-xs font-bold">
+          {team.tla}
+        </div>
+      )}
+      <p className="text-xs font-semibold leading-tight">{name}</p>
+    </div>
+  )
+}
+
 export function UzbekistanSpotlight() {
   const { matches } = useUzbMatches()
   const [now, setNow] = useState(() => Date.now())
@@ -40,10 +63,11 @@ export function UzbekistanSpotlight() {
   const nextMatch = getNextMatch(matches)
   const lastMatch = getLastMatch(matches)
 
-  const home = nextMatch?.homeTeam
-  const away = nextMatch?.awayTeam
+  const uzbTeam = nextMatch
+    ? (nextMatch.homeTeam.tla === 'UZB' ? nextMatch.homeTeam : nextMatch.awayTeam)
+    : null
   const opponent = nextMatch
-    ? (home?.tla === 'UZB' ? away : home)
+    ? (nextMatch.homeTeam.tla === 'UZB' ? nextMatch.awayTeam : nextMatch.homeTeam)
     : null
 
   const nextDate = nextMatch
@@ -65,39 +89,37 @@ export function UzbekistanSpotlight() {
           </div>
         </div>
 
-        {nextMatch && (
+        {nextMatch && uzbTeam && opponent && (
           <div className="mb-3 rounded-lg bg-black/10 dark:bg-white/5 p-3">
-            <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">Следующий матч</p>
+            <p className="text-xs text-gray-500 uppercase tracking-wide mb-3">Следующий матч</p>
             <div className="flex items-center justify-between gap-2">
-              <div className="text-center flex-1">
-                <div className="text-2xl mb-0.5">{tlaToFlag('UZB')}</div>
-                <p className="text-xs font-semibold">Узбекистан</p>
-              </div>
+              <TeamBadge team={uzbTeam} label="Узбекистан" />
               <div className="text-center shrink-0 px-2">
                 <p className="text-xs text-gray-400 leading-tight">{nextDate}</p>
                 {countdown && (
                   <p className="text-gold font-bold text-xs mt-1">⏱ через {countdown}</p>
                 )}
               </div>
-              <div className="text-center flex-1">
-                <div className="text-2xl mb-0.5">
-                  {opponent?.tla ? tlaToFlag(opponent.tla) : '🏳️'}
-                </div>
-                <p className="text-xs font-semibold">{opponent?.shortName ?? opponent?.name}</p>
-              </div>
+              <TeamBadge team={opponent} />
             </div>
           </div>
         )}
 
         {lastMatch && (
           <div>
-            <p className="text-xs text-gray-500 uppercase tracking-wide mb-1">Последний результат</p>
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="font-semibold text-sm">{lastMatch.homeTeam.shortName}</span>
+            <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">Последний результат</p>
+            <div className="flex items-center gap-3">
+              {lastMatch.homeTeam.crest && (
+                <img src={lastMatch.homeTeam.crest} alt="" width={28} height={28} className="object-contain" />
+              )}
+              <span className="font-semibold text-sm">{teamRu(lastMatch.homeTeam.tla, lastMatch.homeTeam.shortName)}</span>
               <span className="text-gold font-black text-lg">
                 {lastMatch.score.fullTime.home ?? '–'} : {lastMatch.score.fullTime.away ?? '–'}
               </span>
-              <span className="font-semibold text-sm">{lastMatch.awayTeam.shortName}</span>
+              <span className="font-semibold text-sm">{teamRu(lastMatch.awayTeam.tla, lastMatch.awayTeam.shortName)}</span>
+              {lastMatch.awayTeam.crest && (
+                <img src={lastMatch.awayTeam.crest} alt="" width={28} height={28} className="object-contain" />
+              )}
             </div>
           </div>
         )}

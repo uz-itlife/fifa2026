@@ -32,7 +32,7 @@ export default function HomePage() {
       )}
 
       <section>
-        <h2 className="text-lg font-bold mb-3">Следи за Узбекистаном 🇺🇿</h2>
+        <h2 className="text-lg font-bold mb-3">Следи за сборной Узбекистана</h2>
         <UzbekistanSpotlight />
       </section>
 

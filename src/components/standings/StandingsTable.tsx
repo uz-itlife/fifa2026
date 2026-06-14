@@ -1,5 +1,6 @@
 import type { Standing } from '@/types/football'
 import { TeamFlag } from '@/components/ui/TeamFlag'
+import { teamRu } from '@/lib/russian-teams'
 
 interface Props {
   rows: Standing[]
@@ -38,7 +39,7 @@ export function StandingsTable({ rows, highlightTla }: Props) {
               >
                 <td className="py-2 text-gray-500 text-xs">{row.position}</td>
                 <td className="py-2">
-                  <TeamFlag tla={row.team.tla} name={row.team.shortName} crest={row.team.crest} size="sm" />
+                  <TeamFlag tla={row.team.tla} name={teamRu(row.team.tla, row.team.shortName)} crest={row.team.crest} size="sm" />
                 </td>
                 <td className="py-2 text-center text-gray-400">{row.playedGames}</td>
                 <td className="py-2 text-center text-win hidden sm:table-cell">{row.won}</td>
