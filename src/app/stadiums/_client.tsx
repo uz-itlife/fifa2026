@@ -21,7 +21,7 @@ const STADIUMS: Stadium[] = [
     city: 'Нью-Йорк / Нью-Джерси',
     country: 'США', countryFlag: '🇺🇸',
     capacity: 82_500, lat: 40.8135, lng: -74.0745, matches: 8, finals: true,
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/MetLife_Stadium_Giants_Jets.jpg/1280px-MetLife_Stadium_Giants_Jets.jpg',
+    photo: '/stadiums/metlife.jpg',
     description: 'Крупнейший стадион ЧМ-2026. Примет финал турнира.',
   },
   {
@@ -29,7 +29,7 @@ const STADIUMS: Stadium[] = [
     city: 'Арлингтон, Техас',
     country: 'США', countryFlag: '🇺🇸',
     capacity: 80_000, lat: 32.7480, lng: -97.0929, matches: 6,
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/AT%26T_Stadium_2010.jpg/1280px-AT%26T_Stadium_2010.jpg',
+    photo: '/stadiums/att.jpg',
     description: 'Домашняя арена Dallas Cowboys. Один из крупнейших крытых стадионов в мире.',
   },
   {
@@ -37,7 +37,7 @@ const STADIUMS: Stadium[] = [
     city: 'Инглвуд, Калифорния',
     country: 'США', countryFlag: '🇺🇸',
     capacity: 70_240, lat: 33.9535, lng: -118.3392, matches: 6,
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/SoFi_Stadium_Aerial.jpg/1280px-SoFi_Stadium_Aerial.jpg',
+    photo: '/stadiums/sofi.jpg',
     description: 'Современная крытая арена в Лос-Анджелесе. Открыта в 2020 году.',
   },
   {
@@ -45,7 +45,7 @@ const STADIUMS: Stadium[] = [
     city: 'Мехико',
     country: 'Мексика', countryFlag: '🇲🇽',
     capacity: 87_523, lat: 19.3029, lng: -99.1505, matches: 5,
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Aztecaestadio.jpg/1280px-Aztecaestadio.jpg',
+    photo: '/stadiums/azteca.jpg',
     description: 'Легендарный стадион с историей. Единственная арена, принявшая три ЧМ (1970, 1986, 2026).',
   },
   {
@@ -53,7 +53,7 @@ const STADIUMS: Stadium[] = [
     city: 'Ванкувер',
     country: 'Канада', countryFlag: '🇨🇦',
     capacity: 54_500, lat: 49.2768, lng: -123.1116, matches: 5,
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/BC_Place_Stadium.jpg/1280px-BC_Place_Stadium.jpg',
+    photo: '/stadiums/bcplace.jpg',
     description: 'Единственная крытая арена ЧМ-2026 с воздушной кровлей.',
   },
   {
@@ -61,7 +61,7 @@ const STADIUMS: Stadium[] = [
     city: 'Санта-Клара, Калифорния',
     country: 'США', countryFlag: '🇺🇸',
     capacity: 68_500, lat: 37.4032, lng: -121.9698, matches: 4,
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Levi%27s_Stadium.jpg/1280px-Levi%27s_Stadium.jpg',
+    photo: '/stadiums/levis.jpg',
     description: 'Домашняя арена San Francisco 49ers. Расположена в Кремниевой долине.',
   },
   {
@@ -69,7 +69,7 @@ const STADIUMS: Stadium[] = [
     city: 'Филадельфия',
     country: 'США', countryFlag: '🇺🇸',
     capacity: 69_796, lat: 39.9008, lng: -75.1675, matches: 5,
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Lincoln_Financial_Field_2018.jpg/1280px-Lincoln_Financial_Field_2018.jpg',
+    photo: '/stadiums/lincoln.jpg',
     description: 'Домашняя арена Philadelphia Eagles. Открыта в 2003 году.',
   },
   {
@@ -77,7 +77,7 @@ const STADIUMS: Stadium[] = [
     city: 'Канзас-Сити',
     country: 'США', countryFlag: '🇺🇸',
     capacity: 76_416, lat: 39.0489, lng: -94.4839, matches: 4,
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Arrowhead_stadium.jpg/1280px-Arrowhead_stadium.jpg',
+    photo: '/stadiums/arrowhead.jpg',
     description: 'Домашняя арена Kansas City Chiefs. Известна громкими болельщиками.',
   },
   {
@@ -85,7 +85,7 @@ const STADIUMS: Stadium[] = [
     city: 'Хьюстон, Техас',
     country: 'США', countryFlag: '🇺🇸',
     capacity: 72_220, lat: 29.6847, lng: -95.4107, matches: 5,
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/NRG_Stadium_Houston_Texans.jpg/1280px-NRG_Stadium_Houston_Texans.jpg',
+    photo: '/stadiums/nrg.jpg',
     description: 'Первый стадион NFL с раздвижной кровлей. Открыт в 2002 году.',
   },
   {
@@ -93,7 +93,7 @@ const STADIUMS: Stadium[] = [
     city: 'Сиэтл',
     country: 'США', countryFlag: '🇺🇸',
     capacity: 72_000, lat: 47.5952, lng: -122.3316, matches: 4,
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Lumen_Field_2021.jpg/1280px-Lumen_Field_2021.jpg',
+    photo: '/stadiums/lumen.jpg',
     description: 'Домашняя арена Seattle Seahawks. Открыта в 2002 году.',
   },
   {
@@ -101,7 +101,7 @@ const STADIUMS: Stadium[] = [
     city: 'Фоксборо, Массачусетс',
     country: 'США', countryFlag: '🇺🇸',
     capacity: 65_878, lat: 42.0909, lng: -71.2643, matches: 5,
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Gillette_stadium.jpg/1280px-Gillette_stadium.jpg',
+    photo: '/stadiums/gillette.jpg',
     description: 'Домашняя арена New England Patriots. Открыта в 2002 году.',
   },
   {
@@ -109,7 +109,7 @@ const STADIUMS: Stadium[] = [
     city: 'Монтеррей',
     country: 'Мексика', countryFlag: '🇲🇽',
     capacity: 53_500, lat: 25.6694, lng: -100.2358, matches: 4,
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Estadio_BBVA.jpg/1280px-Estadio_BBVA.jpg',
+    photo: '/stadiums/bbva.jpg',
     description: 'Современная арена с видом на горы Серро-де-ла-Силья.',
   },
   {
@@ -117,7 +117,7 @@ const STADIUMS: Stadium[] = [
     city: 'Гвадалахара',
     country: 'Мексика', countryFlag: '🇲🇽',
     capacity: 49_850, lat: 20.6693, lng: -103.4504, matches: 4,
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Estadio_Chivas.jpg/1280px-Estadio_Chivas.jpg',
+    photo: '/stadiums/akron.jpg',
     description: 'Домашняя арена ФК «Гвадалахара». Открыта в 2010 году.',
   },
   {
@@ -125,7 +125,7 @@ const STADIUMS: Stadium[] = [
     city: 'Торонто',
     country: 'Канада', countryFlag: '🇨🇦',
     capacity: 45_000, lat: 43.6333, lng: -79.4187, matches: 4,
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/BMO_Field_2018.jpg/1280px-BMO_Field_2018.jpg',
+    photo: '/stadiums/bmo.jpg',
     description: 'Домашняя арена Toronto FC. Открыта в 2007 году.',
   },
   {
@@ -133,7 +133,7 @@ const STADIUMS: Stadium[] = [
     city: 'Атланта',
     country: 'США', countryFlag: '🇺🇸',
     capacity: 71_000, lat: 33.7554, lng: -84.4009, matches: 4,
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Mercedes-Benz_Stadium.jpg/1280px-Mercedes-Benz_Stadium.jpg',
+    photo: '/stadiums/mercedesbenz.jpg',
     description: 'Инновационная арена с раздвижной кровлей. Открыта в 2017 году.',
   },
   {
@@ -141,7 +141,7 @@ const STADIUMS: Stadium[] = [
     city: 'Майами',
     country: 'США', countryFlag: '🇺🇸',
     capacity: 65_326, lat: 25.9579, lng: -80.2389, matches: 5,
-    photo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Hard_Rock_Stadium_2016.jpg/1280px-Hard_Rock_Stadium_2016.jpg',
+    photo: '/stadiums/hardrock.jpg',
     description: 'Домашняя арена Miami Dolphins. Обновлена в 2016 году.',
   },
 ]
