@@ -9,49 +9,56 @@ import { teamRu } from '@/lib/russian-teams'
 
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 
-type Event =
-  | { kind: 'goal'; minute: number; injuryTime?: number | null; data: Goal }
-  | { kind: 'booking'; minute: number; injuryTime?: number | null; data: Booking }
+type TimelineItem =
+  | { kind: 'goal'; minute: number; injury: number | null; goal: Goal }
+  | { kind: 'card'; minute: number; injury: null; booking: Booking }
 
-function buildTimeline(goals: Goal[], bookings: Booking[]): Event[] {
-  const events: Event[] = [
-    ...goals.map(g => ({ kind: 'goal' as const, minute: g.minute, injuryTime: g.injuryTime, data: g })),
-    ...bookings.map(b => ({ kind: 'booking' as const, minute: b.minute, injuryTime: undefined, data: b })),
+function buildTimeline(goals: Goal[], bookings: Booking[]): TimelineItem[] {
+  const items: TimelineItem[] = [
+    ...goals.map(g => ({
+      kind: 'goal' as const,
+      minute: g.minute,
+      injury: g.injuryTime ?? null,
+      goal: g,
+    })),
+    ...bookings.map(b => ({
+      kind: 'card' as const,
+      minute: b.minute,
+      injury: null,
+      booking: b,
+    })),
   ]
-  return events.sort((a, b) => a.minute - b.minute)
+  return items.sort((a, b) => a.minute - b.minute || (a.injury ?? 0) - (b.injury ?? 0))
 }
 
-function CardBox({ card }: { card: Booking['card'] }) {
-  if (card === 'RED_CARD') return <span className="inline-block w-3 h-4 bg-red-500 rounded-sm shrink-0" />
-  if (card === 'YELLOW_RED_CARD') return <span className="inline-block w-3 h-4 bg-orange-400 rounded-sm shrink-0" />
-  return <span className="inline-block w-3 h-4 bg-yellow-400 rounded-sm shrink-0" />
-}
-
-function MinuteBadge({ minute, injury }: { minute: number; injury?: number | null }) {
-  return (
-    <span className="text-xs text-gray-500 font-mono w-10 shrink-0 text-right">
-      {minute}{injury ? `+${injury}` : ''}&apos;
-    </span>
-  )
+function isHomeEvent(teamName: string, teamId: number, homeName: string, homeId: number) {
+  return teamId === homeId || teamName === homeName
 }
 
 export default function MatchDetailPage() {
   const { id } = useParams<{ id: string }>()
-  const { data } = useSWR<CachedResponse<Match>>(`/api/matches/${id}`, fetcher, { refreshInterval: 60_000 })
+  const { data } = useSWR<CachedResponse<Match>>(
+    `/api/matches/${id}`,
+    fetcher,
+    { refreshInterval: 60_000 }
+  )
   const match = data?.data
 
-  if (!match) return <div className="text-gray-500 text-center py-20">Загрузка...</div>
+  if (!match) {
+    return <div className="text-gray-500 text-center py-20">Загрузка...</div>
+  }
 
   const isLive = match.status === 'IN_PLAY' || match.status === 'PAUSED'
   const isFinished = match.status === 'FINISHED'
   const isUzb = match.homeTeam.tla === 'UZB' || match.awayTeam.tla === 'UZB'
+
   const goals = match.goals ?? []
   const bookings = match.bookings ?? []
   const timeline = buildTimeline(goals, bookings)
 
   const groupLabel = match.group
     ? `Группа ${match.group.replace(/^GROUP[_\s]*/i, '').toUpperCase()}`
-    : match.stage?.replace(/_/g, ' ')
+    : (match.stage ?? '').replace(/_/g, ' ')
 
   const homeRu = teamRu(match.homeTeam.tla, match.homeTeam.shortName)
   const awayRu = teamRu(match.awayTeam.tla, match.awayTeam.shortName)
@@ -60,89 +67,143 @@ export default function MatchDetailPage() {
     <div className="max-w-2xl mx-auto space-y-4">
       {isUzb && isLive && <WatchBanner />}
 
-      {/* Score card */}
+      {/* Score header */}
       <div className="bg-white dark:bg-dark-card rounded-xl p-6 border border-light-border dark:border-dark-border">
-        <div className="text-center text-xs text-gray-500 mb-4 flex items-center justify-center gap-2">
+        <div className="flex items-center justify-center gap-3 mb-5 text-xs text-gray-500">
           <span>{groupLabel}</span>
-          {isLive && <LiveBadge minute={match.minute} />}
-          {isFinished && <span className="text-gray-400">Завершён</span>}
+          <span>·</span>
+          {isLive
+            ? <LiveBadge minute={match.minute} />
+            : isFinished
+            ? <span className="text-green-500 font-medium">Завершён</span>
+            : <span>{new Date(match.utcDate).toLocaleString('ru-RU', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}</span>
+          }
         </div>
 
-        <div className="flex items-center justify-between gap-4">
-          <div className="text-center flex-1">
+        <div className="flex items-center gap-4">
+          {/* Home */}
+          <div className="flex-1 flex flex-col items-center gap-2">
             <TeamFlag tla={match.homeTeam.tla} name={homeRu} crest={match.homeTeam.crest} size="lg" />
           </div>
-          <div className="text-4xl font-black text-gold shrink-0 tabular-nums">
-            {match.score.fullTime.home ?? '–'} : {match.score.fullTime.away ?? '–'}
+
+          {/* Score */}
+          <div className="text-center shrink-0">
+            <div className="text-5xl font-black text-gold tabular-nums leading-none">
+              {match.score.fullTime.home ?? '–'} : {match.score.fullTime.away ?? '–'}
+            </div>
+            {match.score.halfTime.home !== null && (
+              <div className="text-xs text-gray-500 mt-2">
+                Перерыв {match.score.halfTime.home} : {match.score.halfTime.away}
+              </div>
+            )}
           </div>
-          <div className="text-center flex-1">
+
+          {/* Away */}
+          <div className="flex-1 flex flex-col items-center gap-2">
             <TeamFlag tla={match.awayTeam.tla} name={awayRu} crest={match.awayTeam.crest} size="lg" />
           </div>
         </div>
-
-        {match.score.halfTime.home !== null && (
-          <p className="text-center text-xs text-gray-500 mt-3">
-            Перерыв: {match.score.halfTime.home} : {match.score.halfTime.away}
-          </p>
-        )}
       </div>
 
-      {/* Timeline */}
+      {/* Events timeline */}
       {timeline.length > 0 ? (
-        <div className="bg-white dark:bg-dark-card rounded-xl p-4 border border-light-border dark:border-dark-border">
-          <h3 className="text-xs font-bold text-gray-500 uppercase tracking-widest mb-3">События матча</h3>
-          <div className="space-y-2">
-            {timeline.map((ev, i) => {
-              const isHome = ev.kind === 'goal'
-                ? ev.data.team.name === match.homeTeam.name || ev.data.team.id === match.homeTeam.id
-                : ev.data.team.name === match.homeTeam.name || ev.data.team.id === match.homeTeam.id
+        <div className="bg-white dark:bg-dark-card rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
+          <div className="px-4 py-3 border-b border-light-border dark:border-dark-border">
+            <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest">События матча</h3>
+          </div>
 
-              if (ev.kind === 'goal') {
+          {/* Column headers */}
+          <div className="grid grid-cols-[1fr_48px_1fr] text-[10px] text-gray-500 uppercase tracking-wider px-4 py-2 border-b border-light-border/50 dark:border-dark-border/50">
+            <span>{homeRu}</span>
+            <span className="text-center">мин</span>
+            <span className="text-right">{awayRu}</span>
+          </div>
+
+          <div className="divide-y divide-light-border/40 dark:divide-dark-border/40">
+            {timeline.map((item, i) => {
+              const home = item.kind === 'goal'
+                ? isHomeEvent(item.goal.team.name, item.goal.team.id, match.homeTeam.name, match.homeTeam.id)
+                : isHomeEvent(item.booking.team.name, item.booking.team.id, match.homeTeam.name, match.homeTeam.id)
+
+              const minuteStr = `${item.minute}${item.injury ? `+${item.injury}` : ''}'`
+
+              if (item.kind === 'goal') {
                 return (
-                  <div key={i} className={['flex items-center gap-2', isHome ? 'flex-row' : 'flex-row-reverse'].join(' ')}>
-                    <MinuteBadge minute={ev.minute} injury={ev.injuryTime} />
-                    <span className="text-base shrink-0">⚽</span>
-                    <div className={['flex-1', isHome ? 'text-left' : 'text-right'].join(' ')}>
-                      <span className="text-sm font-semibold text-white">
-                        {ev.data.scorer?.name ?? 'Автогол'}
-                      </span>
-                      {ev.data.assist && (
-                        <span className="text-xs text-gray-500 ml-1.5">пас: {ev.data.assist.name}</span>
+                  <div key={i} className="grid grid-cols-[1fr_48px_1fr] items-center px-4 py-2.5 hover:bg-black/5 dark:hover:bg-white/5">
+                    {/* Home side */}
+                    <div className={home ? 'text-left' : ''}>
+                      {home && (
+                        <div>
+                          <span className="text-sm font-semibold text-white">
+                            ⚽ {item.goal.scorer?.name ?? 'Автогол'}
+                          </span>
+                          {item.goal.assist && (
+                            <div className="text-[11px] text-gray-500">
+                              Пас: {item.goal.assist.name}
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                    {/* Minute */}
+                    <div className="text-center text-xs font-mono text-gold font-bold">{minuteStr}</div>
+                    {/* Away side */}
+                    <div className={!home ? 'text-right' : ''}>
+                      {!home && (
+                        <div>
+                          <span className="text-sm font-semibold text-white">
+                            {item.goal.scorer?.name ?? 'Автогол'} ⚽
+                          </span>
+                          {item.goal.assist && (
+                            <div className="text-[11px] text-gray-500">
+                              Пас: {item.goal.assist.name}
+                            </div>
+                          )}
+                        </div>
                       )}
                     </div>
                   </div>
                 )
               }
 
+              // Card event
+              const cardEmoji = item.booking.card === 'RED_CARD' ? '🟥'
+                : item.booking.card === 'YELLOW_RED_CARD' ? '🟧'
+                : '🟨'
+
               return (
-                <div key={i} className={['flex items-center gap-2', isHome ? 'flex-row' : 'flex-row-reverse'].join(' ')}>
-                  <MinuteBadge minute={ev.minute} />
-                  <CardBox card={ev.data.card} />
-                  <div className={['flex-1', isHome ? 'text-left' : 'text-right'].join(' ')}>
-                    <span className="text-sm font-semibold text-white">{ev.data.player.name}</span>
+                <div key={i} className="grid grid-cols-[1fr_48px_1fr] items-center px-4 py-2.5 hover:bg-black/5 dark:hover:bg-white/5">
+                  <div>
+                    {home && (
+                      <span className="text-sm text-gray-300">
+                        {cardEmoji} {item.booking.player.name}
+                      </span>
+                    )}
+                  </div>
+                  <div className="text-center text-xs font-mono text-gray-500">{minuteStr}</div>
+                  <div className="text-right">
+                    {!home && (
+                      <span className="text-sm text-gray-300">
+                        {item.booking.player.name} {cardEmoji}
+                      </span>
+                    )}
                   </div>
                 </div>
               )
             })}
           </div>
-
-          {/* Goal summary under timeline */}
-          <div className="mt-4 pt-3 border-t border-dark-border/50 flex justify-between text-xs text-gray-500">
-            <div>
-              {goals.filter(g => g.team.id === match.homeTeam.id || g.team.name === match.homeTeam.name)
-                .map(g => `${g.scorer?.name ?? '?'} ${g.minute}'`).join(', ')}
-            </div>
-            <div className="text-right">
-              {goals.filter(g => g.team.id === match.awayTeam.id || g.team.name === match.awayTeam.name)
-                .map(g => `${g.scorer?.name ?? '?'} ${g.minute}'`).join(', ')}
-            </div>
-          </div>
         </div>
-      ) : (isFinished || isLive) ? (
-        <div className="bg-white dark:bg-dark-card rounded-xl p-4 border border-light-border dark:border-dark-border text-center text-sm text-gray-500">
-          {isLive ? 'События матча обновляются...' : 'Подробная статистика недоступна'}
+      ) : (isFinished || isLive) && (
+        <div className="bg-white dark:bg-dark-card rounded-xl p-5 border border-light-border dark:border-dark-border text-center space-y-1">
+          <p className="text-sm text-gray-400">
+            {isLive ? '⏱ Матч идёт — события появятся здесь' : 'Детальная статистика недоступна в бесплатном плане API'}
+          </p>
+          <p className="text-xs text-gray-500">
+            Счёт: {match.score.fullTime.home} : {match.score.fullTime.away}
+            {match.score.halfTime.home !== null && ` (перерыв ${match.score.halfTime.home}:${match.score.halfTime.away})`}
+          </p>
         </div>
-      ) : null}
+      )}
 
       {isUzb && !isLive && <WatchBanner compact />}
     </div>

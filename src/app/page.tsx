@@ -1,7 +1,6 @@
 'use client'
 import Link from 'next/link'
 import { useLiveMatches } from '@/hooks/useLiveMatches'
-import { UzbekistanSpotlight } from '@/components/uzbekistan/UzbekistanSpotlight'
 import { MatchCard } from '@/components/matches/MatchCard'
 import { LiveBadge } from '@/components/ui/LiveBadge'
 
@@ -30,11 +29,6 @@ export default function HomePage() {
           </div>
         </section>
       )}
-
-      <section>
-        <h2 className="text-lg font-bold mb-3">Следи за сборной Узбекистана</h2>
-        <UzbekistanSpotlight />
-      </section>
 
       <section>
         <h2 className="text-lg font-bold mb-3">Разделы</h2>
