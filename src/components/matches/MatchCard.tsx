@@ -1,0 +1,58 @@
+import Link from 'next/link'
+import type { Match } from '@/types/football'
+import { LiveBadge } from '@/components/ui/LiveBadge'
+import { TeamFlag } from '@/components/ui/TeamFlag'
+import { WatchBanner } from '@/components/uzbekistan/WatchBanner'
+
+const UZB_TLA = 'UZB'
+
+interface Props { match: Match }
+
+export function MatchCard({ match }: Props) {
+  const isLive = match.status === 'IN_PLAY' || match.status === 'PAUSED'
+  const isFinished = match.status === 'FINISHED'
+  const hasScore = isFinished || isLive
+  const isUzbMatch = match.homeTeam.tla === UZB_TLA || match.awayTeam.tla === UZB_TLA
+  const date = new Date(match.utcDate).toLocaleString('ru-RU', {
+    day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit'
+  })
+
+  return (
+    <div className="bg-white dark:bg-dark-card rounded-xl p-4 border border-light-border dark:border-dark-border hover:scale-[1.01] transition-transform">
+      <div className="flex items-center justify-between mb-2 text-xs text-gray-500">
+        <span>{match.group?.replace('GROUP_', 'Группа ') ?? match.stage}</span>
+        {isLive ? <LiveBadge minute={match.minute} /> : <span>{date}</span>}
+      </div>
+
+      <Link href={`/matches/${match.id}`}>
+        <div className="flex items-center justify-between gap-4">
+          <TeamFlag tla={match.homeTeam.tla} name={match.homeTeam.shortName} crest={match.homeTeam.crest} />
+          <div className="flex items-center gap-2 text-xl font-bold shrink-0">
+            {hasScore ? (
+              <>
+                <span className={match.score.winner === 'HOME_TEAM' ? 'text-win' : ''}>
+                  {match.score.fullTime.home}
+                </span>
+                <span className="text-gray-600">—</span>
+                <span className={match.score.winner === 'AWAY_TEAM' ? 'text-win' : ''}>
+                  {match.score.fullTime.away}
+                </span>
+              </>
+            ) : (
+              <span className="text-gray-500 text-sm">{date}</span>
+            )}
+          </div>
+          <div className="text-right">
+            <TeamFlag tla={match.awayTeam.tla} name={match.awayTeam.shortName} crest={match.awayTeam.crest} />
+          </div>
+        </div>
+      </Link>
+
+      {isUzbMatch && (
+        <div className="mt-3">
+          <WatchBanner compact />
+        </div>
+      )}
+    </div>
+  )
+}
