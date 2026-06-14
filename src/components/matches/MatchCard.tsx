@@ -20,7 +20,7 @@ export function MatchCard({ match }: Props) {
   return (
     <div className="bg-white dark:bg-dark-card rounded-xl p-4 border border-light-border dark:border-dark-border hover:scale-[1.01] transition-transform">
       <div className="flex items-center justify-between mb-2 text-xs text-gray-500">
-        <span>{match.group?.replace('GROUP_', 'Группа ') ?? match.stage}</span>
+        <span>{match.group ? `Группа ${match.group.replace(/^GROUP[_\s]*/i, '').toUpperCase()}` : match.stage}</span>
         {isLive ? <LiveBadge minute={match.minute} /> : <span>{date}</span>}
       </div>
 

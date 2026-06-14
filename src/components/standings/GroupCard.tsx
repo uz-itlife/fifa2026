@@ -10,7 +10,7 @@ interface Props {
 }
 
 export function GroupCard({ group, highlight, index }: Props) {
-  const letter = (group.group ?? '').replace('GROUP_', '')
+  const letter = (group.group ?? '').replace(/^GROUP[_\s]*/i, '').toUpperCase()
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }}

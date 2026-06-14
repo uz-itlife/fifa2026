@@ -5,7 +5,7 @@ import { ThemeToggle } from '@/components/ui/ThemeToggle'
 import { useLiveMatches } from '@/hooks/useLiveMatches'
 
 const tabs = [
-  { href: '/uzbekistan', label: '🇺🇿 Узбекистан', highlight: true },
+  { href: '/uzbekistan', label: 'Узбекистан 🇺🇿', highlight: true },
   { href: '/groups', label: 'Группы' },
   { href: '/knockout', label: 'Плей-офф' },
   { href: '/matches', label: 'Матчи' },

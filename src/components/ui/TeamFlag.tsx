@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { tlaToFlag } from '@/lib/flag-utils'
 
 interface TeamFlagProps {
   tla: string
@@ -21,12 +22,4 @@ export function TeamFlag({ tla, name, crest, size = 'md' }: TeamFlagProps) {
       <span className="font-medium">{name}</span>
     </span>
   )
-}
-
-function tlaToFlag(tla: string): string {
-  try {
-    return tla.toUpperCase().split('').map(c =>
-      String.fromCodePoint(0x1F1E6 + c.charCodeAt(0) - 65)
-    ).join('')
-  } catch { return '🏳️' }
 }

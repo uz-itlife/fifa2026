@@ -36,6 +36,22 @@ export interface Score {
   halfTime: { home: number | null; away: number | null }
 }
 
+export interface Goal {
+  minute: number
+  injuryTime?: number | null
+  type: string
+  team: { id: number; name: string }
+  scorer: { id: number; name: string } | null
+  assist: { id: number; name: string } | null
+}
+
+export interface Booking {
+  minute: number
+  team: { id: number; name: string }
+  player: { id: number; name: string }
+  card: 'YELLOW_CARD' | 'RED_CARD' | 'YELLOW_RED_CARD'
+}
+
 export interface Match {
   id: number
   utcDate: string
@@ -47,6 +63,8 @@ export interface Match {
   awayTeam: Team
   score: Score
   minute?: number
+  goals?: Goal[]
+  bookings?: Booking[]
 }
 
 export interface MatchesResponse {

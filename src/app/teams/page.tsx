@@ -1,11 +1,7 @@
 'use client'
 import { useStandings } from '@/hooks/useStandings'
 import Link from 'next/link'
-
-function tlaToFlag(tla: string) {
-  try { return tla.toUpperCase().split('').map(c => String.fromCodePoint(0x1F1E6 + c.charCodeAt(0) - 65)).join('') }
-  catch { return '🏳️' }
-}
+import { tlaToFlag } from '@/lib/flag-utils'
 
 export default function TeamsPage() {
   const { standings } = useStandings()

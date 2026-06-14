@@ -40,7 +40,7 @@ export function UzbekistanSpotlight() {
           <div className="text-sm mb-2">
             <span className="text-gray-400">Следующий матч: </span>
             <span className="font-semibold">
-              🇺🇿 vs {nextMatch.homeTeam.tla === 'UZB' ? nextMatch.awayTeam.shortName : nextMatch.homeTeam.shortName}
+              Узбекистан vs {nextMatch.homeTeam.tla === 'UZB' ? nextMatch.awayTeam.shortName : nextMatch.homeTeam.shortName}
             </span>
             <span className="ml-2 text-gold text-xs font-bold">через {countdown}</span>
           </div>
