@@ -1,1 +1,853 @@
-{}
+{
+  "537327": {
+    "homeTeam": {
+      "tla": "MEX",
+      "name": "Mexico"
+    },
+    "awayTeam": {
+      "tla": "RSA",
+      "name": "South Africa"
+    },
+    "stats": {
+      "home": {
+        "possession": 60.5,
+        "fouls": 12,
+        "passes": 520,
+        "passAccuracy": 90,
+        "goalkeeperSaves": 2,
+        "yellowCards": 1,
+        "redCards": 1,
+        "corners": 3
+      },
+      "away": {
+        "possession": 39.5,
+        "fouls": 11,
+        "passes": 334,
+        "passAccuracy": 81,
+        "goalkeeperSaves": 2,
+        "yellowCards": 2,
+        "redCards": 2,
+        "corners": 1
+      }
+    },
+    "cards": [
+      {
+        "playerId": "256691",
+        "playerName": "Teboho Mokoena",
+        "team": "RSA",
+        "type": "yellow",
+        "minute": "17'"
+      },
+      {
+        "playerId": "303577",
+        "playerName": "Brian Gutiérrez",
+        "team": "MEX",
+        "type": "yellow",
+        "minute": "23'"
+      },
+      {
+        "playerId": "228595",
+        "playerName": "Sphephelo Sithole",
+        "team": "RSA",
+        "type": "red",
+        "minute": "49'"
+      },
+      {
+        "playerId": "266125",
+        "playerName": "Nkosinathi Sibisi",
+        "team": "RSA",
+        "type": "yellow",
+        "minute": "74'"
+      },
+      {
+        "playerId": "157046",
+        "playerName": "Themba Zwane",
+        "team": "RSA",
+        "type": "red",
+        "minute": "84'"
+      },
+      {
+        "playerId": "224323",
+        "playerName": "César Montes",
+        "team": "MEX",
+        "type": "red",
+        "minute": "90'+2'"
+      }
+    ]
+  },
+  "537328": {
+    "homeTeam": {
+      "tla": "KOR",
+      "name": "South Korea"
+    },
+    "awayTeam": {
+      "tla": "CZE",
+      "name": "Czechia"
+    },
+    "stats": {
+      "home": {
+        "possession": 61.5,
+        "fouls": 9,
+        "passes": 541,
+        "passAccuracy": 87,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 4
+      },
+      "away": {
+        "possession": 38.5,
+        "fouls": 16,
+        "passes": 327,
+        "passAccuracy": 70,
+        "goalkeeperSaves": 4,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 5
+      }
+    },
+    "cards": [
+      {
+        "playerId": "345769",
+        "playerName": "Lee Gi-Hyuk",
+        "team": "KOR",
+        "type": "yellow",
+        "minute": "90'+6'"
+      }
+    ]
+  },
+  "537333": {
+    "homeTeam": {
+      "tla": "CAN",
+      "name": "Canada"
+    },
+    "awayTeam": {
+      "tla": "BIH",
+      "name": "Bosnia-Herzegovina"
+    },
+    "stats": {
+      "home": {
+        "possession": 61.1,
+        "fouls": 10,
+        "passes": 421,
+        "passAccuracy": 74,
+        "goalkeeperSaves": 2,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 9
+      },
+      "away": {
+        "possession": 38.9,
+        "fouls": 20,
+        "passes": 271,
+        "passAccuracy": 63,
+        "goalkeeperSaves": 1,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 4
+      }
+    },
+    "cards": [
+      {
+        "playerId": "293691",
+        "playerName": "Alistair Johnston",
+        "team": "CAN",
+        "type": "yellow",
+        "minute": "11'"
+      },
+      {
+        "playerId": "269136",
+        "playerName": "Ermedin Demirovic",
+        "team": "BIH",
+        "type": "yellow",
+        "minute": "45'"
+      },
+      {
+        "playerId": "305118",
+        "playerName": "Jovo Lukic",
+        "team": "BIH",
+        "type": "yellow",
+        "minute": "45'+1'"
+      },
+      {
+        "playerId": "365345",
+        "playerName": "Luc de Fougerolles",
+        "team": "CAN",
+        "type": "yellow",
+        "minute": "53'"
+      },
+      {
+        "playerId": "220538",
+        "playerName": "Nikola Katic",
+        "team": "BIH",
+        "type": "yellow",
+        "minute": "90'+3'"
+      }
+    ]
+  },
+  "537334": {
+    "homeTeam": {
+      "tla": "QAT",
+      "name": "Qatar"
+    },
+    "awayTeam": {
+      "tla": "SUI",
+      "name": "Switzerland"
+    },
+    "stats": {
+      "home": {
+        "possession": 32,
+        "fouls": 12,
+        "passes": 278,
+        "passAccuracy": 72,
+        "goalkeeperSaves": 5,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 3
+      },
+      "away": {
+        "possession": 68,
+        "fouls": 11,
+        "passes": 576,
+        "passAccuracy": 91,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 10
+      }
+    },
+    "cards": [
+      {
+        "playerId": "310372",
+        "playerName": "Mahmoud Abunada",
+        "team": "QAT",
+        "type": "yellow",
+        "minute": "16'"
+      },
+      {
+        "playerId": "310373",
+        "playerName": "Jassem Gaber",
+        "team": "QAT",
+        "type": "yellow",
+        "minute": "23'"
+      },
+      {
+        "playerId": "222628",
+        "playerName": "Denis Zakaria",
+        "team": "SUI",
+        "type": "yellow",
+        "minute": "42'"
+      }
+    ]
+  },
+  "537339": {
+    "homeTeam": {
+      "tla": "BRA",
+      "name": "Brazil"
+    },
+    "awayTeam": {
+      "tla": "MAR",
+      "name": "Morocco"
+    },
+    "stats": {
+      "home": {
+        "possession": 51.4,
+        "fouls": 16,
+        "passes": 514,
+        "passAccuracy": 87,
+        "goalkeeperSaves": 2,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 6
+      },
+      "away": {
+        "possession": 48.6,
+        "fouls": 14,
+        "passes": 486,
+        "passAccuracy": 86,
+        "goalkeeperSaves": 4,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 2
+      }
+    },
+    "cards": [
+      {
+        "playerId": "173666",
+        "playerName": "Casemiro",
+        "team": "BRA",
+        "type": "yellow",
+        "minute": "37'"
+      },
+      {
+        "playerId": "259835",
+        "playerName": "Roger Ibañez",
+        "team": "BRA",
+        "type": "yellow",
+        "minute": "43'"
+      }
+    ]
+  },
+  "537340": {
+    "homeTeam": {
+      "tla": "HAI",
+      "name": "Haiti"
+    },
+    "awayTeam": {
+      "tla": "SCO",
+      "name": "Scotland"
+    },
+    "stats": {
+      "home": {
+        "possession": 53.7,
+        "fouls": 23,
+        "passes": 431,
+        "passAccuracy": 85,
+        "goalkeeperSaves": 1,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 4
+      },
+      "away": {
+        "possession": 46.3,
+        "fouls": 21,
+        "passes": 374,
+        "passAccuracy": 82,
+        "goalkeeperSaves": 2,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 3
+      }
+    },
+    "cards": [
+      {
+        "playerId": "240369",
+        "playerName": "Jean-Ricner Bellegarde",
+        "team": "HAI",
+        "type": "yellow",
+        "minute": "39'"
+      },
+      {
+        "playerId": "283940",
+        "playerName": "Aaron Hickey",
+        "team": "SCO",
+        "type": "yellow",
+        "minute": "46'"
+      },
+      {
+        "playerId": "368045",
+        "playerName": "Findlay Curtis",
+        "team": "SCO",
+        "type": "yellow",
+        "minute": "90'+1'"
+      },
+      {
+        "playerId": "141870",
+        "playerName": "Kenny McLean",
+        "team": "SCO",
+        "type": "yellow",
+        "minute": "90'+5'"
+      }
+    ]
+  },
+  "537345": {
+    "homeTeam": {
+      "tla": "USA",
+      "name": "United States"
+    },
+    "awayTeam": {
+      "tla": "PAR",
+      "name": "Paraguay"
+    },
+    "stats": {
+      "home": {
+        "possession": 65.3,
+        "fouls": 13,
+        "passes": 598,
+        "passAccuracy": 85,
+        "goalkeeperSaves": 1,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 3
+      },
+      "away": {
+        "possession": 34.7,
+        "fouls": 17,
+        "passes": 319,
+        "passAccuracy": 73,
+        "goalkeeperSaves": 3,
+        "yellowCards": 5,
+        "redCards": 0,
+        "corners": 1
+      }
+    },
+    "cards": [
+      {
+        "playerId": "84295",
+        "playerName": "Juan Jose Cáceres",
+        "team": "PAR",
+        "type": "yellow",
+        "minute": "10'"
+      },
+      {
+        "playerId": "48128",
+        "playerName": "Miguel Almirón",
+        "team": "PAR",
+        "type": "yellow",
+        "minute": "53'"
+      },
+      {
+        "playerId": "222776",
+        "playerName": "Tyler Adams",
+        "team": "USA",
+        "type": "yellow",
+        "minute": "59'"
+      },
+      {
+        "playerId": "192278",
+        "playerName": "Diego Gómez",
+        "team": "PAR",
+        "type": "yellow",
+        "minute": "79'"
+      },
+      {
+        "playerId": "257754",
+        "playerName": "Alex Arce",
+        "team": "PAR",
+        "type": "yellow",
+        "minute": "88'"
+      },
+      {
+        "playerId": "181657",
+        "playerName": "Júnior Alonso",
+        "team": "PAR",
+        "type": "yellow",
+        "minute": "90'+3'"
+      }
+    ]
+  },
+  "537346": {
+    "homeTeam": {
+      "tla": "AUS",
+      "name": "Australia"
+    },
+    "awayTeam": {
+      "tla": "TUR",
+      "name": "Turkey"
+    },
+    "stats": {
+      "home": {
+        "possession": 28.4,
+        "fouls": 12,
+        "passes": 271,
+        "passAccuracy": 74,
+        "goalkeeperSaves": 8,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 5
+      },
+      "away": {
+        "possession": 71.6,
+        "fouls": 4,
+        "passes": 704,
+        "passAccuracy": 90,
+        "goalkeeperSaves": 2,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 8
+      }
+    },
+    "cards": [
+      {
+        "playerId": "266575",
+        "playerName": "Yunus Akgün",
+        "team": "TUR",
+        "type": "yellow",
+        "minute": "86'"
+      }
+    ]
+  },
+  "537351": {
+    "homeTeam": {
+      "tla": "GER",
+      "name": "Germany"
+    },
+    "awayTeam": {
+      "tla": "CUW",
+      "name": "Curaçao"
+    },
+    "stats": {
+      "home": {
+        "possession": 64.6,
+        "fouls": 18,
+        "passes": 637,
+        "passAccuracy": 87,
+        "goalkeeperSaves": 1,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 8
+      },
+      "away": {
+        "possession": 35.4,
+        "fouls": 11,
+        "passes": 343,
+        "passAccuracy": 82,
+        "goalkeeperSaves": 4,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 1
+      }
+    },
+    "cards": []
+  },
+  "537352": {
+    "homeTeam": {
+      "tla": "CIV",
+      "name": "Ivory Coast"
+    },
+    "awayTeam": {
+      "tla": "ECU",
+      "name": "Ecuador"
+    },
+    "stats": {
+      "home": {
+        "possession": 48.4,
+        "fouls": 10,
+        "passes": 470,
+        "passAccuracy": 84,
+        "goalkeeperSaves": 1,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 3
+      },
+      "away": {
+        "possession": 51.6,
+        "fouls": 13,
+        "passes": 492,
+        "passAccuracy": 85,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 6
+      }
+    },
+    "cards": [
+      {
+        "playerId": "184118",
+        "playerName": "Seko Fofana",
+        "team": "CIV",
+        "type": "yellow",
+        "minute": "28'"
+      },
+      {
+        "playerId": "194711",
+        "playerName": "Franck Kessié",
+        "team": "CIV",
+        "type": "yellow",
+        "minute": "38'"
+      },
+      {
+        "playerId": "346636",
+        "playerName": "Guela Doué",
+        "team": "CIV",
+        "type": "yellow",
+        "minute": "40'"
+      },
+      {
+        "playerId": "286665",
+        "playerName": "Jackson Porozo",
+        "team": "ECU",
+        "type": "yellow",
+        "minute": "73'"
+      }
+    ]
+  },
+  "537357": {
+    "homeTeam": {
+      "tla": "NED",
+      "name": "Netherlands"
+    },
+    "awayTeam": {
+      "tla": "JPN",
+      "name": "Japan"
+    },
+    "stats": {
+      "home": {
+        "possession": 59.8,
+        "fouls": 7,
+        "passes": 524,
+        "passAccuracy": 88,
+        "goalkeeperSaves": 1,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 5
+      },
+      "away": {
+        "possession": 40.2,
+        "fouls": 7,
+        "passes": 341,
+        "passAccuracy": 84,
+        "goalkeeperSaves": 4,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 4
+      }
+    },
+    "cards": [
+      {
+        "playerId": "284792",
+        "playerName": "Crysencio Summerville",
+        "team": "NED",
+        "type": "yellow",
+        "minute": "61'"
+      },
+      {
+        "playerId": "159255",
+        "playerName": "Memphis Depay",
+        "team": "NED",
+        "type": "yellow",
+        "minute": "83'"
+      },
+      {
+        "playerId": "296512",
+        "playerName": "Micky van de Ven",
+        "team": "NED",
+        "type": "yellow",
+        "minute": "90'+1'"
+      }
+    ]
+  },
+  "537358": {
+    "homeTeam": {
+      "tla": "SWE",
+      "name": "Sweden"
+    },
+    "awayTeam": {
+      "tla": "TUN",
+      "name": "Tunisia"
+    },
+    "stats": {
+      "home": {
+        "possession": 48.7,
+        "fouls": 10,
+        "passes": 356,
+        "passAccuracy": 78,
+        "goalkeeperSaves": 1,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 4
+      },
+      "away": {
+        "possession": 51.3,
+        "fouls": 8,
+        "passes": 371,
+        "passAccuracy": 79,
+        "goalkeeperSaves": 1,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 2
+      }
+    },
+    "cards": [
+      {
+        "playerId": "159152",
+        "playerName": "Rani Khedira",
+        "team": "TUN",
+        "type": "yellow",
+        "minute": "54'"
+      }
+    ]
+  },
+  "537363": {
+    "homeTeam": {
+      "tla": "BEL",
+      "name": "Belgium"
+    },
+    "awayTeam": {
+      "tla": "EGY",
+      "name": "Egypt"
+    },
+    "stats": {
+      "home": {
+        "possession": 53.6,
+        "fouls": 15,
+        "passes": 455,
+        "passAccuracy": 86,
+        "goalkeeperSaves": 2,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 2
+      },
+      "away": {
+        "possession": 46.4,
+        "fouls": 15,
+        "passes": 398,
+        "passAccuracy": 81,
+        "goalkeeperSaves": 3,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 7
+      }
+    },
+    "cards": [
+      {
+        "playerId": "357112",
+        "playerName": "Marawan Attia",
+        "team": "EGY",
+        "type": "yellow",
+        "minute": "13'"
+      },
+      {
+        "playerId": "197163",
+        "playerName": "Timothy Castagne",
+        "team": "BEL",
+        "type": "yellow",
+        "minute": "14'"
+      },
+      {
+        "playerId": "265176",
+        "playerName": "Ahmed Fatouh",
+        "team": "EGY",
+        "type": "yellow",
+        "minute": "34'"
+      },
+      {
+        "playerId": "301327",
+        "playerName": "Maxim De Cuyper",
+        "team": "BEL",
+        "type": "yellow",
+        "minute": "75'"
+      }
+    ]
+  },
+  "537364": {
+    "homeTeam": {
+      "tla": "IRN",
+      "name": "Iran"
+    },
+    "awayTeam": {
+      "tla": "NZL",
+      "name": "New Zealand"
+    },
+    "stats": {
+      "home": {
+        "possession": 48.5,
+        "fouls": 10,
+        "passes": 409,
+        "passAccuracy": 77,
+        "goalkeeperSaves": 6,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 4
+      },
+      "away": {
+        "possession": 51.5,
+        "fouls": 8,
+        "passes": 446,
+        "passAccuracy": 84,
+        "goalkeeperSaves": 2,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 1
+      }
+    },
+    "cards": [
+      {
+        "playerId": "203453",
+        "playerName": "Ehsan Hajsafi",
+        "team": "IRN",
+        "type": "yellow",
+        "minute": "89'"
+      }
+    ]
+  },
+  "537369": {
+    "homeTeam": {
+      "tla": "ESP",
+      "name": "Spain"
+    },
+    "awayTeam": {
+      "tla": "CPV",
+      "name": "Cape Verde Islands"
+    },
+    "stats": {
+      "home": {
+        "possession": 74.3,
+        "fouls": 10,
+        "passes": 800,
+        "passAccuracy": 92,
+        "goalkeeperSaves": 1,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 11
+      },
+      "away": {
+        "possession": 25.7,
+        "fouls": 1,
+        "passes": 278,
+        "passAccuracy": 74,
+        "goalkeeperSaves": 7,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 1
+      }
+    },
+    "cards": [
+      {
+        "playerId": "332394",
+        "playerName": "Sidny Lopes Cabral",
+        "team": "CPV",
+        "type": "yellow",
+        "minute": "16'"
+      },
+      {
+        "playerId": "250465",
+        "playerName": "Pedri",
+        "team": "ESP",
+        "type": "yellow",
+        "minute": "90'+3'"
+      }
+    ]
+  },
+  "537370": {
+    "homeTeam": {
+      "tla": "KSA",
+      "name": "Saudi Arabia"
+    },
+    "awayTeam": {
+      "tla": "URU",
+      "name": "Uruguay"
+    },
+    "stats": {
+      "home": {
+        "possession": 33.2,
+        "fouls": 11,
+        "passes": 322,
+        "passAccuracy": 73,
+        "goalkeeperSaves": 9,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 4
+      },
+      "away": {
+        "possession": 66.8,
+        "fouls": 6,
+        "passes": 612,
+        "passAccuracy": 88,
+        "goalkeeperSaves": 2,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 14
+      }
+    },
+    "cards": [
+      {
+        "playerId": "256667",
+        "playerName": "Abdulelah Al-Amri",
+        "team": "KSA",
+        "type": "yellow",
+        "minute": "44'"
+      }
+    ]
+  }
+}

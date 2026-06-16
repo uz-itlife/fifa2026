@@ -23,10 +23,10 @@ interface MatchStatsEntry {
   homeTeam: { tla: string; name: string }
   awayTeam: { tla: string; name: string }
   stats: { home: TeamMatchStats | null; away: TeamMatchStats | null }
-  cards: { playerId: number; playerName: string; team: string; type: 'yellow' | 'red' | 'second-yellow'; minute: number }[]
+  cards: { playerId: string; playerName: string; team: string; type: 'yellow' | 'red' | 'second-yellow'; minute: string }[]
 }
 
-const matchStats: Record<string, MatchStatsEntry> = matchStatsData
+const matchStats = matchStatsData as unknown as Record<string, MatchStatsEntry>
 const matchStatsList = Object.entries(matchStats).map(([id, m]) => ({ id, ...m }))
 
 const TABS = [
@@ -107,7 +107,7 @@ export default function StatsPage() {
     .sort((a, b) => b.points - a.points || b.goalDifference - a.goalDifference || b.goalsFor - a.goalsFor)
 
   const cardsRanked = (() => {
-    const byPlayer = new Map<number, { playerName: string; team: string; yellow: number; red: number }>()
+    const byPlayer = new Map<string, { playerName: string; team: string; yellow: number; red: number }>()
     for (const entry of matchStatsList) {
       for (const c of entry.cards) {
         const existing = byPlayer.get(c.playerId) ?? { playerName: c.playerName, team: c.team, yellow: 0, red: 0 }

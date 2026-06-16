@@ -15,17 +15,11 @@ function loadEnv() {
 loadEnv()
 
 const FOOTBALL_DATA_KEY = process.env.FOOTBALL_DATA_API_KEY
-const API_FOOTBALL_KEY = process.env.API_FOOTBALL_KEY
 
-if (!FOOTBALL_DATA_KEY || !API_FOOTBALL_KEY) {
-  console.error('Missing FOOTBALL_DATA_API_KEY or API_FOOTBALL_KEY in .env.local')
+if (!FOOTBALL_DATA_KEY) {
+  console.error('Missing FOOTBALL_DATA_API_KEY in .env.local')
   process.exit(1)
 }
-
-// World Cup league id 1 in api-football.com's database; verify against
-// GET /leagues?name=World Cup if matches stop resolving in a future edition.
-const LEAGUE_ID = 1
-const SEASON = 2026
 
 async function footballData(pathname) {
   const res = await fetch(`https://api.football-data.org/v4${pathname}`, {
@@ -35,72 +29,84 @@ async function footballData(pathname) {
   return res.json()
 }
 
-async function apiFootball(pathname) {
-  const res = await fetch(`https://v3.football.api-sports.io${pathname}`, {
-    headers: { 'x-apisports-key': API_FOOTBALL_KEY },
-  })
-  if (!res.ok) throw new Error(`api-football ${res.status}`)
+async function espn(pathname) {
+  const res = await fetch(`https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world${pathname}`)
+  if (!res.ok) throw new Error(`espn ${res.status}`)
   return res.json()
 }
 
-function normalizeName(n) {
-  return n.toLowerCase().replace(/[^a-z]/g, '')
+function toEspnDate(d) {
+  return d.toISOString().slice(0, 10).replace(/-/g, '')
 }
 
-async function findFixture(match) {
-  const date = match.utcDate.slice(0, 10)
-  const data = await apiFootball(`/fixtures?date=${date}&league=${LEAGUE_ID}&season=${SEASON}`)
-  const home = normalizeName(match.homeTeam.name)
-  const away = normalizeName(match.awayTeam.name)
-  return data.response.find(f => {
-    const fh = normalizeName(f.teams.home.name)
-    const fa = normalizeName(f.teams.away.name)
-    return (fh.includes(home) || home.includes(fh)) && (fa.includes(away) || away.includes(fa))
-  })
+async function findEvent(match) {
+  const matchDate = new Date(match.utcDate)
+  const prevDate = new Date(matchDate.getTime() - 24 * 60 * 60 * 1000)
+  const candidates = [toEspnDate(matchDate), toEspnDate(prevDate)]
+
+  for (const date of candidates) {
+    const data = await espn(`/scoreboard?dates=${date}`)
+    const found = (data.events || []).find(e => {
+      const codes = e.competitions?.[0]?.competitors?.map(c => c.team.abbreviation) || []
+      return codes.includes(match.homeTeam.tla) && codes.includes(match.awayTeam.tla)
+    })
+    if (found) return found
+  }
+  return undefined
 }
 
 function extractStat(statistics, name) {
-  const found = statistics?.find(s => s.type === name)
-  if (!found || found.value === null || found.value === undefined) return null
-  if (typeof found.value === 'string' && found.value.endsWith('%')) return parseInt(found.value, 10)
-  return found.value
+  const found = statistics?.find(s => s.name === name)
+  if (!found || found.displayValue === undefined || found.displayValue === null || found.displayValue === '') return null
+  const num = parseFloat(found.displayValue)
+  return Number.isNaN(num) ? null : num
 }
 
-function toTeamStats(block) {
-  if (!block) return null
+function toTeamStats(statistics) {
+  if (!statistics) return null
+  const totalPasses = extractStat(statistics, 'totalPasses')
+  const accuratePasses = extractStat(statistics, 'accuratePasses')
   return {
-    possession: extractStat(block.statistics, 'Ball Possession'),
-    fouls: extractStat(block.statistics, 'Fouls'),
-    passes: extractStat(block.statistics, 'Total passes'),
-    passAccuracy: extractStat(block.statistics, 'Passes %'),
-    goalkeeperSaves: extractStat(block.statistics, 'Goalkeeper Saves'),
-    yellowCards: extractStat(block.statistics, 'Yellow Cards'),
-    redCards: extractStat(block.statistics, 'Red Cards'),
-    corners: extractStat(block.statistics, 'Corner Kicks'),
+    possession: extractStat(statistics, 'possessionPct'),
+    fouls: extractStat(statistics, 'foulsCommitted'),
+    passes: totalPasses,
+    passAccuracy: totalPasses ? Math.round((accuratePasses / totalPasses) * 100) : null,
+    goalkeeperSaves: extractStat(statistics, 'saves'),
+    yellowCards: extractStat(statistics, 'yellowCards'),
+    redCards: extractStat(statistics, 'redCards'),
+    corners: extractStat(statistics, 'wonCorners'),
   }
 }
 
-async function syncMatch(match, fixture) {
-  const fixtureId = fixture.fixture.id
-  const statsRes = await apiFootball(`/fixtures/statistics?fixture=${fixtureId}`)
-  const [homeBlock, awayBlock] = statsRes.response
+function cardType(typeText) {
+  if (typeText === 'Red Card') return 'red'
+  if (typeText === 'Yellow Card Second') return 'second-yellow'
+  return 'yellow'
+}
 
-  const eventsRes = await apiFootball(`/fixtures/events?fixture=${fixtureId}`)
-  const homeName = fixture.teams.home.name
-  const cards = eventsRes.response
-    .filter(e => e.type === 'Card')
+async function syncMatch(match, event) {
+  const summary = await espn(`/summary?event=${event.id}`)
+  const teams = summary.boxscore?.teams || []
+  const homeBlock = teams.find(t => t.homeAway === 'home')
+  const awayBlock = teams.find(t => t.homeAway === 'away')
+
+  const tlaByTeamId = {}
+  for (const t of teams) tlaByTeamId[t.team.id] = t.team.abbreviation
+
+  const cards = (summary.keyEvents || [])
+    .filter(e => e.type && (e.type.text === 'Yellow Card' || e.type.text === 'Red Card'))
     .map(e => ({
-      playerId: e.player.id,
-      playerName: e.player.name,
-      team: e.team.name === homeName ? match.homeTeam.tla : match.awayTeam.tla,
-      type: e.detail === 'Red Card' ? 'red' : e.detail === 'Yellow Card' ? 'yellow' : 'second-yellow',
-      minute: e.time.elapsed,
+      playerId: e.participants?.[0]?.athlete?.id || null,
+      playerName: e.participants?.[0]?.athlete?.displayName || e.shortText || 'Unknown',
+      team: tlaByTeamId[e.team?.id] || null,
+      type: cardType(e.type.text),
+      minute: e.clock?.displayValue || null,
     }))
 
   return {
     homeTeam: { tla: match.homeTeam.tla, name: match.homeTeam.name },
     awayTeam: { tla: match.awayTeam.tla, name: match.awayTeam.name },
-    stats: { home: toTeamStats(homeBlock), away: toTeamStats(awayBlock) },
+    stats: { home: toTeamStats(homeBlock?.statistics), away: toTeamStats(awayBlock?.statistics) },
     cards,
   }
 }
@@ -117,12 +123,12 @@ async function main() {
     if (store[match.id]) continue
     console.log(`Syncing match ${match.id}: ${match.homeTeam.tla} vs ${match.awayTeam.tla}`)
     try {
-      const fixture = await findFixture(match)
-      if (!fixture) {
-        console.log('  no matching api-football fixture found, skipping')
+      const event = await findEvent(match)
+      if (!event) {
+        console.log('  no matching ESPN event found, skipping')
         continue
       }
-      store[match.id] = await syncMatch(match, fixture)
+      store[match.id] = await syncMatch(match, event)
       synced++
     } catch (err) {
       console.error(`  failed: ${err.message}`)
