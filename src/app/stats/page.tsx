@@ -5,29 +5,86 @@ import { useStandings } from '@/hooks/useStandings'
 import { TeamFlag } from '@/components/ui/TeamFlag'
 import { StaleDataBanner } from '@/components/ui/StaleDataBanner'
 import { teamRu } from '@/lib/russian-teams'
+import fifaRankingData from '@/data/fifa-ranking.json'
+import matchStatsData from '@/data/match-stats.json'
 
-const AVAILABLE_TABS = [
+interface TeamMatchStats {
+  possession: number | null
+  fouls: number | null
+  passes: number | null
+  passAccuracy: number | null
+  goalkeeperSaves: number | null
+  yellowCards: number | null
+  redCards: number | null
+  corners: number | null
+}
+
+interface MatchStatsEntry {
+  homeTeam: { tla: string; name: string }
+  awayTeam: { tla: string; name: string }
+  stats: { home: TeamMatchStats | null; away: TeamMatchStats | null }
+  cards: { playerId: number; playerName: string; team: string; type: 'yellow' | 'red' | 'second-yellow'; minute: number }[]
+}
+
+const matchStats: Record<string, MatchStatsEntry> = matchStatsData
+const matchStatsList = Object.entries(matchStats).map(([id, m]) => ({ id, ...m }))
+
+const TABS = [
   { key: 'players', label: 'Лучшие игроки' },
   { key: 'assists', label: 'Ассисты' },
   { key: 'teams', label: 'Лучшие команды' },
-] as const
-
-const UNAVAILABLE_TABS = [
-  { key: 'cards', label: 'Карточки' },
   { key: 'fifa', label: 'Рейтинг FIFA' },
+  { key: 'cards', label: 'Карточки' },
   { key: 'fouls', label: 'Нарушения' },
   { key: 'keepers', label: 'Вратари' },
   { key: 'possession', label: 'Владение' },
   { key: 'passes', label: 'Передачи' },
 ] as const
 
-type TabKey = typeof AVAILABLE_TABS[number]['key'] | typeof UNAVAILABLE_TABS[number]['key']
+type TabKey = typeof TABS[number]['key']
 
-function Unavailable({ label }: { label: string }) {
+function PendingSync({ label }: { label: string }) {
   return (
     <div className="text-center py-16">
       <p className="text-lg text-gray-400 mb-2">{label}</p>
-      <p className="text-sm text-gray-500">Недоступно в бесплатном плане football-data.org API</p>
+      <p className="text-sm text-gray-500">Появится после синхронизации статистики матчей</p>
+    </div>
+  )
+}
+
+function MatchStatRow({ entry, statKey, suffix }: {
+  entry: typeof matchStatsList[number]
+  statKey: keyof TeamMatchStats
+  suffix?: string
+}) {
+  const home = entry.stats.home?.[statKey]
+  const away = entry.stats.away?.[statKey]
+  return (
+    <tr className="border-t border-light-border/40 dark:border-dark-border/40 hover:bg-gray-50 dark:hover:bg-white/5">
+      <td className="py-2 px-4 text-left">{teamRu(entry.homeTeam.tla, entry.homeTeam.name)}</td>
+      <td className="py-2 px-4 text-center font-bold text-gold">{home ?? '–'}{home != null && suffix}</td>
+      <td className="py-2 px-4 text-center text-gray-500">vs</td>
+      <td className="py-2 px-4 text-center font-bold text-gold">{away ?? '–'}{away != null && suffix}</td>
+      <td className="py-2 px-4 text-left">{teamRu(entry.awayTeam.tla, entry.awayTeam.name)}</td>
+    </tr>
+  )
+}
+
+function MatchStatTable({ statKey, suffix, emptyLabel }: {
+  statKey: keyof TeamMatchStats
+  suffix?: string
+  emptyLabel: string
+}) {
+  if (matchStatsList.length === 0) return <PendingSync label={emptyLabel} />
+  return (
+    <div className="bg-white dark:bg-dark-card rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
+      <table className="w-full text-sm">
+        <tbody>
+          {matchStatsList.map(entry => (
+            <MatchStatRow key={entry.id} entry={entry} statKey={statKey} suffix={suffix} />
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }
@@ -49,13 +106,26 @@ export default function StatsPage() {
     .flatMap(g => g.table.map(row => ({ ...row, groupLabel: (g.group ?? '').replace(/^GROUP[_\s]*/i, '').toUpperCase() })))
     .sort((a, b) => b.points - a.points || b.goalDifference - a.goalDifference || b.goalsFor - a.goalsFor)
 
+  const cardsRanked = (() => {
+    const byPlayer = new Map<number, { playerName: string; team: string; yellow: number; red: number }>()
+    for (const entry of matchStatsList) {
+      for (const c of entry.cards) {
+        const existing = byPlayer.get(c.playerId) ?? { playerName: c.playerName, team: c.team, yellow: 0, red: 0 }
+        if (c.type === 'red') existing.red += 1
+        else existing.yellow += 1
+        byPlayer.set(c.playerId, existing)
+      }
+    }
+    return [...byPlayer.values()].sort((a, b) => (b.red * 2 + b.yellow) - (a.red * 2 + a.yellow))
+  })()
+
   return (
     <div>
       {stale && <StaleDataBanner />}
       <h1 className="text-2xl font-bold mb-4">Статистика</h1>
 
       <div className="flex gap-2 mb-6 flex-wrap">
-        {[...AVAILABLE_TABS, ...UNAVAILABLE_TABS].map(t => (
+        {TABS.map(t => (
           <button
             key={t.key}
             onClick={() => setTab(t.key)}
@@ -181,12 +251,65 @@ export default function StatsPage() {
         )
       )}
 
-      {tab === 'cards' && <Unavailable label="Жёлтые и красные карточки" />}
-      {tab === 'fifa' && <Unavailable label="Рейтинг FIFA" />}
-      {tab === 'fouls' && <Unavailable label="Нарушения" />}
-      {tab === 'keepers' && <Unavailable label="Статистика вратарей" />}
-      {tab === 'possession' && <Unavailable label="Владение мячом" />}
-      {tab === 'passes' && <Unavailable label="Точность передач" />}
+      {tab === 'fifa' && (
+        <div className="bg-white dark:bg-dark-card rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
+          <div className="px-4 py-2 text-xs text-gray-500 border-b border-light-border dark:border-dark-border">
+            {fifaRankingData.source} · обновлено {fifaRankingData.updatedAt}
+          </div>
+          <table className="w-full text-sm">
+            <thead>
+              <tr className="text-xs uppercase tracking-wide text-gray-500 border-b border-light-border dark:border-dark-border">
+                <th className="py-2 px-4 text-left w-8">#</th>
+                <th className="py-2 px-4 text-left">Команда</th>
+                <th className="py-2 px-4 text-center text-gold">Очки</th>
+              </tr>
+            </thead>
+            <tbody>
+              {fifaRankingData.ranking.map(r => (
+                <tr key={r.tla} className="border-t border-light-border/40 dark:border-dark-border/40 hover:bg-gray-50 dark:hover:bg-white/5">
+                  <td className="py-2 px-4 text-gray-500 text-xs">{r.rank}</td>
+                  <td className="py-2 px-4"><TeamFlag tla={r.tla} name={teamRu(r.tla, r.tla)} size="sm" /></td>
+                  <td className="py-2 px-4 text-center font-bold text-gold">{r.points ?? '–'}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
+
+      {tab === 'cards' && (
+        cardsRanked.length === 0 ? <PendingSync label="Жёлтые и красные карточки" /> : (
+          <div className="bg-white dark:bg-dark-card rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="text-xs uppercase tracking-wide text-gray-500 border-b border-light-border dark:border-dark-border">
+                  <th className="py-2 px-4 text-left w-8">#</th>
+                  <th className="py-2 px-4 text-left">Игрок</th>
+                  <th className="py-2 px-4 text-left">Команда</th>
+                  <th className="py-2 px-4 text-center">🟨</th>
+                  <th className="py-2 px-4 text-center">🟥</th>
+                </tr>
+              </thead>
+              <tbody>
+                {cardsRanked.map((c, i) => (
+                  <tr key={c.playerName + c.team} className="border-t border-light-border/40 dark:border-dark-border/40 hover:bg-gray-50 dark:hover:bg-white/5">
+                    <td className="py-2 px-4 text-gray-500 text-xs">{i + 1}</td>
+                    <td className="py-2 px-4 font-medium">{c.playerName}</td>
+                    <td className="py-2 px-4">{teamRu(c.team, c.team)}</td>
+                    <td className="py-2 px-4 text-center font-bold text-yellow-500">{c.yellow}</td>
+                    <td className="py-2 px-4 text-center font-bold text-red-500">{c.red}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )
+      )}
+
+      {tab === 'fouls' && <MatchStatTable statKey="fouls" emptyLabel="Нарушения" />}
+      {tab === 'keepers' && <MatchStatTable statKey="goalkeeperSaves" emptyLabel="Сэйвы вратарей" />}
+      {tab === 'possession' && <MatchStatTable statKey="possession" suffix="%" emptyLabel="Владение мячом" />}
+      {tab === 'passes' && <MatchStatTable statKey="passAccuracy" suffix="%" emptyLabel="Точность передач" />}
     </div>
   )
 }
