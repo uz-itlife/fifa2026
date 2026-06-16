@@ -3,10 +3,17 @@ import type { Match } from '@/types/football'
 import { LiveBadge } from '@/components/ui/LiveBadge'
 import { TeamFlag } from '@/components/ui/TeamFlag'
 import { WatchBanner } from '@/components/uzbekistan/WatchBanner'
+import { teamRu } from '@/lib/russian-teams'
 
 const UZB_TLA = 'UZB'
 
 interface Props { match: Match }
+
+function scoreClass(winner: string | null | undefined, side: 'HOME' | 'AWAY'): string {
+  if (!winner || winner === 'DRAW') return 'text-white'
+  if (winner === 'HOME_TEAM') return side === 'HOME' ? 'text-green-500' : 'text-red-500'
+  return side === 'AWAY' ? 'text-green-500' : 'text-red-500'
+}
 
 export function MatchCard({ match }: Props) {
   const isLive = match.status === 'IN_PLAY' || match.status === 'PAUSED'
@@ -16,6 +23,8 @@ export function MatchCard({ match }: Props) {
   const date = new Date(match.utcDate).toLocaleString('ru-RU', {
     day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit'
   })
+  const homeRu = teamRu(match.homeTeam.tla, match.homeTeam.shortName)
+  const awayRu = teamRu(match.awayTeam.tla, match.awayTeam.shortName)
 
   return (
     <div className="bg-white dark:bg-dark-card rounded-xl p-4 border border-light-border dark:border-dark-border hover:scale-[1.01] transition-transform">
@@ -26,15 +35,15 @@ export function MatchCard({ match }: Props) {
 
       <Link href={`/matches/${match.id}`}>
         <div className="flex items-center justify-between gap-4">
-          <TeamFlag tla={match.homeTeam.tla} name={match.homeTeam.shortName} crest={match.homeTeam.crest} />
+          <TeamFlag tla={match.homeTeam.tla} name={homeRu} crest={match.homeTeam.crest} />
           <div className="flex items-center gap-2 text-xl font-bold shrink-0">
             {hasScore ? (
               <>
-                <span className={match.score.winner === 'HOME_TEAM' ? 'text-win' : ''}>
+                <span className={scoreClass(match.score.winner, 'HOME')}>
                   {match.score.fullTime.home}
                 </span>
-                <span className="text-gray-600">—</span>
-                <span className={match.score.winner === 'AWAY_TEAM' ? 'text-win' : ''}>
+                <span className="text-gray-600">:</span>
+                <span className={scoreClass(match.score.winner, 'AWAY')}>
                   {match.score.fullTime.away}
                 </span>
               </>
@@ -43,7 +52,7 @@ export function MatchCard({ match }: Props) {
             )}
           </div>
           <div className="text-right">
-            <TeamFlag tla={match.awayTeam.tla} name={match.awayTeam.shortName} crest={match.awayTeam.crest} />
+            <TeamFlag tla={match.awayTeam.tla} name={awayRu} crest={match.awayTeam.crest} />
           </div>
         </div>
       </Link>

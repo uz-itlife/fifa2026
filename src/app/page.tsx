@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useLiveMatches } from '@/hooks/useLiveMatches'
 import { MatchCard } from '@/components/matches/MatchCard'
 import { LiveBadge } from '@/components/ui/LiveBadge'
+import { LiveBroadcastBar } from '@/components/ui/LiveBroadcastBar'
 
 const SECTIONS = [
   { href: '/groups', label: '📊 Таблицы групп', desc: '12 групп · 48 команд' },
@@ -18,6 +19,11 @@ export default function HomePage() {
 
   return (
     <div className="space-y-8">
+      {/* Live broadcast buttons — always visible */}
+      <section>
+        <LiveBroadcastBar />
+      </section>
+
       {liveMatches.length > 0 && (
         <section>
           <div className="flex items-center gap-2 mb-3">
