@@ -4,6 +4,7 @@ import { useLiveMatches } from '@/hooks/useLiveMatches'
 import { MatchCard } from '@/components/matches/MatchCard'
 import { LiveBadge } from '@/components/ui/LiveBadge'
 import { LiveBroadcastBar } from '@/components/ui/LiveBroadcastBar'
+import { NextLastMatchCard } from '@/components/home/NextLastMatchCard'
 
 const SECTIONS = [
   { href: '/groups', label: '📊 Таблицы групп', desc: '12 групп · 48 команд' },
@@ -11,6 +12,7 @@ const SECTIONS = [
   { href: '/matches', label: '📅 Расписание', desc: 'Все матчи с фильтрами' },
   { href: '/teams', label: '🌍 Команды', desc: 'Профили 48 сборных' },
   { href: '/players', label: '⚡ Игроки', desc: 'Бомбардиры и статистика' },
+  { href: '/stats', label: '📈 Статистика', desc: 'Команды, игроки, индекс гола' },
   { href: '/stadiums', label: '🏟️ Стадионы', desc: '16 арен США/Канада/Мексика' },
 ]
 
@@ -22,6 +24,10 @@ export default function HomePage() {
       {/* Live broadcast buttons — always visible */}
       <section>
         <LiveBroadcastBar />
+      </section>
+
+      <section>
+        <NextLastMatchCard />
       </section>
 
       {liveMatches.length > 0 && (

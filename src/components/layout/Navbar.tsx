@@ -11,6 +11,7 @@ const tabs = [
   { href: '/matches', label: 'Матчи' },
   { href: '/teams', label: 'Команды' },
   { href: '/players', label: 'Игроки' },
+  { href: '/stats', label: 'Статистика' },
   { href: '/stadiums', label: 'Стадионы' },
 ]
 

@@ -4,16 +4,11 @@ import { LiveBadge } from '@/components/ui/LiveBadge'
 import { TeamFlag } from '@/components/ui/TeamFlag'
 import { WatchBanner } from '@/components/uzbekistan/WatchBanner'
 import { teamRu } from '@/lib/russian-teams'
+import { scoreClass } from '@/lib/match-utils'
 
 const UZB_TLA = 'UZB'
 
 interface Props { match: Match }
-
-function scoreClass(winner: string | null | undefined, side: 'HOME' | 'AWAY'): string {
-  if (!winner || winner === 'DRAW') return 'text-white'
-  if (winner === 'HOME_TEAM') return side === 'HOME' ? 'text-green-500' : 'text-red-500'
-  return side === 'AWAY' ? 'text-green-500' : 'text-red-500'
-}
 
 export function MatchCard({ match }: Props) {
   const isLive = match.status === 'IN_PLAY' || match.status === 'PAUSED'
