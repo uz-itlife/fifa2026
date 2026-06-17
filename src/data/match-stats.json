@@ -956,5 +956,46 @@
       }
     },
     "cards": []
+  },
+  "537398": {
+    "homeTeam": {
+      "tla": "AUT",
+      "name": "Austria"
+    },
+    "awayTeam": {
+      "tla": "JOR",
+      "name": "Jordan"
+    },
+    "stats": {
+      "home": {
+        "possession": 63.2,
+        "fouls": 12,
+        "passes": 580,
+        "passAccuracy": 84,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 4
+      },
+      "away": {
+        "possession": 36.8,
+        "fouls": 7,
+        "passes": 332,
+        "passAccuracy": 73,
+        "goalkeeperSaves": 1,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 3
+      }
+    },
+    "cards": [
+      {
+        "playerId": "173907",
+        "playerName": "Marcel Sabitzer",
+        "team": "AUT",
+        "type": "yellow",
+        "minute": "77'"
+      }
+    ]
   }
 }
