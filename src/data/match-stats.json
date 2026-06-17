@@ -882,5 +882,46 @@
       }
     },
     "cards": []
+  },
+  "537392": {
+    "homeTeam": {
+      "tla": "IRQ",
+      "name": "Iraq"
+    },
+    "awayTeam": {
+      "tla": "NOR",
+      "name": "Norway"
+    },
+    "stats": {
+      "home": {
+        "possession": 38.7,
+        "fouls": 12,
+        "passes": 333,
+        "passAccuracy": 81,
+        "goalkeeperSaves": 2,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 2
+      },
+      "away": {
+        "possession": 61.3,
+        "fouls": 13,
+        "passes": 536,
+        "passAccuracy": 89,
+        "goalkeeperSaves": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 5
+      }
+    },
+    "cards": [
+      {
+        "playerId": "378968",
+        "playerName": "Zaid Tahseen",
+        "team": "IRQ",
+        "type": "yellow",
+        "minute": "86'"
+      }
+    ]
   }
 }
