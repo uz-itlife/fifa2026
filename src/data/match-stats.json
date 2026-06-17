@@ -997,5 +997,67 @@
         "minute": "77'"
       }
     ]
+  },
+  "537403": {
+    "homeTeam": {
+      "tla": "POR",
+      "name": "Portugal"
+    },
+    "awayTeam": {
+      "tla": "COD",
+      "name": "Congo DR"
+    },
+    "stats": {
+      "home": {
+        "possession": 75.4,
+        "fouls": 9,
+        "passes": 783,
+        "passAccuracy": 92,
+        "goalkeeperSaves": 1,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 5
+      },
+      "away": {
+        "possession": 24.6,
+        "fouls": 10,
+        "passes": 250,
+        "passAccuracy": 78,
+        "goalkeeperSaves": 0,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 4
+      }
+    },
+    "cards": [
+      {
+        "playerId": "199833",
+        "playerName": "Bernardo Silva",
+        "team": "POR",
+        "type": "yellow",
+        "minute": "13'"
+      },
+      {
+        "playerId": "174322",
+        "playerName": "Chancel Mbemba",
+        "team": "COD",
+        "type": "yellow",
+        "minute": "32'"
+      },
+      {
+        "playerId": "222670",
+        "playerName": "Nélson Semedo",
+        "team": "POR",
+        "type": "yellow",
+        "minute": "88'"
+      },
+      {
+        "playerId": "329691",
+        "playerName": "Tomás Araújo",
+        "team": "POR",
+        "type": "yellow",
+        "minute": "90'+2'"
+      }
+    ]
   }
 }
