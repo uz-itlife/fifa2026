@@ -1060,6 +1060,54 @@
       }
     ]
   },
+  "537404": {
+    "homeTeam": {
+      "tla": "UZB",
+      "name": "Uzbekistan"
+    },
+    "awayTeam": {
+      "tla": "COL",
+      "name": "Colombia"
+    },
+    "stats": {
+      "home": {
+        "possession": 38.6,
+        "fouls": 14,
+        "passes": 319,
+        "passAccuracy": 76,
+        "goalkeeperSaves": 1,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 3
+      },
+      "away": {
+        "possession": 61.4,
+        "fouls": 11,
+        "passes": 519,
+        "passAccuracy": 86,
+        "goalkeeperSaves": 1,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 4
+      }
+    },
+    "cards": [
+      {
+        "playerId": "173247",
+        "playerName": "Johan Mojica",
+        "team": "COL",
+        "type": "yellow",
+        "minute": "7'"
+      },
+      {
+        "playerId": "362211",
+        "playerName": "Abdukodir Khusanov",
+        "team": "UZB",
+        "type": "yellow",
+        "minute": "34'"
+      }
+    ]
+  },
   "537409": {
     "homeTeam": {
       "tla": "ENG",
