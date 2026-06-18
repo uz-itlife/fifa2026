@@ -295,6 +295,68 @@
       }
     ]
   },
+  "537335": {
+    "homeTeam": {
+      "tla": "SUI",
+      "name": "Switzerland"
+    },
+    "awayTeam": {
+      "tla": "BIH",
+      "name": "Bosnia-Herzegovina"
+    },
+    "stats": {
+      "home": {
+        "possession": 62.3,
+        "fouls": 7,
+        "passes": 587,
+        "passAccuracy": 88,
+        "goalkeeperSaves": 2,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 7
+      },
+      "away": {
+        "possession": 37.7,
+        "fouls": 18,
+        "passes": 353,
+        "passAccuracy": 81,
+        "goalkeeperSaves": 3,
+        "yellowCards": 2,
+        "redCards": 1,
+        "corners": 3
+      }
+    },
+    "cards": [
+      {
+        "playerId": "308979",
+        "playerName": "Amar Dedic",
+        "team": "BIH",
+        "type": "yellow",
+        "minute": "59'"
+      },
+      {
+        "playerId": "102337",
+        "playerName": "Edin Dzeko",
+        "team": "BIH",
+        "type": "yellow",
+        "minute": "61'"
+      },
+      {
+        "playerId": "212237",
+        "playerName": "Nico Elvedi",
+        "team": "SUI",
+        "type": "yellow",
+        "minute": "65'"
+      },
+      {
+        "playerId": "318390",
+        "playerName": "Tarik Muharemovic",
+        "team": "BIH",
+        "type": "red",
+        "minute": "80'"
+      }
+    ]
+  },
   "537339": {
     "homeTeam": {
       "tla": "BRA",
