@@ -357,6 +357,68 @@
       }
     ]
   },
+  "537336": {
+    "homeTeam": {
+      "tla": "CAN",
+      "name": "Canada"
+    },
+    "awayTeam": {
+      "tla": "QAT",
+      "name": "Qatar"
+    },
+    "stats": {
+      "home": {
+        "possession": 78.8,
+        "fouls": 9,
+        "passes": 566,
+        "passAccuracy": 91,
+        "goalkeeperSaves": 0,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 19
+      },
+      "away": {
+        "possession": 21.2,
+        "fouls": 10,
+        "passes": 164,
+        "passAccuracy": 63,
+        "goalkeeperSaves": 4,
+        "yellowCards": 1,
+        "redCards": 2,
+        "corners": 1
+      }
+    },
+    "cards": [
+      {
+        "playerId": "238712",
+        "playerName": "Derek Cornelius",
+        "team": "CAN",
+        "type": "yellow",
+        "minute": "9'"
+      },
+      {
+        "playerId": "272874",
+        "playerName": "Homam Ahmed",
+        "team": "QAT",
+        "type": "red",
+        "minute": "33'"
+      },
+      {
+        "playerId": "219254",
+        "playerName": "Assim Madibo",
+        "team": "QAT",
+        "type": "red",
+        "minute": "53'"
+      },
+      {
+        "playerId": "268018",
+        "playerName": "Ahmed Fathy",
+        "team": "QAT",
+        "type": "yellow",
+        "minute": "62'"
+      }
+    ]
+  },
   "537339": {
     "homeTeam": {
       "tla": "BRA",
