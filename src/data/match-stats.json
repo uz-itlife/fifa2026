@@ -694,6 +694,89 @@
       }
     ]
   },
+  "537348": {
+    "homeTeam": {
+      "tla": "USA",
+      "name": "United States"
+    },
+    "awayTeam": {
+      "tla": "AUS",
+      "name": "Australia"
+    },
+    "stats": {
+      "home": {
+        "possession": 62,
+        "fouls": 12,
+        "passes": 524,
+        "passAccuracy": 85,
+        "goalkeeperSaves": 2,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 7
+      },
+      "away": {
+        "possession": 38,
+        "fouls": 16,
+        "passes": 308,
+        "passAccuracy": 71,
+        "goalkeeperSaves": 1,
+        "yellowCards": 4,
+        "redCards": 0,
+        "corners": 4
+      }
+    },
+    "cards": [
+      {
+        "playerId": "328541",
+        "playerName": "Jordan Bos",
+        "team": "AUS",
+        "type": "yellow",
+        "minute": "16'"
+      },
+      {
+        "playerId": "332081",
+        "playerName": "Alessandro Circati",
+        "team": "AUS",
+        "type": "yellow",
+        "minute": "32'"
+      },
+      {
+        "playerId": "222396",
+        "playerName": "Antonee Robinson",
+        "team": "USA",
+        "type": "yellow",
+        "minute": "56'"
+      },
+      {
+        "playerId": "207461",
+        "playerName": "Harry Souttar",
+        "team": "AUS",
+        "type": "yellow",
+        "minute": "88'"
+      },
+      {
+        "playerId": "282643",
+        "playerName": "Folarin Balogun",
+        "team": "USA",
+        "type": "yellow",
+        "minute": "89'"
+      },
+      {
+        "playerId": "267053",
+        "playerName": "Jacob Italiano",
+        "team": "AUS",
+        "type": "yellow",
+        "minute": "89'"
+      },
+      {
+        "playerId": "272585",
+        "playerName": "Chris Richards",
+        "team": "USA",
+        "type": "yellow",
+        "minute": "90'+3'"
+      }
+    ]
+  },
   "537351": {
     "homeTeam": {
       "tla": "GER",
