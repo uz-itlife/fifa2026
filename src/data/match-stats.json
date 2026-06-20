@@ -577,6 +577,116 @@
       }
     ]
   },
+  "537341": {
+    "homeTeam": {
+      "tla": "BRA",
+      "name": "Brazil"
+    },
+    "awayTeam": {
+      "tla": "HAI",
+      "name": "Haiti"
+    },
+    "stats": {
+      "home": {
+        "possession": 56.7,
+        "fouls": 13,
+        "passes": 525,
+        "passAccuracy": 88,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 4
+      },
+      "away": {
+        "possession": 43.3,
+        "fouls": 14,
+        "passes": 399,
+        "passAccuracy": 83,
+        "goalkeeperSaves": 2,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 4
+      }
+    },
+    "cards": [
+      {
+        "playerId": "218703",
+        "playerName": "Carlens Arcus",
+        "team": "HAI",
+        "type": "yellow",
+        "minute": "4'"
+      },
+      {
+        "playerId": "250241",
+        "playerName": "Frantzdy Pierrot",
+        "team": "HAI",
+        "type": "yellow",
+        "minute": "45'+4'"
+      },
+      {
+        "playerId": "186575",
+        "playerName": "Douglas Santos",
+        "team": "BRA",
+        "type": "yellow",
+        "minute": "65'"
+      },
+      {
+        "playerId": "333939",
+        "playerName": "Danley Jean Jacques",
+        "team": "HAI",
+        "type": "yellow",
+        "minute": "72'"
+      }
+    ]
+  },
+  "537342": {
+    "homeTeam": {
+      "tla": "SCO",
+      "name": "Scotland"
+    },
+    "awayTeam": {
+      "tla": "MAR",
+      "name": "Morocco"
+    },
+    "stats": {
+      "home": {
+        "possession": 41.1,
+        "fouls": 11,
+        "passes": 456,
+        "passAccuracy": 85,
+        "goalkeeperSaves": 1,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 2
+      },
+      "away": {
+        "possession": 58.9,
+        "fouls": 8,
+        "passes": 670,
+        "passAccuracy": 90,
+        "goalkeeperSaves": 0,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 5
+      }
+    },
+    "cards": [
+      {
+        "playerId": "230963",
+        "playerName": "Issa Diop",
+        "team": "MAR",
+        "type": "yellow",
+        "minute": "23'"
+      },
+      {
+        "playerId": "104943",
+        "playerName": "Andy Robertson",
+        "team": "SCO",
+        "type": "yellow",
+        "minute": "65'"
+      }
+    ]
+  },
   "537345": {
     "homeTeam": {
       "tla": "USA",
