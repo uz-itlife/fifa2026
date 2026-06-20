@@ -1133,6 +1133,61 @@
       }
     ]
   },
+  "537359": {
+    "homeTeam": {
+      "tla": "NED",
+      "name": "Netherlands"
+    },
+    "awayTeam": {
+      "tla": "SWE",
+      "name": "Sweden"
+    },
+    "stats": {
+      "home": {
+        "possession": 50.9,
+        "fouls": 9,
+        "passes": 450,
+        "passAccuracy": 88,
+        "goalkeeperSaves": 7,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 2
+      },
+      "away": {
+        "possession": 49.1,
+        "fouls": 12,
+        "passes": 424,
+        "passAccuracy": 85,
+        "goalkeeperSaves": 2,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 5
+      }
+    },
+    "cards": [
+      {
+        "playerId": "250166",
+        "playerName": "Gabriel Gudmundsson",
+        "team": "SWE",
+        "type": "yellow",
+        "minute": "53'"
+      },
+      {
+        "playerId": "304242",
+        "playerName": "Yasin Ayari",
+        "team": "SWE",
+        "type": "yellow",
+        "minute": "75'"
+      },
+      {
+        "playerId": "356379",
+        "playerName": "Lucas Bergvall",
+        "team": "SWE",
+        "type": "yellow",
+        "minute": "80'"
+      }
+    ]
+  },
   "537363": {
     "homeTeam": {
       "tla": "BEL",
