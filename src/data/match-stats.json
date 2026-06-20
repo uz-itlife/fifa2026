@@ -804,6 +804,61 @@
       }
     ]
   },
+  "537347": {
+    "homeTeam": {
+      "tla": "TUR",
+      "name": "Turkey"
+    },
+    "awayTeam": {
+      "tla": "PAR",
+      "name": "Paraguay"
+    },
+    "stats": {
+      "home": {
+        "possession": 78.5,
+        "fouls": 14,
+        "passes": 629,
+        "passAccuracy": 89,
+        "goalkeeperSaves": 1,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 12
+      },
+      "away": {
+        "possession": 21.5,
+        "fouls": 15,
+        "passes": 178,
+        "passAccuracy": 54,
+        "goalkeeperSaves": 5,
+        "yellowCards": 1,
+        "redCards": 1,
+        "corners": 0
+      }
+    },
+    "cards": [
+      {
+        "playerId": "297328",
+        "playerName": "Matías Galarza",
+        "team": "PAR",
+        "type": "yellow",
+        "minute": "4'"
+      },
+      {
+        "playerId": "48128",
+        "playerName": "Miguel Almirón",
+        "team": "PAR",
+        "type": "red",
+        "minute": "45'+3'"
+      },
+      {
+        "playerId": "287678",
+        "playerName": "Eren Elmali",
+        "team": "TUR",
+        "type": "yellow",
+        "minute": "71'"
+      }
+    ]
+  },
   "537348": {
     "homeTeam": {
       "tla": "USA",
