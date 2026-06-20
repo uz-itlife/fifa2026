@@ -1037,6 +1037,39 @@
       }
     ]
   },
+  "537353": {
+    "homeTeam": {
+      "tla": "GER",
+      "name": "Germany"
+    },
+    "awayTeam": {
+      "tla": "CIV",
+      "name": "Ivory Coast"
+    },
+    "stats": {
+      "home": {
+        "possession": 59.4,
+        "fouls": 5,
+        "passes": 622,
+        "passAccuracy": 89,
+        "goalkeeperSaves": 1,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 8
+      },
+      "away": {
+        "possession": 40.6,
+        "fouls": 7,
+        "passes": 431,
+        "passAccuracy": 85,
+        "goalkeeperSaves": 5,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 3
+      }
+    },
+    "cards": []
+  },
   "537357": {
     "homeTeam": {
       "tla": "NED",
