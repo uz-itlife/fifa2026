@@ -1297,6 +1297,39 @@
       }
     ]
   },
+  "537360": {
+    "homeTeam": {
+      "tla": "TUN",
+      "name": "Tunisia"
+    },
+    "awayTeam": {
+      "tla": "JPN",
+      "name": "Japan"
+    },
+    "stats": {
+      "home": {
+        "possession": 37.9,
+        "fouls": 8,
+        "passes": 353,
+        "passAccuracy": 80,
+        "goalkeeperSaves": 1,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 3
+      },
+      "away": {
+        "possession": 62.1,
+        "fouls": 15,
+        "passes": 582,
+        "passAccuracy": 90,
+        "goalkeeperSaves": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 5
+      }
+    },
+    "cards": []
+  },
   "537363": {
     "homeTeam": {
       "tla": "BEL",
