@@ -1433,6 +1433,61 @@
       }
     ]
   },
+  "537365": {
+    "homeTeam": {
+      "tla": "BEL",
+      "name": "Belgium"
+    },
+    "awayTeam": {
+      "tla": "IRN",
+      "name": "Iran"
+    },
+    "stats": {
+      "home": {
+        "possession": 70.3,
+        "fouls": 7,
+        "passes": 622,
+        "passAccuracy": 86,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 1,
+        "corners": 4
+      },
+      "away": {
+        "possession": 29.7,
+        "fouls": 9,
+        "passes": 268,
+        "passAccuracy": 74,
+        "goalkeeperSaves": 7,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 2
+      }
+    },
+    "cards": [
+      {
+        "playerId": "139437",
+        "playerName": "Romelu Lukaku",
+        "team": "BEL",
+        "type": "yellow",
+        "minute": "3'"
+      },
+      {
+        "playerId": "194863",
+        "playerName": "Saeid Ezatolahi",
+        "team": "IRN",
+        "type": "yellow",
+        "minute": "33'"
+      },
+      {
+        "playerId": "318577",
+        "playerName": "Nathan Ngoy",
+        "team": "BEL",
+        "type": "red",
+        "minute": "66'"
+      }
+    ]
+  },
   "537369": {
     "homeTeam": {
       "tla": "ESP",
