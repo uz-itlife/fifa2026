@@ -1522,6 +1522,54 @@
       }
     ]
   },
+  "537371": {
+    "homeTeam": {
+      "tla": "ESP",
+      "name": "Spain"
+    },
+    "awayTeam": {
+      "tla": "KSA",
+      "name": "Saudi Arabia"
+    },
+    "stats": {
+      "home": {
+        "possession": 67.1,
+        "fouls": 10,
+        "passes": 725,
+        "passAccuracy": 92,
+        "goalkeeperSaves": 1,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 6
+      },
+      "away": {
+        "possession": 32.9,
+        "fouls": 2,
+        "passes": 364,
+        "passAccuracy": 80,
+        "goalkeeperSaves": 5,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 1
+      }
+    },
+    "cards": [
+      {
+        "playerId": "163850",
+        "playerName": "Salem Al-Dawsari",
+        "team": "KSA",
+        "type": "yellow",
+        "minute": "30'"
+      },
+      {
+        "playerId": "262468",
+        "playerName": "Mohamed Kanno",
+        "team": "KSA",
+        "type": "yellow",
+        "minute": "60'"
+      }
+    ]
+  },
   "537391": {
     "homeTeam": {
       "tla": "FRA",
