@@ -1070,6 +1070,82 @@
     },
     "cards": []
   },
+  "537354": {
+    "homeTeam": {
+      "tla": "ECU",
+      "name": "Ecuador"
+    },
+    "awayTeam": {
+      "tla": "CUW",
+      "name": "Curaçao"
+    },
+    "stats": {
+      "home": {
+        "possession": 74.8,
+        "fouls": 7,
+        "passes": 645,
+        "passAccuracy": 90,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 9
+      },
+      "away": {
+        "possession": 25.2,
+        "fouls": 10,
+        "passes": 225,
+        "passAccuracy": 70,
+        "goalkeeperSaves": 15,
+        "yellowCards": 5,
+        "redCards": 0,
+        "corners": 0
+      }
+    },
+    "cards": [
+      {
+        "playerId": "270829",
+        "playerName": "Jordy Alcívar",
+        "team": "ECU",
+        "type": "yellow",
+        "minute": "38'"
+      },
+      {
+        "playerId": "138664",
+        "playerName": "Leandro Bacuna",
+        "team": "CUW",
+        "type": "yellow",
+        "minute": "39'"
+      },
+      {
+        "playerId": "216287",
+        "playerName": "Juninho Bacuna",
+        "team": "CUW",
+        "type": "yellow",
+        "minute": "53'"
+      },
+      {
+        "playerId": "317285",
+        "playerName": "Livano Comenencia",
+        "team": "CUW",
+        "type": "yellow",
+        "minute": "56'"
+      },
+      {
+        "playerId": "246281",
+        "playerName": "Juriën Gaari",
+        "team": "CUW",
+        "type": "yellow",
+        "minute": "75'"
+      },
+      {
+        "playerId": "178273",
+        "playerName": "Gervane Kastaneer",
+        "team": "CUW",
+        "type": "yellow",
+        "minute": "90'+1'"
+      }
+    ]
+  },
   "537357": {
     "homeTeam": {
       "tla": "NED",
