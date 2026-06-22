@@ -52,6 +52,12 @@ export interface Booking {
   card: 'YELLOW_CARD' | 'RED_CARD' | 'YELLOW_RED_CARD'
 }
 
+export interface Venue {
+  name: string | null
+  city: string | null
+  country: string | null
+}
+
 export interface Match {
   id: number
   utcDate: string
@@ -65,6 +71,7 @@ export interface Match {
   minute?: number
   goals?: Goal[]
   bookings?: Booking[]
+  venue?: Venue | null
 }
 
 export interface MatchesResponse {

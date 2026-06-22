@@ -95,7 +95,12 @@
         "minute": 67,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "Estadio Banorte",
+      "city": "Mexico City",
+      "country": "Mexico"
+    }
   },
   "537328": {
     "homeTeam": {
@@ -168,7 +173,12 @@
         "minute": 80,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "Estadio Akron",
+      "city": "Guadalajara",
+      "country": "Mexico"
+    }
   },
   "537329": {
     "homeTeam": {
@@ -245,7 +255,12 @@
         "minute": 83,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "Mercedes-Benz Stadium",
+      "city": "Atlanta, Georgia",
+      "country": "USA"
+    }
   },
   "537330": {
     "homeTeam": {
@@ -305,7 +320,12 @@
         "minute": 50,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "Estadio Akron",
+      "city": "Guadalajara",
+      "country": "Mexico"
+    }
   },
   "537333": {
     "homeTeam": {
@@ -396,7 +416,12 @@
         "minute": 78,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "BMO Field",
+      "city": "Toronto",
+      "country": "Canada"
+    }
   },
   "537334": {
     "homeTeam": {
@@ -473,7 +498,12 @@
         "minute": 90,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "Levi's Stadium",
+      "city": "Santa Clara, California",
+      "country": "USA"
+    }
   },
   "537335": {
     "homeTeam": {
@@ -587,7 +617,12 @@
         "minute": 90,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "SoFi Stadium",
+      "city": "Inglewood, California",
+      "country": "USA"
+    }
   },
   "537336": {
     "homeTeam": {
@@ -711,7 +746,12 @@
         "minute": 90,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "BC Place",
+      "city": "Vancouver",
+      "country": "Canada"
+    }
   },
   "537339": {
     "homeTeam": {
@@ -781,7 +821,12 @@
         "minute": 32,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "MetLife Stadium",
+      "city": "East Rutherford, New Jersey",
+      "country": "USA"
+    }
   },
   "537340": {
     "homeTeam": {
@@ -855,7 +900,12 @@
         "minute": 28,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "Gillette Stadium",
+      "city": "Foxborough, Massachusetts",
+      "country": "USA"
+    }
   },
   "537341": {
     "homeTeam": {
@@ -949,7 +999,12 @@
         "minute": 45,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "Lincoln Financial Field",
+      "city": "Philadelphia, Pennsylvania",
+      "country": "USA"
+    }
   },
   "537342": {
     "homeTeam": {
@@ -1009,7 +1064,12 @@
         "minute": 2,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "Gillette Stadium",
+      "city": "Foxborough, Massachusetts",
+      "country": "USA"
+    }
   },
   "537345": {
     "homeTeam": {
@@ -1137,7 +1197,12 @@
         "minute": 90,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "SoFi Stadium",
+      "city": "Inglewood, California",
+      "country": "USA"
+    }
   },
   "537346": {
     "homeTeam": {
@@ -1200,7 +1265,12 @@
         "minute": 75,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "BC Place",
+      "city": "Vancouver",
+      "country": "Canada"
+    }
   },
   "537347": {
     "homeTeam": {
@@ -1267,7 +1337,12 @@
         "minute": 2,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "Levi's Stadium",
+      "city": "Santa Clara, California",
+      "country": "USA"
+    }
   },
   "537348": {
     "homeTeam": {
@@ -1372,7 +1447,12 @@
         "minute": 43,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "Lumen Field",
+      "city": "Seattle, Washington",
+      "country": "USA"
+    }
   },
   "537351": {
     "homeTeam": {
@@ -1487,7 +1567,12 @@
         "minute": 88,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "NRG Stadium",
+      "city": "Houston, Texas",
+      "country": "USA"
+    }
   },
   "537352": {
     "homeTeam": {
@@ -1561,7 +1646,12 @@
         "minute": 90,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "Lincoln Financial Field",
+      "city": "Philadelphia, Pennsylvania",
+      "country": "USA"
+    }
   },
   "537353": {
     "homeTeam": {
@@ -1626,7 +1716,12 @@
         "minute": 90,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "BMO Field",
+      "city": "Toronto",
+      "country": "Canada"
+    }
   },
   "537354": {
     "homeTeam": {
@@ -1703,7 +1798,12 @@
         "minute": 90
       }
     ],
-    "goals": []
+    "goals": [],
+    "venue": {
+      "name": "GEHA Field at Arrowhead Stadium",
+      "city": "Kansas City, Missouri",
+      "country": "USA"
+    }
   },
   "537357": {
     "homeTeam": {
@@ -1800,7 +1900,12 @@
         "minute": 89,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "AT&T Stadium",
+      "city": "Arlington, Texas",
+      "country": "USA"
+    }
   },
   "537358": {
     "homeTeam": {
@@ -1903,7 +2008,12 @@
         "minute": 90,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "Estadio BBVA",
+      "city": "Guadalupe",
+      "country": "Mexico"
+    }
   },
   "537359": {
     "homeTeam": {
@@ -2020,7 +2130,12 @@
         "minute": 89,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "NRG Stadium",
+      "city": "Houston, Texas",
+      "country": "USA"
+    }
   },
   "537360": {
     "homeTeam": {
@@ -2095,7 +2210,12 @@
         "minute": 83,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "Estadio BBVA",
+      "city": "Guadalupe",
+      "country": "Mexico"
+    }
   },
   "537363": {
     "homeTeam": {
@@ -2179,7 +2299,12 @@
         "minute": 66,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "Lumen Field",
+      "city": "Seattle, Washington",
+      "country": "USA"
+    }
   },
   "537364": {
     "homeTeam": {
@@ -2262,7 +2387,12 @@
         "minute": 64,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "SoFi Stadium",
+      "city": "Inglewood, California",
+      "country": "USA"
+    }
   },
   "537365": {
     "homeTeam": {
@@ -2318,7 +2448,12 @@
         "minute": 66
       }
     ],
-    "goals": []
+    "goals": [],
+    "venue": {
+      "name": "SoFi Stadium",
+      "city": "Inglewood, California",
+      "country": "USA"
+    }
   },
   "537366": {
     "homeTeam": {
@@ -2415,7 +2550,12 @@
         "minute": 82,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "BC Place",
+      "city": "Vancouver",
+      "country": "Canada"
+    }
   },
   "537369": {
     "homeTeam": {
@@ -2464,7 +2604,12 @@
         "minute": 90
       }
     ],
-    "goals": []
+    "goals": [],
+    "venue": {
+      "name": "Mercedes-Benz Stadium",
+      "city": "Atlanta, Georgia",
+      "country": "USA"
+    }
   },
   "537371": {
     "homeTeam": {
@@ -2554,7 +2699,12 @@
         "minute": 49,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "Mercedes-Benz Stadium",
+      "city": "Atlanta, Georgia",
+      "country": "USA"
+    }
   },
   "537391": {
     "homeTeam": {
@@ -2629,7 +2779,12 @@
         "minute": 90,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "MetLife Stadium",
+      "city": "East Rutherford, New Jersey",
+      "country": "USA"
+    }
   },
   "537392": {
     "homeTeam": {
@@ -2722,7 +2877,12 @@
         "minute": 90,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "Gillette Stadium",
+      "city": "Foxborough, Massachusetts",
+      "country": "USA"
+    }
   },
   "537397": {
     "homeTeam": {
@@ -2787,7 +2947,12 @@
         "minute": 76,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "GEHA Field at Arrowhead Stadium",
+      "city": "Kansas City, Missouri",
+      "country": "USA"
+    }
   },
   "537398": {
     "homeTeam": {
@@ -2870,7 +3035,12 @@
         "minute": 90,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "Levi's Stadium",
+      "city": "Santa Clara, California",
+      "country": "USA"
+    }
   },
   "537403": {
     "homeTeam": {
@@ -2954,7 +3124,12 @@
         "minute": 45,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "NRG Stadium",
+      "city": "Houston, Texas",
+      "country": "USA"
+    }
   },
   "537404": {
     "homeTeam": {
@@ -3044,7 +3219,12 @@
         "minute": 90,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "Estadio Banorte",
+      "city": "Mexico City",
+      "country": "Mexico"
+    }
   },
   "537409": {
     "homeTeam": {
@@ -3139,7 +3319,12 @@
         "minute": 85,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "AT&T Stadium",
+      "city": "Arlington, Texas",
+      "country": "USA"
+    }
   },
   "537410": {
     "homeTeam": {
@@ -3206,6 +3391,11 @@
         "minute": 90,
         "injuryTime": null
       }
-    ]
+    ],
+    "venue": {
+      "name": "BMO Field",
+      "city": "Toronto",
+      "country": "Canada"
+    }
   }
 }

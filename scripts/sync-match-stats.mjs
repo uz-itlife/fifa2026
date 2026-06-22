@@ -126,12 +126,20 @@ async function syncMatch(match, event) {
       }
     })
 
+  const venueInfo = summary.gameInfo?.venue
+  const venue = venueInfo ? {
+    name: venueInfo.fullName || venueInfo.shortName || null,
+    city: venueInfo.address?.city || null,
+    country: venueInfo.address?.country || null,
+  } : null
+
   return {
     homeTeam: { tla: match.homeTeam.tla, name: match.homeTeam.name },
     awayTeam: { tla: match.awayTeam.tla, name: match.awayTeam.name },
     stats: { home: toTeamStats(homeBlock?.statistics), away: toTeamStats(awayBlock?.statistics) },
     cards,
     goals,
+    venue,
   }
 }
 
@@ -144,7 +152,7 @@ async function main() {
   let synced = 0
 
   for (const match of matches) {
-    if (store[match.id]) continue
+    if (store[match.id]?.venue) continue
     console.log(`Syncing match ${match.id}: ${match.homeTeam.tla} vs ${match.awayTeam.tla}`)
     try {
       const event = await findEvent(match)

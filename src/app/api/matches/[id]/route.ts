@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server'
 import { footballFetch } from '@/lib/football-api'
 import { getCache, setCache } from '@/lib/api-cache'
-import type { Match, Goal, Booking, CachedResponse } from '@/types/football'
+import type { Match, Goal, Booking, Venue, CachedResponse } from '@/types/football'
 import matchStatsData from '@/data/match-stats.json'
 
 interface SyncedGoal {
@@ -24,6 +24,7 @@ interface SyncedCard {
 interface SyncedMatchStats {
   goals?: SyncedGoal[]
   cards?: SyncedCard[]
+  venue?: Venue | null
 }
 
 const matchStats = matchStatsData as unknown as Record<string, SyncedMatchStats>
@@ -56,6 +57,10 @@ function fillFromSyncedStats(match: Match) {
       player: { id: c.playerId ?? 0, name: c.playerName },
       card: c.type === 'red' ? 'RED_CARD' : c.type === 'second-yellow' ? 'YELLOW_RED_CARD' : 'YELLOW_CARD',
     }))
+  }
+
+  if (!match.venue && synced.venue) {
+    match.venue = synced.venue
   }
 
   return match

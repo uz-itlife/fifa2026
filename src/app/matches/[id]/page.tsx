@@ -35,6 +35,29 @@ function isHomeEvent(teamName: string, teamId: number, homeName: string, homeId:
   return teamId === homeId || teamName === homeName
 }
 
+function BallIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="inline-block w-4 h-4 align-middle shrink-0" aria-hidden="true">
+      <circle cx="12" cy="12" r="10" fill="white" stroke="black" strokeWidth="1.2" />
+      <polygon points="12,7 15.5,9.6 14.3,13.6 9.7,13.6 8.5,9.6" fill="black" />
+      <path d="M12 7 L12 3 M15.5 9.6 L19.5 8.2 M14.3 13.6 L16.8 17.2 M9.7 13.6 L7.2 17.2 M8.5 9.6 L4.5 8.2" stroke="black" strokeWidth="1" />
+    </svg>
+  )
+}
+
+function CardIcon({ card }: { card: Booking['card'] }) {
+  if (card === 'YELLOW_RED_CARD') {
+    return (
+      <span className="inline-flex -space-x-1 align-middle shrink-0">
+        <span className="w-2 h-3.5 bg-yellow-400 rounded-[1px]" />
+        <span className="w-2 h-3.5 bg-red-600 rounded-[1px]" />
+      </span>
+    )
+  }
+  const color = card === 'RED_CARD' ? 'bg-red-600' : 'bg-yellow-400'
+  return <span className={`inline-block w-2.5 h-3.5 rounded-[1px] align-middle shrink-0 ${color}`} />
+}
+
 export default function MatchDetailPage() {
   const { id } = useParams<{ id: string }>()
   const { data } = useSWR<CachedResponse<Match>>(
@@ -79,6 +102,14 @@ export default function MatchDetailPage() {
             : <span>{new Date(match.utcDate).toLocaleString('ru-RU', { day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit' })}</span>
           }
         </div>
+
+        {match.venue?.name && (
+          <div className="text-center text-xs text-gray-500 mb-4">
+            {match.venue.name}
+            {match.venue.city && `, ${match.venue.city}`}
+            {match.venue.country && `, ${match.venue.country}`}
+          </div>
+        )}
 
         <div className="flex items-center gap-4">
           {/* Home */}
@@ -134,8 +165,9 @@ export default function MatchDetailPage() {
                     <div className={home ? 'text-left' : ''}>
                       {home && (
                         <div>
-                          <span className="text-sm font-semibold text-white">
-                            ⚽ {item.goal.scorer?.name ?? 'Автогол'}
+                          <span className="text-sm font-semibold text-gray-900 dark:text-white inline-flex items-center gap-1.5">
+                            <BallIcon /> {item.goal.scorer?.name ?? 'Автогол'}
+                            <span className="text-[10px] font-bold text-gold tracking-wide">ГОЛ</span>
                           </span>
                           {item.goal.assist && (
                             <div className="text-[11px] text-gray-500">
@@ -151,8 +183,9 @@ export default function MatchDetailPage() {
                     <div className={!home ? 'text-right' : ''}>
                       {!home && (
                         <div>
-                          <span className="text-sm font-semibold text-white">
-                            {item.goal.scorer?.name ?? 'Автогол'} ⚽
+                          <span className="text-sm font-semibold text-gray-900 dark:text-white inline-flex items-center gap-1.5">
+                            <span className="text-[10px] font-bold text-gold tracking-wide">ГОЛ</span>
+                            {item.goal.scorer?.name ?? 'Автогол'} <BallIcon />
                           </span>
                           {item.goal.assist && (
                             <div className="text-[11px] text-gray-500">
@@ -167,24 +200,20 @@ export default function MatchDetailPage() {
               }
 
               // Card event
-              const cardEmoji = item.booking.card === 'RED_CARD' ? '🟥'
-                : item.booking.card === 'YELLOW_RED_CARD' ? '🟧'
-                : '🟨'
-
               return (
                 <div key={i} className="grid grid-cols-[1fr_48px_1fr] items-center px-4 py-2.5 hover:bg-black/5 dark:hover:bg-white/5">
                   <div>
                     {home && (
-                      <span className="text-sm text-gray-300">
-                        {cardEmoji} {item.booking.player.name}
+                      <span className="text-sm text-gray-700 dark:text-gray-300 inline-flex items-center gap-1.5">
+                        <CardIcon card={item.booking.card} /> {item.booking.player.name}
                       </span>
                     )}
                   </div>
                   <div className="text-center text-xs font-mono text-gray-500">{minuteStr}</div>
                   <div className="text-right">
                     {!home && (
-                      <span className="text-sm text-gray-300">
-                        {item.booking.player.name} {cardEmoji}
+                      <span className="text-sm text-gray-700 dark:text-gray-300 inline-flex items-center gap-1.5 justify-end">
+                        {item.booking.player.name} <CardIcon card={item.booking.card} />
                       </span>
                     )}
                   </div>

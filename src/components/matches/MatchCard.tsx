@@ -31,19 +31,19 @@ export function MatchCard({ match }: Props) {
       <Link href={`/matches/${match.id}`}>
         <div className="flex items-center justify-between gap-4">
           <TeamFlag tla={match.homeTeam.tla} name={homeRu} crest={match.homeTeam.crest} />
-          <div className="flex items-center gap-2 text-xl font-bold shrink-0">
+          <div className="flex items-center justify-center gap-2 text-xl font-bold tabular-nums shrink-0 w-20">
             {hasScore ? (
               <>
-                <span className={scoreClass(match.score.winner, 'HOME')}>
+                <span className={`w-6 text-right ${scoreClass(match.score.winner, 'HOME')}`}>
                   {match.score.fullTime.home}
                 </span>
                 <span className="text-gray-600">:</span>
-                <span className={scoreClass(match.score.winner, 'AWAY')}>
+                <span className={`w-6 text-left ${scoreClass(match.score.winner, 'AWAY')}`}>
                   {match.score.fullTime.away}
                 </span>
               </>
             ) : (
-              <span className="text-gray-500 text-sm">{date}</span>
+              <span className="text-gray-500 text-sm text-center">{date}</span>
             )}
           </div>
           <div className="text-right">
