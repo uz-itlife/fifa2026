@@ -32,46 +32,68 @@
     },
     "cards": [
       {
-        "playerId": "256691",
+        "playerId": 256691,
         "playerName": "Teboho Mokoena",
         "team": "RSA",
         "type": "yellow",
-        "minute": "17'"
+        "minute": 17
       },
       {
-        "playerId": "303577",
+        "playerId": 303577,
         "playerName": "Brian Gutiérrez",
         "team": "MEX",
         "type": "yellow",
-        "minute": "23'"
+        "minute": 23
       },
       {
-        "playerId": "228595",
+        "playerId": 228595,
         "playerName": "Sphephelo Sithole",
         "team": "RSA",
         "type": "red",
-        "minute": "49'"
+        "minute": 49
       },
       {
-        "playerId": "266125",
+        "playerId": 266125,
         "playerName": "Nkosinathi Sibisi",
         "team": "RSA",
         "type": "yellow",
-        "minute": "74'"
+        "minute": 74
       },
       {
-        "playerId": "157046",
+        "playerId": 157046,
         "playerName": "Themba Zwane",
         "team": "RSA",
         "type": "red",
-        "minute": "84'"
+        "minute": 84
       },
       {
-        "playerId": "224323",
+        "playerId": 224323,
         "playerName": "César Montes",
         "team": "MEX",
         "type": "red",
-        "minute": "90'+2'"
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 233075,
+        "playerName": "Julián Quiñones",
+        "assistId": 276942,
+        "assistName": "Érik Lira",
+        "team": "MEX",
+        "type": "GOAL",
+        "minute": 9,
+        "injuryTime": null
+      },
+      {
+        "playerId": 167060,
+        "playerName": "Raúl Jiménez",
+        "assistId": 194308,
+        "assistName": "Roberto Alvarado",
+        "team": "MEX",
+        "type": "GOAL---HEADER",
+        "minute": 67,
+        "injuryTime": null
       }
     ]
   },
@@ -108,11 +130,180 @@
     },
     "cards": [
       {
-        "playerId": "345769",
+        "playerId": 345769,
         "playerName": "Lee Gi-Hyuk",
         "team": "KOR",
         "type": "yellow",
-        "minute": "90'+6'"
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 151714,
+        "playerName": "Ladislav Krejcí",
+        "assistId": 191209,
+        "assistName": "Vladimír Coufal",
+        "team": "CZE",
+        "type": "GOAL---HEADER",
+        "minute": 59,
+        "injuryTime": null
+      },
+      {
+        "playerId": 280061,
+        "playerName": "Hwang In-Beom",
+        "assistId": 274197,
+        "assistName": "Lee Kang-In",
+        "team": "KOR",
+        "type": "GOAL",
+        "minute": 67,
+        "injuryTime": null
+      },
+      {
+        "playerId": 302434,
+        "playerName": "Oh Hyeon-Gyu",
+        "assistId": 280061,
+        "assistName": "Hwang In-Beom",
+        "team": "KOR",
+        "type": "GOAL",
+        "minute": 80,
+        "injuryTime": null
+      }
+    ]
+  },
+  "537329": {
+    "homeTeam": {
+      "tla": "CZE",
+      "name": "Czechia"
+    },
+    "awayTeam": {
+      "tla": "RSA",
+      "name": "South Africa"
+    },
+    "stats": {
+      "home": {
+        "possession": 38.3,
+        "fouls": 12,
+        "passes": 341,
+        "passAccuracy": 80,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 5
+      },
+      "away": {
+        "possession": 61.7,
+        "fouls": 10,
+        "passes": 563,
+        "passAccuracy": 90,
+        "goalkeeperSaves": 2,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 5
+      }
+    },
+    "cards": [
+      {
+        "playerId": 256691,
+        "playerName": "Teboho Mokoena",
+        "team": "RSA",
+        "type": "yellow",
+        "minute": 33
+      },
+      {
+        "playerId": 301321,
+        "playerName": "Thalente Mbatha",
+        "team": "RSA",
+        "type": "yellow",
+        "minute": 40
+      },
+      {
+        "playerId": 151714,
+        "playerName": "Ladislav Krejcí",
+        "team": "CZE",
+        "type": "yellow",
+        "minute": 75
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 249525,
+        "playerName": "Michal Sadílek",
+        "assistId": 387865,
+        "assistName": "Alexandr Sojka",
+        "team": "CZE",
+        "type": "GOAL",
+        "minute": 6,
+        "injuryTime": null
+      },
+      {
+        "playerId": 256691,
+        "playerName": "Teboho Mokoena",
+        "assistId": null,
+        "assistName": null,
+        "team": "RSA",
+        "type": "PENALTY---SCORED",
+        "minute": 83,
+        "injuryTime": null
+      }
+    ]
+  },
+  "537330": {
+    "homeTeam": {
+      "tla": "MEX",
+      "name": "Mexico"
+    },
+    "awayTeam": {
+      "tla": "KOR",
+      "name": "South Korea"
+    },
+    "stats": {
+      "home": {
+        "possession": 42.4,
+        "fouls": 9,
+        "passes": 427,
+        "passAccuracy": 82,
+        "goalkeeperSaves": 2,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 1
+      },
+      "away": {
+        "possession": 57.6,
+        "fouls": 7,
+        "passes": 578,
+        "passAccuracy": 84,
+        "goalkeeperSaves": 3,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 2
+      }
+    },
+    "cards": [
+      {
+        "playerId": 274197,
+        "playerName": "Lee Kang-In",
+        "team": "KOR",
+        "type": "yellow",
+        "minute": 4
+      },
+      {
+        "playerId": 256598,
+        "playerName": "Paik Seung-Ho",
+        "team": "KOR",
+        "type": "yellow",
+        "minute": 58
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 242614,
+        "playerName": "Luis Romo",
+        "assistId": null,
+        "assistName": null,
+        "team": "MEX",
+        "type": "GOAL",
+        "minute": 50,
+        "injuryTime": null
       }
     ]
   },
@@ -149,39 +340,61 @@
     },
     "cards": [
       {
-        "playerId": "293691",
+        "playerId": 293691,
         "playerName": "Alistair Johnston",
         "team": "CAN",
         "type": "yellow",
-        "minute": "11'"
+        "minute": 11
       },
       {
-        "playerId": "269136",
+        "playerId": 269136,
         "playerName": "Ermedin Demirovic",
         "team": "BIH",
         "type": "yellow",
-        "minute": "45'"
+        "minute": 45
       },
       {
-        "playerId": "305118",
+        "playerId": 305118,
         "playerName": "Jovo Lukic",
         "team": "BIH",
         "type": "yellow",
-        "minute": "45'+1'"
+        "minute": 45
       },
       {
-        "playerId": "365345",
+        "playerId": 365345,
         "playerName": "Luc de Fougerolles",
         "team": "CAN",
         "type": "yellow",
-        "minute": "53'"
+        "minute": 53
       },
       {
-        "playerId": "220538",
+        "playerId": 220538,
         "playerName": "Nikola Katic",
         "team": "BIH",
         "type": "yellow",
-        "minute": "90'+3'"
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 305118,
+        "playerName": "Jovo Lukic",
+        "assistId": 170553,
+        "assistName": "Sead Kolasinac",
+        "team": "BIH",
+        "type": "GOAL---HEADER",
+        "minute": 21,
+        "injuryTime": null
+      },
+      {
+        "playerId": 205024,
+        "playerName": "Cyle Larin",
+        "assistId": 318522,
+        "assistName": "Promise David",
+        "team": "CAN",
+        "type": "GOAL",
+        "minute": 78,
+        "injuryTime": null
       }
     ]
   },
@@ -218,25 +431,285 @@
     },
     "cards": [
       {
-        "playerId": "310372",
+        "playerId": 310372,
         "playerName": "Mahmoud Abunada",
         "team": "QAT",
         "type": "yellow",
-        "minute": "16'"
+        "minute": 16
       },
       {
-        "playerId": "310373",
+        "playerId": 310373,
         "playerName": "Jassem Gaber",
         "team": "QAT",
         "type": "yellow",
-        "minute": "23'"
+        "minute": 23
       },
       {
-        "playerId": "222628",
+        "playerId": 222628,
         "playerName": "Denis Zakaria",
         "team": "SUI",
         "type": "yellow",
-        "minute": "42'"
+        "minute": 42
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 202099,
+        "playerName": "Breel Embolo",
+        "assistId": null,
+        "assistName": null,
+        "team": "SUI",
+        "type": "PENALTY---SCORED",
+        "minute": 17,
+        "injuryTime": null
+      },
+      {
+        "playerId": 243626,
+        "playerName": "Miro Muheim",
+        "assistId": 272874,
+        "assistName": "Homam Ahmed",
+        "team": "QAT",
+        "type": "OWN_GOAL",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ]
+  },
+  "537335": {
+    "homeTeam": {
+      "tla": "SUI",
+      "name": "Switzerland"
+    },
+    "awayTeam": {
+      "tla": "BIH",
+      "name": "Bosnia-Herzegovina"
+    },
+    "stats": {
+      "home": {
+        "possession": 62.3,
+        "fouls": 7,
+        "passes": 586,
+        "passAccuracy": 88,
+        "goalkeeperSaves": 2,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 7
+      },
+      "away": {
+        "possession": 37.7,
+        "fouls": 18,
+        "passes": 354,
+        "passAccuracy": 81,
+        "goalkeeperSaves": 3,
+        "yellowCards": 2,
+        "redCards": 1,
+        "corners": 3
+      }
+    },
+    "cards": [
+      {
+        "playerId": 308979,
+        "playerName": "Amar Dedic",
+        "team": "BIH",
+        "type": "yellow",
+        "minute": 59
+      },
+      {
+        "playerId": 102337,
+        "playerName": "Edin Dzeko",
+        "team": "BIH",
+        "type": "yellow",
+        "minute": 61
+      },
+      {
+        "playerId": 212237,
+        "playerName": "Nico Elvedi",
+        "team": "SUI",
+        "type": "yellow",
+        "minute": 65
+      },
+      {
+        "playerId": 318390,
+        "playerName": "Tarik Muharemovic",
+        "team": "BIH",
+        "type": "red",
+        "minute": 80
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 386992,
+        "playerName": "Johan Manzambi",
+        "assistId": null,
+        "assistName": null,
+        "team": "SUI",
+        "type": "GOAL",
+        "minute": 74,
+        "injuryTime": null
+      },
+      {
+        "playerId": 259513,
+        "playerName": "Rubén Vargas",
+        "assistId": 202099,
+        "assistName": "Breel Embolo",
+        "team": "SUI",
+        "type": "GOAL",
+        "minute": 84,
+        "injuryTime": null
+      },
+      {
+        "playerId": 386992,
+        "playerName": "Johan Manzambi",
+        "assistId": 259513,
+        "assistName": "Rubén Vargas",
+        "team": "SUI",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
+      },
+      {
+        "playerId": 414676,
+        "playerName": "Ermin Mahmic",
+        "assistId": null,
+        "assistName": null,
+        "team": "BIH",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
+      },
+      {
+        "playerId": 149981,
+        "playerName": "Granit Xhaka",
+        "assistId": null,
+        "assistName": null,
+        "team": "SUI",
+        "type": "PENALTY---SCORED",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ]
+  },
+  "537336": {
+    "homeTeam": {
+      "tla": "CAN",
+      "name": "Canada"
+    },
+    "awayTeam": {
+      "tla": "QAT",
+      "name": "Qatar"
+    },
+    "stats": {
+      "home": {
+        "possession": 79,
+        "fouls": 9,
+        "passes": 567,
+        "passAccuracy": 91,
+        "goalkeeperSaves": 0,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 19
+      },
+      "away": {
+        "possession": 21,
+        "fouls": 10,
+        "passes": 162,
+        "passAccuracy": 64,
+        "goalkeeperSaves": 4,
+        "yellowCards": 1,
+        "redCards": 2,
+        "corners": 1
+      }
+    },
+    "cards": [
+      {
+        "playerId": 238712,
+        "playerName": "Derek Cornelius",
+        "team": "CAN",
+        "type": "yellow",
+        "minute": 9
+      },
+      {
+        "playerId": 272874,
+        "playerName": "Homam Ahmed",
+        "team": "QAT",
+        "type": "red",
+        "minute": 33
+      },
+      {
+        "playerId": 219254,
+        "playerName": "Assim Madibo",
+        "team": "QAT",
+        "type": "red",
+        "minute": 53
+      },
+      {
+        "playerId": 268018,
+        "playerName": "Ahmed Fathy",
+        "team": "QAT",
+        "type": "yellow",
+        "minute": 62
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 205024,
+        "playerName": "Cyle Larin",
+        "assistId": null,
+        "assistName": null,
+        "team": "CAN",
+        "type": "GOAL",
+        "minute": 16,
+        "injuryTime": null
+      },
+      {
+        "playerId": 273499,
+        "playerName": "Jonathan David",
+        "assistId": null,
+        "assistName": null,
+        "team": "CAN",
+        "type": "GOAL",
+        "minute": 29,
+        "injuryTime": null
+      },
+      {
+        "playerId": 273499,
+        "playerName": "Jonathan David",
+        "assistId": null,
+        "assistName": null,
+        "team": "CAN",
+        "type": "GOAL",
+        "minute": 45,
+        "injuryTime": null
+      },
+      {
+        "playerId": 311163,
+        "playerName": "Nathan Saliba",
+        "assistId": null,
+        "assistName": null,
+        "team": "CAN",
+        "type": "GOAL---FREE-KICK",
+        "minute": 64,
+        "injuryTime": null
+      },
+      {
+        "playerId": 309315,
+        "playerName": "Mohamed Manai",
+        "assistId": null,
+        "assistName": null,
+        "team": "CAN",
+        "type": "OWN_GOAL",
+        "minute": 75,
+        "injuryTime": null
+      },
+      {
+        "playerId": 273499,
+        "playerName": "Jonathan David",
+        "assistId": 311163,
+        "assistName": "Nathan Saliba",
+        "team": "CAN",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
       }
     ]
   },
@@ -273,18 +746,40 @@
     },
     "cards": [
       {
-        "playerId": "173666",
+        "playerId": 173666,
         "playerName": "Casemiro",
         "team": "BRA",
         "type": "yellow",
-        "minute": "37'"
+        "minute": 37
       },
       {
-        "playerId": "259835",
+        "playerId": 259835,
         "playerName": "Roger Ibañez",
         "team": "BRA",
         "type": "yellow",
-        "minute": "43'"
+        "minute": 43
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 304572,
+        "playerName": "Ismael Saibari",
+        "assistId": 246532,
+        "assistName": "Brahim Díaz",
+        "team": "MAR",
+        "type": "GOAL",
+        "minute": 21,
+        "injuryTime": null
+      },
+      {
+        "playerId": 252107,
+        "playerName": "Vinícius Júnior",
+        "assistId": 218522,
+        "assistName": "Bruno Guimarães",
+        "team": "BRA",
+        "type": "GOAL",
+        "minute": 32,
+        "injuryTime": null
       }
     ]
   },
@@ -321,32 +816,198 @@
     },
     "cards": [
       {
-        "playerId": "240369",
+        "playerId": 240369,
         "playerName": "Jean-Ricner Bellegarde",
         "team": "HAI",
         "type": "yellow",
-        "minute": "39'"
+        "minute": 39
       },
       {
-        "playerId": "283940",
+        "playerId": 283940,
         "playerName": "Aaron Hickey",
         "team": "SCO",
         "type": "yellow",
-        "minute": "46'"
+        "minute": 46
       },
       {
-        "playerId": "368045",
+        "playerId": 368045,
         "playerName": "Findlay Curtis",
         "team": "SCO",
         "type": "yellow",
-        "minute": "90'+1'"
+        "minute": 90
       },
       {
-        "playerId": "141870",
+        "playerId": 141870,
         "playerName": "Kenny McLean",
         "team": "SCO",
         "type": "yellow",
-        "minute": "90'+5'"
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 162843,
+        "playerName": "John McGinn",
+        "assistId": null,
+        "assistName": null,
+        "team": "SCO",
+        "type": "GOAL",
+        "minute": 28,
+        "injuryTime": null
+      }
+    ]
+  },
+  "537341": {
+    "homeTeam": {
+      "tla": "BRA",
+      "name": "Brazil"
+    },
+    "awayTeam": {
+      "tla": "HAI",
+      "name": "Haiti"
+    },
+    "stats": {
+      "home": {
+        "possession": 56.7,
+        "fouls": 13,
+        "passes": 525,
+        "passAccuracy": 88,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 4
+      },
+      "away": {
+        "possession": 43.3,
+        "fouls": 14,
+        "passes": 399,
+        "passAccuracy": 83,
+        "goalkeeperSaves": 2,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 4
+      }
+    },
+    "cards": [
+      {
+        "playerId": 218703,
+        "playerName": "Carlens Arcus",
+        "team": "HAI",
+        "type": "yellow",
+        "minute": 4
+      },
+      {
+        "playerId": 250241,
+        "playerName": "Frantzdy Pierrot",
+        "team": "HAI",
+        "type": "yellow",
+        "minute": 45
+      },
+      {
+        "playerId": 186575,
+        "playerName": "Douglas Santos",
+        "team": "BRA",
+        "type": "yellow",
+        "minute": 65
+      },
+      {
+        "playerId": 333939,
+        "playerName": "Danley Jean Jacques",
+        "team": "HAI",
+        "type": "yellow",
+        "minute": 72
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 259902,
+        "playerName": "Matheus Cunha",
+        "assistId": null,
+        "assistName": null,
+        "team": "BRA",
+        "type": "GOAL",
+        "minute": 23,
+        "injuryTime": null
+      },
+      {
+        "playerId": 259902,
+        "playerName": "Matheus Cunha",
+        "assistId": 252107,
+        "assistName": "Vinícius Júnior",
+        "team": "BRA",
+        "type": "GOAL",
+        "minute": 36,
+        "injuryTime": null
+      },
+      {
+        "playerId": 252107,
+        "playerName": "Vinícius Júnior",
+        "assistId": 234715,
+        "assistName": "Lucas Paquetá",
+        "team": "BRA",
+        "type": "GOAL",
+        "minute": 45,
+        "injuryTime": null
+      }
+    ]
+  },
+  "537342": {
+    "homeTeam": {
+      "tla": "SCO",
+      "name": "Scotland"
+    },
+    "awayTeam": {
+      "tla": "MAR",
+      "name": "Morocco"
+    },
+    "stats": {
+      "home": {
+        "possession": 41.1,
+        "fouls": 11,
+        "passes": 456,
+        "passAccuracy": 85,
+        "goalkeeperSaves": 1,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 2
+      },
+      "away": {
+        "possession": 58.9,
+        "fouls": 8,
+        "passes": 670,
+        "passAccuracy": 90,
+        "goalkeeperSaves": 0,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 5
+      }
+    },
+    "cards": [
+      {
+        "playerId": 230963,
+        "playerName": "Issa Diop",
+        "team": "MAR",
+        "type": "yellow",
+        "minute": 23
+      },
+      {
+        "playerId": 104943,
+        "playerName": "Andy Robertson",
+        "team": "SCO",
+        "type": "yellow",
+        "minute": 65
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 304572,
+        "playerName": "Ismael Saibari",
+        "assistId": 246532,
+        "assistName": "Brahim Díaz",
+        "team": "MAR",
+        "type": "GOAL",
+        "minute": 2,
+        "injuryTime": null
       }
     ]
   },
@@ -383,46 +1044,98 @@
     },
     "cards": [
       {
-        "playerId": "84295",
+        "playerId": 84295,
         "playerName": "Juan Jose Cáceres",
         "team": "PAR",
         "type": "yellow",
-        "minute": "10'"
+        "minute": 10
       },
       {
-        "playerId": "48128",
+        "playerId": 48128,
         "playerName": "Miguel Almirón",
         "team": "PAR",
         "type": "yellow",
-        "minute": "53'"
+        "minute": 53
       },
       {
-        "playerId": "222776",
+        "playerId": 222776,
         "playerName": "Tyler Adams",
         "team": "USA",
         "type": "yellow",
-        "minute": "59'"
+        "minute": 59
       },
       {
-        "playerId": "192278",
+        "playerId": 192278,
         "playerName": "Diego Gómez",
         "team": "PAR",
         "type": "yellow",
-        "minute": "79'"
+        "minute": 79
       },
       {
-        "playerId": "257754",
+        "playerId": 257754,
         "playerName": "Alex Arce",
         "team": "PAR",
         "type": "yellow",
-        "minute": "88'"
+        "minute": 88
       },
       {
-        "playerId": "181657",
+        "playerId": 181657,
         "playerName": "Júnior Alonso",
         "team": "PAR",
         "type": "yellow",
-        "minute": "90'+3'"
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 301516,
+        "playerName": "Damián Bobadilla",
+        "assistId": null,
+        "assistName": null,
+        "team": "USA",
+        "type": "OWN_GOAL",
+        "minute": 7,
+        "injuryTime": null
+      },
+      {
+        "playerId": 282643,
+        "playerName": "Folarin Balogun",
+        "assistId": 225607,
+        "assistName": "Christian Pulisic",
+        "team": "USA",
+        "type": "GOAL",
+        "minute": 31,
+        "injuryTime": null
+      },
+      {
+        "playerId": 282643,
+        "playerName": "Folarin Balogun",
+        "assistId": 301416,
+        "assistName": "Malik Tillman",
+        "team": "USA",
+        "type": "GOAL",
+        "minute": 45,
+        "injuryTime": null
+      },
+      {
+        "playerId": 289046,
+        "playerName": "Maurício",
+        "assistId": 20975,
+        "assistName": "Julio Enciso",
+        "team": "PAR",
+        "type": "GOAL",
+        "minute": 73,
+        "injuryTime": null
+      },
+      {
+        "playerId": 290230,
+        "playerName": "Giovanni Reyna",
+        "assistId": 248276,
+        "assistName": "Alex Freeman",
+        "team": "USA",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
       }
     ]
   },
@@ -459,11 +1172,205 @@
     },
     "cards": [
       {
-        "playerId": "266575",
+        "playerId": 266575,
         "playerName": "Yunus Akgün",
         "team": "TUR",
         "type": "yellow",
-        "minute": "86'"
+        "minute": 86
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 328535,
+        "playerName": "Nestory Irankunda",
+        "assistId": 403528,
+        "assistName": "Paul Okon-Engstler",
+        "team": "AUS",
+        "type": "GOAL",
+        "minute": 27,
+        "injuryTime": null
+      },
+      {
+        "playerId": 260643,
+        "playerName": "Connor Metcalfe",
+        "assistId": null,
+        "assistName": null,
+        "team": "AUS",
+        "type": "GOAL",
+        "minute": 75,
+        "injuryTime": null
+      }
+    ]
+  },
+  "537347": {
+    "homeTeam": {
+      "tla": "TUR",
+      "name": "Turkey"
+    },
+    "awayTeam": {
+      "tla": "PAR",
+      "name": "Paraguay"
+    },
+    "stats": {
+      "home": {
+        "possession": 78.5,
+        "fouls": 14,
+        "passes": 629,
+        "passAccuracy": 89,
+        "goalkeeperSaves": 1,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 12
+      },
+      "away": {
+        "possession": 21.5,
+        "fouls": 15,
+        "passes": 178,
+        "passAccuracy": 54,
+        "goalkeeperSaves": 5,
+        "yellowCards": 1,
+        "redCards": 1,
+        "corners": 0
+      }
+    },
+    "cards": [
+      {
+        "playerId": 297328,
+        "playerName": "Matías Galarza",
+        "team": "PAR",
+        "type": "yellow",
+        "minute": 4
+      },
+      {
+        "playerId": 48128,
+        "playerName": "Miguel Almirón",
+        "team": "PAR",
+        "type": "red",
+        "minute": 45
+      },
+      {
+        "playerId": 287678,
+        "playerName": "Eren Elmali",
+        "team": "TUR",
+        "type": "yellow",
+        "minute": 71
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 297328,
+        "playerName": "Matías Galarza",
+        "assistId": 20975,
+        "assistName": "Julio Enciso",
+        "team": "PAR",
+        "type": "GOAL",
+        "minute": 2,
+        "injuryTime": null
+      }
+    ]
+  },
+  "537348": {
+    "homeTeam": {
+      "tla": "USA",
+      "name": "United States"
+    },
+    "awayTeam": {
+      "tla": "AUS",
+      "name": "Australia"
+    },
+    "stats": {
+      "home": {
+        "possession": 61.9,
+        "fouls": 12,
+        "passes": 523,
+        "passAccuracy": 85,
+        "goalkeeperSaves": 2,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 7
+      },
+      "away": {
+        "possession": 38.1,
+        "fouls": 16,
+        "passes": 310,
+        "passAccuracy": 71,
+        "goalkeeperSaves": 1,
+        "yellowCards": 4,
+        "redCards": 0,
+        "corners": 4
+      }
+    },
+    "cards": [
+      {
+        "playerId": 328541,
+        "playerName": "Jordan Bos",
+        "team": "AUS",
+        "type": "yellow",
+        "minute": 16
+      },
+      {
+        "playerId": 332081,
+        "playerName": "Alessandro Circati",
+        "team": "AUS",
+        "type": "yellow",
+        "minute": 32
+      },
+      {
+        "playerId": 222396,
+        "playerName": "Antonee Robinson",
+        "team": "USA",
+        "type": "yellow",
+        "minute": 56
+      },
+      {
+        "playerId": 207461,
+        "playerName": "Harry Souttar",
+        "team": "AUS",
+        "type": "yellow",
+        "minute": 88
+      },
+      {
+        "playerId": 282643,
+        "playerName": "Folarin Balogun",
+        "team": "USA",
+        "type": "yellow",
+        "minute": 89
+      },
+      {
+        "playerId": 267053,
+        "playerName": "Jacob Italiano",
+        "team": "AUS",
+        "type": "yellow",
+        "minute": 89
+      },
+      {
+        "playerId": 272585,
+        "playerName": "Chris Richards",
+        "team": "USA",
+        "type": "yellow",
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 207350,
+        "playerName": "Cameron Burgess",
+        "assistId": null,
+        "assistName": null,
+        "team": "USA",
+        "type": "OWN_GOAL",
+        "minute": 11,
+        "injuryTime": null
+      },
+      {
+        "playerId": 248276,
+        "playerName": "Alex Freeman",
+        "assistId": null,
+        "assistName": null,
+        "team": "USA",
+        "type": "GOAL---HEADER",
+        "minute": 43,
+        "injuryTime": null
       }
     ]
   },
@@ -498,7 +1405,89 @@
         "corners": 1
       }
     },
-    "cards": []
+    "cards": [],
+    "goals": [
+      {
+        "playerId": 281122,
+        "playerName": "Felix Nmecha",
+        "assistId": 303748,
+        "assistName": "Florian Wirtz",
+        "team": "GER",
+        "type": "GOAL",
+        "minute": 6,
+        "injuryTime": null
+      },
+      {
+        "playerId": 317285,
+        "playerName": "Livano Comenencia",
+        "assistId": null,
+        "assistName": null,
+        "team": "CUW",
+        "type": "GOAL",
+        "minute": 21,
+        "injuryTime": null
+      },
+      {
+        "playerId": 286828,
+        "playerName": "Nico Schlotterbeck",
+        "assistId": 120829,
+        "assistName": "Nathaniel Brown",
+        "team": "GER",
+        "type": "GOAL---HEADER",
+        "minute": 38,
+        "injuryTime": null
+      },
+      {
+        "playerId": 231182,
+        "playerName": "Kai Havertz",
+        "assistId": null,
+        "assistName": null,
+        "team": "GER",
+        "type": "PENALTY---SCORED",
+        "minute": 45,
+        "injuryTime": null
+      },
+      {
+        "playerId": 303821,
+        "playerName": "Jamal Musiala",
+        "assistId": 190161,
+        "assistName": "Joshua Kimmich",
+        "team": "GER",
+        "type": "GOAL",
+        "minute": 47,
+        "injuryTime": null
+      },
+      {
+        "playerId": 120829,
+        "playerName": "Nathaniel Brown",
+        "assistId": 273300,
+        "assistName": "Deniz Undav",
+        "team": "GER",
+        "type": "GOAL---VOLLEY",
+        "minute": 68,
+        "injuryTime": null
+      },
+      {
+        "playerId": 273300,
+        "playerName": "Deniz Undav",
+        "assistId": 190161,
+        "assistName": "Joshua Kimmich",
+        "team": "GER",
+        "type": "GOAL",
+        "minute": 78,
+        "injuryTime": null
+      },
+      {
+        "playerId": 231182,
+        "playerName": "Kai Havertz",
+        "assistId": 273300,
+        "assistName": "Deniz Undav",
+        "team": "GER",
+        "type": "GOAL",
+        "minute": 88,
+        "injuryTime": null
+      }
+    ]
   },
   "537352": {
     "homeTeam": {
@@ -533,34 +1522,188 @@
     },
     "cards": [
       {
-        "playerId": "184118",
+        "playerId": 184118,
         "playerName": "Seko Fofana",
         "team": "CIV",
         "type": "yellow",
-        "minute": "28'"
+        "minute": 28
       },
       {
-        "playerId": "194711",
+        "playerId": 194711,
         "playerName": "Franck Kessié",
         "team": "CIV",
         "type": "yellow",
-        "minute": "38'"
+        "minute": 38
       },
       {
-        "playerId": "346636",
+        "playerId": 346636,
         "playerName": "Guela Doué",
         "team": "CIV",
         "type": "yellow",
-        "minute": "40'"
+        "minute": 40
       },
       {
-        "playerId": "286665",
+        "playerId": 286665,
         "playerName": "Jackson Porozo",
         "team": "ECU",
         "type": "yellow",
-        "minute": "73'"
+        "minute": 73
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 291630,
+        "playerName": "Amad Diallo",
+        "assistId": 286569,
+        "assistName": "Wilfried Singo",
+        "team": "CIV",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
       }
     ]
+  },
+  "537353": {
+    "homeTeam": {
+      "tla": "GER",
+      "name": "Germany"
+    },
+    "awayTeam": {
+      "tla": "CIV",
+      "name": "Ivory Coast"
+    },
+    "stats": {
+      "home": {
+        "possession": 59.5,
+        "fouls": 5,
+        "passes": 624,
+        "passAccuracy": 89,
+        "goalkeeperSaves": 1,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 8
+      },
+      "away": {
+        "possession": 40.5,
+        "fouls": 7,
+        "passes": 431,
+        "passAccuracy": 85,
+        "goalkeeperSaves": 5,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 3
+      }
+    },
+    "cards": [],
+    "goals": [
+      {
+        "playerId": 194711,
+        "playerName": "Franck Kessié",
+        "assistId": null,
+        "assistName": null,
+        "team": "CIV",
+        "type": "GOAL",
+        "minute": 30,
+        "injuryTime": null
+      },
+      {
+        "playerId": 273300,
+        "playerName": "Deniz Undav",
+        "assistId": 210818,
+        "assistName": "Nadiem Amiri",
+        "team": "GER",
+        "type": "GOAL",
+        "minute": 68,
+        "injuryTime": null
+      },
+      {
+        "playerId": 273300,
+        "playerName": "Deniz Undav",
+        "assistId": 281122,
+        "assistName": "Felix Nmecha",
+        "team": "GER",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ]
+  },
+  "537354": {
+    "homeTeam": {
+      "tla": "ECU",
+      "name": "Ecuador"
+    },
+    "awayTeam": {
+      "tla": "CUW",
+      "name": "Curaçao"
+    },
+    "stats": {
+      "home": {
+        "possession": 74.6,
+        "fouls": 7,
+        "passes": 644,
+        "passAccuracy": 90,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 9
+      },
+      "away": {
+        "possession": 25.4,
+        "fouls": 10,
+        "passes": 227,
+        "passAccuracy": 70,
+        "goalkeeperSaves": 15,
+        "yellowCards": 5,
+        "redCards": 0,
+        "corners": 0
+      }
+    },
+    "cards": [
+      {
+        "playerId": 270829,
+        "playerName": "Jordy Alcívar",
+        "team": "ECU",
+        "type": "yellow",
+        "minute": 38
+      },
+      {
+        "playerId": 138664,
+        "playerName": "Leandro Bacuna",
+        "team": "CUW",
+        "type": "yellow",
+        "minute": 39
+      },
+      {
+        "playerId": 216287,
+        "playerName": "Juninho Bacuna",
+        "team": "CUW",
+        "type": "yellow",
+        "minute": 53
+      },
+      {
+        "playerId": 317285,
+        "playerName": "Livano Comenencia",
+        "team": "CUW",
+        "type": "yellow",
+        "minute": 56
+      },
+      {
+        "playerId": 246281,
+        "playerName": "Juriën Gaari",
+        "team": "CUW",
+        "type": "yellow",
+        "minute": 75
+      },
+      {
+        "playerId": 178273,
+        "playerName": "Gervane Kastaneer",
+        "team": "CUW",
+        "type": "yellow",
+        "minute": 90
+      }
+    ],
+    "goals": []
   },
   "537357": {
     "homeTeam": {
@@ -595,25 +1738,67 @@
     },
     "cards": [
       {
-        "playerId": "284792",
+        "playerId": 284792,
         "playerName": "Crysencio Summerville",
         "team": "NED",
         "type": "yellow",
-        "minute": "61'"
+        "minute": 61
       },
       {
-        "playerId": "159255",
+        "playerId": 159255,
         "playerName": "Memphis Depay",
         "team": "NED",
         "type": "yellow",
-        "minute": "83'"
+        "minute": 83
       },
       {
-        "playerId": "296512",
+        "playerId": 296512,
         "playerName": "Micky van de Ven",
         "team": "NED",
         "type": "yellow",
-        "minute": "90'+1'"
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 157892,
+        "playerName": "Virgil van Dijk",
+        "assistId": 274632,
+        "assistName": "Ryan Gravenberch",
+        "team": "NED",
+        "type": "GOAL---HEADER",
+        "minute": 51,
+        "injuryTime": null
+      },
+      {
+        "playerId": 265953,
+        "playerName": "Keito Nakamura",
+        "assistId": 256587,
+        "assistName": "Takefusa Kubo",
+        "team": "JPN",
+        "type": "GOAL",
+        "minute": 57,
+        "injuryTime": null
+      },
+      {
+        "playerId": 284792,
+        "playerName": "Crysencio Summerville",
+        "assistId": 274632,
+        "assistName": "Ryan Gravenberch",
+        "team": "NED",
+        "type": "GOAL",
+        "minute": 64,
+        "injuryTime": null
+      },
+      {
+        "playerId": 219362,
+        "playerName": "Daichi Kamada",
+        "assistId": 238016,
+        "assistName": "Koki Ogawa",
+        "team": "JPN",
+        "type": "GOAL---HEADER",
+        "minute": 89,
+        "injuryTime": null
       }
     ]
   },
@@ -650,11 +1835,265 @@
     },
     "cards": [
       {
-        "playerId": "159152",
+        "playerId": 159152,
         "playerName": "Rani Khedira",
         "team": "TUN",
         "type": "yellow",
-        "minute": "54'"
+        "minute": 54
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 304242,
+        "playerName": "Yasin Ayari",
+        "assistId": null,
+        "assistName": null,
+        "team": "SWE",
+        "type": "GOAL",
+        "minute": 7,
+        "injuryTime": null
+      },
+      {
+        "playerId": 235662,
+        "playerName": "Alexander Isak",
+        "assistId": 258906,
+        "assistName": "Viktor Gyökeres",
+        "team": "SWE",
+        "type": "GOAL",
+        "minute": 30,
+        "injuryTime": null
+      },
+      {
+        "playerId": 303848,
+        "playerName": "Omar Rekik",
+        "assistId": 300007,
+        "assistName": "Hannibal Mejbri",
+        "team": "TUN",
+        "type": "GOAL---HEADER",
+        "minute": 43,
+        "injuryTime": null
+      },
+      {
+        "playerId": 258906,
+        "playerName": "Viktor Gyökeres",
+        "assistId": 235662,
+        "assistName": "Alexander Isak",
+        "team": "SWE",
+        "type": "GOAL",
+        "minute": 59,
+        "injuryTime": null
+      },
+      {
+        "playerId": 220120,
+        "playerName": "Mattias Svanberg",
+        "assistId": 235662,
+        "assistName": "Alexander Isak",
+        "team": "SWE",
+        "type": "GOAL",
+        "minute": 84,
+        "injuryTime": null
+      },
+      {
+        "playerId": 304242,
+        "playerName": "Yasin Ayari",
+        "assistId": 356379,
+        "assistName": "Lucas Bergvall",
+        "team": "SWE",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ]
+  },
+  "537359": {
+    "homeTeam": {
+      "tla": "NED",
+      "name": "Netherlands"
+    },
+    "awayTeam": {
+      "tla": "SWE",
+      "name": "Sweden"
+    },
+    "stats": {
+      "home": {
+        "possession": 50.9,
+        "fouls": 9,
+        "passes": 449,
+        "passAccuracy": 89,
+        "goalkeeperSaves": 7,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 2
+      },
+      "away": {
+        "possession": 49.1,
+        "fouls": 12,
+        "passes": 425,
+        "passAccuracy": 85,
+        "goalkeeperSaves": 2,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 5
+      }
+    },
+    "cards": [
+      {
+        "playerId": 250166,
+        "playerName": "Gabriel Gudmundsson",
+        "team": "SWE",
+        "type": "yellow",
+        "minute": 53
+      },
+      {
+        "playerId": 304242,
+        "playerName": "Yasin Ayari",
+        "team": "SWE",
+        "type": "yellow",
+        "minute": 75
+      },
+      {
+        "playerId": 356379,
+        "playerName": "Lucas Bergvall",
+        "team": "SWE",
+        "type": "yellow",
+        "minute": 80
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 282229,
+        "playerName": "Brian Brobbey",
+        "assistId": 249524,
+        "assistName": "Cody Gakpo",
+        "team": "NED",
+        "type": "GOAL",
+        "minute": 5,
+        "injuryTime": null
+      },
+      {
+        "playerId": 282229,
+        "playerName": "Brian Brobbey",
+        "assistId": 213248,
+        "assistName": "Denzel Dumfries",
+        "team": "NED",
+        "type": "GOAL",
+        "minute": 17,
+        "injuryTime": null
+      },
+      {
+        "playerId": 249524,
+        "playerName": "Cody Gakpo",
+        "assistId": 213248,
+        "assistName": "Denzel Dumfries",
+        "team": "NED",
+        "type": "GOAL",
+        "minute": 47,
+        "injuryTime": null
+      },
+      {
+        "playerId": 249524,
+        "playerName": "Cody Gakpo",
+        "assistId": 284792,
+        "assistName": "Crysencio Summerville",
+        "team": "NED",
+        "type": "GOAL",
+        "minute": 54,
+        "injuryTime": null
+      },
+      {
+        "playerId": 296622,
+        "playerName": "Anthony Elanga",
+        "assistId": 235662,
+        "assistName": "Alexander Isak",
+        "team": "SWE",
+        "type": "GOAL",
+        "minute": 59,
+        "injuryTime": null
+      },
+      {
+        "playerId": 284792,
+        "playerName": "Crysencio Summerville",
+        "assistId": 159255,
+        "assistName": "Memphis Depay",
+        "team": "NED",
+        "type": "GOAL",
+        "minute": 89,
+        "injuryTime": null
+      }
+    ]
+  },
+  "537360": {
+    "homeTeam": {
+      "tla": "TUN",
+      "name": "Tunisia"
+    },
+    "awayTeam": {
+      "tla": "JPN",
+      "name": "Japan"
+    },
+    "stats": {
+      "home": {
+        "possession": 37.9,
+        "fouls": 8,
+        "passes": 354,
+        "passAccuracy": 80,
+        "goalkeeperSaves": 1,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 3
+      },
+      "away": {
+        "possession": 62.1,
+        "fouls": 15,
+        "passes": 583,
+        "passAccuracy": 89,
+        "goalkeeperSaves": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 5
+      }
+    },
+    "cards": [],
+    "goals": [
+      {
+        "playerId": 219362,
+        "playerName": "Daichi Kamada",
+        "assistId": 265953,
+        "assistName": "Keito Nakamura",
+        "team": "JPN",
+        "type": "GOAL",
+        "minute": 4,
+        "injuryTime": null
+      },
+      {
+        "playerId": 274277,
+        "playerName": "Ayase Ueda",
+        "assistId": 238033,
+        "assistName": "Kou Itakura",
+        "team": "JPN",
+        "type": "GOAL",
+        "minute": 31,
+        "injuryTime": null
+      },
+      {
+        "playerId": 219350,
+        "playerName": "Junya Ito",
+        "assistId": 274277,
+        "assistName": "Ayase Ueda",
+        "team": "JPN",
+        "type": "GOAL",
+        "minute": 69,
+        "injuryTime": null
+      },
+      {
+        "playerId": 274277,
+        "playerName": "Ayase Ueda",
+        "assistId": 357030,
+        "assistName": "Kaishu Sano",
+        "team": "JPN",
+        "type": "GOAL---HEADER",
+        "minute": 83,
+        "injuryTime": null
       }
     ]
   },
@@ -691,32 +2130,54 @@
     },
     "cards": [
       {
-        "playerId": "357112",
+        "playerId": 357112,
         "playerName": "Marawan Attia",
         "team": "EGY",
         "type": "yellow",
-        "minute": "13'"
+        "minute": 13
       },
       {
-        "playerId": "197163",
+        "playerId": 197163,
         "playerName": "Timothy Castagne",
         "team": "BEL",
         "type": "yellow",
-        "minute": "14'"
+        "minute": 14
       },
       {
-        "playerId": "265176",
+        "playerId": 265176,
         "playerName": "Ahmed Fatouh",
         "team": "EGY",
         "type": "yellow",
-        "minute": "34'"
+        "minute": 34
       },
       {
-        "playerId": "301327",
+        "playerId": 301327,
         "playerName": "Maxim De Cuyper",
         "team": "BEL",
         "type": "yellow",
-        "minute": "75'"
+        "minute": 75
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 299365,
+        "playerName": "Emam Ashour",
+        "assistId": 173896,
+        "assistName": "Mohamed Salah",
+        "team": "EGY",
+        "type": "GOAL",
+        "minute": 20,
+        "injuryTime": null
+      },
+      {
+        "playerId": 119993,
+        "playerName": "Mohamed Hany",
+        "assistId": null,
+        "assistName": null,
+        "team": "BEL",
+        "type": "OWN_GOAL",
+        "minute": 66,
+        "injuryTime": null
       }
     ]
   },
@@ -753,11 +2214,206 @@
     },
     "cards": [
       {
-        "playerId": "203453",
+        "playerId": 203453,
         "playerName": "Ehsan Hajsafi",
         "team": "IRN",
         "type": "yellow",
-        "minute": "89'"
+        "minute": 89
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 266555,
+        "playerName": "Elijah Just",
+        "assistId": 134190,
+        "assistName": "Chris Wood",
+        "team": "NZL",
+        "type": "GOAL",
+        "minute": 7,
+        "injuryTime": null
+      },
+      {
+        "playerId": 218086,
+        "playerName": "Ramin Rezaeian",
+        "assistId": null,
+        "assistName": null,
+        "team": "IRN",
+        "type": "GOAL",
+        "minute": 32,
+        "injuryTime": null
+      },
+      {
+        "playerId": 266555,
+        "playerName": "Elijah Just",
+        "assistId": 134190,
+        "assistName": "Chris Wood",
+        "team": "NZL",
+        "type": "GOAL",
+        "minute": 54,
+        "injuryTime": null
+      },
+      {
+        "playerId": 296999,
+        "playerName": "Mohammad Mohebbi",
+        "assistId": 218086,
+        "assistName": "Ramin Rezaeian",
+        "team": "IRN",
+        "type": "GOAL---HEADER",
+        "minute": 64,
+        "injuryTime": null
+      }
+    ]
+  },
+  "537365": {
+    "homeTeam": {
+      "tla": "BEL",
+      "name": "Belgium"
+    },
+    "awayTeam": {
+      "tla": "IRN",
+      "name": "Iran"
+    },
+    "stats": {
+      "home": {
+        "possession": 70.1,
+        "fouls": 7,
+        "passes": 621,
+        "passAccuracy": 86,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 1,
+        "corners": 4
+      },
+      "away": {
+        "possession": 29.9,
+        "fouls": 9,
+        "passes": 270,
+        "passAccuracy": 73,
+        "goalkeeperSaves": 7,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 2
+      }
+    },
+    "cards": [
+      {
+        "playerId": 139437,
+        "playerName": "Romelu Lukaku",
+        "team": "BEL",
+        "type": "yellow",
+        "minute": 3
+      },
+      {
+        "playerId": 194863,
+        "playerName": "Saeid Ezatolahi",
+        "team": "IRN",
+        "type": "yellow",
+        "minute": 33
+      },
+      {
+        "playerId": 318577,
+        "playerName": "Nathan Ngoy",
+        "team": "BEL",
+        "type": "red",
+        "minute": 66
+      }
+    ],
+    "goals": []
+  },
+  "537366": {
+    "homeTeam": {
+      "tla": "NZL",
+      "name": "New Zealand"
+    },
+    "awayTeam": {
+      "tla": "EGY",
+      "name": "Egypt"
+    },
+    "stats": {
+      "home": {
+        "possession": 44.4,
+        "fouls": 14,
+        "passes": 421,
+        "passAccuracy": 80,
+        "goalkeeperSaves": 4,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 4
+      },
+      "away": {
+        "possession": 55.6,
+        "fouls": 8,
+        "passes": 526,
+        "passAccuracy": 87,
+        "goalkeeperSaves": 4,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 4
+      }
+    },
+    "cards": [
+      {
+        "playerId": 328932,
+        "playerName": "Mohanad Lashin",
+        "team": "EGY",
+        "type": "yellow",
+        "minute": 17
+      },
+      {
+        "playerId": 228283,
+        "playerName": "Sarpreet Singh",
+        "team": "NZL",
+        "type": "yellow",
+        "minute": 20
+      },
+      {
+        "playerId": 228279,
+        "playerName": "Callum McCowatt",
+        "team": "NZL",
+        "type": "yellow",
+        "minute": 34
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 332367,
+        "playerName": "Finn Surman",
+        "assistId": 159470,
+        "assistName": "Tim Payne",
+        "team": "NZL",
+        "type": "GOAL---HEADER",
+        "minute": 15,
+        "injuryTime": null
+      },
+      {
+        "playerId": 378495,
+        "playerName": "Mostafa Zico",
+        "assistId": 119993,
+        "assistName": "Mohamed Hany",
+        "team": "EGY",
+        "type": "GOAL---HEADER",
+        "minute": 58,
+        "injuryTime": null
+      },
+      {
+        "playerId": 173896,
+        "playerName": "Mohamed Salah",
+        "assistId": 378495,
+        "assistName": "Mostafa Zico",
+        "team": "EGY",
+        "type": "GOAL",
+        "minute": 67,
+        "injuryTime": null
+      },
+      {
+        "playerId": 157825,
+        "playerName": "Trézéguet",
+        "assistId": 173896,
+        "assistName": "Mohamed Salah",
+        "team": "EGY",
+        "type": "GOAL---HEADER",
+        "minute": 82,
+        "injuryTime": null
       }
     ]
   },
@@ -794,59 +2450,761 @@
     },
     "cards": [
       {
-        "playerId": "332394",
+        "playerId": 332394,
         "playerName": "Sidny Lopes Cabral",
         "team": "CPV",
         "type": "yellow",
-        "minute": "16'"
+        "minute": 16
       },
       {
-        "playerId": "250465",
-        "playerName": "Pedri",
+        "playerId": 250465,
+        "playerName": "Pedri ",
         "team": "ESP",
         "type": "yellow",
-        "minute": "90'+3'"
+        "minute": 90
       }
-    ]
+    ],
+    "goals": []
   },
-  "537370": {
+  "537371": {
     "homeTeam": {
+      "tla": "ESP",
+      "name": "Spain"
+    },
+    "awayTeam": {
       "tla": "KSA",
       "name": "Saudi Arabia"
     },
+    "stats": {
+      "home": {
+        "possession": 67.1,
+        "fouls": 10,
+        "passes": 726,
+        "passAccuracy": 92,
+        "goalkeeperSaves": 1,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 6
+      },
+      "away": {
+        "possession": 32.9,
+        "fouls": 2,
+        "passes": 364,
+        "passAccuracy": 81,
+        "goalkeeperSaves": 5,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 1
+      }
+    },
+    "cards": [
+      {
+        "playerId": 163850,
+        "playerName": "Salem Al-Dawsari",
+        "team": "KSA",
+        "type": "yellow",
+        "minute": 30
+      },
+      {
+        "playerId": 262468,
+        "playerName": "Mohamed Kanno",
+        "team": "KSA",
+        "type": "yellow",
+        "minute": 60
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 362150,
+        "playerName": "Lamine Yamal",
+        "assistId": 229018,
+        "assistName": "Mikel Oyarzabal",
+        "team": "ESP",
+        "type": "GOAL",
+        "minute": 10,
+        "injuryTime": null
+      },
+      {
+        "playerId": 229018,
+        "playerName": "Mikel Oyarzabal",
+        "assistId": 159317,
+        "assistName": "Aymeric Laporte",
+        "team": "ESP",
+        "type": "GOAL",
+        "minute": 21,
+        "injuryTime": null
+      },
+      {
+        "playerId": 229018,
+        "playerName": "Mikel Oyarzabal",
+        "assistId": 227765,
+        "assistName": "Dani Olmo",
+        "team": "ESP",
+        "type": "GOAL---VOLLEY",
+        "minute": 24,
+        "injuryTime": null
+      },
+      {
+        "playerId": 256666,
+        "playerName": "Hassan Al-Tambakti",
+        "assistId": null,
+        "assistName": null,
+        "team": "ESP",
+        "type": "OWN_GOAL",
+        "minute": 49,
+        "injuryTime": null
+      }
+    ]
+  },
+  "537391": {
+    "homeTeam": {
+      "tla": "FRA",
+      "name": "France"
+    },
     "awayTeam": {
-      "tla": "URU",
-      "name": "Uruguay"
+      "tla": "SEN",
+      "name": "Senegal"
     },
     "stats": {
       "home": {
-        "possession": 33.2,
-        "fouls": 11,
-        "passes": 322,
-        "passAccuracy": 73,
-        "goalkeeperSaves": 9,
+        "possession": 53.4,
+        "fouls": 5,
+        "passes": 575,
+        "passAccuracy": 88,
+        "goalkeeperSaves": 2,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 6
+      },
+      "away": {
+        "possession": 46.6,
+        "fouls": 9,
+        "passes": 502,
+        "passAccuracy": 86,
+        "goalkeeperSaves": 5,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 4
+      }
+    },
+    "cards": [],
+    "goals": [
+      {
+        "playerId": 231388,
+        "playerName": "Kylian Mbappé",
+        "assistId": 286831,
+        "assistName": "Michael Olise",
+        "team": "FRA",
+        "type": "GOAL",
+        "minute": 66,
+        "injuryTime": null
+      },
+      {
+        "playerId": 328238,
+        "playerName": "Bradley Barcola",
+        "assistId": 176203,
+        "assistName": "Adrien Rabiot",
+        "team": "FRA",
+        "type": "GOAL",
+        "minute": 82,
+        "injuryTime": null
+      },
+      {
+        "playerId": 388522,
+        "playerName": "Ibrahim Mbaye",
+        "assistId": 268641,
+        "assistName": "Iliman Ndiaye",
+        "team": "SEN",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
+      },
+      {
+        "playerId": 231388,
+        "playerName": "Kylian Mbappé",
+        "assistId": null,
+        "assistName": null,
+        "team": "FRA",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ]
+  },
+  "537392": {
+    "homeTeam": {
+      "tla": "IRQ",
+      "name": "Iraq"
+    },
+    "awayTeam": {
+      "tla": "NOR",
+      "name": "Norway"
+    },
+    "stats": {
+      "home": {
+        "possession": 38.7,
+        "fouls": 12,
+        "passes": 334,
+        "passAccuracy": 81,
+        "goalkeeperSaves": 2,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 2
+      },
+      "away": {
+        "possession": 61.3,
+        "fouls": 13,
+        "passes": 537,
+        "passAccuracy": 89,
+        "goalkeeperSaves": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 5
+      }
+    },
+    "cards": [
+      {
+        "playerId": 378968,
+        "playerName": "Zaid Tahseen",
+        "team": "IRQ",
+        "type": "yellow",
+        "minute": 86
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 253989,
+        "playerName": "Erling Haaland",
+        "assistId": 313361,
+        "assistName": "David Møller Wolfe",
+        "team": "NOR",
+        "type": "GOAL",
+        "minute": 29,
+        "injuryTime": null
+      },
+      {
+        "playerId": 244677,
+        "playerName": "Aymen Hussein",
+        "assistId": 311149,
+        "assistName": "Amir Al-Ammari",
+        "team": "IRQ",
+        "type": "GOAL---HEADER",
+        "minute": 39,
+        "injuryTime": null
+      },
+      {
+        "playerId": 253989,
+        "playerName": "Erling Haaland",
+        "assistId": null,
+        "assistName": null,
+        "team": "NOR",
+        "type": "GOAL",
+        "minute": 43,
+        "injuryTime": null
+      },
+      {
+        "playerId": 281736,
+        "playerName": "Leo Østigard",
+        "assistId": 203669,
+        "assistName": "Martin Ødegaard",
+        "team": "NOR",
+        "type": "GOAL---HEADER",
+        "minute": 76,
+        "injuryTime": null
+      },
+      {
+        "playerId": 244677,
+        "playerName": "Aymen Hussein",
+        "assistId": null,
+        "assistName": null,
+        "team": "NOR",
+        "type": "OWN_GOAL",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ]
+  },
+  "537397": {
+    "homeTeam": {
+      "tla": "ARG",
+      "name": "Argentina"
+    },
+    "awayTeam": {
+      "tla": "ALG",
+      "name": "Algeria"
+    },
+    "stats": {
+      "home": {
+        "possession": 47.8,
+        "fouls": 13,
+        "passes": 561,
+        "passAccuracy": 90,
+        "goalkeeperSaves": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 2
+      },
+      "away": {
+        "possession": 52.2,
+        "fouls": 8,
+        "passes": 609,
+        "passAccuracy": 92,
+        "goalkeeperSaves": 3,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 2
+      }
+    },
+    "cards": [],
+    "goals": [
+      {
+        "playerId": 45843,
+        "playerName": "Lionel Messi",
+        "assistId": 174466,
+        "assistName": "Rodrigo De Paul",
+        "team": "ARG",
+        "type": "GOAL",
+        "minute": 17,
+        "injuryTime": null
+      },
+      {
+        "playerId": 45843,
+        "playerName": "Lionel Messi",
+        "assistId": null,
+        "assistName": null,
+        "team": "ARG",
+        "type": "GOAL",
+        "minute": 60,
+        "injuryTime": null
+      },
+      {
+        "playerId": 45843,
+        "playerName": "Lionel Messi",
+        "assistId": 76017,
+        "assistName": "Nico González",
+        "team": "ARG",
+        "type": "GOAL",
+        "minute": 76,
+        "injuryTime": null
+      }
+    ]
+  },
+  "537398": {
+    "homeTeam": {
+      "tla": "AUT",
+      "name": "Austria"
+    },
+    "awayTeam": {
+      "tla": "JOR",
+      "name": "Jordan"
+    },
+    "stats": {
+      "home": {
+        "possession": 63.2,
+        "fouls": 12,
+        "passes": 580,
+        "passAccuracy": 84,
+        "goalkeeperSaves": 3,
         "yellowCards": 1,
         "redCards": 0,
         "corners": 4
       },
       "away": {
-        "possession": 66.8,
-        "fouls": 6,
-        "passes": 612,
-        "passAccuracy": 88,
-        "goalkeeperSaves": 2,
+        "possession": 36.8,
+        "fouls": 7,
+        "passes": 332,
+        "passAccuracy": 73,
+        "goalkeeperSaves": 1,
         "yellowCards": 0,
         "redCards": 0,
-        "corners": 14
+        "corners": 3
       }
     },
     "cards": [
       {
-        "playerId": "256667",
-        "playerName": "Abdulelah Al-Amri",
-        "team": "KSA",
+        "playerId": 173907,
+        "playerName": "Marcel Sabitzer",
+        "team": "AUT",
         "type": "yellow",
-        "minute": "44'"
+        "minute": 77
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 238296,
+        "playerName": "Romano Schmid",
+        "assistId": 238886,
+        "assistName": "Xaver Schlager",
+        "team": "AUT",
+        "type": "GOAL",
+        "minute": 21,
+        "injuryTime": null
+      },
+      {
+        "playerId": 320908,
+        "playerName": "Ali Olwan",
+        "assistId": 295462,
+        "assistName": "Noor Al-Rawabdeh",
+        "team": "JOR",
+        "type": "GOAL",
+        "minute": 50,
+        "injuryTime": null
+      },
+      {
+        "playerId": 274269,
+        "playerName": "Yazan Al-Arab",
+        "assistId": null,
+        "assistName": null,
+        "team": "AUT",
+        "type": "OWN_GOAL",
+        "minute": 76,
+        "injuryTime": null
+      },
+      {
+        "playerId": 98193,
+        "playerName": "Marko Arnautovic",
+        "assistId": null,
+        "assistName": null,
+        "team": "AUT",
+        "type": "PENALTY---SCORED",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ]
+  },
+  "537403": {
+    "homeTeam": {
+      "tla": "POR",
+      "name": "Portugal"
+    },
+    "awayTeam": {
+      "tla": "COD",
+      "name": "Congo DR"
+    },
+    "stats": {
+      "home": {
+        "possession": 75.4,
+        "fouls": 9,
+        "passes": 783,
+        "passAccuracy": 92,
+        "goalkeeperSaves": 1,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 5
+      },
+      "away": {
+        "possession": 24.6,
+        "fouls": 10,
+        "passes": 249,
+        "passAccuracy": 78,
+        "goalkeeperSaves": 0,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 4
+      }
+    },
+    "cards": [
+      {
+        "playerId": 199833,
+        "playerName": "Bernardo Silva",
+        "team": "POR",
+        "type": "yellow",
+        "minute": 13
+      },
+      {
+        "playerId": 174322,
+        "playerName": "Chancel Mbemba",
+        "team": "COD",
+        "type": "yellow",
+        "minute": 32
+      },
+      {
+        "playerId": 222670,
+        "playerName": "Nélson Semedo",
+        "team": "POR",
+        "type": "yellow",
+        "minute": 88
+      },
+      {
+        "playerId": 329691,
+        "playerName": "Tomás Araújo",
+        "team": "POR",
+        "type": "yellow",
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 355061,
+        "playerName": "João Neves",
+        "assistId": 256115,
+        "assistName": "Pedro Neto",
+        "team": "POR",
+        "type": "GOAL---HEADER",
+        "minute": 6,
+        "injuryTime": null
+      },
+      {
+        "playerId": 224077,
+        "playerName": "Yoane Wissa",
+        "assistId": 165892,
+        "assistName": "Arthur Masuaku",
+        "team": "COD",
+        "type": "GOAL---HEADER",
+        "minute": 45,
+        "injuryTime": null
+      }
+    ]
+  },
+  "537404": {
+    "homeTeam": {
+      "tla": "UZB",
+      "name": "Uzbekistan"
+    },
+    "awayTeam": {
+      "tla": "COL",
+      "name": "Colombia"
+    },
+    "stats": {
+      "home": {
+        "possession": 38.6,
+        "fouls": 14,
+        "passes": 319,
+        "passAccuracy": 76,
+        "goalkeeperSaves": 1,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 3
+      },
+      "away": {
+        "possession": 61.4,
+        "fouls": 11,
+        "passes": 519,
+        "passAccuracy": 86,
+        "goalkeeperSaves": 1,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 4
+      }
+    },
+    "cards": [
+      {
+        "playerId": 173247,
+        "playerName": "Johan Mojica",
+        "team": "COL",
+        "type": "yellow",
+        "minute": 7
+      },
+      {
+        "playerId": 362211,
+        "playerName": "Abdukodir Khusanov",
+        "team": "UZB",
+        "type": "yellow",
+        "minute": 34
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 146679,
+        "playerName": "Daniel Muñoz",
+        "assistId": 257390,
+        "assistName": "Luis Díaz",
+        "team": "COL",
+        "type": "GOAL",
+        "minute": 40,
+        "injuryTime": null
+      },
+      {
+        "playerId": 317793,
+        "playerName": "Abbosbek Fayzullaev",
+        "assistId": null,
+        "assistName": null,
+        "team": "UZB",
+        "type": "GOAL---HEADER",
+        "minute": 60,
+        "injuryTime": null
+      },
+      {
+        "playerId": 257390,
+        "playerName": "Luis Díaz",
+        "assistId": 341736,
+        "assistName": "Gustavo Puerta",
+        "team": "COL",
+        "type": "GOAL",
+        "minute": 65,
+        "injuryTime": null
+      },
+      {
+        "playerId": 255295,
+        "playerName": "Jáminton Campaz",
+        "assistId": 336809,
+        "assistName": "Cucho Hernández",
+        "team": "COL",
+        "type": "GOAL---HEADER",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ]
+  },
+  "537409": {
+    "homeTeam": {
+      "tla": "ENG",
+      "name": "England"
+    },
+    "awayTeam": {
+      "tla": "CRO",
+      "name": "Croatia"
+    },
+    "stats": {
+      "home": {
+        "possession": 51.7,
+        "fouls": 10,
+        "passes": 474,
+        "passAccuracy": 86,
+        "goalkeeperSaves": 3,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 8
+      },
+      "away": {
+        "possession": 48.3,
+        "fouls": 12,
+        "passes": 443,
+        "passAccuracy": 86,
+        "goalkeeperSaves": 7,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 2
+      }
+    },
+    "cards": [],
+    "goals": [
+      {
+        "playerId": 142200,
+        "playerName": "Harry Kane",
+        "assistId": null,
+        "assistName": null,
+        "team": "ENG",
+        "type": "PENALTY---SCORED",
+        "minute": 12,
+        "injuryTime": null
+      },
+      {
+        "playerId": 311475,
+        "playerName": "Martin Baturina",
+        "assistId": 341494,
+        "assistName": "Petar Sucic",
+        "team": "CRO",
+        "type": "GOAL",
+        "minute": 36,
+        "injuryTime": null
+      },
+      {
+        "playerId": 142200,
+        "playerName": "Harry Kane",
+        "assistId": 238262,
+        "assistName": "Declan Rice",
+        "team": "ENG",
+        "type": "GOAL---HEADER",
+        "minute": 42,
+        "injuryTime": null
+      },
+      {
+        "playerId": 277128,
+        "playerName": "Petar Musa",
+        "assistId": 103485,
+        "assistName": "Ivan Perisic",
+        "team": "CRO",
+        "type": "GOAL",
+        "minute": 45,
+        "injuryTime": null
+      },
+      {
+        "playerId": 291281,
+        "playerName": "Jude Bellingham",
+        "assistId": 238472,
+        "assistName": "Elliot Anderson",
+        "team": "ENG",
+        "type": "GOAL",
+        "minute": 47,
+        "injuryTime": null
+      },
+      {
+        "playerId": 230945,
+        "playerName": "Marcus Rashford",
+        "assistId": 280555,
+        "assistName": "Bukayo Saka",
+        "team": "ENG",
+        "type": "GOAL",
+        "minute": 85,
+        "injuryTime": null
+      }
+    ]
+  },
+  "537410": {
+    "homeTeam": {
+      "tla": "GHA",
+      "name": "Ghana"
+    },
+    "awayTeam": {
+      "tla": "PAN",
+      "name": "Panama"
+    },
+    "stats": {
+      "home": {
+        "possession": 38,
+        "fouls": 9,
+        "passes": 352,
+        "passAccuracy": 83,
+        "goalkeeperSaves": 4,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 2
+      },
+      "away": {
+        "possession": 62,
+        "fouls": 11,
+        "passes": 583,
+        "passAccuracy": 86,
+        "goalkeeperSaves": 2,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 2
+      }
+    },
+    "cards": [
+      {
+        "playerId": 387659,
+        "playerName": "Caleb Yirenkyi",
+        "team": "GHA",
+        "type": "yellow",
+        "minute": 16
+      },
+      {
+        "playerId": 260346,
+        "playerName": "César Blackman",
+        "team": "PAN",
+        "type": "yellow",
+        "minute": 72
+      },
+      {
+        "playerId": 285452,
+        "playerName": "Carlos Harvey",
+        "team": "PAN",
+        "type": "yellow",
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 387659,
+        "playerName": "Caleb Yirenkyi",
+        "assistId": 240495,
+        "assistName": "Brandon Thomas-Asante",
+        "team": "GHA",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
       }
     ]
   }

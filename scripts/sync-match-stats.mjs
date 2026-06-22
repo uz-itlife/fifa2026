@@ -84,6 +84,12 @@ function cardType(typeText) {
   return 'yellow'
 }
 
+function parseMinute(clock) {
+  const m = (clock?.displayValue || '').match(/^(\d+)(?:\+(\d+))?/)
+  if (!m) return { minute: 0, injury: null }
+  return { minute: parseInt(m[1], 10), injury: m[2] ? parseInt(m[2], 10) : null }
+}
+
 async function syncMatch(match, event) {
   const summary = await espn(`/summary?event=${event.id}`)
   const teams = summary.boxscore?.teams || []
@@ -96,18 +102,36 @@ async function syncMatch(match, event) {
   const cards = (summary.keyEvents || [])
     .filter(e => e.type && (e.type.text === 'Yellow Card' || e.type.text === 'Red Card'))
     .map(e => ({
-      playerId: e.participants?.[0]?.athlete?.id || null,
+      playerId: e.participants?.[0]?.athlete?.id ? Number(e.participants[0].athlete.id) : null,
       playerName: e.participants?.[0]?.athlete?.displayName || e.shortText || 'Unknown',
       team: tlaByTeamId[e.team?.id] || null,
       type: cardType(e.type.text),
-      minute: e.clock?.displayValue || null,
+      minute: parseMinute(e.clock).minute,
     }))
+
+  const goals = (summary.keyEvents || [])
+    .filter(e => e.scoringPlay === true)
+    .map(e => {
+      const { minute, injury } = parseMinute(e.clock)
+      const isOwnGoal = /own goal/i.test(e.type?.text || '')
+      return {
+        playerId: e.participants?.[0]?.athlete?.id ? Number(e.participants[0].athlete.id) : null,
+        playerName: e.participants?.[0]?.athlete?.displayName || e.shortText || 'Unknown',
+        assistId: e.participants?.[1]?.athlete?.id ? Number(e.participants[1].athlete.id) : null,
+        assistName: e.participants?.[1]?.athlete?.displayName || null,
+        team: tlaByTeamId[e.team?.id] || null,
+        type: isOwnGoal ? 'OWN_GOAL' : (e.type?.type || 'goal').toUpperCase(),
+        minute,
+        injuryTime: injury,
+      }
+    })
 
   return {
     homeTeam: { tla: match.homeTeam.tla, name: match.homeTeam.name },
     awayTeam: { tla: match.awayTeam.tla, name: match.awayTeam.name },
     stats: { home: toTeamStats(homeBlock?.statistics), away: toTeamStats(awayBlock?.statistics) },
     cards,
+    goals,
   }
 }
 
