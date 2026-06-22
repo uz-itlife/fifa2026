@@ -5,6 +5,7 @@ import { useStandings } from '@/hooks/useStandings'
 import { TeamFlag } from '@/components/ui/TeamFlag'
 import { StaleDataBanner } from '@/components/ui/StaleDataBanner'
 import { teamRu } from '@/lib/russian-teams'
+import { playerRu } from '@/lib/player-names-ru'
 import fifaRankingData from '@/data/fifa-ranking.json'
 import matchStatsData from '@/data/match-stats.json'
 
@@ -160,7 +161,7 @@ export default function StatsPage() {
                 {playersRanked.map((s, i) => (
                   <tr key={s.player.id} className="border-t border-light-border/40 dark:border-dark-border/40 hover:bg-gray-50 dark:hover:bg-white/5">
                     <td className="py-2 px-4 text-gray-500 text-xs">{i + 1}</td>
-                    <td className="py-2 px-4 font-medium">{s.player.name}</td>
+                    <td className="py-2 px-4 font-medium">{playerRu(s.player.name)}</td>
                     <td className="py-2 px-4"><TeamFlag tla={s.team.tla} name={teamRu(s.team.tla, s.team.shortName)} crest={s.team.crest} size="sm" /></td>
                     <td className="py-2 px-4 text-center">{s.goals}</td>
                     <td className="py-2 px-4 text-center">{s.assists ?? 0}</td>
@@ -191,7 +192,7 @@ export default function StatsPage() {
                 {assistsRanked.map((s, i) => (
                   <tr key={s.player.id} className="border-t border-light-border/40 dark:border-dark-border/40 hover:bg-gray-50 dark:hover:bg-white/5">
                     <td className="py-2 px-4 text-gray-500 text-xs">{i + 1}</td>
-                    <td className="py-2 px-4 font-medium">{s.player.name}</td>
+                    <td className="py-2 px-4 font-medium">{playerRu(s.player.name)}</td>
                     <td className="py-2 px-4"><TeamFlag tla={s.team.tla} name={teamRu(s.team.tla, s.team.shortName)} crest={s.team.crest} size="sm" /></td>
                     <td className="py-2 px-4 text-center font-bold text-gold">{s.assists ?? 0}</td>
                   </tr>
@@ -294,7 +295,7 @@ export default function StatsPage() {
                 {cardsRanked.map((c, i) => (
                   <tr key={c.playerName + c.team} className="border-t border-light-border/40 dark:border-dark-border/40 hover:bg-gray-50 dark:hover:bg-white/5">
                     <td className="py-2 px-4 text-gray-500 text-xs">{i + 1}</td>
-                    <td className="py-2 px-4 font-medium">{c.playerName}</td>
+                    <td className="py-2 px-4 font-medium">{playerRu(c.playerName)}</td>
                     <td className="py-2 px-4">{teamRu(c.team, c.team)}</td>
                     <td className="py-2 px-4 text-center font-bold text-yellow-500">{c.yellow}</td>
                     <td className="py-2 px-4 text-center font-bold text-red-500">{c.red}</td>

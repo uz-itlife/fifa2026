@@ -6,6 +6,7 @@ import { TeamFlag } from '@/components/ui/TeamFlag'
 import { LiveBadge } from '@/components/ui/LiveBadge'
 import { WatchBanner } from '@/components/uzbekistan/WatchBanner'
 import { teamRu, stageRu, cityRu, countryRu } from '@/lib/russian-teams'
+import { playerRu } from '@/lib/player-names-ru'
 
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 
@@ -171,11 +172,11 @@ export default function MatchDetailPage() {
                           <span className="text-sm font-semibold text-gray-900 dark:text-white inline-flex items-center gap-1.5">
                             <BallIcon />
                             <span className="text-[10px] font-bold text-gold tracking-wide">ГОЛ</span>
-                            {item.goal.scorer?.name ?? 'Автогол'}
+                            {item.goal.scorer ? playerRu(item.goal.scorer.name) : 'Автогол'}
                           </span>
                           {item.goal.assist && (
                             <div className="text-[11px] text-gray-500">
-                              Пас: {item.goal.assist.name}
+                              Пас: {playerRu(item.goal.assist.name)}
                             </div>
                           )}
                         </div>
@@ -189,11 +190,11 @@ export default function MatchDetailPage() {
                         <div>
                           <span className="text-sm font-semibold text-gray-900 dark:text-white inline-flex items-center gap-1.5">
                             <span className="text-[10px] font-bold text-gold tracking-wide">ГОЛ</span>
-                            {item.goal.scorer?.name ?? 'Автогол'} <BallIcon />
+                            {item.goal.scorer ? playerRu(item.goal.scorer.name) : 'Автогол'} <BallIcon />
                           </span>
                           {item.goal.assist && (
                             <div className="text-[11px] text-gray-500">
-                              Пас: {item.goal.assist.name}
+                              Пас: {playerRu(item.goal.assist.name)}
                             </div>
                           )}
                         </div>
@@ -209,7 +210,7 @@ export default function MatchDetailPage() {
                   <div>
                     {home && (
                       <span className="text-sm text-gray-700 dark:text-gray-300 inline-flex items-center gap-1.5">
-                        <CardIcon card={item.booking.card} /> {item.booking.player.name}
+                        <CardIcon card={item.booking.card} /> {playerRu(item.booking.player.name)}
                       </span>
                     )}
                   </div>
@@ -217,7 +218,7 @@ export default function MatchDetailPage() {
                   <div className="text-right">
                     {!home && (
                       <span className="text-sm text-gray-700 dark:text-gray-300 inline-flex items-center gap-1.5 justify-end">
-                        {item.booking.player.name} <CardIcon card={item.booking.card} />
+                        {playerRu(item.booking.player.name)} <CardIcon card={item.booking.card} />
                       </span>
                     )}
                   </div>

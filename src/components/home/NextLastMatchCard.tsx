@@ -5,6 +5,7 @@ import useSWR from 'swr'
 import { useMatches } from '@/hooks/useMatches'
 import type { Match, CachedResponse } from '@/types/football'
 import { teamRu } from '@/lib/russian-teams'
+import { playerRu } from '@/lib/player-names-ru'
 
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 
@@ -60,7 +61,7 @@ function ScorersList({ matchId }: { matchId: number }) {
     <div className="mt-3 space-y-0.5">
       {goals.map((g, i) => (
         <p key={i} className="text-xs text-gray-400 text-center">
-          ⚽ {g.scorer?.name ?? 'Автогол'} <span className="text-gray-600">{g.minute}'</span>
+          ⚽ {g.scorer ? playerRu(g.scorer.name) : 'Автогол'} <span className="text-gray-600">{g.minute}'</span>
         </p>
       ))}
     </div>

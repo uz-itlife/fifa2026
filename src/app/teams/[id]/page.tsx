@@ -2,6 +2,8 @@
 import { useParams } from 'next/navigation'
 import useSWR from 'swr'
 import type { CachedResponse, TeamDetail } from '@/types/football'
+import { teamRu } from '@/lib/russian-teams'
+import { playerRu } from '@/lib/player-names-ru'
 
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 
@@ -15,8 +17,8 @@ export default function TeamPage() {
       <div className="flex items-center gap-4 mb-6">
         {team.crest && <img src={team.crest} alt={team.name} className="w-16 h-16 object-contain" />}
         <div>
-          <h1 className="text-2xl font-bold">{team.name}</h1>
-          {team.coach && <p className="text-gray-400 text-sm">Тренер: {team.coach.name}</p>}
+          <h1 className="text-2xl font-bold">{teamRu(team.tla, team.name)}</h1>
+          {team.coach && <p className="text-gray-400 text-sm">Тренер: {playerRu(team.coach.name)}</p>}
           {team.founded && <p className="text-gray-500 text-xs">Основан: {team.founded}</p>}
         </div>
       </div>
@@ -32,7 +34,7 @@ export default function TeamPage() {
           <tbody>
             {team.squad.map(p => (
               <tr key={p.id} className="border-t border-light-border/50 dark:border-dark-border/50">
-                <td className="py-2 px-4">{p.name}</td>
+                <td className="py-2 px-4">{playerRu(p.name)}</td>
                 <td className="py-2 px-4 text-center text-gray-400 text-xs">{p.position ?? '—'}</td>
                 <td className="py-2 px-4 text-center text-gray-500">{p.shirtNumber ?? '—'}</td>
               </tr>

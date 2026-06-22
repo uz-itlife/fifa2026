@@ -3,6 +3,8 @@ import { useState } from 'react'
 import { useScorers } from '@/hooks/useScorers'
 import { TeamFlag } from '@/components/ui/TeamFlag'
 import { StaleDataBanner } from '@/components/ui/StaleDataBanner'
+import { teamRu } from '@/lib/russian-teams'
+import { playerRu } from '@/lib/player-names-ru'
 
 const TABS = [
   { key: 'scorers', label: 'Бомбардиры' },
@@ -49,8 +51,8 @@ export default function PlayersPage() {
               {sorted.map((s, i) => (
                 <tr key={s.player.id} className="border-t border-light-border/40 dark:border-dark-border/40 hover:bg-gray-50 dark:hover:bg-white/5">
                   <td className="py-2 px-4 text-gray-500 text-xs">{i + 1}</td>
-                  <td className="py-2 px-4 font-medium">{s.player.name}</td>
-                  <td className="py-2 px-4"><TeamFlag tla={s.team.tla} name={s.team.shortName} crest={s.team.crest} size="sm" /></td>
+                  <td className="py-2 px-4 font-medium">{playerRu(s.player.name)}</td>
+                  <td className="py-2 px-4"><TeamFlag tla={s.team.tla} name={teamRu(s.team.tla, s.team.shortName)} crest={s.team.crest} size="sm" /></td>
                   <td className="py-2 px-4 text-center font-bold text-gold">
                     {tab === 'scorers' ? s.goals : tab === 'assists' ? (s.assists ?? 0) : (s.penalties ?? 0)}
                   </td>
