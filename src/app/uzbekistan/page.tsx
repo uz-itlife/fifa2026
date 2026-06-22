@@ -94,6 +94,22 @@ export default function UzbekistanPage() {
       </section>
 
       <section>
+        <h2 className="text-lg font-bold mb-3">Обзоры матчей</h2>
+        <a
+          href="https://www.youtube.com/@QsportUzbekistan"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-between gap-4 bg-white dark:bg-dark-card border border-light-border dark:border-dark-border hover:border-gold rounded-xl px-4 py-3 transition-colors group"
+        >
+          <div>
+            <p className="font-bold text-sm">▶️ Qsport Uzbekistan</p>
+            <p className="text-gray-400 text-xs mt-0.5">Короткие обзоры матчей на русском на YouTube</p>
+          </div>
+          <span className="text-gold group-hover:translate-x-1 transition-transform text-lg">→</span>
+        </a>
+      </section>
+
+      <section>
         <WatchBanner />
       </section>
     </div>
