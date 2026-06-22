@@ -5,7 +5,7 @@ import type { CachedResponse, Match, Goal, Booking } from '@/types/football'
 import { TeamFlag } from '@/components/ui/TeamFlag'
 import { LiveBadge } from '@/components/ui/LiveBadge'
 import { WatchBanner } from '@/components/uzbekistan/WatchBanner'
-import { teamRu } from '@/lib/russian-teams'
+import { teamRu, stageRu, cityRu, countryRu } from '@/lib/russian-teams'
 
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 
@@ -81,7 +81,10 @@ export default function MatchDetailPage() {
 
   const groupLabel = match.group
     ? `Группа ${match.group.replace(/^GROUP[_\s]*/i, '').toUpperCase()}`
-    : (match.stage ?? '').replace(/_/g, ' ')
+    : stageRu(match.stage)
+
+  const venueCity = cityRu(match.venue?.city)
+  const venueCountry = countryRu(match.venue?.country)
 
   const homeRu = teamRu(match.homeTeam.tla, match.homeTeam.shortName)
   const awayRu = teamRu(match.awayTeam.tla, match.awayTeam.shortName)
@@ -106,8 +109,8 @@ export default function MatchDetailPage() {
         {match.venue?.name && (
           <div className="text-center text-xs text-gray-500 mb-4">
             {match.venue.name}
-            {match.venue.city && `, ${match.venue.city}`}
-            {match.venue.country && `, ${match.venue.country}`}
+            {venueCity && `, ${venueCity}`}
+            {venueCountry && `, ${venueCountry}`}
           </div>
         )}
 
@@ -166,8 +169,9 @@ export default function MatchDetailPage() {
                       {home && (
                         <div>
                           <span className="text-sm font-semibold text-gray-900 dark:text-white inline-flex items-center gap-1.5">
-                            <BallIcon /> {item.goal.scorer?.name ?? 'Автогол'}
+                            <BallIcon />
                             <span className="text-[10px] font-bold text-gold tracking-wide">ГОЛ</span>
+                            {item.goal.scorer?.name ?? 'Автогол'}
                           </span>
                           {item.goal.assist && (
                             <div className="text-[11px] text-gray-500">

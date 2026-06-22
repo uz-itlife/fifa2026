@@ -3,7 +3,7 @@ import type { Match } from '@/types/football'
 import { LiveBadge } from '@/components/ui/LiveBadge'
 import { TeamFlag } from '@/components/ui/TeamFlag'
 import { WatchBanner } from '@/components/uzbekistan/WatchBanner'
-import { teamRu } from '@/lib/russian-teams'
+import { teamRu, stageRu } from '@/lib/russian-teams'
 import { scoreClass } from '@/lib/match-utils'
 
 const UZB_TLA = 'UZB'
@@ -24,13 +24,15 @@ export function MatchCard({ match }: Props) {
   return (
     <div className="bg-white dark:bg-dark-card rounded-xl p-4 border border-light-border dark:border-dark-border hover:scale-[1.01] transition-transform">
       <div className="flex items-center justify-between mb-2 text-xs text-gray-500">
-        <span>{match.group ? `Группа ${match.group.replace(/^GROUP[_\s]*/i, '').toUpperCase()}` : match.stage}</span>
+        <span>{match.group ? `Группа ${match.group.replace(/^GROUP[_\s]*/i, '').toUpperCase()}` : stageRu(match.stage)}</span>
         {isLive ? <LiveBadge minute={match.minute} /> : <span>{date}</span>}
       </div>
 
       <Link href={`/matches/${match.id}`}>
-        <div className="flex items-center justify-between gap-4">
-          <TeamFlag tla={match.homeTeam.tla} name={homeRu} crest={match.homeTeam.crest} />
+        <div className="flex items-center gap-2">
+          <div className="flex-1 min-w-0">
+            <TeamFlag tla={match.homeTeam.tla} name={homeRu} crest={match.homeTeam.crest} />
+          </div>
           <div className="flex items-center justify-center gap-2 text-xl font-bold tabular-nums shrink-0 w-20">
             {hasScore ? (
               <>
@@ -46,7 +48,7 @@ export function MatchCard({ match }: Props) {
               <span className="text-gray-500 text-sm text-center">{date}</span>
             )}
           </div>
-          <div className="text-right">
+          <div className="flex-1 min-w-0 flex justify-end text-right">
             <TeamFlag tla={match.awayTeam.tla} name={awayRu} crest={match.awayTeam.crest} />
           </div>
         </div>

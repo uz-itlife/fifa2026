@@ -100,3 +100,51 @@ const MAP: Record<string, string> = {
 export function teamRu(tla: string, fallback: string): string {
   return MAP[tla?.toUpperCase()] ?? fallback
 }
+
+const STAGE_MAP: Record<string, string> = {
+  'GROUP_STAGE': 'Групповой этап',
+  'ROUND_OF_16': '1/8 финала',
+  'QUARTER_FINALS': 'Четвертьфинал',
+  'SEMI_FINALS': 'Полуфинал',
+  'THIRD_PLACE': 'Матч за 3-е место',
+  'FINAL': 'Финал',
+}
+
+export function stageRu(stage: string | null | undefined): string {
+  if (!stage) return ''
+  return STAGE_MAP[stage] ?? stage.replace(/_/g, ' ')
+}
+
+const COUNTRY_MAP: Record<string, string> = {
+  'USA': 'США',
+  'Mexico': 'Мексика',
+  'Canada': 'Канада',
+}
+
+const CITY_MAP: Record<string, string> = {
+  'Mexico City': 'Мехико',
+  'Guadalajara': 'Гвадалахара',
+  'Guadalupe': 'Гваделупе',
+  'Toronto': 'Торонто',
+  'Vancouver': 'Ванкувер',
+  'Arlington, Texas': 'Арлингтон, Техас',
+  'Atlanta, Georgia': 'Атланта, Джорджия',
+  'East Rutherford, New Jersey': 'Ист-Резерфорд, Нью-Джерси',
+  'Foxborough, Massachusetts': 'Фоксборо, Массачусетс',
+  'Houston, Texas': 'Хьюстон, Техас',
+  'Inglewood, California': 'Инглвуд, Калифорния',
+  'Kansas City, Missouri': 'Канзас-Сити, Миссури',
+  'Philadelphia, Pennsylvania': 'Филадельфия, Пенсильвания',
+  'Santa Clara, California': 'Санта-Клара, Калифорния',
+  'Seattle, Washington': 'Сиэтл, Вашингтон',
+}
+
+export function cityRu(city: string | null | undefined): string | null {
+  if (!city) return null
+  return CITY_MAP[city] ?? city
+}
+
+export function countryRu(country: string | null | undefined): string | null {
+  if (!country) return null
+  return COUNTRY_MAP[country] ?? country
+}
