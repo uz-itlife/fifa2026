@@ -3745,6 +3745,111 @@
       "country": "Mexico"
     }
   },
+  "537405": {
+    "homeTeam": {
+      "tla": "POR",
+      "name": "Portugal"
+    },
+    "awayTeam": {
+      "tla": "UZB",
+      "name": "Uzbekistan"
+    },
+    "stats": {
+      "home": {
+        "possession": 66,
+        "fouls": 14,
+        "passes": 624,
+        "passAccuracy": 90,
+        "goalkeeperSaves": 2,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 3
+      },
+      "away": {
+        "possession": 34,
+        "fouls": 15,
+        "passes": 325,
+        "passAccuracy": 81,
+        "goalkeeperSaves": 4,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 2
+      }
+    },
+    "cards": [
+      {
+        "playerId": 195266,
+        "playerName": "Odiljon Xamrobekov",
+        "team": "UZB",
+        "type": "yellow",
+        "minute": 14
+      },
+      {
+        "playerId": 337011,
+        "playerName": "Renato Veiga",
+        "team": "POR",
+        "type": "yellow",
+        "minute": 68
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 22774,
+        "playerName": "Cristiano Ronaldo",
+        "assistId": 176399,
+        "assistName": "João Cancelo",
+        "team": "POR",
+        "type": "GOAL",
+        "minute": 6,
+        "injuryTime": null
+      },
+      {
+        "playerId": 290591,
+        "playerName": "Nuno Mendes",
+        "assistId": null,
+        "assistName": null,
+        "team": "POR",
+        "type": "GOAL---FREE-KICK",
+        "minute": 17,
+        "injuryTime": null
+      },
+      {
+        "playerId": 22774,
+        "playerName": "Cristiano Ronaldo",
+        "assistId": 124091,
+        "assistName": "Bruno Fernandes",
+        "team": "POR",
+        "type": "GOAL",
+        "minute": 39,
+        "injuryTime": null
+      },
+      {
+        "playerId": 308612,
+        "playerName": "Abduvohid Nematov",
+        "assistId": null,
+        "assistName": null,
+        "team": "POR",
+        "type": "OWN_GOAL",
+        "minute": 60,
+        "injuryTime": null
+      },
+      {
+        "playerId": 258917,
+        "playerName": "Rafael Leão",
+        "assistId": null,
+        "assistName": null,
+        "team": "POR",
+        "type": "GOAL",
+        "minute": 87,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "NRG Stadium",
+      "city": "Houston, Texas",
+      "country": "USA"
+    }
+  },
   "537409": {
     "homeTeam": {
       "tla": "ENG",
