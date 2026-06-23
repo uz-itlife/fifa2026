@@ -3476,6 +3476,91 @@
       "country": "USA"
     }
   },
+  "537400": {
+    "homeTeam": {
+      "tla": "JOR",
+      "name": "Jordan"
+    },
+    "awayTeam": {
+      "tla": "ALG",
+      "name": "Algeria"
+    },
+    "stats": {
+      "home": {
+        "possession": 27.9,
+        "fouls": 11,
+        "passes": 250,
+        "passAccuracy": 72,
+        "goalkeeperSaves": 6,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 1
+      },
+      "away": {
+        "possession": 72.1,
+        "fouls": 6,
+        "passes": 640,
+        "passAccuracy": 88,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 10
+      }
+    },
+    "cards": [
+      {
+        "playerId": 290517,
+        "playerName": "Ramiz Zerrouki",
+        "team": "ALG",
+        "type": "yellow",
+        "minute": 44
+      },
+      {
+        "playerId": 321503,
+        "playerName": "Husam Abu Dahab",
+        "team": "JOR",
+        "type": "yellow",
+        "minute": 64
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 321515,
+        "playerName": "Nizar Al-Rashdan",
+        "assistId": 257489,
+        "assistName": "Mousa Al-Tamari",
+        "team": "JOR",
+        "type": "GOAL",
+        "minute": 36,
+        "injuryTime": null
+      },
+      {
+        "playerId": 346186,
+        "playerName": "Nadhir Benbouali",
+        "assistId": 163940,
+        "assistName": "Riyad Mahrez",
+        "team": "ALG",
+        "type": "GOAL---HEADER",
+        "minute": 69,
+        "injuryTime": null
+      },
+      {
+        "playerId": 259743,
+        "playerName": "Amine Gouiri",
+        "assistId": null,
+        "assistName": null,
+        "team": "ALG",
+        "type": "GOAL---VOLLEY",
+        "minute": 82,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "Levi's Stadium",
+      "city": "Santa Clara, California",
+      "country": "USA"
+    }
+  },
   "537403": {
     "homeTeam": {
       "tla": "POR",
