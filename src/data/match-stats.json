@@ -3061,6 +3061,174 @@
       "country": "USA"
     }
   },
+  "537393": {
+    "homeTeam": {
+      "tla": "FRA",
+      "name": "France"
+    },
+    "awayTeam": {
+      "tla": "IRQ",
+      "name": "Iraq"
+    },
+    "stats": {
+      "home": {
+        "possession": 55.5,
+        "fouls": 8,
+        "passes": 602,
+        "passAccuracy": 90,
+        "goalkeeperSaves": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 4
+      },
+      "away": {
+        "possession": 44.5,
+        "fouls": 4,
+        "passes": 483,
+        "passAccuracy": 86,
+        "goalkeeperSaves": 2,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 2
+      }
+    },
+    "cards": [
+      {
+        "playerId": 311149,
+        "playerName": "Amir Al-Ammari",
+        "team": "IRQ",
+        "type": "yellow",
+        "minute": 6
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 231388,
+        "playerName": "Kylian Mbappé",
+        "assistId": 286831,
+        "assistName": "Michael Olise",
+        "team": "FRA",
+        "type": "GOAL",
+        "minute": 14,
+        "injuryTime": null
+      },
+      {
+        "playerId": 231388,
+        "playerName": "Kylian Mbappé",
+        "assistId": 229744,
+        "assistName": "Ousmane Dembélé",
+        "team": "FRA",
+        "type": "GOAL",
+        "minute": 54,
+        "injuryTime": null
+      },
+      {
+        "playerId": 229744,
+        "playerName": "Ousmane Dembélé",
+        "assistId": 286831,
+        "assistName": "Michael Olise",
+        "team": "FRA",
+        "type": "GOAL",
+        "minute": 66,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "Lincoln Financial Field",
+      "city": "Philadelphia, Pennsylvania",
+      "country": "USA"
+    }
+  },
+  "537394": {
+    "homeTeam": {
+      "tla": "NOR",
+      "name": "Norway"
+    },
+    "awayTeam": {
+      "tla": "SEN",
+      "name": "Senegal"
+    },
+    "stats": {
+      "home": {
+        "possession": 41.7,
+        "fouls": 13,
+        "passes": 352,
+        "passAccuracy": 80,
+        "goalkeeperSaves": 2,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 5
+      },
+      "away": {
+        "possession": 58.3,
+        "fouls": 5,
+        "passes": 487,
+        "passAccuracy": 88,
+        "goalkeeperSaves": 3,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 4
+      }
+    },
+    "cards": [],
+    "goals": [
+      {
+        "playerId": 129285,
+        "playerName": "Marcus Holmgren Pedersen",
+        "assistId": null,
+        "assistName": null,
+        "team": "NOR",
+        "type": "GOAL",
+        "minute": 43,
+        "injuryTime": null
+      },
+      {
+        "playerId": 253989,
+        "playerName": "Erling Haaland",
+        "assistId": 203669,
+        "assistName": "Martin Ødegaard",
+        "team": "NOR",
+        "type": "GOAL",
+        "minute": 48,
+        "injuryTime": null
+      },
+      {
+        "playerId": 241012,
+        "playerName": "Ismaïla Sarr",
+        "assistId": 169797,
+        "assistName": "Sadio Mané",
+        "team": "SEN",
+        "type": "GOAL",
+        "minute": 53,
+        "injuryTime": null
+      },
+      {
+        "playerId": 253989,
+        "playerName": "Erling Haaland",
+        "assistId": 205924,
+        "assistName": "Patrick Berg",
+        "team": "NOR",
+        "type": "GOAL",
+        "minute": 58,
+        "injuryTime": null
+      },
+      {
+        "playerId": 241012,
+        "playerName": "Ismaïla Sarr",
+        "assistId": 308524,
+        "assistName": "Nicolas Jackson",
+        "team": "SEN",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "MetLife Stadium",
+      "city": "East Rutherford, New Jersey",
+      "country": "USA"
+    }
+  },
   "537397": {
     "homeTeam": {
       "tla": "ARG",
