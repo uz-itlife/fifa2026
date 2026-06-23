@@ -4021,5 +4021,59 @@
       "city": "Toronto",
       "country": "Canada"
     }
+  },
+  "537411": {
+    "homeTeam": {
+      "tla": "ENG",
+      "name": "England"
+    },
+    "awayTeam": {
+      "tla": "GHA",
+      "name": "Ghana"
+    },
+    "stats": {
+      "home": {
+        "possession": 78.8,
+        "fouls": 14,
+        "passes": 633,
+        "passAccuracy": 93,
+        "goalkeeperSaves": 0,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 9
+      },
+      "away": {
+        "possession": 21.2,
+        "fouls": 24,
+        "passes": 173,
+        "passAccuracy": 74,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 2
+      }
+    },
+    "cards": [
+      {
+        "playerId": 238262,
+        "playerName": "Declan Rice",
+        "team": "ENG",
+        "type": "yellow",
+        "minute": 41
+      },
+      {
+        "playerId": 214412,
+        "playerName": "Iñaki Williams",
+        "team": "GHA",
+        "type": "yellow",
+        "minute": 60
+      }
+    ],
+    "goals": [],
+    "venue": {
+      "name": "Gillette Stadium",
+      "city": "Foxborough, Massachusetts",
+      "country": "USA"
+    }
   }
 }
