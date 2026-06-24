@@ -4075,5 +4075,70 @@
       "city": "Foxborough, Massachusetts",
       "country": "USA"
     }
+  },
+  "537412": {
+    "homeTeam": {
+      "tla": "PAN",
+      "name": "Panama"
+    },
+    "awayTeam": {
+      "tla": "CRO",
+      "name": "Croatia"
+    },
+    "stats": {
+      "home": {
+        "possession": 42.1,
+        "fouls": 19,
+        "passes": 356,
+        "passAccuracy": 78,
+        "goalkeeperSaves": 1,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 7
+      },
+      "away": {
+        "possession": 57.9,
+        "fouls": 12,
+        "passes": 515,
+        "passAccuracy": 84,
+        "goalkeeperSaves": 1,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 2
+      }
+    },
+    "cards": [
+      {
+        "playerId": 201919,
+        "playerName": "Édgar Yoel Bárcenas",
+        "team": "PAN",
+        "type": "yellow",
+        "minute": 61
+      },
+      {
+        "playerId": 341494,
+        "playerName": "Petar Sucic",
+        "team": "CRO",
+        "type": "yellow",
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 207288,
+        "playerName": "Ante Budimir",
+        "assistId": 276329,
+        "assistName": "Josip Stanisic",
+        "team": "CRO",
+        "type": "GOAL---VOLLEY",
+        "minute": 54,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "BMO Field",
+      "city": "Toronto",
+      "country": "Canada"
+    }
   }
 }
