@@ -753,6 +753,193 @@
       "country": "Canada"
     }
   },
+  "537337": {
+    "homeTeam": {
+      "tla": "SUI",
+      "name": "Switzerland"
+    },
+    "awayTeam": {
+      "tla": "CAN",
+      "name": "Canada"
+    },
+    "stats": {
+      "home": {
+        "possession": 55.2,
+        "fouls": 19,
+        "passes": 441,
+        "passAccuracy": 83,
+        "goalkeeperSaves": 6,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 2
+      },
+      "away": {
+        "possession": 44.8,
+        "fouls": 13,
+        "passes": 339,
+        "passAccuracy": 80,
+        "goalkeeperSaves": 2,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 7
+      }
+    },
+    "cards": [
+      {
+        "playerId": 205024,
+        "playerName": "Cyle Larin",
+        "team": "CAN",
+        "type": "yellow",
+        "minute": 32
+      },
+      {
+        "playerId": 149981,
+        "playerName": "Granit Xhaka",
+        "team": "SUI",
+        "type": "yellow",
+        "minute": 32
+      },
+      {
+        "playerId": 271879,
+        "playerName": "Liam Millar",
+        "team": "CAN",
+        "type": "yellow",
+        "minute": 87
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 259513,
+        "playerName": "Rubén Vargas",
+        "assistId": 386992,
+        "assistName": "Johan Manzambi",
+        "team": "SUI",
+        "type": "GOAL",
+        "minute": 46,
+        "injuryTime": null
+      },
+      {
+        "playerId": 386992,
+        "playerName": "Johan Manzambi",
+        "assistId": 202099,
+        "assistName": "Breel Embolo",
+        "team": "SUI",
+        "type": "GOAL",
+        "minute": 57,
+        "injuryTime": null
+      },
+      {
+        "playerId": 318522,
+        "playerName": "Promise David",
+        "assistId": 311163,
+        "assistName": "Nathan Saliba",
+        "team": "CAN",
+        "type": "GOAL---VOLLEY",
+        "minute": 76,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "BC Place",
+      "city": "Vancouver",
+      "country": "Canada"
+    }
+  },
+  "537338": {
+    "homeTeam": {
+      "tla": "BIH",
+      "name": "Bosnia-Herzegovina"
+    },
+    "awayTeam": {
+      "tla": "QAT",
+      "name": "Qatar"
+    },
+    "stats": {
+      "home": {
+        "possession": 54.5,
+        "fouls": 9,
+        "passes": 517,
+        "passAccuracy": 88,
+        "goalkeeperSaves": 2,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 5
+      },
+      "away": {
+        "possession": 45.5,
+        "fouls": 14,
+        "passes": 434,
+        "passAccuracy": 85,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 5
+      }
+    },
+    "cards": [
+      {
+        "playerId": 268018,
+        "playerName": "Ahmed Fathy",
+        "team": "QAT",
+        "type": "yellow",
+        "minute": 78
+      },
+      {
+        "playerId": 414676,
+        "playerName": "Ermin Mahmic",
+        "team": "BIH",
+        "type": "yellow",
+        "minute": 82
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 391034,
+        "playerName": "Kerim Alajbegovic",
+        "assistId": 306256,
+        "assistName": "Ivan Basic",
+        "team": "BIH",
+        "type": "GOAL",
+        "minute": 29,
+        "injuryTime": null
+      },
+      {
+        "playerId": 310372,
+        "playerName": "Mahmoud Abunada",
+        "assistId": null,
+        "assistName": null,
+        "team": "BIH",
+        "type": "OWN_GOAL",
+        "minute": 34,
+        "injuryTime": null
+      },
+      {
+        "playerId": 236586,
+        "playerName": "Hassan Al-Haydos",
+        "assistId": 109204,
+        "assistName": "Edmílson Junior",
+        "team": "QAT",
+        "type": "GOAL",
+        "minute": 42,
+        "injuryTime": null
+      },
+      {
+        "playerId": 414676,
+        "playerName": "Ermin Mahmic",
+        "assistId": 246836,
+        "assistName": "Dennis Hadzikadunic",
+        "team": "BIH",
+        "type": "GOAL",
+        "minute": 80,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "Lumen Field",
+      "city": "Seattle, Washington",
+      "country": "USA"
+    }
+  },
   "537339": {
     "homeTeam": {
       "tla": "BRA",
