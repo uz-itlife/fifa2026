@@ -3850,6 +3850,78 @@
       "country": "USA"
     }
   },
+  "537406": {
+    "homeTeam": {
+      "tla": "COL",
+      "name": "Colombia"
+    },
+    "awayTeam": {
+      "tla": "COD",
+      "name": "Congo DR"
+    },
+    "stats": {
+      "home": {
+        "possession": 63.5,
+        "fouls": 12,
+        "passes": 541,
+        "passAccuracy": 87,
+        "goalkeeperSaves": 1,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 5
+      },
+      "away": {
+        "possession": 36.5,
+        "fouls": 16,
+        "passes": 299,
+        "passAccuracy": 76,
+        "goalkeeperSaves": 8,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 4
+      }
+    },
+    "cards": [
+      {
+        "playerId": 227697,
+        "playerName": "Jhon Lucumí",
+        "team": "COL",
+        "type": "yellow",
+        "minute": 56
+      },
+      {
+        "playerId": 235875,
+        "playerName": "Charles Pickel",
+        "team": "COD",
+        "type": "yellow",
+        "minute": 90
+      },
+      {
+        "playerId": 197399,
+        "playerName": "Jefferson Lerma",
+        "team": "COL",
+        "type": "yellow",
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 146679,
+        "playerName": "Daniel Muñoz",
+        "assistId": 177780,
+        "assistName": "Juan Fernando Quintero",
+        "team": "COL",
+        "type": "GOAL",
+        "minute": 76,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "Estadio Akron",
+      "city": "Guadalajara",
+      "country": "Mexico"
+    }
+  },
   "537409": {
     "homeTeam": {
       "tla": "ENG",
