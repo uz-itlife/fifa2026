@@ -2349,6 +2349,187 @@
       "country": "USA"
     }
   },
+  "537355": {
+    "homeTeam": {
+      "tla": "ECU",
+      "name": "Ecuador"
+    },
+    "awayTeam": {
+      "tla": "GER",
+      "name": "Germany"
+    },
+    "stats": {
+      "home": {
+        "possession": 38.9,
+        "fouls": 15,
+        "passes": 379,
+        "passAccuracy": 83,
+        "goalkeeperSaves": 2,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 3
+      },
+      "away": {
+        "possession": 61.1,
+        "fouls": 10,
+        "passes": 592,
+        "passAccuracy": 87,
+        "goalkeeperSaves": 1,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 2
+      }
+    },
+    "cards": [
+      {
+        "playerId": 292062,
+        "playerName": "Piero Hincapié",
+        "team": "ECU",
+        "type": "yellow",
+        "minute": 43
+      },
+      {
+        "playerId": 359370,
+        "playerName": "Aleksandar Pavlovic",
+        "team": "GER",
+        "type": "yellow",
+        "minute": 44
+      },
+      {
+        "playerId": 262111,
+        "playerName": "Alan Franco",
+        "team": "ECU",
+        "type": "yellow",
+        "minute": 50
+      },
+      {
+        "playerId": 277352,
+        "playerName": "Gonzalo Plata",
+        "team": "ECU",
+        "type": "yellow",
+        "minute": 89
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 202641,
+        "playerName": "Leroy Sané",
+        "assistId": 303748,
+        "assistName": "Florian Wirtz",
+        "team": "GER",
+        "type": "GOAL",
+        "minute": 2,
+        "injuryTime": null
+      },
+      {
+        "playerId": 318090,
+        "playerName": "Nilson Angulo",
+        "assistId": 297150,
+        "assistName": "Pedro Vite",
+        "team": "ECU",
+        "type": "GOAL",
+        "minute": 9,
+        "injuryTime": null
+      },
+      {
+        "playerId": 277352,
+        "playerName": "Gonzalo Plata",
+        "assistId": 281316,
+        "assistName": "Kevin Rodríguez",
+        "team": "ECU",
+        "type": "GOAL---VOLLEY",
+        "minute": 77,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "MetLife Stadium",
+      "city": "East Rutherford, New Jersey",
+      "country": "USA"
+    }
+  },
+  "537356": {
+    "homeTeam": {
+      "tla": "CUW",
+      "name": "Curaçao"
+    },
+    "awayTeam": {
+      "tla": "CIV",
+      "name": "Ivory Coast"
+    },
+    "stats": {
+      "home": {
+        "possession": 36.6,
+        "fouls": 11,
+        "passes": 354,
+        "passAccuracy": 83,
+        "goalkeeperSaves": 1,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 4
+      },
+      "away": {
+        "possession": 63.4,
+        "fouls": 6,
+        "passes": 623,
+        "passAccuracy": 90,
+        "goalkeeperSaves": 2,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 6
+      }
+    },
+    "cards": [
+      {
+        "playerId": 210397,
+        "playerName": "Nicolas Pépé",
+        "team": "CIV",
+        "type": "yellow",
+        "minute": 35
+      },
+      {
+        "playerId": 216287,
+        "playerName": "Juninho Bacuna",
+        "team": "CUW",
+        "type": "yellow",
+        "minute": 75
+      },
+      {
+        "playerId": 178273,
+        "playerName": "Gervane Kastaneer",
+        "team": "CUW",
+        "type": "yellow",
+        "minute": 83
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 210397,
+        "playerName": "Nicolas Pépé",
+        "assistId": 402479,
+        "assistName": "Yan Diomande",
+        "team": "CIV",
+        "type": "GOAL",
+        "minute": 7,
+        "injuryTime": null
+      },
+      {
+        "playerId": 210397,
+        "playerName": "Nicolas Pépé",
+        "assistId": 213718,
+        "assistName": "Ibrahim Sangaré",
+        "team": "CIV",
+        "type": "GOAL",
+        "minute": 64,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "Lincoln Financial Field",
+      "city": "Philadelphia, Pennsylvania",
+      "country": "USA"
+    }
+  },
   "537357": {
     "homeTeam": {
       "tla": "NED",
