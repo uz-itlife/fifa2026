@@ -9,10 +9,11 @@ import { playerRu } from '@/lib/player-names-ru'
 
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 
-function getNextMatch(matches: Match[]) {
+function getNextMatches(matches: Match[]) {
   return matches
     .filter(m => m.status === 'SCHEDULED' || m.status === 'TIMED')
-    .sort((a, b) => new Date(a.utcDate).getTime() - new Date(b.utcDate).getTime())[0] ?? null
+    .sort((a, b) => new Date(a.utcDate).getTime() - new Date(b.utcDate).getTime())
+    .slice(0, 2)
 }
 
 function getLastMatches(matches: Match[]) {
@@ -78,37 +79,38 @@ export function NextLastMatchCard() {
     return () => clearInterval(id)
   }, [])
 
-  const nextMatch = getNextMatch(matches)
+  const nextMatches = getNextMatches(matches)
   const lastMatches = getLastMatches(matches)
 
-  const nextDate = nextMatch
-    ? new Date(nextMatch.utcDate).toLocaleString('ru-RU', {
-        day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit',
-      })
-    : null
-  const countdown = nextMatch ? buildCountdown(nextMatch.utcDate, now) : null
-
-  if (!nextMatch && lastMatches.length === 0) return null
+  if (nextMatches.length === 0 && lastMatches.length === 0) return null
 
   return (
     <div className="bg-white dark:bg-dark-card rounded-xl border border-light-border dark:border-dark-border divide-y divide-light-border dark:divide-dark-border">
-      {nextMatch ? (
-        <Link href={`/matches/${nextMatch.id}`}>
-          <div className="p-4 hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
-            <p className="text-xs text-gray-500 uppercase tracking-widest mb-3">Следующий матч</p>
-            <div className="flex items-center justify-between gap-2">
-              <CrestBadge tla={nextMatch.homeTeam.tla} crest={nextMatch.homeTeam.crest}
-                name={teamRu(nextMatch.homeTeam.tla, nextMatch.homeTeam.shortName)} />
-              <div className="text-center shrink-0 px-2">
-                <p className="text-xs text-gray-400 leading-snug">{nextDate}</p>
-                {countdown && <p className="text-gold font-bold text-sm mt-1">⏱ {countdown}</p>}
+      {nextMatches.length > 0 ? nextMatches.map((m, idx) => {
+        const date = new Date(m.utcDate).toLocaleString('ru-RU', {
+          day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit',
+        })
+        const countdown = buildCountdown(m.utcDate, now)
+        return (
+          <Link key={m.id} href={`/matches/${m.id}`}>
+            <div className="p-4 hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
+              <p className="text-xs text-gray-500 uppercase tracking-widest mb-3">
+                {idx === 0 ? 'Следующий матч' : 'Следующий матч 2'}
+              </p>
+              <div className="flex items-center justify-between gap-2">
+                <CrestBadge tla={m.homeTeam.tla} crest={m.homeTeam.crest}
+                  name={teamRu(m.homeTeam.tla, m.homeTeam.shortName)} />
+                <div className="text-center shrink-0 px-2">
+                  <p className="text-xs text-gray-400 leading-snug">{date}</p>
+                  {countdown && <p className="text-gold font-bold text-sm mt-1">⏱ {countdown}</p>}
+                </div>
+                <CrestBadge tla={m.awayTeam.tla} crest={m.awayTeam.crest}
+                  name={teamRu(m.awayTeam.tla, m.awayTeam.shortName)} />
               </div>
-              <CrestBadge tla={nextMatch.awayTeam.tla} crest={nextMatch.awayTeam.crest}
-                name={teamRu(nextMatch.awayTeam.tla, nextMatch.awayTeam.shortName)} />
             </div>
-          </div>
-        </Link>
-      ) : (
+          </Link>
+        )
+      }) : (
         <div className="p-4">
           <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">Следующий матч</p>
           <p className="text-sm text-gray-500">Нет предстоящих матчей</p>
