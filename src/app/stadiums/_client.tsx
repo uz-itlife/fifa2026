@@ -290,7 +290,7 @@ export default function StadiumsClient() {
               </div>
 
               <a
-                href={`https://www.openstreetmap.org/?mlat=${selected.lat}&mlon=${selected.lng}&zoom=15`}
+                href={`https://www.google.com/maps?q=${selected.lat},${selected.lng}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-gold/40 hover:border-gold hover:bg-gold/5 text-gold text-sm font-medium transition-colors"

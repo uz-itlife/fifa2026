@@ -15,10 +15,11 @@ function getNextMatch(matches: Match[]) {
     .sort((a, b) => new Date(a.utcDate).getTime() - new Date(b.utcDate).getTime())[0] ?? null
 }
 
-function getLastMatch(matches: Match[]) {
+function getLastMatches(matches: Match[]) {
   return matches
     .filter(m => m.status === 'FINISHED')
-    .sort((a, b) => new Date(b.utcDate).getTime() - new Date(a.utcDate).getTime())[0] ?? null
+    .sort((a, b) => new Date(b.utcDate).getTime() - new Date(a.utcDate).getTime())
+    .slice(0, 2)
 }
 
 function buildCountdown(utcDate: string, now: number): string | null {
@@ -78,7 +79,7 @@ export function NextLastMatchCard() {
   }, [])
 
   const nextMatch = getNextMatch(matches)
-  const lastMatch = getLastMatch(matches)
+  const lastMatches = getLastMatches(matches)
 
   const nextDate = nextMatch
     ? new Date(nextMatch.utcDate).toLocaleString('ru-RU', {
@@ -87,7 +88,7 @@ export function NextLastMatchCard() {
     : null
   const countdown = nextMatch ? buildCountdown(nextMatch.utcDate, now) : null
 
-  if (!nextMatch && !lastMatch) return null
+  if (!nextMatch && lastMatches.length === 0) return null
 
   return (
     <div className="bg-white dark:bg-dark-card rounded-xl border border-light-border dark:border-dark-border divide-y divide-light-border dark:divide-dark-border">
@@ -114,26 +115,28 @@ export function NextLastMatchCard() {
         </div>
       )}
 
-      {lastMatch ? (
-        <Link href={`/matches/${lastMatch.id}`}>
+      {lastMatches.length > 0 ? lastMatches.map((m, idx) => (
+        <Link key={m.id} href={`/matches/${m.id}`}>
           <div className="p-4 hover:bg-black/5 dark:hover:bg-white/5 transition-colors">
-            <p className="text-xs text-gray-500 uppercase tracking-widest mb-3">Последний матч</p>
+            <p className="text-xs text-gray-500 uppercase tracking-widest mb-3">
+              {idx === 0 ? 'Последний матч' : 'Предыдущий матч'}
+            </p>
             <div className="flex items-center justify-between gap-2">
-              <CrestBadge tla={lastMatch.homeTeam.tla} crest={lastMatch.homeTeam.crest}
-                name={teamRu(lastMatch.homeTeam.tla, lastMatch.homeTeam.shortName)} />
+              <CrestBadge tla={m.homeTeam.tla} crest={m.homeTeam.crest}
+                name={teamRu(m.homeTeam.tla, m.homeTeam.shortName)} />
               <div className="text-center shrink-0 px-2">
                 <p className="text-3xl font-black text-gold">
-                  {lastMatch.score.fullTime.home ?? '–'} : {lastMatch.score.fullTime.away ?? '–'}
+                  {m.score.fullTime.home ?? '–'} : {m.score.fullTime.away ?? '–'}
                 </p>
                 <p className="text-xs text-gray-500 mt-0.5">Завершён</p>
               </div>
-              <CrestBadge tla={lastMatch.awayTeam.tla} crest={lastMatch.awayTeam.crest}
-                name={teamRu(lastMatch.awayTeam.tla, lastMatch.awayTeam.shortName)} />
+              <CrestBadge tla={m.awayTeam.tla} crest={m.awayTeam.crest}
+                name={teamRu(m.awayTeam.tla, m.awayTeam.shortName)} />
             </div>
-            <ScorersList matchId={lastMatch.id} />
+            <ScorersList matchId={m.id} />
           </div>
         </Link>
-      ) : (
+      )) : (
         <div className="p-4">
           <p className="text-xs text-gray-500 uppercase tracking-widest mb-1">Последний матч</p>
           <p className="text-sm text-gray-500">Матчи ещё не сыграны</p>
