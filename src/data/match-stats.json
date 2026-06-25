@@ -327,6 +327,149 @@
       "country": "Mexico"
     }
   },
+  "537331": {
+    "homeTeam": {
+      "tla": "CZE",
+      "name": "Czechia"
+    },
+    "awayTeam": {
+      "tla": "MEX",
+      "name": "Mexico"
+    },
+    "stats": {
+      "home": {
+        "possession": 51.6,
+        "fouls": 9,
+        "passes": 398,
+        "passAccuracy": 83,
+        "goalkeeperSaves": 2,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 5
+      },
+      "away": {
+        "possession": 48.4,
+        "fouls": 13,
+        "passes": 388,
+        "passAccuracy": 85,
+        "goalkeeperSaves": 1,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 1
+      }
+    },
+    "cards": [
+      {
+        "playerId": 241627,
+        "playerName": "Edson Álvarez",
+        "team": "MEX",
+        "type": "yellow",
+        "minute": 64
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 379193,
+        "playerName": "Mateo Chávez",
+        "assistId": 242614,
+        "assistName": "Luis Romo",
+        "team": "MEX",
+        "type": "GOAL",
+        "minute": 55,
+        "injuryTime": null
+      },
+      {
+        "playerId": 233075,
+        "playerName": "Julián Quiñones",
+        "assistId": 178746,
+        "assistName": "Jorge Sánchez",
+        "team": "MEX",
+        "type": "GOAL",
+        "minute": 61,
+        "injuryTime": null
+      },
+      {
+        "playerId": 283827,
+        "playerName": "Álvaro Fidalgo",
+        "assistId": 194308,
+        "assistName": "Roberto Alvarado",
+        "team": "MEX",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "Estadio Banorte",
+      "city": "Mexico City",
+      "country": "Mexico"
+    }
+  },
+  "537332": {
+    "homeTeam": {
+      "tla": "RSA",
+      "name": "South Africa"
+    },
+    "awayTeam": {
+      "tla": "KOR",
+      "name": "South Korea"
+    },
+    "stats": {
+      "home": {
+        "possession": 31.5,
+        "fouls": 7,
+        "passes": 338,
+        "passAccuracy": 82,
+        "goalkeeperSaves": 2,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 4
+      },
+      "away": {
+        "possession": 68.5,
+        "fouls": 9,
+        "passes": 720,
+        "passAccuracy": 89,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 6
+      }
+    },
+    "cards": [
+      {
+        "playerId": 223818,
+        "playerName": "Aubrey Modiba",
+        "team": "RSA",
+        "type": "yellow",
+        "minute": 73
+      },
+      {
+        "playerId": 303464,
+        "playerName": "Cho Gue-Sung",
+        "team": "KOR",
+        "type": "yellow",
+        "minute": 79
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 335450,
+        "playerName": "Thapelo Maseko",
+        "assistId": 313399,
+        "assistName": "Tshepang Moremi",
+        "team": "RSA",
+        "type": "GOAL",
+        "minute": 63,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "Estadio BBVA",
+      "city": "Guadalupe",
+      "country": "Mexico"
+    }
+  },
   "537333": {
     "homeTeam": {
       "tla": "CAN",
@@ -1255,6 +1398,220 @@
     "venue": {
       "name": "Gillette Stadium",
       "city": "Foxborough, Massachusetts",
+      "country": "USA"
+    }
+  },
+  "537343": {
+    "homeTeam": {
+      "tla": "SCO",
+      "name": "Scotland"
+    },
+    "awayTeam": {
+      "tla": "BRA",
+      "name": "Brazil"
+    },
+    "stats": {
+      "home": {
+        "possession": 46,
+        "fouls": 10,
+        "passes": 500,
+        "passAccuracy": 90,
+        "goalkeeperSaves": 5,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 7
+      },
+      "away": {
+        "possession": 54,
+        "fouls": 11,
+        "passes": 605,
+        "passAccuracy": 93,
+        "goalkeeperSaves": 5,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 7
+      }
+    },
+    "cards": [
+      {
+        "playerId": 170369,
+        "playerName": "Danilo",
+        "team": "BRA",
+        "type": "yellow",
+        "minute": 62
+      },
+      {
+        "playerId": 176287,
+        "playerName": "Fabinho",
+        "team": "BRA",
+        "type": "yellow",
+        "minute": 82
+      },
+      {
+        "playerId": 93435,
+        "playerName": "Ryan Christie",
+        "team": "SCO",
+        "type": "yellow",
+        "minute": 89
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 252107,
+        "playerName": "Vinícius Júnior",
+        "assistId": 357719,
+        "assistName": "Rayan",
+        "team": "BRA",
+        "type": "GOAL",
+        "minute": 7,
+        "injuryTime": null
+      },
+      {
+        "playerId": 252107,
+        "playerName": "Vinícius Júnior",
+        "assistId": 218522,
+        "assistName": "Bruno Guimarães",
+        "team": "BRA",
+        "type": "GOAL---HEADER",
+        "minute": 45,
+        "injuryTime": null
+      },
+      {
+        "playerId": 259902,
+        "playerName": "Matheus Cunha",
+        "assistId": 218522,
+        "assistName": "Bruno Guimarães",
+        "team": "BRA",
+        "type": "GOAL",
+        "minute": 60,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "Hard Rock Stadium",
+      "city": "Miami Gardens, Florida",
+      "country": "USA"
+    }
+  },
+  "537344": {
+    "homeTeam": {
+      "tla": "MAR",
+      "name": "Morocco"
+    },
+    "awayTeam": {
+      "tla": "HAI",
+      "name": "Haiti"
+    },
+    "stats": {
+      "home": {
+        "possession": 69.1,
+        "fouls": 10,
+        "passes": 541,
+        "passAccuracy": 88,
+        "goalkeeperSaves": 1,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 9
+      },
+      "away": {
+        "possession": 30.9,
+        "fouls": 18,
+        "passes": 247,
+        "passAccuracy": 80,
+        "goalkeeperSaves": 8,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 1
+      }
+    },
+    "cards": [
+      {
+        "playerId": 89090,
+        "playerName": "Johny Placide",
+        "team": "HAI",
+        "type": "yellow",
+        "minute": 79
+      },
+      {
+        "playerId": 210778,
+        "playerName": "Duckens Nazon",
+        "team": "HAI",
+        "type": "yellow",
+        "minute": 80
+      },
+      {
+        "playerId": 304212,
+        "playerName": "Josué Casimir",
+        "team": "HAI",
+        "type": "yellow",
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 175149,
+        "playerName": "Yassine Bounou",
+        "assistId": 241032,
+        "assistName": "Jean-Kévin Duverne",
+        "team": "HAI",
+        "type": "OWN_GOAL",
+        "minute": 10,
+        "injuryTime": null
+      },
+      {
+        "playerId": 240233,
+        "playerName": "Achraf Hakimi",
+        "assistId": null,
+        "assistName": null,
+        "team": "MAR",
+        "type": "GOAL",
+        "minute": 39,
+        "injuryTime": null
+      },
+      {
+        "playerId": 265915,
+        "playerName": "Wilson Isidor",
+        "assistId": 241032,
+        "assistName": "Jean-Kévin Duverne",
+        "team": "HAI",
+        "type": "GOAL",
+        "minute": 43,
+        "injuryTime": null
+      },
+      {
+        "playerId": 304572,
+        "playerName": "Ismael Saibari",
+        "assistId": 240233,
+        "assistName": "Achraf Hakimi",
+        "team": "MAR",
+        "type": "GOAL",
+        "minute": 45,
+        "injuryTime": null
+      },
+      {
+        "playerId": 276139,
+        "playerName": "Soufiane Rahimi",
+        "assistId": 307870,
+        "assistName": "Chadi Riad",
+        "team": "MAR",
+        "type": "GOAL",
+        "minute": 78,
+        "injuryTime": null
+      },
+      {
+        "playerId": 379012,
+        "playerName": "Gessime Yassine",
+        "assistId": 276139,
+        "assistName": "Soufiane Rahimi",
+        "team": "MAR",
+        "type": "GOAL",
+        "minute": 89,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "Mercedes-Benz Stadium",
+      "city": "Atlanta, Georgia",
       "country": "USA"
     }
   },
