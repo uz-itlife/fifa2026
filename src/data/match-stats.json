@@ -2942,6 +2942,168 @@
       "country": "Mexico"
     }
   },
+  "537361": {
+    "homeTeam": {
+      "tla": "TUN",
+      "name": "Tunisia"
+    },
+    "awayTeam": {
+      "tla": "NED",
+      "name": "Netherlands"
+    },
+    "stats": {
+      "home": {
+        "possession": 28.4,
+        "fouls": 11,
+        "passes": 257,
+        "passAccuracy": 77,
+        "goalkeeperSaves": 4,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 4
+      },
+      "away": {
+        "possession": 71.6,
+        "fouls": 10,
+        "passes": 649,
+        "passAccuracy": 92,
+        "goalkeeperSaves": 3,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 6
+      }
+    },
+    "cards": [],
+    "goals": [
+      {
+        "playerId": 209595,
+        "playerName": "Ellyes Skhiri",
+        "assistId": null,
+        "assistName": null,
+        "team": "NED",
+        "type": "OWN_GOAL",
+        "minute": 3,
+        "injuryTime": null
+      },
+      {
+        "playerId": 282229,
+        "playerName": "Brian Brobbey",
+        "assistId": 157892,
+        "assistName": "Virgil van Dijk",
+        "team": "NED",
+        "type": "GOAL---VOLLEY",
+        "minute": 7,
+        "injuryTime": null
+      },
+      {
+        "playerId": 396085,
+        "playerName": "Hazem Mastouri",
+        "assistId": 300007,
+        "assistName": "Hannibal Mejbri",
+        "team": "TUN",
+        "type": "GOAL---HEADER",
+        "minute": 54,
+        "injuryTime": null
+      },
+      {
+        "playerId": 282583,
+        "playerName": "Jan Paul van Hecke",
+        "assistId": 261328,
+        "assistName": "Tijjani Reijnders",
+        "team": "NED",
+        "type": "GOAL---HEADER",
+        "minute": 62,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "GEHA Field at Arrowhead Stadium",
+      "city": "Kansas City, Missouri",
+      "country": "USA"
+    }
+  },
+  "537362": {
+    "homeTeam": {
+      "tla": "JPN",
+      "name": "Japan"
+    },
+    "awayTeam": {
+      "tla": "SWE",
+      "name": "Sweden"
+    },
+    "stats": {
+      "home": {
+        "possession": 52.3,
+        "fouls": 20,
+        "passes": 446,
+        "passAccuracy": 85,
+        "goalkeeperSaves": 4,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 2
+      },
+      "away": {
+        "possession": 47.7,
+        "fouls": 11,
+        "passes": 395,
+        "passAccuracy": 79,
+        "goalkeeperSaves": 2,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 8
+      }
+    },
+    "cards": [
+      {
+        "playerId": 312862,
+        "playerName": "Isak Hien",
+        "team": "SWE",
+        "type": "yellow",
+        "minute": 32
+      },
+      {
+        "playerId": 202728,
+        "playerName": "Shogo Taniguchi",
+        "team": "JPN",
+        "type": "yellow",
+        "minute": 77
+      },
+      {
+        "playerId": 258906,
+        "playerName": "Viktor Gyökeres",
+        "team": "SWE",
+        "type": "yellow",
+        "minute": 85
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 286347,
+        "playerName": "Daizen Maeda",
+        "assistId": 219627,
+        "assistName": "Ritsu Doan",
+        "team": "JPN",
+        "type": "GOAL",
+        "minute": 56,
+        "injuryTime": null
+      },
+      {
+        "playerId": 296622,
+        "playerName": "Anthony Elanga",
+        "assistId": 258906,
+        "assistName": "Viktor Gyökeres",
+        "team": "SWE",
+        "type": "GOAL",
+        "minute": 62,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "AT&T Stadium",
+      "city": "Arlington, Texas",
+      "country": "USA"
+    }
+  },
   "537363": {
     "homeTeam": {
       "tla": "BEL",
