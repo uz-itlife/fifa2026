@@ -4268,6 +4268,237 @@
       "country": "USA"
     }
   },
+  "537395": {
+    "homeTeam": {
+      "tla": "NOR",
+      "name": "Norway"
+    },
+    "awayTeam": {
+      "tla": "FRA",
+      "name": "France"
+    },
+    "stats": {
+      "home": {
+        "possession": 43.2,
+        "fouls": 9,
+        "passes": 420,
+        "passAccuracy": 82,
+        "goalkeeperSaves": 5,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 4
+      },
+      "away": {
+        "possession": 56.8,
+        "fouls": 11,
+        "passes": 557,
+        "passAccuracy": 86,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 5
+      }
+    },
+    "cards": [
+      {
+        "playerId": 205924,
+        "playerName": "Patrick Berg",
+        "team": "NOR",
+        "type": "yellow",
+        "minute": 10
+      },
+      {
+        "playerId": 265919,
+        "playerName": "Aurélien Tchouaméni",
+        "team": "FRA",
+        "type": "yellow",
+        "minute": 74
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 229744,
+        "playerName": "Ousmane Dembélé",
+        "assistId": 231388,
+        "assistName": "Kylian Mbappé",
+        "team": "FRA",
+        "type": "GOAL",
+        "minute": 7,
+        "injuryTime": null
+      },
+      {
+        "playerId": 229744,
+        "playerName": "Ousmane Dembélé",
+        "assistId": 231388,
+        "assistName": "Kylian Mbappé",
+        "team": "FRA",
+        "type": "GOAL",
+        "minute": 20,
+        "injuryTime": null
+      },
+      {
+        "playerId": 307477,
+        "playerName": "Thelo Aasgaard",
+        "assistId": 313415,
+        "assistName": "Andreas Schjelderup",
+        "team": "NOR",
+        "type": "GOAL",
+        "minute": 21,
+        "injuryTime": null
+      },
+      {
+        "playerId": 229744,
+        "playerName": "Ousmane Dembélé",
+        "assistId": 265919,
+        "assistName": "Aurélien Tchouaméni",
+        "team": "FRA",
+        "type": "GOAL",
+        "minute": 32,
+        "injuryTime": null
+      },
+      {
+        "playerId": 336388,
+        "playerName": "Désiré Doué",
+        "assistId": 328238,
+        "assistName": "Bradley Barcola",
+        "team": "FRA",
+        "type": "GOAL---HEADER",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "Gillette Stadium",
+      "city": "Foxborough, Massachusetts",
+      "country": "USA"
+    }
+  },
+  "537396": {
+    "homeTeam": {
+      "tla": "SEN",
+      "name": "Senegal"
+    },
+    "awayTeam": {
+      "tla": "IRQ",
+      "name": "Iraq"
+    },
+    "stats": {
+      "home": {
+        "possession": 69.3,
+        "fouls": 10,
+        "passes": 590,
+        "passAccuracy": 88,
+        "goalkeeperSaves": 1,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 12
+      },
+      "away": {
+        "possession": 30.7,
+        "fouls": 11,
+        "passes": 265,
+        "passAccuracy": 69,
+        "goalkeeperSaves": 7,
+        "yellowCards": 2,
+        "redCards": 1,
+        "corners": 3
+      }
+    },
+    "cards": [
+      {
+        "playerId": 244675,
+        "playerName": "Rebin Sulaka",
+        "team": "IRQ",
+        "type": "red",
+        "minute": 13
+      },
+      {
+        "playerId": 251614,
+        "playerName": "Abdoulaye Seck",
+        "team": "SEN",
+        "type": "yellow",
+        "minute": 18
+      },
+      {
+        "playerId": 311149,
+        "playerName": "Amir Al-Ammari",
+        "team": "IRQ",
+        "type": "yellow",
+        "minute": 75
+      },
+      {
+        "playerId": 255889,
+        "playerName": "Pape Gueye",
+        "team": "SEN",
+        "type": "yellow",
+        "minute": 81
+      },
+      {
+        "playerId": 345320,
+        "playerName": "Merchas Doski",
+        "team": "IRQ",
+        "type": "yellow",
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 324991,
+        "playerName": "Habib Diarra",
+        "assistId": 251614,
+        "assistName": "Abdoulaye Seck",
+        "team": "SEN",
+        "type": "GOAL",
+        "minute": 4,
+        "injuryTime": null
+      },
+      {
+        "playerId": 241012,
+        "playerName": "Ismaïla Sarr",
+        "assistId": 38721,
+        "assistName": "Lamine Camara",
+        "team": "SEN",
+        "type": "GOAL",
+        "minute": 56,
+        "injuryTime": null
+      },
+      {
+        "playerId": 255889,
+        "playerName": "Pape Gueye",
+        "assistId": 241012,
+        "assistName": "Ismaïla Sarr",
+        "team": "SEN",
+        "type": "GOAL",
+        "minute": 59,
+        "injuryTime": null
+      },
+      {
+        "playerId": 255889,
+        "playerName": "Pape Gueye",
+        "assistId": 268641,
+        "assistName": "Iliman Ndiaye",
+        "team": "SEN",
+        "type": "GOAL",
+        "minute": 71,
+        "injuryTime": null
+      },
+      {
+        "playerId": 268641,
+        "playerName": "Iliman Ndiaye",
+        "assistId": 255889,
+        "assistName": "Pape Gueye",
+        "team": "SEN",
+        "type": "GOAL",
+        "minute": 82,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "BMO Field",
+      "city": "Toronto",
+      "country": "Canada"
+    }
+  },
   "537397": {
     "homeTeam": {
       "tla": "ARG",
