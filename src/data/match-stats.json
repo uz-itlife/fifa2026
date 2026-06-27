@@ -5861,5 +5861,172 @@
       "city": "Toronto",
       "country": "Canada"
     }
+  },
+  "537413": {
+    "homeTeam": {
+      "tla": "PAN",
+      "name": "Panama"
+    },
+    "awayTeam": {
+      "tla": "ENG",
+      "name": "England"
+    },
+    "stats": {
+      "home": {
+        "possession": 32.8,
+        "fouls": 16,
+        "passes": 267,
+        "passAccuracy": 75,
+        "goalkeeperSaves": 4,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 3
+      },
+      "away": {
+        "possession": 67.2,
+        "fouls": 13,
+        "passes": 557,
+        "passAccuracy": 88,
+        "goalkeeperSaves": 2,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 7
+      }
+    },
+    "cards": [
+      {
+        "playerId": 267996,
+        "playerName": "José Fajardo",
+        "team": "PAN",
+        "type": "yellow",
+        "minute": 53
+      },
+      {
+        "playerId": 298524,
+        "playerName": "Jarell Quansah",
+        "team": "ENG",
+        "type": "yellow",
+        "minute": 60
+      },
+      {
+        "playerId": 189775,
+        "playerName": "Andrés Andrade",
+        "team": "PAN",
+        "type": "yellow",
+        "minute": 84
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 291281,
+        "playerName": "Jude Bellingham",
+        "assistId": 280555,
+        "assistName": "Bukayo Saka",
+        "team": "ENG",
+        "type": "GOAL---VOLLEY",
+        "minute": 62,
+        "injuryTime": null
+      },
+      {
+        "playerId": 142200,
+        "playerName": "Harry Kane",
+        "assistId": 291281,
+        "assistName": "Jude Bellingham",
+        "team": "ENG",
+        "type": "GOAL---HEADER",
+        "minute": 67,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "MetLife Stadium",
+      "city": "East Rutherford, New Jersey",
+      "country": "USA"
+    }
+  },
+  "537414": {
+    "homeTeam": {
+      "tla": "CRO",
+      "name": "Croatia"
+    },
+    "awayTeam": {
+      "tla": "GHA",
+      "name": "Ghana"
+    },
+    "stats": {
+      "home": {
+        "possession": 53.3,
+        "fouls": 9,
+        "passes": 523,
+        "passAccuracy": 91,
+        "goalkeeperSaves": 0,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 3
+      },
+      "away": {
+        "possession": 46.7,
+        "fouls": 13,
+        "passes": 455,
+        "passAccuracy": 88,
+        "goalkeeperSaves": 2,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 2
+      }
+    },
+    "cards": [
+      {
+        "playerId": 103485,
+        "playerName": "Ivan Perisic",
+        "team": "CRO",
+        "type": "yellow",
+        "minute": 68
+      },
+      {
+        "playerId": 357205,
+        "playerName": "Kojo Peprah Oppong",
+        "team": "GHA",
+        "type": "yellow",
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 341494,
+        "playerName": "Petar Sucic",
+        "assistId": 154595,
+        "assistName": "Mateo Kovacic",
+        "team": "CRO",
+        "type": "GOAL",
+        "minute": 31,
+        "injuryTime": null
+      },
+      {
+        "playerId": 205737,
+        "playerName": "Derrick Luckassen",
+        "assistId": 333310,
+        "assistName": "Ernest Nuamah",
+        "team": "GHA",
+        "type": "GOAL",
+        "minute": 73,
+        "injuryTime": null
+      },
+      {
+        "playerId": 206378,
+        "playerName": "Nikola Vlasic",
+        "assistId": 76762,
+        "assistName": "Luka Modric",
+        "team": "CRO",
+        "type": "GOAL---HEADER",
+        "minute": 83,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "Lincoln Financial Field",
+      "city": "Philadelphia, Pennsylvania",
+      "country": "USA"
+    }
   }
 }
