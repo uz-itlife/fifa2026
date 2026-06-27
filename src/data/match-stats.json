@@ -3596,6 +3596,231 @@
       "country": "Canada"
     }
   },
+  "537367": {
+    "homeTeam": {
+      "tla": "NZL",
+      "name": "New Zealand"
+    },
+    "awayTeam": {
+      "tla": "BEL",
+      "name": "Belgium"
+    },
+    "stats": {
+      "home": {
+        "possession": 45.5,
+        "fouls": 10,
+        "passes": 436,
+        "passAccuracy": 85,
+        "goalkeeperSaves": 5,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 5
+      },
+      "away": {
+        "possession": 54.5,
+        "fouls": 7,
+        "passes": 525,
+        "passAccuracy": 88,
+        "goalkeeperSaves": 1,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 8
+      }
+    },
+    "cards": [
+      {
+        "playerId": 297798,
+        "playerName": "Marko Stamenic",
+        "team": "NZL",
+        "type": "yellow",
+        "minute": 46
+      },
+      {
+        "playerId": 266555,
+        "playerName": "Elijah Just",
+        "team": "NZL",
+        "type": "yellow",
+        "minute": 56
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 174980,
+        "playerName": "Leandro Trossard",
+        "assistId": null,
+        "assistName": null,
+        "team": "BEL",
+        "type": "GOAL",
+        "minute": 28,
+        "injuryTime": null
+      },
+      {
+        "playerId": 174980,
+        "playerName": "Leandro Trossard",
+        "assistId": 193849,
+        "assistName": "Hans Vanaken",
+        "team": "BEL",
+        "type": "GOAL---VOLLEY",
+        "minute": 50,
+        "injuryTime": null
+      },
+      {
+        "playerId": 134947,
+        "playerName": "Kevin De Bruyne",
+        "assistId": null,
+        "assistName": null,
+        "team": "BEL",
+        "type": "GOAL",
+        "minute": 66,
+        "injuryTime": null
+      },
+      {
+        "playerId": 266555,
+        "playerName": "Elijah Just",
+        "assistId": null,
+        "assistName": null,
+        "team": "NZL",
+        "type": "GOAL",
+        "minute": 84,
+        "injuryTime": null
+      },
+      {
+        "playerId": 139437,
+        "playerName": "Romelu Lukaku",
+        "assistId": 260027,
+        "assistName": "Nicolas Raskin",
+        "team": "BEL",
+        "type": "GOAL---HEADER",
+        "minute": 86,
+        "injuryTime": null
+      },
+      {
+        "playerId": 271132,
+        "playerName": "Alexis Saelemaekers",
+        "assistId": 139437,
+        "assistName": "Romelu Lukaku",
+        "team": "BEL",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "BC Place",
+      "city": "Vancouver",
+      "country": "Canada"
+    }
+  },
+  "537368": {
+    "homeTeam": {
+      "tla": "EGY",
+      "name": "Egypt"
+    },
+    "awayTeam": {
+      "tla": "IRN",
+      "name": "Iran"
+    },
+    "stats": {
+      "home": {
+        "possession": 61.3,
+        "fouls": 11,
+        "passes": 587,
+        "passAccuracy": 87,
+        "goalkeeperSaves": 2,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 8
+      },
+      "away": {
+        "possession": 38.7,
+        "fouls": 16,
+        "passes": 367,
+        "passAccuracy": 77,
+        "goalkeeperSaves": 2,
+        "yellowCards": 4,
+        "redCards": 0,
+        "corners": 2
+      }
+    },
+    "cards": [
+      {
+        "playerId": 243943,
+        "playerName": "Hossein Kanani",
+        "team": "IRN",
+        "type": "yellow",
+        "minute": 19
+      },
+      {
+        "playerId": 314444,
+        "playerName": "Mahmoud Saber",
+        "team": "EGY",
+        "type": "yellow",
+        "minute": 20
+      },
+      {
+        "playerId": 265417,
+        "playerName": "Yasser Ibrahim",
+        "team": "EGY",
+        "type": "yellow",
+        "minute": 42
+      },
+      {
+        "playerId": 302404,
+        "playerName": "Ali Nemati",
+        "team": "IRN",
+        "type": "yellow",
+        "minute": 43
+      },
+      {
+        "playerId": 194863,
+        "playerName": "Saeid Ezatolahi",
+        "team": "IRN",
+        "type": "yellow",
+        "minute": 79
+      },
+      {
+        "playerId": 328932,
+        "playerName": "Mohanad Lashin",
+        "team": "EGY",
+        "type": "yellow",
+        "minute": 90
+      },
+      {
+        "playerId": 180674,
+        "playerName": "Shoja Khalilzadeh",
+        "team": "IRN",
+        "type": "yellow",
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 314444,
+        "playerName": "Mahmoud Saber",
+        "assistId": 157825,
+        "assistName": "Trézéguet",
+        "team": "EGY",
+        "type": "GOAL---VOLLEY",
+        "minute": 5,
+        "injuryTime": null
+      },
+      {
+        "playerId": 218086,
+        "playerName": "Ramin Rezaeian",
+        "assistId": null,
+        "assistName": null,
+        "team": "IRN",
+        "type": "GOAL",
+        "minute": 14,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "Lumen Field",
+      "city": "Seattle, Washington",
+      "country": "USA"
+    }
+  },
   "537369": {
     "homeTeam": {
       "tla": "ESP",
@@ -3920,6 +4145,92 @@
       "name": "Hard Rock Stadium",
       "city": "Miami Gardens, Florida",
       "country": "USA"
+    }
+  },
+  "537373": {
+    "homeTeam": {
+      "tla": "URU",
+      "name": "Uruguay"
+    },
+    "awayTeam": {
+      "tla": "ESP",
+      "name": "Spain"
+    },
+    "stats": {
+      "home": {
+        "possession": 33.1,
+        "fouls": 14,
+        "passes": 301,
+        "passAccuracy": 76,
+        "goalkeeperSaves": 0,
+        "yellowCards": 3,
+        "redCards": 1,
+        "corners": 1
+      },
+      "away": {
+        "possession": 66.9,
+        "fouls": 14,
+        "passes": 622,
+        "passAccuracy": 89,
+        "goalkeeperSaves": 2,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 6
+      }
+    },
+    "cards": [
+      {
+        "playerId": 297373,
+        "playerName": "Álex Baena",
+        "team": "ESP",
+        "type": "yellow",
+        "minute": 46
+      },
+      {
+        "playerId": 287497,
+        "playerName": "Juan Manuel Sanabria",
+        "team": "URU",
+        "type": "yellow",
+        "minute": 54
+      },
+      {
+        "playerId": 188368,
+        "playerName": "Guillermo Varela",
+        "team": "URU",
+        "type": "yellow",
+        "minute": 58
+      },
+      {
+        "playerId": 251889,
+        "playerName": "Nicolás de la Cruz",
+        "team": "URU",
+        "type": "yellow",
+        "minute": 90
+      },
+      {
+        "playerId": 241466,
+        "playerName": "Agustín Canobbio",
+        "team": "URU",
+        "type": "red",
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 297373,
+        "playerName": "Álex Baena",
+        "assistId": 206474,
+        "assistName": "Marcos Llorente",
+        "team": "ESP",
+        "type": "GOAL",
+        "minute": 42,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "Estadio Akron",
+      "city": "Guadalajara",
+      "country": "Mexico"
     }
   },
   "537374": {
