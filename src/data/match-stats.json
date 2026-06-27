@@ -3922,6 +3922,74 @@
       "country": "USA"
     }
   },
+  "537374": {
+    "homeTeam": {
+      "tla": "CPV",
+      "name": "Cape Verde Islands"
+    },
+    "awayTeam": {
+      "tla": "KSA",
+      "name": "Saudi Arabia"
+    },
+    "stats": {
+      "home": {
+        "possession": 51.2,
+        "fouls": 10,
+        "passes": 452,
+        "passAccuracy": 85,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 4
+      },
+      "away": {
+        "possession": 48.8,
+        "fouls": 16,
+        "passes": 442,
+        "passAccuracy": 80,
+        "goalkeeperSaves": 2,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 2
+      }
+    },
+    "cards": [
+      {
+        "playerId": 286011,
+        "playerName": "Saud Abdulhamid",
+        "team": "KSA",
+        "type": "yellow",
+        "minute": 4
+      },
+      {
+        "playerId": 365810,
+        "playerName": "Wagner Pina",
+        "team": "CPV",
+        "type": "yellow",
+        "minute": 8
+      },
+      {
+        "playerId": 270417,
+        "playerName": "Nasser Al-Dawsari",
+        "team": "KSA",
+        "type": "yellow",
+        "minute": 67
+      },
+      {
+        "playerId": 283331,
+        "playerName": "Feras Al-Brikan",
+        "team": "KSA",
+        "type": "yellow",
+        "minute": 90
+      }
+    ],
+    "goals": [],
+    "venue": {
+      "name": "NRG Stadium",
+      "city": "Houston, Texas",
+      "country": "USA"
+    }
+  },
   "537391": {
     "homeTeam": {
       "tla": "FRA",
