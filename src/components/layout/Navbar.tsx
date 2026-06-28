@@ -5,13 +5,13 @@ import { ThemeToggle } from '@/components/ui/ThemeToggle'
 import { useLiveMatches } from '@/hooks/useLiveMatches'
 
 const tabs = [
-  { href: '/uzbekistan', label: 'Узбекистан 🇺🇿', highlight: true },
   { href: '/groups', label: 'Группы' },
   { href: '/knockout', label: 'Плей-офф' },
   { href: '/matches', label: 'Матчи' },
   { href: '/teams', label: 'Команды' },
   { href: '/stats', label: 'Статистика' },
   { href: '/stadiums', label: 'Стадионы' },
+  { href: '/gallery', label: 'Галерея' },
 ]
 
 export function Navbar() {

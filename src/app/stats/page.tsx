@@ -59,8 +59,8 @@ function MatchStatRow({ entry, statKey, suffix }: {
   statKey: keyof TeamMatchStats
   suffix?: string
 }) {
-  const home = entry.stats.home?.[statKey]
-  const away = entry.stats.away?.[statKey]
+  const home = entry.stats?.home?.[statKey]
+  const away = entry.stats?.away?.[statKey]
   return (
     <tr className="border-t border-light-border/40 dark:border-dark-border/40 hover:bg-gray-50 dark:hover:bg-white/5">
       <td className="py-2 px-4 text-left">{teamRu(entry.homeTeam.tla, entry.homeTeam.name)}</td>
@@ -77,12 +77,13 @@ function MatchStatTable({ statKey, suffix, emptyLabel }: {
   suffix?: string
   emptyLabel: string
 }) {
-  if (matchStatsList.length === 0) return <PendingSync label={emptyLabel} />
+  const entries = matchStatsList.filter(e => e.stats?.home != null || e.stats?.away != null)
+  if (entries.length === 0) return <PendingSync label={emptyLabel} />
   return (
     <div className="bg-white dark:bg-dark-card rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
       <table className="w-full text-sm">
         <tbody>
-          {matchStatsList.map(entry => (
+          {entries.map(entry => (
             <MatchStatRow key={entry.id} entry={entry} statKey={statKey} suffix={suffix} />
           ))}
         </tbody>
