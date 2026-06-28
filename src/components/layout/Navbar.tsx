@@ -10,7 +10,6 @@ const tabs = [
   { href: '/knockout', label: 'Плей-офф' },
   { href: '/matches', label: 'Матчи' },
   { href: '/teams', label: 'Команды' },
-  { href: '/players', label: 'Игроки' },
   { href: '/stats', label: 'Статистика' },
   { href: '/stadiums', label: 'Стадионы' },
 ]

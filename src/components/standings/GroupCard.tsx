@@ -12,6 +12,7 @@ interface Props {
 
 export function GroupCard({ group, highlight, index, qualifiedThirdTlas }: Props) {
   const letter = (group.group ?? '').replace(/^GROUP[_\s]*/i, '').toUpperCase()
+  const href = `/groups/${letter.toLowerCase()}`
   return (
     <motion.div
       initial={{ opacity: 0, y: 12 }}
@@ -24,16 +25,10 @@ export function GroupCard({ group, highlight, index, qualifiedThirdTlas }: Props
           : 'border-light-border dark:border-dark-border',
       ].join(' ')}
     >
-      <div className="flex items-center justify-between mb-3">
+      <Link href={href} className="flex items-center justify-between mb-3 group/header">
         <h3 className="text-gold font-bold tracking-widest text-sm uppercase">Группа {letter}</h3>
-        <Link
-          href={`/groups/${letter.toLowerCase()}`}
-          className="text-xs text-gray-500 hover:text-gold transition-colors px-2 py-1 rounded hover:bg-gold/10"
-          onClick={e => e.stopPropagation()}
-        >
-          Подробнее →
-        </Link>
-      </div>
+        <span className="text-xs text-gray-500 group-hover/header:text-gold transition-colors">Подробнее →</span>
+      </Link>
       <StandingsTable rows={group.table} qualifiedThirdTlas={qualifiedThirdTlas} />
     </motion.div>
   )

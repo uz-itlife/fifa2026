@@ -157,7 +157,8 @@ export default function StatsPage() {
                   <th className="py-2 px-4 text-left">Команда</th>
                   <th className="py-2 px-4 text-center">Голы</th>
                   <th className="py-2 px-4 text-center">Пас</th>
-                  <th className="py-2 px-4 text-center text-gold">Индекс гола</th>
+                  <th className="py-2 px-4 text-center">Пен</th>
+                  <th className="py-2 px-4 text-center text-gold">Индекс</th>
                 </tr>
               </thead>
               <tbody>
@@ -168,6 +169,7 @@ export default function StatsPage() {
                     <td className="py-2 px-4"><TeamFlag tla={s.team.tla} name={teamRu(s.team.tla, s.team.shortName)} crest={s.team.crest} size="sm" /></td>
                     <td className="py-2 px-4 text-center">{s.goals}</td>
                     <td className="py-2 px-4 text-center">{s.assists ?? 0}</td>
+                    <td className="py-2 px-4 text-center">{s.penalties ?? 0}</td>
                     <td className="py-2 px-4 text-center font-bold text-gold">{s.index}</td>
                   </tr>
                 ))}
