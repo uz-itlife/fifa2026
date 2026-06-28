@@ -5,6 +5,7 @@ import { useMatches } from '@/hooks/useMatches'
 import { StandingsTable } from '@/components/standings/StandingsTable'
 import { MatchCard } from '@/components/matches/MatchCard'
 import { StaleDataBanner } from '@/components/ui/StaleDataBanner'
+import { getBest8ThirdPlace } from '@/lib/standings-utils'
 
 export default function GroupPage() {
   const { id } = useParams<{ id: string }>()
@@ -14,6 +15,7 @@ export default function GroupPage() {
 
   const group = standings.find(g => g.group === groupKey)
   const groupMatches = matches.filter(m => m.group === groupKey)
+  const qualifiedThirdTlas = getBest8ThirdPlace(standings)
 
   if (!group) return <div className="text-gray-500 text-center py-20">Загрузка...</div>
 
@@ -22,7 +24,7 @@ export default function GroupPage() {
       {stale && <StaleDataBanner />}
       <h1 className="text-2xl font-bold mb-6">Группа {id.toUpperCase()}</h1>
       <div className="bg-white dark:bg-dark-card rounded-xl p-4 border border-light-border dark:border-dark-border mb-6">
-        <StandingsTable rows={group.table} highlightTla={id.toUpperCase() === 'K' ? 'UZB' : undefined} showAll />
+        <StandingsTable rows={group.table} highlightTla={id.toUpperCase() === 'K' ? 'UZB' : undefined} showAll qualifiedThirdTlas={qualifiedThirdTlas} />
       </div>
       <h2 className="text-lg font-semibold mb-3">Матчи</h2>
       <div className="flex flex-col gap-3">

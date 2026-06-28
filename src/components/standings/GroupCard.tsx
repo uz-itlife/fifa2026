@@ -7,9 +7,10 @@ interface Props {
   group: StandingsGroup
   highlight?: boolean
   index: number
+  qualifiedThirdTlas?: Set<string>
 }
 
-export function GroupCard({ group, highlight, index }: Props) {
+export function GroupCard({ group, highlight, index, qualifiedThirdTlas }: Props) {
   const letter = (group.group ?? '').replace(/^GROUP[_\s]*/i, '').toUpperCase()
   return (
     <motion.div
@@ -28,7 +29,7 @@ export function GroupCard({ group, highlight, index }: Props) {
           Подробнее →
         </Link>
       </div>
-      <StandingsTable rows={group.table} />
+      <StandingsTable rows={group.table} qualifiedThirdTlas={qualifiedThirdTlas} />
     </motion.div>
   )
 }

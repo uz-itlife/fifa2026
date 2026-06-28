@@ -6,24 +6,29 @@ interface Props {
   rows: Standing[]
   highlightTla?: string
   showAll?: boolean
+  qualifiedThirdTlas?: Set<string>
 }
 
-function posBadge(pos: number) {
+function posBadge(pos: number, tla: string, qualifiedThirds?: Set<string>): string {
   if (pos === 1) return 'bg-gold'
   if (pos === 2) return 'bg-green-500'
-  if (pos === 3) return 'bg-blue-400'
+  if (pos === 3) return (qualifiedThirds === undefined || qualifiedThirds.has(tla)) ? 'bg-blue-400' : 'bg-gray-400'
   return 'bg-gray-400'
 }
 
-function rowStyle(pos: number, highlighted: boolean) {
+function rowStyle(pos: number, tla: string, highlighted: boolean, qualifiedThirds?: Set<string>): string {
   if (highlighted) return 'bg-blue-900/20 border-l-2 border-l-blue-400'
   if (pos === 1) return 'border-l-2 border-l-gold bg-gold/5'
   if (pos === 2) return 'border-l-2 border-l-green-500 bg-green-500/5'
-  if (pos === 3) return 'border-l-2 border-l-blue-400 bg-blue-400/5'
-  return 'opacity-50'
+  if (pos === 3) {
+    if (qualifiedThirds === undefined || qualifiedThirds.has(tla))
+      return 'border-l-2 border-l-blue-400 bg-blue-400/5'
+    return 'opacity-40'
+  }
+  return 'opacity-40'
 }
 
-export function StandingsTable({ rows, highlightTla, showAll }: Props) {
+export function StandingsTable({ rows, highlightTla, showAll, qualifiedThirdTlas }: Props) {
   if (rows.length === 0) {
     return <p className="text-xs text-gray-500 py-3 text-center">Нет данных</p>
   }
@@ -57,11 +62,11 @@ export function StandingsTable({ rows, highlightTla, showAll }: Props) {
               <tr
                 key={row.team.id}
                 data-testid={`standing-row-${row.position}`}
-                className={`border-b border-light-border/50 dark:border-dark-border/50 transition-colors ${rowStyle(row.position, highlighted)}`}
+                className={`border-b border-light-border/50 dark:border-dark-border/50 transition-colors ${rowStyle(row.position, row.team.tla, highlighted, qualifiedThirdTlas)}`}
               >
                 <td className="py-2 text-xs">
                   <div className="flex items-center gap-1">
-                    <span className={`w-2 h-2 rounded-sm shrink-0 ${posBadge(row.position)}`} />
+                    <span className={`w-2 h-2 rounded-sm shrink-0 ${posBadge(row.position, row.team.tla, qualifiedThirdTlas)}`} />
                     <span className="text-gray-500">{row.position}</span>
                   </div>
                 </td>
@@ -86,14 +91,12 @@ export function StandingsTable({ rows, highlightTla, showAll }: Props) {
           })}
         </tbody>
       </table>
-      {!showAll && (
-        <div className="mt-2 flex flex-wrap gap-3 text-[10px] text-gray-500">
-          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-sm bg-gold" />1-е место</span>
-          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-sm bg-green-500" />2-е место</span>
-          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-sm bg-blue-400" />3-е место (возм.)</span>
-          <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-sm bg-gray-400" />Выбывает</span>
-        </div>
-      )}
+      <div className="mt-2 flex flex-wrap gap-3 text-[10px] text-gray-500">
+        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-sm bg-gold" />1-е место</span>
+        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-sm bg-green-500" />2-е место</span>
+        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-sm bg-blue-400" />3-е (8 лучших)</span>
+        <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-sm bg-gray-400" />Выбывает</span>
+      </div>
     </div>
   )
 }

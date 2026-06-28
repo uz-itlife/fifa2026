@@ -2,6 +2,7 @@
 import { useStandings } from '@/hooks/useStandings'
 import { GroupCard } from '@/components/standings/GroupCard'
 import { StaleDataBanner } from '@/components/ui/StaleDataBanner'
+import { getBest8ThirdPlace } from '@/lib/standings-utils'
 
 function SkeletonCard() {
   return (
@@ -66,6 +67,8 @@ export default function GroupsPage() {
     )
   }
 
+  const qualifiedThirdTlas = getBest8ThirdPlace(standings)
+
   const sorted = [...standings].sort((a, b) => {
     if (a.group === 'GROUP_K') return -1
     if (b.group === 'GROUP_K') return 1
@@ -83,6 +86,7 @@ export default function GroupsPage() {
             group={group}
             highlight={group.group === 'GROUP_K'}
             index={i}
+            qualifiedThirdTlas={qualifiedThirdTlas}
           />
         ))}
       </div>
