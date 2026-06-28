@@ -92,7 +92,7 @@ export default function KnockoutPage() {
     .filter(m => !GROUP.has(m.stage) && !LATE.has(m.stage))
     .sort((a, b) => new Date(a.utcDate).getTime() - new Date(b.utcDate).getTime())
 
-  const bracketMatches = matches.filter(m => LATE.has(m.stage))
+  const allKoMatches = matches.filter(m => !GROUP.has(m.stage))
 
   // Determine which early stages to show (prefer known ones; fallback to actual stages found)
   const knownEarlyStages = ['LAST_64', 'LAST_32', 'ROUND_OF_64', 'ROUND_OF_32']
@@ -154,14 +154,7 @@ export default function KnockoutPage() {
           })}
         </div>
       ) : (
-        bracketMatches.length === 0 ? (
-          <div className="text-center py-20 text-gray-500">
-            <p className="text-lg mb-2">Сетка 1/16 ещё не сформирована</p>
-            <p className="text-sm">Появится после завершения раунда 1/32</p>
-          </div>
-        ) : (
-          <BracketView matches={bracketMatches} />
-        )
+        <BracketView matches={allKoMatches} />
       )}
     </div>
   )
