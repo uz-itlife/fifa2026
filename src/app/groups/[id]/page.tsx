@@ -22,7 +22,7 @@ export default function GroupPage() {
       {stale && <StaleDataBanner />}
       <h1 className="text-2xl font-bold mb-6">Группа {id.toUpperCase()}</h1>
       <div className="bg-white dark:bg-dark-card rounded-xl p-4 border border-light-border dark:border-dark-border mb-6">
-        <StandingsTable rows={group.table} highlightTla={id.toUpperCase() === 'K' ? 'UZB' : undefined} />
+        <StandingsTable rows={group.table} highlightTla={id.toUpperCase() === 'K' ? 'UZB' : undefined} showAll />
       </div>
       <h2 className="text-lg font-semibold mb-3">Матчи</h2>
       <div className="flex flex-col gap-3">

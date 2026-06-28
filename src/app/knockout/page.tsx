@@ -6,7 +6,7 @@ import { StaleDataBanner } from '@/components/ui/StaleDataBanner'
 export default function KnockoutPage() {
   const { matches, stale, isLoading } = useMatches()
   const knockoutMatches = matches.filter(m =>
-    ['ROUND_OF_16', 'QUARTER_FINALS', 'SEMI_FINALS', 'FINAL'].includes(m.stage)
+    ['ROUND_OF_32', 'ROUND_OF_16', 'QUARTER_FINALS', 'SEMI_FINALS', 'FINAL'].includes(m.stage)
   )
   return (
     <div>

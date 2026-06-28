@@ -4,9 +4,10 @@ import { BracketNode } from './BracketNode'
 interface Props { matches: Match[] }
 
 const STAGES = [
-  { key: 'ROUND_OF_16', label: '1/8 финала', count: 8 },
-  { key: 'QUARTER_FINALS', label: 'Четвертьфиналы', count: 4 },
-  { key: 'SEMI_FINALS', label: 'Полуфиналы', count: 2 },
+  { key: 'ROUND_OF_32', label: '1/32 финала', count: 16 },
+  { key: 'ROUND_OF_16', label: '1/16 финала', count: 8 },
+  { key: 'QUARTER_FINALS', label: 'Четвертьфинал', count: 4 },
+  { key: 'SEMI_FINALS', label: 'Полуфинал', count: 2 },
   { key: 'FINAL', label: 'Финал', count: 1 },
 ]
 

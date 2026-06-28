@@ -105,7 +105,10 @@ export default function StatsPage() {
 
   const teamsRanked = standings
     .flatMap(g => g.table.map(row => ({ ...row, groupLabel: (g.group ?? '').replace(/^GROUP[_\s]*/i, '').toUpperCase() })))
-    .sort((a, b) => b.points - a.points || b.goalDifference - a.goalDifference || b.goalsFor - a.goalsFor)
+    .sort((a, b) => {
+      if (a.position !== b.position) return a.position - b.position
+      return b.points - a.points || b.goalDifference - a.goalDifference || b.goalsFor - a.goalsFor
+    })
 
   const cardsRanked = (() => {
     const byPlayer = new Map<string, { playerName: string; team: string; yellow: number; red: number }>()
@@ -230,9 +233,10 @@ export default function StatsPage() {
               <tbody>
                 {teamsRanked.map((row, i) => {
                   const gdSign = row.goalDifference > 0 ? '+' : ''
+                  const posColor = row.position === 1 ? 'text-gold' : row.position === 2 ? 'text-green-500' : row.position === 3 ? 'text-blue-400' : 'text-gray-500'
                   return (
                     <tr key={row.team.id} className="border-t border-light-border/40 dark:border-dark-border/40 hover:bg-gray-50 dark:hover:bg-white/5">
-                      <td className="py-2 px-4 text-gray-500 text-xs">{i + 1}</td>
+                      <td className={`py-2 px-4 text-xs font-bold ${posColor}`}>{i + 1}</td>
                       <td className="py-2 px-4"><TeamFlag tla={row.team.tla} name={teamRu(row.team.tla, row.team.shortName)} crest={row.team.crest} size="sm" /></td>
                       <td className="py-2 px-4 text-center text-gray-400 text-xs">{row.groupLabel}</td>
                       <td className="py-2 px-4 text-center text-gray-400">{row.playedGames}</td>
