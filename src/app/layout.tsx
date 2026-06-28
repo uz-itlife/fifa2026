@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/components/layout/ThemeProvider'
 import { Navbar } from '@/components/layout/Navbar'
 import { PageTransition } from '@/components/layout/PageTransition'
 import { BgSlideshow } from '@/components/layout/BgSlideshow'
+import { Footer } from '@/components/layout/Footer'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin', 'cyrillic'], variable: '--font-sans' })
@@ -25,11 +26,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <ThemeProvider>
           <BgSlideshow />
           <Navbar />
-          <main className="max-w-7xl mx-auto px-4 py-6 w-full">
+          <main className="flex-1 max-w-7xl mx-auto px-4 py-6 w-full">
             <PageTransition>
               {children}
             </PageTransition>
           </main>
+          <Footer />
         </ThemeProvider>
         <Analytics />
       </body>

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
 import { useLiveMatches } from '@/hooks/useLiveMatches'
+import { LikeCounter } from '@/components/layout/LikeCounter'
 
 const tabs = [
   { href: '/groups', label: 'Группы' },
@@ -52,6 +53,7 @@ export function Navbar() {
           })}
         </div>
 
+        <LikeCounter />
         <ThemeToggle />
       </div>
     </nav>
