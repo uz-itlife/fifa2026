@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useMatches } from '@/hooks/useMatches'
 import { BracketView } from '@/components/knockout/BracketView'
 import { StaleDataBanner } from '@/components/ui/StaleDataBanner'
-import { teamRu, stageRu } from '@/lib/russian-teams'
+import { teamRu, stageRu, cityRu } from '@/lib/russian-teams'
 import { TeamFlag } from '@/components/ui/TeamFlag'
 import { LiveBadge } from '@/components/ui/LiveBadge'
 import { scoreClass } from '@/lib/match-utils'
@@ -48,10 +48,13 @@ function KOMatchCard({ match, slot }: { match: Match | null; slot: number }) {
   return (
     <Link href={`/matches/${match.id}`}>
       <div className="bg-white dark:bg-dark-card rounded-xl p-4 border border-light-border dark:border-dark-border hover:border-gold transition-colors">
-        <div className="flex items-center justify-between mb-3 text-xs text-gray-500">
+        <div className="flex items-center justify-between mb-2 text-xs text-gray-500">
           <span className="text-gold font-semibold">Матч {slot}</span>
           {isLive ? <LiveBadge minute={match.minute} /> : <span>{date}</span>}
         </div>
+        {match.venue?.city && (
+          <div className="text-[11px] text-gray-400 mb-2">📍 {cityRu(match.venue.city) ?? match.venue.city}</div>
+        )}
         <div className="flex items-center gap-2">
           <div className="flex-1 min-w-0">
             <TeamFlag tla={match.homeTeam.tla} name={homeRu} crest={match.homeTeam.crest} size="sm" />
@@ -113,7 +116,7 @@ export default function KnockoutPage() {
                 : 'text-gray-400 border border-light-border dark:border-dark-border hover:text-white'
             }`}
           >
-            1/64 — 1/32
+            1/16 финала
           </button>
           <button
             onClick={() => setView('bracket')}
@@ -123,7 +126,7 @@ export default function KnockoutPage() {
                 : 'text-gray-400 border border-light-border dark:border-dark-border hover:text-white'
             }`}
           >
-            1/16 → Финал
+            1/8 → Финал
           </button>
         </div>
       </div>

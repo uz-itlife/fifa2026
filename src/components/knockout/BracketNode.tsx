@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import type { Match } from '@/types/football'
 import { LiveBadge } from '@/components/ui/LiveBadge'
-import { teamRu } from '@/lib/russian-teams'
+import { teamRu, cityRu } from '@/lib/russian-teams'
 
 interface Props { match: Match | null; label?: string; seeding?: string }
 
@@ -33,6 +33,11 @@ export function BracketNode({ match, label, seeding }: Props) {
             {match.score.fullTime.away ?? '–'}
           </span>
         </div>
+        {match.venue?.city && (
+          <p className="text-[10px] text-gray-400 mt-1.5 truncate">
+            📍 {cityRu(match.venue.city) ?? match.venue.city}
+          </p>
+        )}
       </div>
     </Link>
   )

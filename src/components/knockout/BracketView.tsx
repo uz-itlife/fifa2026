@@ -11,16 +11,17 @@ const STAGES = [
   { key: 'FINAL',         label: 'Финал',         count: 1, alias: null },
 ]
 
-// Expected bracket seedings for 1/8 (pairs of 1/16 winners)
+// Round of 16 seedings: winners of consecutive 1/16 match pairs
+// Slot labels match the numbered order of LAST_32 matches sorted by date
 const LAST16_SEEDING = [
-  'П. М.1 — П. М.2',
-  'П. М.3 — П. М.4',
-  'П. М.5 — П. М.6',
-  'П. М.7 — П. М.8',
-  'П. М.9 — П. М.10',
-  'П. М.11 — П. М.12',
-  'П. М.13 — П. М.14',
-  'П. М.15 — П. М.16',
+  'Победитель матча 1 — Победитель матча 2',
+  'Победитель матча 3 — Победитель матча 4',
+  'Победитель матча 5 — Победитель матча 6',
+  'Победитель матча 7 — Победитель матча 8',
+  'Победитель матча 9 — Победитель матча 10',
+  'Победитель матча 11 — Победитель матча 12',
+  'Победитель матча 13 — Победитель матча 14',
+  'Победитель матча 15 — Победитель матча 16',
 ]
 
 export function BracketView({ matches }: Props) {

@@ -3,7 +3,7 @@ import type { Match } from '@/types/football'
 import { LiveBadge } from '@/components/ui/LiveBadge'
 import { TeamFlag } from '@/components/ui/TeamFlag'
 import { WatchBanner } from '@/components/uzbekistan/WatchBanner'
-import { teamRu, stageRu } from '@/lib/russian-teams'
+import { teamRu, stageRu, cityRu } from '@/lib/russian-teams'
 import { scoreClass } from '@/lib/match-utils'
 
 const UZB_TLA = 'UZB'
@@ -23,10 +23,13 @@ export function MatchCard({ match }: Props) {
 
   return (
     <div className="bg-white dark:bg-dark-card rounded-xl p-4 border border-light-border dark:border-dark-border hover:scale-[1.01] transition-transform">
-      <div className="flex items-center justify-between mb-2 text-xs text-gray-500">
+      <div className="flex items-center justify-between mb-1 text-xs text-gray-500">
         <span>{match.group ? `Группа ${match.group.replace(/^GROUP[_\s]*/i, '').toUpperCase()}` : stageRu(match.stage)}</span>
         {isLive ? <LiveBadge minute={match.minute} /> : <span>{date}</span>}
       </div>
+      {match.venue?.city && (
+        <div className="text-[11px] text-gray-400 mb-2">📍 {cityRu(match.venue.city) ?? match.venue.city}</div>
+      )}
 
       <Link href={`/matches/${match.id}`}>
         <div className="flex items-center gap-2">
