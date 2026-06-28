@@ -10,16 +10,19 @@ import { LiveBadge } from '@/components/ui/LiveBadge'
 import { scoreClass } from '@/lib/match-utils'
 import type { Match } from '@/types/football'
 
-const LATE = new Set(['ROUND_OF_16', 'QUARTER_FINALS', 'SEMI_FINALS', 'THIRD_PLACE', 'FINAL'])
+const LATE = new Set(['LAST_16', 'ROUND_OF_16', 'QUARTER_FINALS', 'SEMI_FINALS', 'THIRD_PLACE', 'FINAL'])
 const GROUP = new Set(['GROUP_STAGE', 'REGULAR_SEASON', 'PRELIMINARY_ROUND'])
 
 const STAGE_LABEL: Record<string, string> = {
-  ROUND_OF_64: '1/64 финала',
-  ROUND_OF_32: '1/32 финала',
+  LAST_64: '1/32 финала',
+  LAST_32: '1/16 финала',
+  ROUND_OF_64: '1/32 финала',
+  ROUND_OF_32: '1/16 финала',
 }
 
-// Expected slot counts per early stage
 const STAGE_SLOTS: Record<string, number> = {
+  LAST_64: 32,
+  LAST_32: 16,
   ROUND_OF_64: 32,
   ROUND_OF_32: 16,
 }
@@ -89,7 +92,7 @@ export default function KnockoutPage() {
   const bracketMatches = matches.filter(m => LATE.has(m.stage))
 
   // Determine which early stages to show (prefer known ones; fallback to actual stages found)
-  const knownEarlyStages = ['ROUND_OF_64', 'ROUND_OF_32']
+  const knownEarlyStages = ['LAST_64', 'LAST_32', 'ROUND_OF_64', 'ROUND_OF_32']
   const actualEarlyStages = [...new Set(earlyMatches.map(m => m.stage))]
   const stagesToShow = actualEarlyStages.length > 0
     ? actualEarlyStages

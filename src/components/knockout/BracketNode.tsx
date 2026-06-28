@@ -3,13 +3,16 @@ import type { Match } from '@/types/football'
 import { LiveBadge } from '@/components/ui/LiveBadge'
 import { teamRu } from '@/lib/russian-teams'
 
-interface Props { match: Match | null; label?: string }
+interface Props { match: Match | null; label?: string; seeding?: string }
 
-export function BracketNode({ match, label }: Props) {
+export function BracketNode({ match, label, seeding }: Props) {
   if (!match) {
     return (
-      <div className="bg-white dark:bg-dark-card rounded-lg p-3 border border-light-border/40 dark:border-dark-border/40 min-w-[160px] opacity-40">
-        <p className="text-xs text-gray-600 text-center">{label ?? 'TBD'}</p>
+      <div className="bg-white dark:bg-dark-card rounded-lg p-3 border border-light-border/40 dark:border-dark-border/40 min-w-[180px] opacity-50">
+        <p className="text-xs text-gray-500 text-center mb-1">{label ?? 'TBD'}</p>
+        {seeding && (
+          <p className="text-[11px] text-gray-400 text-center leading-tight">{seeding}</p>
+        )}
       </div>
     )
   }

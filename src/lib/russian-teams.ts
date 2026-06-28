@@ -104,10 +104,15 @@ export function teamRu(tla: string, fallback: string): string {
 
 const STAGE_MAP: Record<string, string> = {
   'GROUP_STAGE': 'Групповой этап',
+  // football-data.org v4 stage names for FIFA 2026
+  'LAST_32': '1/16 финала',
+  'LAST_16': '1/8 финала',
+  // fallback aliases
+  'ROUND_OF_32': '1/16 финала',
   'ROUND_OF_16': '1/8 финала',
-  'QUARTER_FINALS': 'Четвертьфинал',
-  'SEMI_FINALS': 'Полуфинал',
-  'THIRD_PLACE': 'Матч за 3-е место',
+  'QUARTER_FINALS': '1/4 финала',
+  'SEMI_FINALS': '1/2 финала',
+  'THIRD_PLACE': 'За 3-е место',
   'FINAL': 'Финал',
 }
 
