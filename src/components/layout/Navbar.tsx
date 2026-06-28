@@ -43,8 +43,6 @@ export function Navbar() {
                   'shrink-0 px-3 py-1.5 rounded-md text-sm font-medium transition-colors whitespace-nowrap',
                   active
                     ? 'bg-gold text-dark-bg'
-                    : tab.highlight
-                    ? 'text-gold border border-gold/40 hover:border-gold hover:bg-gold/10'
                     : 'text-gray-400 hover:text-white hover:bg-white/5',
                 ].join(' ')}
               >
