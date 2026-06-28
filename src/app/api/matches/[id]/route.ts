@@ -80,7 +80,10 @@ export async function GET(_: Request, { params }: { params: Promise<{ id: string
       goals: Array.isArray(raw.goals) ? raw.goals as Match['goals'] : [],
       bookings: Array.isArray(raw.bookings) ? raw.bookings as Match['bookings'] : [],
     })
-    setCache(key, match, 60)
+    const ttl = match.status === 'IN_PLAY' || match.status === 'PAUSED' ? 20
+      : match.status === 'FINISHED' ? 120
+      : 60
+    setCache(key, match, ttl)
     return NextResponse.json<CachedResponse<Match>>({ data: match, stale: false })
   } catch {
     const stale = getCache<Match>(key)

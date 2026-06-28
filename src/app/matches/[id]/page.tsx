@@ -64,7 +64,12 @@ export default function MatchDetailPage() {
   const { data } = useSWR<CachedResponse<Match>>(
     `/api/matches/${id}`,
     fetcher,
-    { refreshInterval: 60_000 }
+    {
+      refreshInterval: (d) => {
+        const s = d?.data?.status
+        return (s === 'IN_PLAY' || s === 'PAUSED') ? 20_000 : 60_000
+      },
+    }
   )
   const match = data?.data
 
@@ -227,15 +232,9 @@ export default function MatchDetailPage() {
             })}
           </div>
         </div>
-      ) : (isFinished || isLive) && (
-        <div className="bg-white dark:bg-dark-card rounded-xl p-5 border border-light-border dark:border-dark-border text-center space-y-1">
-          <p className="text-sm text-gray-400">
-            {isLive ? '⏱ Матч идёт — события появятся здесь' : 'Детальная статистика недоступна в бесплатном плане API'}
-          </p>
-          <p className="text-xs text-gray-500">
-            Счёт: {match.score.fullTime.home} : {match.score.fullTime.away}
-            {match.score.halfTime.home !== null && ` (перерыв ${match.score.halfTime.home}:${match.score.halfTime.away})`}
-          </p>
+      ) : isLive && (
+        <div className="bg-white dark:bg-dark-card rounded-xl p-5 border border-light-border dark:border-dark-border text-center">
+          <p className="text-sm text-gray-400">⏱ Матч идёт — события появятся здесь</p>
         </div>
       )}
 
