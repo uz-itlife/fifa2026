@@ -5210,6 +5210,216 @@
       "country": "USA"
     }
   },
+  "537401": {
+    "homeTeam": {
+      "tla": "JOR",
+      "name": "Jordan"
+    },
+    "awayTeam": {
+      "tla": "ARG",
+      "name": "Argentina"
+    },
+    "stats": {
+      "home": {
+        "possession": 26.7,
+        "fouls": 13,
+        "passes": 285,
+        "passAccuracy": 80,
+        "goalkeeperSaves": 1,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 2
+      },
+      "away": {
+        "possession": 73.3,
+        "fouls": 7,
+        "passes": 801,
+        "passAccuracy": 92,
+        "goalkeeperSaves": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 6
+      }
+    },
+    "cards": [
+      {
+        "playerId": 317847,
+        "playerName": "Mohannad Abu Taha",
+        "team": "JOR",
+        "type": "yellow",
+        "minute": 17
+      },
+      {
+        "playerId": 274269,
+        "playerName": "Yazan Al-Arab",
+        "team": "JOR",
+        "type": "yellow",
+        "minute": 64
+      },
+      {
+        "playerId": 289004,
+        "playerName": "Mohammed Abu Zraiq",
+        "team": "JOR",
+        "type": "yellow",
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 207343,
+        "playerName": "Giovani Lo Celso",
+        "assistId": null,
+        "assistName": null,
+        "team": "ARG",
+        "type": "GOAL---FREE-KICK",
+        "minute": 19,
+        "injuryTime": null
+      },
+      {
+        "playerId": 219713,
+        "playerName": "Lautaro Martínez",
+        "assistId": null,
+        "assistName": null,
+        "team": "ARG",
+        "type": "PENALTY---SCORED",
+        "minute": 31,
+        "injuryTime": null
+      },
+      {
+        "playerId": 257489,
+        "playerName": "Mousa Al-Tamari",
+        "assistId": 229021,
+        "assistName": "Ehsan Haddad",
+        "team": "JOR",
+        "type": "GOAL",
+        "minute": 55,
+        "injuryTime": null
+      },
+      {
+        "playerId": 45843,
+        "playerName": "Lionel Messi",
+        "assistId": null,
+        "assistName": null,
+        "team": "ARG",
+        "type": "GOAL---FREE-KICK",
+        "minute": 80,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "AT&T Stadium",
+      "city": "Arlington, Texas",
+      "country": "USA"
+    }
+  },
+  "537402": {
+    "homeTeam": {
+      "tla": "ALG",
+      "name": "Algeria"
+    },
+    "awayTeam": {
+      "tla": "AUT",
+      "name": "Austria"
+    },
+    "stats": {
+      "home": {
+        "possession": 65,
+        "fouls": 3,
+        "passes": 754,
+        "passAccuracy": 94,
+        "goalkeeperSaves": 1,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 0
+      },
+      "away": {
+        "possession": 35,
+        "fouls": 7,
+        "passes": 396,
+        "passAccuracy": 87,
+        "goalkeeperSaves": 2,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 3
+      }
+    },
+    "cards": [
+      {
+        "playerId": 98193,
+        "playerName": "Marko Arnautovic",
+        "team": "AUT",
+        "type": "yellow",
+        "minute": 11
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 98193,
+        "playerName": "Marko Arnautovic",
+        "assistId": 118444,
+        "assistName": "David Alaba",
+        "team": "AUT",
+        "type": "GOAL",
+        "minute": 28,
+        "injuryTime": null
+      },
+      {
+        "playerId": 364590,
+        "playerName": "Rafik Belghali",
+        "assistId": null,
+        "assistName": null,
+        "team": "ALG",
+        "type": "GOAL",
+        "minute": 45,
+        "injuryTime": null
+      },
+      {
+        "playerId": 173907,
+        "playerName": "Marcel Sabitzer",
+        "assistId": 169189,
+        "assistName": "Konrad Laimer",
+        "team": "AUT",
+        "type": "GOAL",
+        "minute": 55,
+        "injuryTime": null
+      },
+      {
+        "playerId": 163940,
+        "playerName": "Riyad Mahrez",
+        "assistId": 241116,
+        "assistName": "Houssem Aouar",
+        "team": "ALG",
+        "type": "GOAL",
+        "minute": 60,
+        "injuryTime": null
+      },
+      {
+        "playerId": 163940,
+        "playerName": "Riyad Mahrez",
+        "assistId": 241116,
+        "assistName": "Houssem Aouar",
+        "team": "ALG",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
+      },
+      {
+        "playerId": 259131,
+        "playerName": "Sasa Kalajdzic",
+        "assistId": 146804,
+        "assistName": "Michael Gregoritsch",
+        "team": "AUT",
+        "type": "GOAL---HEADER",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ],
+    "venue": {
+      "name": "GEHA Field at Arrowhead Stadium",
+      "city": "Kansas City, Missouri",
+      "country": "USA"
+    }
+  },
   "537403": {
     "homeTeam": {
       "tla": "POR",
