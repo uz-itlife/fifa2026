@@ -6,6 +6,7 @@ import { TeamFlag } from '@/components/ui/TeamFlag'
 import { StaleDataBanner } from '@/components/ui/StaleDataBanner'
 import { teamRu } from '@/lib/russian-teams'
 import { playerRu } from '@/lib/player-names-ru'
+import { getBest8ThirdPlace } from '@/lib/standings-utils'
 import fifaRankingData from '@/data/fifa-ranking.json'
 import matchStatsData from '@/data/match-stats.json'
 
@@ -31,9 +32,9 @@ const matchStats = matchStatsData as unknown as Record<string, MatchStatsEntry>
 const matchStatsList = Object.entries(matchStats).map(([id, m]) => ({ id, ...m }))
 
 const TABS = [
+  { key: 'teams', label: 'Лучшие команды' },
   { key: 'players', label: 'Лучшие игроки' },
   { key: 'assists', label: 'Ассисты' },
-  { key: 'teams', label: 'Лучшие команды' },
   { key: 'fifa', label: 'Рейтинг FIFA' },
   { key: 'cards', label: 'Карточки' },
   { key: 'fouls', label: 'Нарушения' },
@@ -91,7 +92,8 @@ function MatchStatTable({ statKey, suffix, emptyLabel }: {
 }
 
 export default function StatsPage() {
-  const [tab, setTab] = useState<TabKey>('players')
+  const [tab, setTab] = useState<TabKey>('teams')
+  const [cardsView, setCardsView] = useState<'teams' | 'players'>('teams')
   const { scorers, stale: scorersStale, isLoading: scorersLoading } = useScorers()
   const { standings, stale: standingsStale, isLoading: standingsLoading } = useStandings()
 
@@ -103,6 +105,8 @@ export default function StatsPage() {
 
   const assistsRanked = [...scorers].sort((a, b) => (b.assists ?? 0) - (a.assists ?? 0))
 
+  const qualifiedThirdTlas = getBest8ThirdPlace(standings)
+
   const teamsRanked = standings
     .flatMap(g => g.table.map(row => ({ ...row, groupLabel: (g.group ?? '').replace(/^GROUP[_\s]*/i, '').toUpperCase() })))
     .sort((a, b) => {
@@ -112,15 +116,20 @@ export default function StatsPage() {
 
   const cardsRanked = (() => {
     const byPlayer = new Map<string, { playerName: string; team: string; yellow: number; red: number }>()
+    const byTeam = new Map<string, { tla: string; yellow: number; red: number }>()
     for (const entry of matchStatsList) {
       for (const c of entry.cards) {
-        const existing = byPlayer.get(c.playerId) ?? { playerName: c.playerName, team: c.team, yellow: 0, red: 0 }
-        if (c.type === 'red') existing.red += 1
-        else existing.yellow += 1
-        byPlayer.set(c.playerId, existing)
+        const ep = byPlayer.get(c.playerId) ?? { playerName: c.playerName, team: c.team, yellow: 0, red: 0 }
+        if (c.type === 'red') ep.red += 1; else ep.yellow += 1
+        byPlayer.set(c.playerId, ep)
+        const et = byTeam.get(c.team) ?? { tla: c.team, yellow: 0, red: 0 }
+        if (c.type === 'red') et.red += 1; else et.yellow += 1
+        byTeam.set(c.team, et)
       }
     }
-    return [...byPlayer.values()].sort((a, b) => (b.red * 2 + b.yellow) - (a.red * 2 + a.yellow))
+    const players = [...byPlayer.values()].sort((a, b) => (b.red * 2 + b.yellow) - (a.red * 2 + a.yellow))
+    const teams = [...byTeam.values()].sort((a, b) => (b.red * 2 + b.yellow) - (a.red * 2 + a.yellow))
+    return { players, teams }
   })()
 
   return (
@@ -235,7 +244,7 @@ export default function StatsPage() {
               <tbody>
                 {teamsRanked.map((row, i) => {
                   const gdSign = row.goalDifference > 0 ? '+' : ''
-                  const posColor = row.position === 1 ? 'text-gold' : row.position === 2 ? 'text-green-500' : row.position === 3 ? 'text-blue-400' : 'text-gray-500'
+                  const posColor = row.position === 1 ? 'text-gold' : row.position === 2 ? 'text-green-500' : row.position === 3 ? (qualifiedThirdTlas.has(row.team.tla) ? 'text-blue-400' : 'text-orange-400') : 'text-gray-500'
                   return (
                     <tr key={row.team.id} className="border-t border-light-border/40 dark:border-dark-border/40 hover:bg-gray-50 dark:hover:bg-white/5">
                       <td className={`py-2 px-4 text-xs font-bold ${posColor}`}>{i + 1}</td>
@@ -285,31 +294,64 @@ export default function StatsPage() {
       )}
 
       {tab === 'cards' && (
-        cardsRanked.length === 0 ? <PendingSync label="Жёлтые и красные карточки" /> : (
-          <div className="bg-white dark:bg-dark-card rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="text-xs uppercase tracking-wide text-gray-500 border-b border-light-border dark:border-dark-border">
-                  <th className="py-2 px-4 text-left w-8">#</th>
-                  <th className="py-2 px-4 text-left">Игрок</th>
-                  <th className="py-2 px-4 text-left">Команда</th>
-                  <th className="py-2 px-4 text-center">🟨</th>
-                  <th className="py-2 px-4 text-center">🟥</th>
-                </tr>
-              </thead>
-              <tbody>
-                {cardsRanked.map((c, i) => (
-                  <tr key={c.playerName + c.team} className="border-t border-light-border/40 dark:border-dark-border/40 hover:bg-gray-50 dark:hover:bg-white/5">
-                    <td className="py-2 px-4 text-gray-500 text-xs">{i + 1}</td>
-                    <td className="py-2 px-4 font-medium">{playerRu(c.playerName)}</td>
-                    <td className="py-2 px-4">{teamRu(c.team, c.team)}</td>
-                    <td className="py-2 px-4 text-center font-bold text-yellow-500">{c.yellow}</td>
-                    <td className="py-2 px-4 text-center font-bold text-red-500">{c.red}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+        cardsRanked.players.length === 0 ? <PendingSync label="Жёлтые и красные карточки" /> : (
+          <>
+            <div className="flex gap-2 mb-4">
+              {(['teams', 'players'] as const).map(v => (
+                <button key={v} onClick={() => setCardsView(v)}
+                  className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${cardsView === v ? 'bg-gold text-dark-bg' : 'text-gray-400 border border-light-border dark:border-dark-border hover:text-white'}`}>
+                  {v === 'teams' ? 'По командам' : 'По игрокам'}
+                </button>
+              ))}
+            </div>
+            <div className="bg-white dark:bg-dark-card rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
+              {cardsView === 'teams' ? (
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="text-xs uppercase tracking-wide text-gray-500 border-b border-light-border dark:border-dark-border">
+                      <th className="py-2 px-4 text-left w-8">#</th>
+                      <th className="py-2 px-4 text-left">Команда</th>
+                      <th className="py-2 px-4 text-center">🟨</th>
+                      <th className="py-2 px-4 text-center">🟥</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cardsRanked.teams.map((c, i) => (
+                      <tr key={c.tla} className="border-t border-light-border/40 dark:border-dark-border/40 hover:bg-gray-50 dark:hover:bg-white/5">
+                        <td className="py-2 px-4 text-gray-500 text-xs">{i + 1}</td>
+                        <td className="py-2 px-4"><TeamFlag tla={c.tla} name={teamRu(c.tla, c.tla)} size="sm" /></td>
+                        <td className="py-2 px-4 text-center font-bold text-yellow-500">{c.yellow}</td>
+                        <td className="py-2 px-4 text-center font-bold text-red-500">{c.red}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              ) : (
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="text-xs uppercase tracking-wide text-gray-500 border-b border-light-border dark:border-dark-border">
+                      <th className="py-2 px-4 text-left w-8">#</th>
+                      <th className="py-2 px-4 text-left">Игрок</th>
+                      <th className="py-2 px-4 text-left">Команда</th>
+                      <th className="py-2 px-4 text-center">🟨</th>
+                      <th className="py-2 px-4 text-center">🟥</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cardsRanked.players.map((c, i) => (
+                      <tr key={c.playerName + c.team} className="border-t border-light-border/40 dark:border-dark-border/40 hover:bg-gray-50 dark:hover:bg-white/5">
+                        <td className="py-2 px-4 text-gray-500 text-xs">{i + 1}</td>
+                        <td className="py-2 px-4 font-medium">{playerRu(c.playerName)}</td>
+                        <td className="py-2 px-4">{teamRu(c.team, c.team)}</td>
+                        <td className="py-2 px-4 text-center font-bold text-yellow-500">{c.yellow}</td>
+                        <td className="py-2 px-4 text-center font-bold text-red-500">{c.red}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              )}
+            </div>
+          </>
         )
       )}
 
