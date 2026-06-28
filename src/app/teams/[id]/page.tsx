@@ -22,7 +22,7 @@ export default function TeamPage() {
           {team.founded && <p className="text-gray-500 text-xs">Основан: {team.founded}</p>}
         </div>
       </div>
-      <div className="bg-white dark:bg-dark-card rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
+      <div className="glass rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
         <table className="w-full text-sm">
           <thead>
             <tr className="bg-gray-50 dark:bg-dark-bg/50 text-xs uppercase tracking-wide text-gray-500">

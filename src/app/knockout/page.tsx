@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { useState } from 'react'
 import Link from 'next/link'
 import { useMatches } from '@/hooks/useMatches'
@@ -38,7 +38,7 @@ const STAGE_SLOTS: Record<string, number> = {
 function KOMatchCard({ match, slot }: { match: Match | null; slot: number }) {
   if (!match) {
     return (
-      <div className="bg-white dark:bg-dark-card rounded-xl p-4 border border-light-border/40 dark:border-dark-border/40 opacity-50">
+      <div className="glass rounded-xl p-4 border border-light-border/40 dark:border-dark-border/40 opacity-50">
         <div className="text-xs text-gray-500 mb-2">Матч {slot}</div>
         <div className="text-sm text-gray-400 text-center py-2">TBD</div>
       </div>
@@ -55,7 +55,7 @@ function KOMatchCard({ match, slot }: { match: Match | null; slot: number }) {
 
   return (
     <Link href={`/matches/${match.id}`}>
-      <div className="bg-white dark:bg-dark-card rounded-xl p-4 border border-light-border dark:border-dark-border hover:border-gold transition-colors">
+      <div className="glass rounded-xl p-4 border border-light-border dark:border-dark-border hover:border-gold transition-colors">
         <div className="flex items-center justify-between mb-2 text-xs text-gray-500">
           <span className="text-gold font-semibold">Матч {slot}</span>
           {isLive ? <LiveBadge minute={match.minute} /> : <span>{date}</span>}

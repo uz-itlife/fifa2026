@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { useEffect, useState } from 'react'
 import { useStandings } from '@/hooks/useStandings'
 import { useUzbMatches } from '@/hooks/useUzbMatches'
@@ -56,7 +56,7 @@ export default function UzbekistanPage() {
               { label: 'Победы', value: uzbRow.won },
               { label: 'Голы', value: `${uzbRow.goalsFor}:${uzbRow.goalsAgainst}` },
             ].map(stat => (
-              <div key={stat.label} className="bg-white dark:bg-dark-card rounded-xl p-4 border border-light-border dark:border-dark-border text-center min-w-[80px]">
+              <div key={stat.label} className="glass rounded-xl p-4 border border-light-border dark:border-dark-border text-center min-w-[80px]">
                 <p className="text-xs text-gray-500 mb-1">{stat.label}</p>
                 <p className={`text-2xl font-black ${stat.highlight ? 'text-gold' : ''}`}>{stat.value}</p>
               </div>
@@ -99,7 +99,7 @@ export default function UzbekistanPage() {
           href="https://www.youtube.com/@QsportUzbekistan"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-between gap-4 bg-white dark:bg-dark-card border border-light-border dark:border-dark-border hover:border-gold rounded-xl px-4 py-3 transition-colors group"
+          className="flex items-center justify-between gap-4 glass border border-light-border dark:border-dark-border hover:border-gold rounded-xl px-4 py-3 transition-colors group"
         >
           <div>
             <p className="font-bold text-sm">▶️ Qsport Uzbekistan</p>

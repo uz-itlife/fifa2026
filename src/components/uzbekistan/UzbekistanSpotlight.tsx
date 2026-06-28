@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useUzbMatches } from '@/hooks/useUzbMatches'
@@ -80,7 +80,7 @@ export function UzbekistanSpotlight() {
 
   return (
     <Link href="/uzbekistan">
-      <div className="bg-white dark:bg-dark-card rounded-xl border border-gold/40 hover:border-gold transition-colors hover:scale-[1.01] divide-y divide-light-border dark:divide-dark-border">
+      <div className="glass rounded-xl border border-gold/40 hover:border-gold transition-colors hover:scale-[1.01] divide-y divide-light-border dark:divide-dark-border">
 
         {/* Следующий матч */}
         {nextMatch && uzbTeam && opponent ? (

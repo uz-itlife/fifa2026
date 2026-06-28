@@ -100,7 +100,7 @@ export default function MatchDetailPage() {
       {isUzb && isLive && <WatchBanner />}
 
       {/* Score header */}
-      <div className="bg-white dark:bg-dark-card rounded-xl p-6 border border-light-border dark:border-dark-border">
+      <div className="glass rounded-xl p-6 border border-light-border dark:border-dark-border">
         <div className="flex items-center justify-center gap-3 mb-5 text-xs text-gray-500">
           <span>{groupLabel}</span>
           <span>·</span>
@@ -147,7 +147,7 @@ export default function MatchDetailPage() {
 
       {/* Events timeline */}
       {timeline.length > 0 ? (
-        <div className="bg-white dark:bg-dark-card rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
+        <div className="glass rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
           <div className="px-4 py-3 border-b border-light-border dark:border-dark-border">
             <h3 className="text-xs font-bold text-gray-400 uppercase tracking-widest">События матча</h3>
           </div>
@@ -233,7 +233,7 @@ export default function MatchDetailPage() {
           </div>
         </div>
       ) : isLive && (
-        <div className="bg-white dark:bg-dark-card rounded-xl p-5 border border-light-border dark:border-dark-border text-center">
+        <div className="glass rounded-xl p-5 border border-light-border dark:border-dark-border text-center">
           <p className="text-sm text-gray-400">⏱ Матч идёт — события появятся здесь</p>
         </div>
       )}

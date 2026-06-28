@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { useState } from 'react'
 import { useScorers } from '@/hooks/useScorers'
 import { useStandings } from '@/hooks/useStandings'
@@ -80,7 +80,7 @@ function MatchStatTable({ statKey, suffix, emptyLabel }: {
   const entries = matchStatsList.filter(e => e.stats?.home != null || e.stats?.away != null)
   if (entries.length === 0) return <PendingSync label={emptyLabel} />
   return (
-    <div className="bg-white dark:bg-dark-card rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
+    <div className="glass rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
       <table className="w-full text-sm">
         <tbody>
           {entries.map(entry => (
@@ -158,7 +158,7 @@ export default function StatsPage() {
         scorersLoading ? (
           <div className="text-gray-500 text-center py-20">Загрузка...</div>
         ) : (
-          <div className="bg-white dark:bg-dark-card rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
+          <div className="glass rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
             <table className="w-full text-sm">
               <thead>
                 <tr className="text-xs uppercase tracking-wide text-gray-500 border-b border-light-border dark:border-dark-border">
@@ -193,7 +193,7 @@ export default function StatsPage() {
         scorersLoading ? (
           <div className="text-gray-500 text-center py-20">Загрузка...</div>
         ) : (
-          <div className="bg-white dark:bg-dark-card rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
+          <div className="glass rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
             <table className="w-full text-sm">
               <thead>
                 <tr className="text-xs uppercase tracking-wide text-gray-500 border-b border-light-border dark:border-dark-border">
@@ -227,7 +227,7 @@ export default function StatsPage() {
             <p className="text-sm text-gray-500">Рейтинг команд появится после первых матчей</p>
           </div>
         ) : (
-          <div className="bg-white dark:bg-dark-card rounded-xl border border-light-border dark:border-dark-border overflow-x-auto">
+          <div className="glass rounded-xl border border-light-border dark:border-dark-border overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="text-xs uppercase tracking-wide text-gray-500 border-b border-light-border dark:border-dark-border">
@@ -269,7 +269,7 @@ export default function StatsPage() {
       )}
 
       {tab === 'fifa' && (
-        <div className="bg-white dark:bg-dark-card rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
+        <div className="glass rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
           <div className="px-4 py-2 text-xs text-gray-500 border-b border-light-border dark:border-dark-border">
             {fifaRankingData.source} · обновлено {fifaRankingData.updatedAt}
           </div>
@@ -305,7 +305,7 @@ export default function StatsPage() {
                 </button>
               ))}
             </div>
-            <div className="bg-white dark:bg-dark-card rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
+            <div className="glass rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
               {cardsView === 'teams' ? (
                 <table className="w-full text-sm">
                   <thead>

@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import useSWR from 'swr'
@@ -85,7 +85,7 @@ export function NextLastMatchCard() {
   if (nextMatches.length === 0 && lastMatches.length === 0) return null
 
   return (
-    <div className="bg-white dark:bg-dark-card rounded-xl border border-light-border dark:border-dark-border divide-y divide-light-border dark:divide-dark-border">
+    <div className="glass rounded-xl border border-light-border dark:border-dark-border divide-y divide-light-border dark:divide-dark-border">
       {nextMatches.length > 0 ? nextMatches.map((m, idx) => {
         const date = new Date(m.utcDate).toLocaleString('ru-RU', {
           day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit',

@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { useStandings } from '@/hooks/useStandings'
 import { GroupCard } from '@/components/standings/GroupCard'
 import { StaleDataBanner } from '@/components/ui/StaleDataBanner'
@@ -6,7 +6,7 @@ import { getBest8ThirdPlace } from '@/lib/standings-utils'
 
 function SkeletonCard() {
   return (
-    <div className="bg-white dark:bg-dark-card rounded-xl p-4 border border-light-border dark:border-dark-border animate-pulse">
+    <div className="glass rounded-xl p-4 border border-light-border dark:border-dark-border animate-pulse">
       <div className="flex justify-between mb-4">
         <div className="h-3 w-16 bg-gray-700/50 rounded" />
         <div className="h-3 w-12 bg-gray-700/50 rounded" />

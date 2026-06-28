@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { useStandings } from '@/hooks/useStandings'
 import Link from 'next/link'
 import { tlaToFlag } from '@/lib/flag-utils'
@@ -19,7 +19,7 @@ export default function TeamsPage() {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-3">
         {teams.map(team => (
           <Link key={team.id} href={`/teams/${team.id}`}>
-            <div className="relative bg-white dark:bg-dark-card rounded-xl p-4 border border-light-border dark:border-dark-border text-center overflow-hidden hover:border-gold transition-colors hover:scale-[1.02] group">
+            <div className="relative glass rounded-xl p-4 border border-light-border dark:border-dark-border text-center overflow-hidden hover:border-gold transition-colors hover:scale-[1.02] group">
               {team.crest && (
                 <img
                   src={team.crest}

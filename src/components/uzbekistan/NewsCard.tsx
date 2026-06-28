@@ -1,4 +1,4 @@
-import type { NewsItem } from '@/types/news'
+﻿import type { NewsItem } from '@/types/news'
 
 interface Props { item: NewsItem }
 
@@ -9,7 +9,7 @@ export function NewsCard({ item }: Props) {
       href={item.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex gap-3 p-3 rounded-xl border border-light-border dark:border-dark-border hover:border-gold transition-colors bg-white dark:bg-dark-card"
+      className="flex gap-3 p-3 rounded-xl border border-light-border dark:border-dark-border hover:border-gold transition-colors glass"
     >
       <div className="flex-1 min-w-0">
         <p className="font-medium text-sm leading-snug line-clamp-2">{item.title}</p>

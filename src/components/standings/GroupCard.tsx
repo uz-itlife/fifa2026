@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import { motion } from 'framer-motion'
 import type { StandingsGroup } from '@/types/football'
 import { StandingsTable } from './StandingsTable'
@@ -19,7 +19,7 @@ export function GroupCard({ group, highlight, index, qualifiedThirdTlas }: Props
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.2, delay: index * 0.03 }}
       className={[
-        'bg-white dark:bg-dark-card rounded-xl p-4 border',
+        'glass rounded-xl p-4 border',
         highlight
           ? 'border-gold shadow-[0_0_12px_rgba(200,168,75,0.2)]'
           : 'border-light-border dark:border-dark-border',

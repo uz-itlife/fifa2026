@@ -48,7 +48,7 @@ export default function GroupPage() {
       <h1 className="text-2xl font-bold mb-6">Группа {letter}</h1>
 
       {/* Full standings table */}
-      <div className="bg-white dark:bg-dark-card rounded-xl p-4 border border-light-border dark:border-dark-border mb-6">
+      <div className="glass rounded-xl p-4 border border-light-border dark:border-dark-border mb-6">
         <StandingsTable
           rows={group.table}
           highlightTla={letter === 'K' ? 'UZB' : undefined}

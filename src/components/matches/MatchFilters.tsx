@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { useFiltersStore } from '@/store/filters'
 import { useLiveMatches } from '@/hooks/useLiveMatches'
 
@@ -56,7 +56,7 @@ export function MatchFilters() {
       <select
         value={groupFilter}
         onChange={e => setGroupFilter(e.target.value)}
-        className="px-3 py-1.5 rounded-lg text-xs bg-white dark:bg-dark-card border border-light-border dark:border-dark-border text-gray-400"
+        className="px-3 py-1.5 rounded-lg text-xs glass border border-light-border dark:border-dark-border text-gray-400"
       >
         {GROUPS.map(g => (
           <option key={g} value={g}>{g ? g.replace(/^GROUP[_\s]*/i, 'Группа ') : 'Все группы'}</option>

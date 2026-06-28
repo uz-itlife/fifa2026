@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { useStandings } from '@/hooks/useStandings'
 import { StandingsTable } from '@/components/standings/StandingsTable'
 import { getBest8ThirdPlace } from '@/lib/standings-utils'
@@ -9,7 +9,7 @@ export function GroupKTable() {
   if (!groupK) return null
   const qualifiedThirdTlas = getBest8ThirdPlace(standings)
   return (
-    <div className="bg-white dark:bg-dark-card rounded-xl p-4 border border-gold/40 shadow-[0_0_16px_rgba(200,168,75,0.1)]">
+    <div className="glass rounded-xl p-4 border border-gold/40 shadow-[0_0_16px_rgba(200,168,75,0.1)]">
       <h3 className="text-gold font-bold tracking-widest text-sm uppercase mb-3">Группа K</h3>
       <StandingsTable rows={groupK.table} highlightTla="UZB" qualifiedThirdTlas={qualifiedThirdTlas} />
     </div>

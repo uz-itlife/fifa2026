@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { useState } from 'react'
 
 interface Stadium {
@@ -178,7 +178,7 @@ export default function StadiumsClient() {
           <button
             key={s.name}
             onClick={() => setSelected(s)}
-            className="text-left group rounded-2xl overflow-hidden border border-light-border dark:border-dark-border hover:border-gold transition-all duration-300 hover:shadow-[0_0_20px_rgba(200,168,75,0.15)] bg-white dark:bg-dark-card"
+            className="text-left group rounded-2xl overflow-hidden border border-light-border dark:border-dark-border hover:border-gold transition-all duration-300 hover:shadow-[0_0_20px_rgba(200,168,75,0.15)] glass"
           >
             {/* Photo */}
             <div className="relative h-48 overflow-hidden bg-gray-800">
@@ -239,7 +239,7 @@ export default function StadiumsClient() {
           onClick={() => setSelected(null)}
         >
           <div
-            className="bg-white dark:bg-dark-card rounded-2xl overflow-hidden max-w-lg w-full shadow-2xl"
+            className="glass rounded-2xl overflow-hidden max-w-lg w-full shadow-2xl"
             onClick={e => e.stopPropagation()}
           >
             {/* Modal photo */}

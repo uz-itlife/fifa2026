@@ -1,4 +1,4 @@
-import Link from 'next/link'
+﻿import Link from 'next/link'
 import type { Match } from '@/types/football'
 import { LiveBadge } from '@/components/ui/LiveBadge'
 import { TeamFlag } from '@/components/ui/TeamFlag'
@@ -9,7 +9,7 @@ interface Props { match: Match | null; label?: string; seeding?: string; compact
 export function BracketNode({ match, label, seeding, compact }: Props) {
   if (!match) {
     return (
-      <div className={`bg-white dark:bg-dark-card rounded-lg border border-light-border/40 dark:border-dark-border/40 opacity-60 ${compact ? 'p-2 min-w-[148px]' : 'p-3 min-w-[190px]'}`}>
+      <div className={`glass rounded-lg border border-light-border/40 dark:border-dark-border/40 opacity-60 ${compact ? 'p-2 min-w-[148px]' : 'p-3 min-w-[190px]'}`}>
         {label && !compact && <p className="text-xs text-gray-500 text-center mb-1">{label}</p>}
         {seeding && (
           <p className={`text-gray-400 text-center leading-tight ${compact ? 'text-[10px]' : 'text-[11px]'}`}>{seeding}</p>
@@ -29,7 +29,7 @@ export function BracketNode({ match, label, seeding, compact }: Props) {
   if (compact) {
     return (
       <Link href={`/matches/${match.id}`}>
-        <div className="bg-white dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border hover:border-gold transition-colors cursor-pointer p-2 min-w-[148px]">
+        <div className="glass rounded-lg border border-light-border dark:border-dark-border hover:border-gold transition-colors cursor-pointer p-2 min-w-[148px]">
           <div className="text-[9px] text-gray-400 mb-0.5 truncate">
             {isLive ? <LiveBadge minute={match.minute} /> : date}
           </div>
@@ -52,7 +52,7 @@ export function BracketNode({ match, label, seeding, compact }: Props) {
 
   return (
     <Link href={`/matches/${match.id}`}>
-      <div className="bg-white dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border hover:border-gold transition-colors cursor-pointer p-3 min-w-[190px]">
+      <div className="glass rounded-lg border border-light-border dark:border-dark-border hover:border-gold transition-colors cursor-pointer p-3 min-w-[190px]">
         <div className="flex items-center justify-between mb-2 text-xs text-gray-400">
           {isLive ? <LiveBadge minute={match.minute} /> : <span>{date}</span>}
         </div>

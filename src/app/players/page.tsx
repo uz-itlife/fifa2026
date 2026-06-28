@@ -1,4 +1,4 @@
-'use client'
+﻿'use client'
 import { useState } from 'react'
 import { useScorers } from '@/hooks/useScorers'
 import { TeamFlag } from '@/components/ui/TeamFlag'
@@ -35,7 +35,7 @@ export default function PlayersPage() {
         ))}
       </div>
       {isLoading ? <div className="text-gray-500 text-center py-20">Загрузка...</div> : (
-        <div className="bg-white dark:bg-dark-card rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
+        <div className="glass rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
           <table className="w-full text-sm">
             <thead>
               <tr className="text-xs uppercase tracking-wide text-gray-500 border-b border-light-border dark:border-dark-border">
