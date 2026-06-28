@@ -23,7 +23,7 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 bg-white dark:bg-dark-card border-b border-light-border dark:border-dark-border shadow-lg">
       <div className="max-w-7xl mx-auto px-4 flex items-center h-14 gap-4">
         <Link href="/" className="flex items-center gap-2 shrink-0">
-          <img src="/trophy.jpg" alt="FIFA WC Trophy" width={32} height={32} className="rounded-full object-cover" />
+          <img src="/trophy.png" alt="FIFA WC Trophy" width={32} height={32} className="rounded-full object-cover" />
           <span className="text-gold font-bold text-lg tracking-widest">FIFA 2026</span>
           {isLive && (
             <span className="flex items-center gap-1 bg-red-500 text-white text-[10px] font-bold px-2 py-0.5 rounded-full animate-pulse">
