@@ -13,6 +13,14 @@ import type { Match } from '@/types/football'
 const LATE = new Set(['LAST_16', 'ROUND_OF_16', 'QUARTER_FINALS', 'SEMI_FINALS', 'THIRD_PLACE', 'FINAL'])
 const GROUP = new Set(['GROUP_STAGE', 'REGULAR_SEASON', 'PRELIMINARY_ROUND'])
 
+const LATE_STAGES_LIST = [
+  { key: 'LAST_16',        alias: 'ROUND_OF_16', label: '1/8 финала' },
+  { key: 'QUARTER_FINALS', alias: null,           label: '1/4 финала' },
+  { key: 'SEMI_FINALS',    alias: null,           label: '1/2 финала' },
+  { key: 'THIRD_PLACE',    alias: null,           label: 'За 3-е место' },
+  { key: 'FINAL',          alias: null,           label: 'Финал' },
+]
+
 const STAGE_LABEL: Record<string, string> = {
   LAST_64: '1/32 финала',
   LAST_32: '1/16 финала',
@@ -154,7 +162,23 @@ export default function KnockoutPage() {
           })}
         </div>
       ) : (
-        <BracketView matches={allKoMatches} />
+        <div className="space-y-10">
+          <BracketView matches={allKoMatches} />
+          {LATE_STAGES_LIST.map(stage => {
+            const stageMs = allKoMatches
+              .filter(m => m.stage === stage.key || m.stage === stage.alias)
+              .sort((a, b) => new Date(a.utcDate).getTime() - new Date(b.utcDate).getTime())
+            if (stageMs.length === 0) return null
+            return (
+              <div key={stage.key}>
+                <h2 className="text-sm font-bold text-gold uppercase tracking-widest mb-3">{stage.label}</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {stageMs.map((m, i) => <KOMatchCard key={m.id} match={m} slot={i + 1} />)}
+                </div>
+              </div>
+            )
+          })}
+        </div>
       )}
     </div>
   )

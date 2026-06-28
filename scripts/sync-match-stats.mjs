@@ -143,6 +143,9 @@ async function syncMatch(match, event) {
   }
 }
 
+const KO_STAGES = new Set(['LAST_32', 'LAST_16', 'QUARTER_FINALS', 'SEMI_FINALS', 'THIRD_PLACE', 'FINAL',
+  'ROUND_OF_32', 'ROUND_OF_16'])
+
 async function main() {
   console.log('Fetching finished matches from football-data.org...')
   const { matches } = await footballData('/competitions/WC/matches?status=FINISHED')
@@ -168,8 +171,42 @@ async function main() {
     await new Promise(r => setTimeout(r, 300))
   }
 
+  // Sync venues for upcoming KO matches (TIMED/SCHEDULED)
+  console.log('\nFetching upcoming KO matches for venue data...')
+  const timedRes = await footballData('/competitions/WC/matches?status=TIMED').catch(() => ({ matches: [] }))
+  const scheduledRes = await footballData('/competitions/WC/matches?status=SCHEDULED').catch(() => ({ matches: [] }))
+  const upcomingKo = [...(timedRes.matches || []), ...(scheduledRes.matches || [])]
+    .filter(m => KO_STAGES.has(m.stage))
+  console.log(`Found ${upcomingKo.length} upcoming KO matches`)
+
+  for (const match of upcomingKo) {
+    if (store[match.id]?.venue) continue
+    console.log(`Getting venue for ${match.id}: ${match.homeTeam.tla} vs ${match.awayTeam.tla}`)
+    try {
+      const event = await findEvent(match)
+      if (!event) { console.log('  no ESPN event found'); continue }
+      const venueRaw = event.competitions?.[0]?.venue
+      if (venueRaw) {
+        store[match.id] = store[match.id] ?? {
+          homeTeam: { tla: match.homeTeam.tla, name: match.homeTeam.name },
+          awayTeam: { tla: match.awayTeam.tla, name: match.awayTeam.name },
+          stats: null, cards: [], goals: [],
+        }
+        store[match.id].venue = {
+          name: venueRaw.fullName || venueRaw.shortName || null,
+          city: venueRaw.address?.city || null,
+          country: venueRaw.address?.country || null,
+        }
+        synced++
+      }
+    } catch (err) {
+      console.error(`  failed: ${err.message}`)
+    }
+    await new Promise(r => setTimeout(r, 300))
+  }
+
   fs.writeFileSync(DATA_FILE, JSON.stringify(store, null, 2))
-  console.log(`Synced ${synced} new matches. Saved to ${DATA_FILE}`)
+  console.log(`Synced ${synced} new entries. Saved to ${DATA_FILE}`)
 }
 
 main()

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import type { Match } from '@/types/football'
 import { LiveBadge } from '@/components/ui/LiveBadge'
+import { TeamFlag } from '@/components/ui/TeamFlag'
 import { teamRu, cityRu } from '@/lib/russian-teams'
 
 interface Props { match: Match | null; label?: string; seeding?: string; compact?: boolean }
@@ -8,7 +9,7 @@ interface Props { match: Match | null; label?: string; seeding?: string; compact
 export function BracketNode({ match, label, seeding, compact }: Props) {
   if (!match) {
     return (
-      <div className={`bg-white dark:bg-dark-card rounded-lg border border-light-border/40 dark:border-dark-border/40 opacity-60 ${compact ? 'p-2 min-w-[148px]' : 'p-3 min-w-[180px]'}`}>
+      <div className={`bg-white dark:bg-dark-card rounded-lg border border-light-border/40 dark:border-dark-border/40 opacity-60 ${compact ? 'p-2 min-w-[148px]' : 'p-3 min-w-[190px]'}`}>
         {label && !compact && <p className="text-xs text-gray-500 text-center mb-1">{label}</p>}
         {seeding && (
           <p className={`text-gray-400 text-center leading-tight ${compact ? 'text-[10px]' : 'text-[11px]'}`}>{seeding}</p>
@@ -16,25 +17,59 @@ export function BracketNode({ match, label, seeding, compact }: Props) {
       </div>
     )
   }
-  const isLive = match.status === 'IN_PLAY'
+  const isLive = match.status === 'IN_PLAY' || match.status === 'PAUSED'
+  const isFinished = match.status === 'FINISHED'
+  const date = new Date(match.utcDate).toLocaleString('ru-RU', {
+    day: 'numeric', month: 'short', hour: '2-digit', minute: '2-digit',
+    timeZone: 'Asia/Tashkent',
+  })
+  const homeRu = teamRu(match.homeTeam.tla, match.homeTeam.shortName)
+  const awayRu = teamRu(match.awayTeam.tla, match.awayTeam.shortName)
+
+  if (compact) {
+    return (
+      <Link href={`/matches/${match.id}`}>
+        <div className="bg-white dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border hover:border-gold transition-colors cursor-pointer p-2 min-w-[148px]">
+          <div className="text-[9px] text-gray-400 mb-0.5 truncate">
+            {isLive ? <LiveBadge minute={match.minute} /> : date}
+          </div>
+          <div className="flex justify-between items-center text-[11px] mb-0.5">
+            <span className="font-medium truncate">{homeRu}</span>
+            <span className={`font-bold ml-1 tabular-nums shrink-0 ${match.score.winner === 'HOME_TEAM' ? 'text-win' : ''}`}>
+              {(isFinished || isLive) ? (match.score.fullTime.home ?? '–') : ''}
+            </span>
+          </div>
+          <div className="flex justify-between items-center text-[11px]">
+            <span className="font-medium truncate">{awayRu}</span>
+            <span className={`font-bold ml-1 tabular-nums shrink-0 ${match.score.winner === 'AWAY_TEAM' ? 'text-win' : ''}`}>
+              {(isFinished || isLive) ? (match.score.fullTime.away ?? '–') : ''}
+            </span>
+          </div>
+        </div>
+      </Link>
+    )
+  }
+
   return (
     <Link href={`/matches/${match.id}`}>
-      <div className={`bg-white dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border hover:border-gold transition-colors cursor-pointer ${compact ? 'p-2 min-w-[148px]' : 'p-3 min-w-[180px]'}`}>
-        {isLive && <div className="mb-1"><LiveBadge minute={match.minute} /></div>}
-        <div className={`flex justify-between items-center mb-0.5 ${compact ? 'text-[11px]' : 'text-sm'}`}>
-          <span className="font-medium truncate">{teamRu(match.homeTeam.tla, match.homeTeam.shortName)}</span>
-          <span className={`font-bold ml-1 tabular-nums ${match.score.winner === 'HOME_TEAM' ? 'text-win' : ''}`}>
-            {match.score.fullTime.home ?? '–'}
+      <div className="bg-white dark:bg-dark-card rounded-lg border border-light-border dark:border-dark-border hover:border-gold transition-colors cursor-pointer p-3 min-w-[190px]">
+        <div className="flex items-center justify-between mb-2 text-xs text-gray-400">
+          {isLive ? <LiveBadge minute={match.minute} /> : <span>{date}</span>}
+        </div>
+        <div className="flex items-center justify-between mb-1">
+          <TeamFlag tla={match.homeTeam.tla} name={homeRu} crest={match.homeTeam.crest} size="sm" />
+          <span className={`font-bold ml-2 tabular-nums text-sm shrink-0 ${match.score.winner === 'HOME_TEAM' ? 'text-win' : ''}`}>
+            {(isFinished || isLive) ? (match.score.fullTime.home ?? '–') : ''}
           </span>
         </div>
-        <div className={`flex justify-between items-center ${compact ? 'text-[11px]' : 'text-sm'}`}>
-          <span className="font-medium truncate">{teamRu(match.awayTeam.tla, match.awayTeam.shortName)}</span>
-          <span className={`font-bold ml-1 tabular-nums ${match.score.winner === 'AWAY_TEAM' ? 'text-win' : ''}`}>
-            {match.score.fullTime.away ?? '–'}
+        <div className="flex items-center justify-between">
+          <TeamFlag tla={match.awayTeam.tla} name={awayRu} crest={match.awayTeam.crest} size="sm" />
+          <span className={`font-bold ml-2 tabular-nums text-sm shrink-0 ${match.score.winner === 'AWAY_TEAM' ? 'text-win' : ''}`}>
+            {(isFinished || isLive) ? (match.score.fullTime.away ?? '–') : ''}
           </span>
         </div>
-        {!compact && match.venue?.city && (
-          <p className="text-[10px] text-gray-400 mt-1.5 truncate">
+        {match.venue?.city && (
+          <p className="text-[10px] text-gray-400 mt-2 truncate">
             📍 {cityRu(match.venue.city) ?? match.venue.city}
           </p>
         )}

@@ -6401,5 +6401,293 @@
       "city": "Philadelphia, Pennsylvania",
       "country": "USA"
     }
+  },
+  "537415": {
+    "homeTeam": {
+      "tla": "GER",
+      "name": "Germany"
+    },
+    "awayTeam": {
+      "tla": "PAR",
+      "name": "Paraguay"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "Gillette Stadium",
+      "city": "Foxborough, Massachusetts",
+      "country": "USA"
+    }
+  },
+  "537416": {
+    "homeTeam": {
+      "tla": "FRA",
+      "name": "France"
+    },
+    "awayTeam": {
+      "tla": "SWE",
+      "name": "Sweden"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "MetLife Stadium",
+      "city": "East Rutherford, New Jersey",
+      "country": "USA"
+    }
+  },
+  "537417": {
+    "homeTeam": {
+      "tla": "RSA",
+      "name": "South Africa"
+    },
+    "awayTeam": {
+      "tla": "CAN",
+      "name": "Canada"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "SoFi Stadium",
+      "city": "Inglewood, California",
+      "country": "USA"
+    }
+  },
+  "537418": {
+    "homeTeam": {
+      "tla": "NED",
+      "name": "Netherlands"
+    },
+    "awayTeam": {
+      "tla": "MAR",
+      "name": "Morocco"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "Estadio BBVA",
+      "city": "Guadalupe",
+      "country": "Mexico"
+    }
+  },
+  "537419": {
+    "homeTeam": {
+      "tla": "POR",
+      "name": "Portugal"
+    },
+    "awayTeam": {
+      "tla": "CRO",
+      "name": "Croatia"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "BMO Field",
+      "city": "Toronto",
+      "country": "Canada"
+    }
+  },
+  "537420": {
+    "homeTeam": {
+      "tla": "ESP",
+      "name": "Spain"
+    },
+    "awayTeam": {
+      "tla": "AUT",
+      "name": "Austria"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "SoFi Stadium",
+      "city": "Inglewood, California",
+      "country": "USA"
+    }
+  },
+  "537421": {
+    "homeTeam": {
+      "tla": "USA",
+      "name": "United States"
+    },
+    "awayTeam": {
+      "tla": "BIH",
+      "name": "Bosnia-Herzegovina"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "Levi's Stadium",
+      "city": "Santa Clara, California",
+      "country": "USA"
+    }
+  },
+  "537422": {
+    "homeTeam": {
+      "tla": "BEL",
+      "name": "Belgium"
+    },
+    "awayTeam": {
+      "tla": "SEN",
+      "name": "Senegal"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "Lumen Field",
+      "city": "Seattle, Washington",
+      "country": "USA"
+    }
+  },
+  "537423": {
+    "homeTeam": {
+      "tla": "BRA",
+      "name": "Brazil"
+    },
+    "awayTeam": {
+      "tla": "JPN",
+      "name": "Japan"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "NRG Stadium",
+      "city": "Houston, Texas",
+      "country": "USA"
+    }
+  },
+  "537424": {
+    "homeTeam": {
+      "tla": "CIV",
+      "name": "Ivory Coast"
+    },
+    "awayTeam": {
+      "tla": "NOR",
+      "name": "Norway"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "AT&T Stadium",
+      "city": "Arlington, Texas",
+      "country": "USA"
+    }
+  },
+  "537425": {
+    "homeTeam": {
+      "tla": "MEX",
+      "name": "Mexico"
+    },
+    "awayTeam": {
+      "tla": "ECU",
+      "name": "Ecuador"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "Estadio Banorte",
+      "city": "Mexico City",
+      "country": "Mexico"
+    }
+  },
+  "537426": {
+    "homeTeam": {
+      "tla": "ENG",
+      "name": "England"
+    },
+    "awayTeam": {
+      "tla": "COD",
+      "name": "Congo DR"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "Mercedes-Benz Stadium",
+      "city": "Atlanta, Georgia",
+      "country": "USA"
+    }
+  },
+  "537427": {
+    "homeTeam": {
+      "tla": "ARG",
+      "name": "Argentina"
+    },
+    "awayTeam": {
+      "tla": "CPV",
+      "name": "Cape Verde Islands"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "Hard Rock Stadium",
+      "city": "Miami Gardens, Florida",
+      "country": "USA"
+    }
+  },
+  "537428": {
+    "homeTeam": {
+      "tla": "AUS",
+      "name": "Australia"
+    },
+    "awayTeam": {
+      "tla": "EGY",
+      "name": "Egypt"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "AT&T Stadium",
+      "city": "Arlington, Texas",
+      "country": "USA"
+    }
+  },
+  "537429": {
+    "homeTeam": {
+      "tla": "SUI",
+      "name": "Switzerland"
+    },
+    "awayTeam": {
+      "tla": "ALG",
+      "name": "Algeria"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "BC Place",
+      "city": "Vancouver",
+      "country": "Canada"
+    }
+  },
+  "537430": {
+    "homeTeam": {
+      "tla": "COL",
+      "name": "Colombia"
+    },
+    "awayTeam": {
+      "tla": "GHA",
+      "name": "Ghana"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "GEHA Field at Arrowhead Stadium",
+      "city": "Kansas City, Missouri",
+      "country": "USA"
+    }
   }
 }
