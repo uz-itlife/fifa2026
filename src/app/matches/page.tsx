@@ -18,9 +18,13 @@ export default function MatchesPage() {
 
   const liveIds = new Set(liveMatches.map(m => m.id))
   const sorted = [...filtered].sort((a, b) => {
-    if (liveIds.has(a.id) && !liveIds.has(b.id)) return -1
-    if (!liveIds.has(a.id) && liveIds.has(b.id)) return 1
-    return new Date(a.utcDate).getTime() - new Date(b.utcDate).getTime()
+    const aLive = liveIds.has(a.id), bLive = liveIds.has(b.id)
+    if (aLive !== bLive) return aLive ? -1 : 1
+    const aUpcoming = a.status === 'SCHEDULED' || a.status === 'TIMED'
+    const bUpcoming = b.status === 'SCHEDULED' || b.status === 'TIMED'
+    if (aUpcoming !== bUpcoming) return aUpcoming ? -1 : 1
+    const ta = new Date(a.utcDate).getTime(), tb = new Date(b.utcDate).getTime()
+    return aUpcoming ? ta - tb : tb - ta
   })
 
   return (
