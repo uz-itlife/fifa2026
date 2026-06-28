@@ -1,7 +1,11 @@
 'use client'
 import { useState, useEffect, useCallback } from 'react'
 
-const PHOTOS = Array.from({ length: 23 }, (_, i) => `/gallery/${String(i + 1).padStart(2, '0')}.jpg`)
+const WEBP = new Set([14, 19, 21])
+const PHOTOS = Array.from({ length: 23 }, (_, i) => {
+  const n = String(i + 1).padStart(2, '0')
+  return `/gallery/${n}.${WEBP.has(i + 1) ? 'webp' : 'jpg'}`
+})
 
 export default function GalleryPage() {
   const [idx, setIdx] = useState(0)
