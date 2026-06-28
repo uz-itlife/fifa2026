@@ -20,6 +20,6 @@
 
 @layer base {
   body {
-    @apply bg-light-bg dark:bg-dark-bg text-gray-900 dark:text-white transition-colors duration-200;
+    @apply text-gray-900 dark:text-white transition-colors duration-200;
   }
 }

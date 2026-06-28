@@ -5,8 +5,6 @@ import { useFiltersStore } from '@/store/filters'
 import { MatchCard } from '@/components/matches/MatchCard'
 import { MatchFilters } from '@/components/matches/MatchFilters'
 import { StaleDataBanner } from '@/components/ui/StaleDataBanner'
-import { LiveBroadcastBar } from '@/components/ui/LiveBroadcastBar'
-
 export default function MatchesPage() {
   const { statusFilter, groupFilter } = useFiltersStore()
   const { matches, stale, isLoading } = useMatches({ status: statusFilter })
@@ -32,7 +30,6 @@ export default function MatchesPage() {
       {stale && <StaleDataBanner />}
       <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
         <h1 className="text-2xl font-bold">Расписание матчей</h1>
-        <LiveBroadcastBar />
       </div>
       <MatchFilters />
       {isLoading ? (

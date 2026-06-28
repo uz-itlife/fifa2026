@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { useLiveMatches } from '@/hooks/useLiveMatches'
 import { MatchCard } from '@/components/matches/MatchCard'
 import { LiveBadge } from '@/components/ui/LiveBadge'
-import { LiveBroadcastBar } from '@/components/ui/LiveBroadcastBar'
 import { NextLastMatchCard } from '@/components/home/NextLastMatchCard'
 
 const SECTIONS = [
@@ -21,11 +20,6 @@ export default function HomePage() {
 
   return (
     <div className="space-y-8">
-      {/* Live broadcast buttons — always visible */}
-      <section>
-        <LiveBroadcastBar />
-      </section>
-
       <section>
         <NextLastMatchCard />
       </section>

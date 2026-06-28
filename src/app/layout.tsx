@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/next'
 import { ThemeProvider } from '@/components/layout/ThemeProvider'
 import { Navbar } from '@/components/layout/Navbar'
 import { PageTransition } from '@/components/layout/PageTransition'
+import { BgSlideshow } from '@/components/layout/BgSlideshow'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin', 'cyrillic'], variable: '--font-sans' })
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ru" suppressHydrationWarning className={`${inter.variable} h-full`}>
       <body className="font-sans antialiased min-h-full flex flex-col">
         <ThemeProvider>
+          <BgSlideshow />
           <Navbar />
           <main className="max-w-7xl mx-auto px-4 py-6 w-full">
             <PageTransition>
