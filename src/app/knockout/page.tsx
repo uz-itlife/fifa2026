@@ -91,16 +91,49 @@ function KOMatchCard({ match, slot }: { match: Match | null; slot: number }) {
   )
 }
 
+const ROUND_OF_32_STAGES = new Set(['LAST_32', 'ROUND_OF_32'])
+const ROUND_OF_16_STAGES = new Set(['LAST_16', 'ROUND_OF_16'])
+
+function getWinner(m: Match) {
+  if (m.status !== 'FINISHED' || !m.score.winner || m.score.winner === 'DRAW') return null
+  return m.score.winner === 'HOME_TEAM' ? m.homeTeam : m.awayTeam
+}
+
+function fillSlots(feeders: Match[], targets: Match[]): Match[] {
+  if (!feeders.length || !targets.length) return targets
+  const byDate = (a: Match, b: Match) => new Date(a.utcDate).getTime() - new Date(b.utcDate).getTime()
+  const f = [...feeders].sort(byDate)
+  return [...targets].sort(byDate).map((t, i) => {
+    const w1 = f[i * 2] ? getWinner(f[i * 2]) : null
+    const w2 = f[i * 2 + 1] ? getWinner(f[i * 2 + 1]) : null
+    const home = !t.homeTeam?.name && w1 ? w1 : t.homeTeam
+    const away = !t.awayTeam?.name && w2 ? w2 : t.awayTeam
+    return home === t.homeTeam && away === t.awayTeam ? t : { ...t, homeTeam: home, awayTeam: away }
+  })
+}
+
+function patchKOBracket(koMatches: Match[]): Match[] {
+  const last32 = koMatches.filter(m => ROUND_OF_32_STAGES.has(m.stage))
+  const last16 = koMatches.filter(m => ROUND_OF_16_STAGES.has(m.stage))
+  const qf = koMatches.filter(m => m.stage === 'QUARTER_FINALS')
+  const sf = koMatches.filter(m => m.stage === 'SEMI_FINALS')
+  const patched16 = fillSlots(last32, last16)
+  const patchedQF = fillSlots(patched16, qf)
+  const patchedSF = fillSlots(patchedQF, sf)
+  const overrides = new Map<number, Match>()
+  ;[...patched16, ...patchedQF, ...patchedSF].forEach(m => overrides.set(m.id, m))
+  return koMatches.map(m => overrides.get(m.id) ?? m)
+}
+
 export default function KnockoutPage() {
   const [view, setView] = useState<'early' | 'bracket'>('early')
   const { matches, stale, isLoading } = useMatches()
 
-  // All non-group, non-late matches go to the early grid
   const earlyMatches = matches
     .filter(m => !GROUP.has(m.stage) && !LATE.has(m.stage))
     .sort((a, b) => new Date(a.utcDate).getTime() - new Date(b.utcDate).getTime())
 
-  const allKoMatches = matches.filter(m => !GROUP.has(m.stage))
+  const allKoMatches = patchKOBracket(matches.filter(m => !GROUP.has(m.stage)))
 
   // Determine which early stages to show (prefer known ones; fallback to actual stages found)
   const knownEarlyStages = ['LAST_64', 'LAST_32', 'ROUND_OF_64', 'ROUND_OF_32']
