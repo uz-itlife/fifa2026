@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import useSWR from 'swr'
 import { useMatches } from '@/hooks/useMatches'
-import type { Match, CachedResponse } from '@/types/football'
+import type { Match, CachedResponse, Goal, Booking } from '@/types/football'
 import { teamRu } from '@/lib/russian-teams'
 import { playerRu } from '@/lib/player-names-ru'
 
@@ -54,18 +54,32 @@ function CrestBadge({ tla, name, crest }: { tla: string; name: string; crest: st
 function ScorersList({ matchId }: { matchId: number }) {
   const { data } = useSWR<CachedResponse<Match>>(`/api/matches/${matchId}`, fetcher)
   const goals = data?.data?.goals ?? []
+  const bookings = data?.data?.bookings ?? []
 
-  if (goals.length === 0) {
-    return <p className="text-xs text-gray-500 text-center mt-2">Детальная статистика недоступна в бесплатном плане API</p>
-  }
+  if (goals.length === 0 && bookings.length === 0) return null
+
+  type Ev =
+    | { minute: number; kind: 'goal'; scorer: Goal['scorer'] }
+    | { minute: number; kind: 'booking'; card: Booking['card']; player: Booking['player'] }
+
+  const events: Ev[] = [
+    ...goals.map(g => ({ minute: g.minute, kind: 'goal' as const, scorer: g.scorer })),
+    ...bookings.map(b => ({ minute: b.minute, kind: 'booking' as const, card: b.card, player: b.player })),
+  ].sort((a, b) => a.minute - b.minute)
 
   return (
     <div className="mt-3 space-y-0.5">
-      {goals.map((g, i) => (
-        <p key={i} className="text-xs text-gray-400 text-center">
-          ⚽ {g.scorer ? playerRu(g.scorer.name) : 'Автогол'} <span className="text-gray-600">{g.minute}'</span>
-        </p>
-      ))}
+      {events.map((ev, i) =>
+        ev.kind === 'goal' ? (
+          <p key={i} className="text-xs text-gray-400 text-center">
+            ⚽ {ev.scorer ? playerRu(ev.scorer.name) : 'Автогол'} <span className="text-gray-600">{ev.minute}'</span>
+          </p>
+        ) : (
+          <p key={i} className="text-xs text-gray-400 text-center">
+            {ev.card === 'RED_CARD' ? '🟥' : '🟨'} {playerRu(ev.player.name)} <span className="text-gray-600">{ev.minute}'</span>
+          </p>
+        )
+      )}
     </div>
   )
 }

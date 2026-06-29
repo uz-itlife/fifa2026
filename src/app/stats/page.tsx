@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { useScorers } from '@/hooks/useScorers'
 import { useStandings } from '@/hooks/useStandings'
+import { useMatches } from '@/hooks/useMatches'
 import { TeamFlag } from '@/components/ui/TeamFlag'
 import { StaleDataBanner } from '@/components/ui/StaleDataBanner'
 import { teamRu } from '@/lib/russian-teams'
@@ -92,11 +93,21 @@ function MatchStatTable({ statKey, suffix, emptyLabel }: {
   )
 }
 
+const GROUP_STAGES = new Set(['GROUP_STAGE', 'REGULAR_SEASON', 'PRELIMINARY_ROUND'])
+const STAGE_SCORE: Record<string, number> = {
+  FINAL: 100, THIRD_PLACE: 60,
+  SEMI_FINALS: 40, QUARTER_FINALS: 20,
+  LAST_16: 10, ROUND_OF_16: 10,
+  LAST_32: 5, ROUND_OF_32: 5,
+}
+
 export default function StatsPage() {
   const [tab, setTab] = useState<TabKey>('teams')
   const [cardsView, setCardsView] = useState<'teams' | 'players'>('teams')
+  const [teamsTab, setTeamsTab] = useState<'group' | 'playoff'>('group')
   const { scorers, stale: scorersStale, isLoading: scorersLoading } = useScorers()
   const { standings, stale: standingsStale, isLoading: standingsLoading } = useStandings()
+  const { matches: allMatches } = useMatches()
 
   const stale = scorersStale || standingsStale
 
@@ -114,6 +125,24 @@ export default function StatsPage() {
       if (a.position !== b.position) return a.position - b.position
       return b.points - a.points || b.goalDifference - a.goalDifference || b.goalsFor - a.goalsFor
     })
+
+  const playoffRanked = (() => {
+    const koMatches = allMatches.filter(m => !GROUP_STAGES.has(m.stage) && m.status === 'FINISHED')
+    if (koMatches.length === 0) return []
+    const map = new Map<string, { tla: string; crest: string; shortName: string; score: number }>()
+    for (const m of koMatches) {
+      const ss = STAGE_SCORE[m.stage] ?? 1
+      const homeWon = m.score.winner === 'HOME_TEAM'
+      const awayWon = m.score.winner === 'AWAY_TEAM'
+      const prev1 = map.get(m.homeTeam.tla)
+      const s1 = ss + (homeWon ? 1 : 0)
+      if (!prev1 || s1 > prev1.score) map.set(m.homeTeam.tla, { tla: m.homeTeam.tla, crest: m.homeTeam.crest, shortName: m.homeTeam.shortName, score: s1 })
+      const prev2 = map.get(m.awayTeam.tla)
+      const s2 = ss + (awayWon ? 1 : 0)
+      if (!prev2 || s2 > prev2.score) map.set(m.awayTeam.tla, { tla: m.awayTeam.tla, crest: m.awayTeam.crest, shortName: m.awayTeam.shortName, score: s2 })
+    }
+    return [...map.values()].sort((a, b) => b.score - a.score)
+  })()
 
   const cardsRanked = (() => {
     const byPlayer = new Map<string, { playerName: string; team: string; yellow: number; red: number }>()
@@ -219,53 +248,91 @@ export default function StatsPage() {
       )}
 
       {tab === 'teams' && (
-        standingsLoading ? (
-          <div className="text-gray-500 text-center py-20">Загрузка...</div>
-        ) : teamsRanked.length === 0 ? (
-          <div className="text-center py-16">
-            <p className="text-lg text-gray-400 mb-2">Групповой этап ещё не начался</p>
-            <p className="text-sm text-gray-500">Рейтинг команд появится после первых матчей</p>
+        <>
+          <div className="flex gap-2 mb-4">
+            {(['group', 'playoff'] as const).map(v => (
+              <button key={v} onClick={() => setTeamsTab(v)}
+                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${teamsTab === v ? 'bg-gold text-dark-bg' : 'text-gray-400 border border-light-border dark:border-dark-border hover:text-white'}`}>
+                {v === 'group' ? 'Лучшие команды группового тура' : 'Лучшие команды плей-офф'}
+              </button>
+            ))}
           </div>
-        ) : (
-          <div className="glass rounded-xl border border-light-border dark:border-dark-border overflow-x-auto">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="text-xs uppercase tracking-wide text-gray-500 border-b border-light-border dark:border-dark-border">
-                  <th className="py-2 px-4 text-left w-8">#</th>
-                  <th className="py-2 px-4 text-left">Команда</th>
-                  <th className="py-2 px-4 text-center w-12">Гр.</th>
-                  <th className="py-2 px-4 text-center w-8">И</th>
-                  <th className="py-2 px-4 text-center w-8">В</th>
-                  <th className="py-2 px-4 text-center w-8">Н</th>
-                  <th className="py-2 px-4 text-center w-8">П</th>
-                  <th className="py-2 px-4 text-center w-10">РГ</th>
-                  <th className="py-2 px-4 text-center text-gold">О</th>
-                </tr>
-              </thead>
-              <tbody>
-                {teamsRanked.map((row, i) => {
-                  const gdSign = row.goalDifference > 0 ? '+' : ''
-                  const posColor = row.position === 1 ? 'text-gold' : row.position === 2 ? 'text-green-500' : row.position === 3 ? (qualifiedThirdTlas.has(row.team.tla) ? 'text-blue-400' : 'text-orange-400') : 'text-gray-500'
-                  return (
-                    <tr key={row.team.id} className="border-t border-light-border/40 dark:border-dark-border/40 hover:bg-gray-50 dark:hover:bg-white/5">
-                      <td className={`py-2 px-4 text-xs font-bold ${posColor}`}>{i + 1}</td>
-                      <td className="py-2 px-4"><TeamFlag tla={row.team.tla} name={teamRu(row.team.tla, row.team.shortName)} crest={row.team.crest} size="sm" /></td>
-                      <td className="py-2 px-4 text-center text-gray-400 text-xs">{row.groupLabel}</td>
-                      <td className="py-2 px-4 text-center text-gray-400">{row.playedGames}</td>
-                      <td className="py-2 px-4 text-center text-win">{row.won}</td>
-                      <td className="py-2 px-4 text-center text-draw">{row.draw}</td>
-                      <td className="py-2 px-4 text-center text-loss">{row.lost}</td>
-                      <td className={['py-2 px-4 text-center text-xs', row.goalDifference > 0 ? 'text-green-400' : row.goalDifference < 0 ? 'text-red-400' : 'text-gray-400'].join(' ')}>
-                        {gdSign}{row.goalDifference}
-                      </td>
-                      <td className="py-2 px-4 text-center font-bold text-gold">{row.points}</td>
+
+          {teamsTab === 'group' && (
+            standingsLoading ? (
+              <div className="text-gray-500 text-center py-20">Загрузка...</div>
+            ) : teamsRanked.length === 0 ? (
+              <div className="text-center py-16">
+                <p className="text-lg text-gray-400 mb-2">Групповой этап ещё не начался</p>
+                <p className="text-sm text-gray-500">Рейтинг команд появится после первых матчей</p>
+              </div>
+            ) : (
+              <div className="glass rounded-xl border border-light-border dark:border-dark-border overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="text-xs uppercase tracking-wide text-gray-500 border-b border-light-border dark:border-dark-border">
+                      <th className="py-2 px-4 text-left w-8">#</th>
+                      <th className="py-2 px-4 text-left">Команда</th>
+                      <th className="py-2 px-4 text-center w-12">Гр.</th>
+                      <th className="py-2 px-4 text-center w-8">И</th>
+                      <th className="py-2 px-4 text-center w-8">В</th>
+                      <th className="py-2 px-4 text-center w-8">Н</th>
+                      <th className="py-2 px-4 text-center w-8">П</th>
+                      <th className="py-2 px-4 text-center w-10">РГ</th>
+                      <th className="py-2 px-4 text-center text-gold">О</th>
                     </tr>
-                  )
-                })}
-              </tbody>
-            </table>
-          </div>
-        )
+                  </thead>
+                  <tbody>
+                    {teamsRanked.map((row, i) => {
+                      const gdSign = row.goalDifference > 0 ? '+' : ''
+                      const posColor = row.position === 1 ? 'text-gold' : row.position === 2 ? 'text-green-500' : row.position === 3 ? (qualifiedThirdTlas.has(row.team.tla) ? 'text-blue-400' : 'text-orange-400') : 'text-gray-500'
+                      return (
+                        <tr key={row.team.id} className="border-t border-light-border/40 dark:border-dark-border/40 hover:bg-gray-50 dark:hover:bg-white/5">
+                          <td className={`py-2 px-4 text-xs font-bold ${posColor}`}>{i + 1}</td>
+                          <td className="py-2 px-4"><TeamFlag tla={row.team.tla} name={teamRu(row.team.tla, row.team.shortName)} crest={row.team.crest} size="sm" /></td>
+                          <td className="py-2 px-4 text-center text-gray-400 text-xs">{row.groupLabel}</td>
+                          <td className="py-2 px-4 text-center text-gray-400">{row.playedGames}</td>
+                          <td className="py-2 px-4 text-center text-win">{row.won}</td>
+                          <td className="py-2 px-4 text-center text-draw">{row.draw}</td>
+                          <td className="py-2 px-4 text-center text-loss">{row.lost}</td>
+                          <td className={['py-2 px-4 text-center text-xs', row.goalDifference > 0 ? 'text-green-400' : row.goalDifference < 0 ? 'text-red-400' : 'text-gray-400'].join(' ')}>
+                            {gdSign}{row.goalDifference}
+                          </td>
+                          <td className="py-2 px-4 text-center font-bold text-gold">{row.points}</td>
+                        </tr>
+                      )
+                    })}
+                  </tbody>
+                </table>
+              </div>
+            )
+          )}
+
+          {teamsTab === 'playoff' && (
+            playoffRanked.length === 0 ? (
+              <PendingSync label="Плей-офф ещё не начался" />
+            ) : (
+              <div className="glass rounded-xl border border-light-border dark:border-dark-border overflow-x-auto">
+                <table className="w-full text-sm">
+                  <thead>
+                    <tr className="text-xs uppercase tracking-wide text-gray-500 border-b border-light-border dark:border-dark-border">
+                      <th className="py-2 px-4 text-left w-8">#</th>
+                      <th className="py-2 px-4 text-left">Команда</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {playoffRanked.map((t, i) => (
+                      <tr key={t.tla} className="border-t border-light-border/40 dark:border-dark-border/40 hover:bg-gray-50 dark:hover:bg-white/5">
+                        <td className="py-2 px-4 text-xs font-bold text-gray-500">{i + 1}</td>
+                        <td className="py-2 px-4"><TeamFlag tla={t.tla} name={teamRu(t.tla, t.shortName)} crest={t.crest} size="sm" /></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )
+          )}
+        </>
       )}
 
       {tab === 'fifa' && (

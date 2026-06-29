@@ -3,6 +3,7 @@ import type { Match } from '@/types/football'
 import { LiveBadge } from '@/components/ui/LiveBadge'
 import { TeamFlag } from '@/components/ui/TeamFlag'
 import { teamRu, cityRu } from '@/lib/russian-teams'
+import { tlaToFlag } from '@/lib/flag-utils'
 
 interface Props { match: Match | null; label?: string; seeding?: string; compact?: boolean }
 
@@ -34,14 +35,14 @@ export function BracketNode({ match, label, seeding, compact }: Props) {
             {isLive ? <LiveBadge minute={match.minute} /> : date}
           </div>
           <div className="flex justify-between items-center text-[11px] mb-0.5">
-            <span className="font-medium truncate">{homeRu}</span>
-            <span className={`font-bold ml-1 tabular-nums shrink-0 ${match.score.winner === 'HOME_TEAM' ? 'text-win' : ''}`}>
+            <span className="font-medium truncate"><span className="mr-0.5">{tlaToFlag(match.homeTeam.tla)}</span>{homeRu}</span>
+            <span className={`font-bold ml-1 tabular-nums shrink-0 ${match.score.winner === 'HOME_TEAM' ? 'text-win' : match.score.winner === 'AWAY_TEAM' ? 'text-loss' : isFinished ? 'text-white' : ''}`}>
               {(isFinished || isLive) ? (match.score.fullTime.home ?? '–') : ''}
             </span>
           </div>
           <div className="flex justify-between items-center text-[11px]">
-            <span className="font-medium truncate">{awayRu}</span>
-            <span className={`font-bold ml-1 tabular-nums shrink-0 ${match.score.winner === 'AWAY_TEAM' ? 'text-win' : ''}`}>
+            <span className="font-medium truncate"><span className="mr-0.5">{tlaToFlag(match.awayTeam.tla)}</span>{awayRu}</span>
+            <span className={`font-bold ml-1 tabular-nums shrink-0 ${match.score.winner === 'AWAY_TEAM' ? 'text-win' : match.score.winner === 'HOME_TEAM' ? 'text-loss' : isFinished ? 'text-white' : ''}`}>
               {(isFinished || isLive) ? (match.score.fullTime.away ?? '–') : ''}
             </span>
           </div>
@@ -58,13 +59,13 @@ export function BracketNode({ match, label, seeding, compact }: Props) {
         </div>
         <div className="flex items-center justify-between mb-1">
           <TeamFlag tla={match.homeTeam.tla} name={homeRu} crest={match.homeTeam.crest} size="sm" />
-          <span className={`font-bold ml-2 tabular-nums text-sm shrink-0 ${match.score.winner === 'HOME_TEAM' ? 'text-win' : ''}`}>
+          <span className={`font-bold ml-2 tabular-nums text-sm shrink-0 ${match.score.winner === 'HOME_TEAM' ? 'text-win' : match.score.winner === 'AWAY_TEAM' ? 'text-loss' : isFinished ? 'text-white' : ''}`}>
             {(isFinished || isLive) ? (match.score.fullTime.home ?? '–') : ''}
           </span>
         </div>
         <div className="flex items-center justify-between">
           <TeamFlag tla={match.awayTeam.tla} name={awayRu} crest={match.awayTeam.crest} size="sm" />
-          <span className={`font-bold ml-2 tabular-nums text-sm shrink-0 ${match.score.winner === 'AWAY_TEAM' ? 'text-win' : ''}`}>
+          <span className={`font-bold ml-2 tabular-nums text-sm shrink-0 ${match.score.winner === 'AWAY_TEAM' ? 'text-win' : match.score.winner === 'HOME_TEAM' ? 'text-loss' : isFinished ? 'text-white' : ''}`}>
             {(isFinished || isLive) ? (match.score.fullTime.away ?? '–') : ''}
           </span>
         </div>
