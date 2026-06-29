@@ -6447,9 +6447,56 @@
       "tla": "CAN",
       "name": "Canada"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 58.4,
+        "fouls": 10,
+        "passes": 554,
+        "passAccuracy": 84,
+        "goalkeeperSaves": 5,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 1
+      },
+      "away": {
+        "possession": 41.6,
+        "fouls": 16,
+        "passes": 379,
+        "passAccuracy": 79,
+        "goalkeeperSaves": 1,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 4
+      }
+    },
+    "cards": [
+      {
+        "playerId": 311163,
+        "playerName": "Nathan Saliba",
+        "team": "CAN",
+        "type": "yellow",
+        "minute": 54
+      },
+      {
+        "playerId": 363538,
+        "playerName": "Niko Sigur",
+        "team": "CAN",
+        "type": "yellow",
+        "minute": 67
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 270505,
+        "playerName": "Stephen Eustáquio",
+        "assistId": null,
+        "assistName": null,
+        "team": "CAN",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "SoFi Stadium",
       "city": "Inglewood, California",
@@ -6555,9 +6602,97 @@
       "tla": "JPN",
       "name": "Japan"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 68.6,
+        "fouls": 4,
+        "passes": 682,
+        "passAccuracy": 92,
+        "goalkeeperSaves": 1,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 6
+      },
+      "away": {
+        "possession": 31.4,
+        "fouls": 13,
+        "passes": 315,
+        "passAccuracy": 83,
+        "goalkeeperSaves": 4,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 2
+      }
+    },
+    "cards": [
+      {
+        "playerId": 357030,
+        "playerName": "Kaishu Sano",
+        "team": "JPN",
+        "type": "yellow",
+        "minute": 12
+      },
+      {
+        "playerId": 173666,
+        "playerName": "Casemiro",
+        "team": "BRA",
+        "type": "yellow",
+        "minute": 14
+      },
+      {
+        "playerId": 219362,
+        "playerName": "Daichi Kamada",
+        "team": "JPN",
+        "type": "yellow",
+        "minute": 45
+      },
+      {
+        "playerId": 170369,
+        "playerName": "Danilo",
+        "team": "BRA",
+        "type": "yellow",
+        "minute": 48
+      },
+      {
+        "playerId": 333663,
+        "playerName": "Junnosuke Suzuki",
+        "team": "JPN",
+        "type": "yellow",
+        "minute": 84
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 357030,
+        "playerName": "Kaishu Sano",
+        "assistId": null,
+        "assistName": null,
+        "team": "JPN",
+        "type": "GOAL",
+        "minute": 29,
+        "injuryTime": null
+      },
+      {
+        "playerId": 173666,
+        "playerName": "Casemiro",
+        "assistId": 236322,
+        "assistName": "Gabriel Magalhães",
+        "team": "BRA",
+        "type": "GOAL---HEADER",
+        "minute": 56,
+        "injuryTime": null
+      },
+      {
+        "playerId": 269844,
+        "playerName": "Gabriel Martinelli",
+        "assistId": 218522,
+        "assistName": "Bruno Guimarães",
+        "team": "BRA",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "NRG Stadium",
       "city": "Houston, Texas",

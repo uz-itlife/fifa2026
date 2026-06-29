@@ -155,7 +155,9 @@ async function main() {
   let synced = 0
 
   for (const match of matches) {
-    if (store[match.id]?.venue) continue
+    const existing = store[match.id]
+    // Skip only if goals or stats already synced (venue-only entries still need full sync)
+    if (existing?.goals?.length > 0 || (existing?.stats?.home !== null && existing?.stats?.home !== undefined)) continue
     console.log(`Syncing match ${match.id}: ${match.homeTeam.tla} vs ${match.awayTeam.tla}`)
     try {
       const event = await findEvent(match)
