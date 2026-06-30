@@ -6583,9 +6583,59 @@
       "tla": "MAR",
       "name": "Morocco"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 30,
+        "fouls": 18,
+        "passes": 373,
+        "passAccuracy": 79,
+        "goalkeeperSaves": 5,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 5
+      },
+      "away": {
+        "possession": 70,
+        "fouls": 15,
+        "passes": 878,
+        "passAccuracy": 91,
+        "goalkeeperSaves": 1,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 8
+      }
+    },
+    "cards": [
+      {
+        "playerId": 230963,
+        "playerName": "Issa Diop",
+        "team": "MAR",
+        "type": "yellow",
+        "minute": 47
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 249524,
+        "playerName": "Cody Gakpo",
+        "assistId": 284792,
+        "assistName": "Crysencio Summerville",
+        "team": "NED",
+        "type": "GOAL",
+        "minute": 72,
+        "injuryTime": null
+      },
+      {
+        "playerId": 230963,
+        "playerName": "Issa Diop",
+        "assistId": 360062,
+        "assistName": "Chemsdine Talbi",
+        "team": "MAR",
+        "type": "GOAL---HEADER",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "Estadio BBVA",
       "city": "Guadalupe",
