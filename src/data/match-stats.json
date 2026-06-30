@@ -6847,9 +6847,69 @@
       "tla": "NOR",
       "name": "Norway"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 47.1,
+        "fouls": 6,
+        "passes": 401,
+        "passAccuracy": 85,
+        "goalkeeperSaves": 1,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 14
+      },
+      "away": {
+        "possession": 52.9,
+        "fouls": 7,
+        "passes": 473,
+        "passAccuracy": 88,
+        "goalkeeperSaves": 4,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 3
+      }
+    },
+    "cards": [
+      {
+        "playerId": 319368,
+        "playerName": "Antonio Nusa",
+        "team": "NOR",
+        "type": "yellow",
+        "minute": 45
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 319368,
+        "playerName": "Antonio Nusa",
+        "assistId": 203669,
+        "assistName": "Martin Ødegaard",
+        "team": "NOR",
+        "type": "GOAL",
+        "minute": 39,
+        "injuryTime": null
+      },
+      {
+        "playerId": 291630,
+        "playerName": "Amad Diallo",
+        "assistId": 210397,
+        "assistName": "Nicolas Pépé",
+        "team": "CIV",
+        "type": "GOAL",
+        "minute": 74,
+        "injuryTime": null
+      },
+      {
+        "playerId": 253989,
+        "playerName": "Erling Haaland",
+        "assistId": 205924,
+        "assistName": "Patrick Berg",
+        "team": "NOR",
+        "type": "GOAL",
+        "minute": 86,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "AT&T Stadium",
       "city": "Arlington, Texas",
