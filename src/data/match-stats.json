@@ -4301,6 +4301,24 @@
       "country": "USA"
     }
   },
+  "537376": {
+    "homeTeam": {
+      "tla": "CAN",
+      "name": "Canada"
+    },
+    "awayTeam": {
+      "tla": "MAR",
+      "name": "Morocco"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "NRG Stadium",
+      "city": "Houston, Texas",
+      "country": "USA"
+    }
+  },
   "537391": {
     "homeTeam": {
       "tla": "FRA",
