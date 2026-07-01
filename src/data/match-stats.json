@@ -6811,9 +6811,96 @@
       "tla": "SEN",
       "name": "Senegal"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 52.2,
+        "fouls": 22,
+        "passes": 699,
+        "passAccuracy": 86,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 4
+      },
+      "away": {
+        "possession": 47.8,
+        "fouls": 12,
+        "passes": 639,
+        "passAccuracy": 84,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 2
+      }
+    },
+    "cards": [
+      {
+        "playerId": 191222,
+        "playerName": "Brandon Mechele",
+        "team": "BEL",
+        "type": "yellow",
+        "minute": 64
+      },
+      {
+        "playerId": 38721,
+        "playerName": "Lamine Camara",
+        "team": "SEN",
+        "type": "yellow",
+        "minute": 67
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 324991,
+        "playerName": "Habib Diarra",
+        "assistId": null,
+        "assistName": null,
+        "team": "SEN",
+        "type": "GOAL",
+        "minute": 25,
+        "injuryTime": null
+      },
+      {
+        "playerId": 241012,
+        "playerName": "Ismaïla Sarr",
+        "assistId": 213181,
+        "assistName": "Moussa Niakhaté",
+        "team": "SEN",
+        "type": "GOAL",
+        "minute": 51,
+        "injuryTime": null
+      },
+      {
+        "playerId": 139437,
+        "playerName": "Romelu Lukaku",
+        "assistId": 166473,
+        "assistName": "Thomas Meunier",
+        "team": "BEL",
+        "type": "GOAL",
+        "minute": 86,
+        "injuryTime": null
+      },
+      {
+        "playerId": 193297,
+        "playerName": "Youri Tielemans",
+        "assistId": 174980,
+        "assistName": "Leandro Trossard",
+        "team": "BEL",
+        "type": "GOAL---HEADER",
+        "minute": 89,
+        "injuryTime": null
+      },
+      {
+        "playerId": 193297,
+        "playerName": "Youri Tielemans",
+        "assistId": null,
+        "assistName": null,
+        "team": "BEL",
+        "type": "PENALTY---SCORED",
+        "minute": 120,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "Lumen Field",
       "city": "Seattle, Washington",
