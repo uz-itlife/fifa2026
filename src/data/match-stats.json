@@ -6518,9 +6518,61 @@
       "tla": "SWE",
       "name": "Sweden"
     },
-    "stats": null,
+    "stats": {
+      "home": {
+        "possession": 61,
+        "fouls": 14,
+        "passes": 551,
+        "passAccuracy": 88,
+        "goalkeeperSaves": 3,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 9
+      },
+      "away": {
+        "possession": 39,
+        "fouls": 10,
+        "passes": 351,
+        "passAccuracy": 79,
+        "goalkeeperSaves": 9,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 1
+      }
+    },
     "cards": [],
-    "goals": [],
+    "goals": [
+      {
+        "playerId": 231388,
+        "playerName": "Kylian Mbappé",
+        "assistId": 229744,
+        "assistName": "Ousmane Dembélé",
+        "team": "FRA",
+        "type": "GOAL",
+        "minute": 45,
+        "injuryTime": null
+      },
+      {
+        "playerId": 328238,
+        "playerName": "Bradley Barcola",
+        "assistId": 286831,
+        "assistName": "Michael Olise",
+        "team": "FRA",
+        "type": "GOAL",
+        "minute": 53,
+        "injuryTime": null
+      },
+      {
+        "playerId": 231388,
+        "playerName": "Kylian Mbappé",
+        "assistId": 286831,
+        "assistName": "Michael Olise",
+        "team": "FRA",
+        "type": "GOAL",
+        "minute": 74,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "MetLife Stadium",
       "city": "East Rutherford, New Jersey",
