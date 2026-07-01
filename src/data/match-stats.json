@@ -4301,6 +4301,24 @@
       "country": "USA"
     }
   },
+  "537375": {
+    "homeTeam": {
+      "tla": "PAR",
+      "name": "Paraguay"
+    },
+    "awayTeam": {
+      "tla": "FRA",
+      "name": "France"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "Lincoln Financial Field",
+      "city": "Philadelphia, Pennsylvania",
+      "country": "USA"
+    }
+  },
   "537376": {
     "homeTeam": {
       "tla": "CAN",
@@ -4316,6 +4334,24 @@
     "venue": {
       "name": "NRG Stadium",
       "city": "Houston, Texas",
+      "country": "USA"
+    }
+  },
+  "537377": {
+    "homeTeam": {
+      "tla": "BRA",
+      "name": "Brazil"
+    },
+    "awayTeam": {
+      "tla": "NOR",
+      "name": "Norway"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "MetLife Stadium",
+      "city": "East Rutherford, New Jersey",
       "country": "USA"
     }
   },
