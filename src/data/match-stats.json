@@ -7102,9 +7102,76 @@
       "tla": "COD",
       "name": "Congo DR"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 59.7,
+        "fouls": 10,
+        "passes": 517,
+        "passAccuracy": 91,
+        "goalkeeperSaves": 1,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 5
+      },
+      "away": {
+        "possession": 40.3,
+        "fouls": 12,
+        "passes": 365,
+        "passAccuracy": 82,
+        "goalkeeperSaves": 5,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 3
+      }
+    },
+    "cards": [
+      {
+        "playerId": 291281,
+        "playerName": "Jude Bellingham",
+        "team": "ENG",
+        "type": "yellow",
+        "minute": 19
+      },
+      {
+        "playerId": 340240,
+        "playerName": "Noah Sadiki",
+        "team": "COD",
+        "type": "yellow",
+        "minute": 28
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 352285,
+        "playerName": "Brian Cipenga",
+        "assistId": 174322,
+        "assistName": "Chancel Mbemba",
+        "team": "COD",
+        "type": "GOAL",
+        "minute": 7,
+        "injuryTime": null
+      },
+      {
+        "playerId": 142200,
+        "playerName": "Harry Kane",
+        "assistId": 268782,
+        "assistName": "Anthony Gordon",
+        "team": "ENG",
+        "type": "GOAL---HEADER",
+        "minute": 75,
+        "injuryTime": null
+      },
+      {
+        "playerId": 142200,
+        "playerName": "Harry Kane",
+        "assistId": 268782,
+        "assistName": "Anthony Gordon",
+        "team": "ENG",
+        "type": "GOAL",
+        "minute": 86,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "Mercedes-Benz Stadium",
       "city": "Atlanta, Georgia",
