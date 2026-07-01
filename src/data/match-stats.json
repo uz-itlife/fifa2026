@@ -6977,9 +6977,80 @@
       "tla": "ECU",
       "name": "Ecuador"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 43.2,
+        "fouls": 10,
+        "passes": 319,
+        "passAccuracy": 78,
+        "goalkeeperSaves": 1,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 3
+      },
+      "away": {
+        "possession": 56.8,
+        "fouls": 14,
+        "passes": 408,
+        "passAccuracy": 84,
+        "goalkeeperSaves": 1,
+        "yellowCards": 3,
+        "redCards": 1,
+        "corners": 8
+      }
+    },
+    "cards": [
+      {
+        "playerId": 262111,
+        "playerName": "Alan Franco",
+        "team": "ECU",
+        "type": "yellow",
+        "minute": 45
+      },
+      {
+        "playerId": 358746,
+        "playerName": "Kendry Páez",
+        "team": "ECU",
+        "type": "yellow",
+        "minute": 90
+      },
+      {
+        "playerId": 292062,
+        "playerName": "Piero Hincapié",
+        "team": "ECU",
+        "type": "red",
+        "minute": 90
+      },
+      {
+        "playerId": 289877,
+        "playerName": "Moisés Caicedo",
+        "team": "ECU",
+        "type": "yellow",
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 233075,
+        "playerName": "Julián Quiñones",
+        "assistId": 194308,
+        "assistName": "Roberto Alvarado",
+        "team": "MEX",
+        "type": "GOAL",
+        "minute": 22,
+        "injuryTime": null
+      },
+      {
+        "playerId": 167060,
+        "playerName": "Raúl Jiménez",
+        "assistId": 233075,
+        "assistName": "Julián Quiñones",
+        "team": "MEX",
+        "type": "GOAL",
+        "minute": 31,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "Estadio Banorte",
       "city": "Mexico City",
