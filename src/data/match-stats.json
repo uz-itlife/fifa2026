@@ -6811,9 +6811,69 @@
       "tla": "AUT",
       "name": "Austria"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 64.5,
+        "fouls": 8,
+        "passes": 629,
+        "passAccuracy": 91,
+        "goalkeeperSaves": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 9
+      },
+      "away": {
+        "possession": 35.5,
+        "fouls": 15,
+        "passes": 346,
+        "passAccuracy": 82,
+        "goalkeeperSaves": 6,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 0
+      }
+    },
+    "cards": [
+      {
+        "playerId": 238906,
+        "playerName": "Stefan Posch",
+        "team": "AUT",
+        "type": "yellow",
+        "minute": 83
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 229018,
+        "playerName": "Mikel Oyarzabal",
+        "assistId": 259910,
+        "assistName": "Marc Cucurella",
+        "team": "ESP",
+        "type": "GOAL",
+        "minute": 36,
+        "injuryTime": null
+      },
+      {
+        "playerId": 268533,
+        "playerName": "Pedro Porro",
+        "assistId": 297373,
+        "assistName": "Álex Baena",
+        "team": "ESP",
+        "type": "GOAL---HEADER",
+        "minute": 66,
+        "injuryTime": null
+      },
+      {
+        "playerId": 229018,
+        "playerName": "Mikel Oyarzabal",
+        "assistId": 259910,
+        "assistName": "Marc Cucurella",
+        "team": "ESP",
+        "type": "GOAL",
+        "minute": 89,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "SoFi Stadium",
       "city": "Inglewood, California",
