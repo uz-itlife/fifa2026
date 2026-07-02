@@ -4355,6 +4355,42 @@
       "country": "USA"
     }
   },
+  "537378": {
+    "homeTeam": {
+      "tla": "MEX",
+      "name": "Mexico"
+    },
+    "awayTeam": {
+      "tla": "ENG",
+      "name": "England"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "Estadio Banorte",
+      "city": "Mexico City",
+      "country": "Mexico"
+    }
+  },
+  "537380": {
+    "homeTeam": {
+      "tla": "USA",
+      "name": "United States"
+    },
+    "awayTeam": {
+      "tla": "BEL",
+      "name": "Belgium"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "Lumen Field",
+      "city": "Seattle, Washington",
+      "country": "USA"
+    }
+  },
   "537391": {
     "homeTeam": {
       "tla": "FRA",
