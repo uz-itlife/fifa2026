@@ -6793,9 +6793,66 @@
       "tla": "BIH",
       "name": "Bosnia-Herzegovina"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 48.4,
+        "fouls": 7,
+        "passes": 415,
+        "passAccuracy": 83,
+        "goalkeeperSaves": 3,
+        "yellowCards": 0,
+        "redCards": 1,
+        "corners": 4
+      },
+      "away": {
+        "possession": 51.6,
+        "fouls": 13,
+        "passes": 446,
+        "passAccuracy": 82,
+        "goalkeeperSaves": 0,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 3
+      }
+    },
+    "cards": [
+      {
+        "playerId": 282643,
+        "playerName": "Folarin Balogun",
+        "team": "USA",
+        "type": "red",
+        "minute": 64
+      },
+      {
+        "playerId": 275414,
+        "playerName": "Stjepan Radeljic",
+        "team": "BIH",
+        "type": "yellow",
+        "minute": 80
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 282643,
+        "playerName": "Folarin Balogun",
+        "assistId": null,
+        "assistName": null,
+        "team": "USA",
+        "type": "GOAL",
+        "minute": 45,
+        "injuryTime": null
+      },
+      {
+        "playerId": 301416,
+        "playerName": "Malik Tillman",
+        "assistId": null,
+        "assistName": null,
+        "team": "USA",
+        "type": "GOAL---FREE-KICK",
+        "minute": 82,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "Levi's Stadium",
       "city": "Santa Clara, California",
