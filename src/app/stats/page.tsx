@@ -94,11 +94,20 @@ function MatchStatTable({ statKey, suffix, emptyLabel }: {
 }
 
 const GROUP_STAGES = new Set(['GROUP_STAGE', 'REGULAR_SEASON', 'PRELIMINARY_ROUND'])
-const STAGE_SCORE: Record<string, number> = {
-  FINAL: 100, THIRD_PLACE: 60,
-  SEMI_FINALS: 40, QUARTER_FINALS: 20,
-  LAST_16: 10, ROUND_OF_16: 10,
-  LAST_32: 5, ROUND_OF_32: 5,
+const STAGE_RANK: Record<string, number> = {
+  LAST_32: 1, ROUND_OF_32: 1,
+  LAST_16: 2, ROUND_OF_16: 2,
+  QUARTER_FINALS: 3,
+  SEMI_FINALS: 4,
+  THIRD_PLACE: 5,
+  FINAL: 6,
+}
+
+type PlayoffTeam = {
+  tla: string; crest: string; shortName: string
+  w32: boolean | null; w16: boolean | null; wQF: boolean | null
+  gf: number; ga: number
+  maxRank: number; stillIn: boolean
 }
 
 export default function StatsPage() {
@@ -128,20 +137,33 @@ export default function StatsPage() {
 
   const playoffRanked = (() => {
     const koMatches = allMatches.filter(m => !GROUP_STAGES.has(m.stage) && m.status === 'FINISHED')
-    if (koMatches.length === 0) return []
-    const map = new Map<string, { tla: string; crest: string; shortName: string; score: number }>()
+    if (koMatches.length === 0) return [] as PlayoffTeam[]
+    const map = new Map<string, PlayoffTeam>()
+    const get = (t: typeof koMatches[0]['homeTeam']): PlayoffTeam => {
+      if (!map.has(t.tla)) map.set(t.tla, { tla: t.tla, crest: t.crest, shortName: t.shortName, w32: null, w16: null, wQF: null, gf: 0, ga: 0, maxRank: 0, stillIn: true })
+      return map.get(t.tla)!
+    }
     for (const m of koMatches) {
-      const ss = STAGE_SCORE[m.stage] ?? 1
+      const rank = STAGE_RANK[m.stage] ?? 0
       const homeWon = m.score.winner === 'HOME_TEAM'
       const awayWon = m.score.winner === 'AWAY_TEAM'
-      const prev1 = map.get(m.homeTeam.tla)
-      const s1 = ss + (homeWon ? 1 : 0)
-      if (!prev1 || s1 > prev1.score) map.set(m.homeTeam.tla, { tla: m.homeTeam.tla, crest: m.homeTeam.crest, shortName: m.homeTeam.shortName, score: s1 })
-      const prev2 = map.get(m.awayTeam.tla)
-      const s2 = ss + (awayWon ? 1 : 0)
-      if (!prev2 || s2 > prev2.score) map.set(m.awayTeam.tla, { tla: m.awayTeam.tla, crest: m.awayTeam.crest, shortName: m.awayTeam.shortName, score: s2 })
+      const hg = m.score.fullTime.home ?? 0
+      const ag = m.score.fullTime.away ?? 0
+      const h = get(m.homeTeam); h.gf += hg; h.ga += ag
+      const a = get(m.awayTeam); a.gf += ag; a.ga += hg
+      if (rank > h.maxRank) h.maxRank = rank
+      if (rank > a.maxRank) a.maxRank = rank
+      if (!homeWon) h.stillIn = false
+      if (!awayWon) a.stillIn = false
+      if (rank === 1) { h.w32 = homeWon; a.w32 = awayWon }
+      if (rank === 2) { h.w16 = homeWon; a.w16 = awayWon }
+      if (rank === 3) { h.wQF = homeWon; a.wQF = awayWon }
     }
-    return [...map.values()].sort((a, b) => b.score - a.score)
+    return [...map.values()].sort((a, b) => {
+      if (b.maxRank !== a.maxRank) return b.maxRank - a.maxRank
+      if (a.stillIn !== b.stillIn) return a.stillIn ? -1 : 1
+      return (b.gf - b.ga) - (a.gf - a.ga)
+    })
   })()
 
   const cardsRanked = (() => {
@@ -316,17 +338,37 @@ export default function StatsPage() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="text-xs uppercase tracking-wide text-gray-500 border-b border-light-border dark:border-dark-border">
-                      <th className="py-2 px-4 text-left w-8">#</th>
-                      <th className="py-2 px-4 text-left">Команда</th>
+                      <th className="py-2 px-3 text-left w-8">#</th>
+                      <th className="py-2 px-3 text-left">Команда</th>
+                      <th className="py-2 px-3 text-center w-10">1/16</th>
+                      <th className="py-2 px-3 text-center w-10">1/8</th>
+                      <th className="py-2 px-3 text-center w-10">1/4</th>
+                      <th className="py-2 px-3 text-center w-14">Г:П</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {playoffRanked.map((t, i) => (
-                      <tr key={t.tla} className="border-t border-light-border/40 dark:border-dark-border/40 hover:bg-gray-50 dark:hover:bg-white/5">
-                        <td className="py-2 px-4 text-xs font-bold text-gray-500">{i + 1}</td>
-                        <td className="py-2 px-4"><TeamFlag tla={t.tla} name={teamRu(t.tla, t.shortName)} crest={t.crest} size="sm" /></td>
-                      </tr>
-                    ))}
+                    {playoffRanked.map((t, i) => {
+                      const win = (v: boolean | null) =>
+                        v === true ? <span className="text-green-500 font-bold">✓</span>
+                        : v === false ? <span className="text-red-500">✗</span>
+                        : <span className="text-gray-500">—</span>
+                      const gdColor = t.gf > t.ga ? 'text-green-400' : t.gf < t.ga ? 'text-red-400' : 'text-gray-400'
+                      return (
+                        <tr key={t.tla} className={[
+                          'border-t border-light-border/40 dark:border-dark-border/40',
+                          t.stillIn ? 'bg-green-500/5 hover:bg-green-500/10' : 'hover:bg-gray-50 dark:hover:bg-white/5',
+                        ].join(' ')}>
+                          <td className="py-2 px-3 text-xs font-bold text-gray-500">{i + 1}</td>
+                          <td className="py-2 px-3">
+                            <TeamFlag tla={t.tla} name={teamRu(t.tla, t.shortName)} crest={t.crest} size="sm" />
+                          </td>
+                          <td className="py-2 px-3 text-center">{win(t.w32)}</td>
+                          <td className="py-2 px-3 text-center">{win(t.w16)}</td>
+                          <td className="py-2 px-3 text-center">{win(t.wQF)}</td>
+                          <td className={`py-2 px-3 text-center font-mono text-xs font-bold ${gdColor}`}>{t.gf}:{t.ga}</td>
+                        </tr>
+                      )
+                    })}
                   </tbody>
                 </table>
               </div>

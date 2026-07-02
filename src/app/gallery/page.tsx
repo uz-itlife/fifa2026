@@ -1,8 +1,8 @@
 'use client'
 import { useState, useEffect, useCallback } from 'react'
 
-const WEBP = new Set([14, 19, 21])
-const PHOTOS = Array.from({ length: 23 }, (_, i) => {
+const WEBP = new Set([1, 17, 24])
+const PHOTOS = Array.from({ length: 40 }, (_, i) => {
   const n = String(i + 1).padStart(2, '0')
   return `/gallery/${n}.${WEBP.has(i + 1) ? 'webp' : 'jpg'}`
 })
