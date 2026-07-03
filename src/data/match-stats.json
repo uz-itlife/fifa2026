@@ -7519,9 +7519,66 @@
       "tla": "EGY",
       "name": "Egypt"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 41.7,
+        "fouls": 12,
+        "passes": 507,
+        "passAccuracy": 80,
+        "goalkeeperSaves": 3,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 4
+      },
+      "away": {
+        "possession": 58.3,
+        "fouls": 14,
+        "passes": 723,
+        "passAccuracy": 85,
+        "goalkeeperSaves": 1,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 7
+      }
+    },
+    "cards": [
+      {
+        "playerId": 276440,
+        "playerName": "Haissem Hassan",
+        "team": "EGY",
+        "type": "yellow",
+        "minute": 105
+      },
+      {
+        "playerId": 265417,
+        "playerName": "Yasser Ibrahim",
+        "team": "EGY",
+        "type": "yellow",
+        "minute": 120
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 299365,
+        "playerName": "Emam Ashour",
+        "assistId": 216119,
+        "assistName": "Karim Hafez",
+        "team": "EGY",
+        "type": "GOAL---HEADER",
+        "minute": 13,
+        "injuryTime": null
+      },
+      {
+        "playerId": 119993,
+        "playerName": "Mohamed Hany",
+        "assistId": null,
+        "assistName": null,
+        "team": "AUS",
+        "type": "OWN_GOAL",
+        "minute": 55,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "AT&T Stadium",
       "city": "Arlington, Texas",
