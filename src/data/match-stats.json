@@ -4310,9 +4310,63 @@
       "tla": "FRA",
       "name": "France"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 24,
+        "fouls": 13,
+        "passes": 183,
+        "passAccuracy": 54,
+        "goalkeeperSaves": 4,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 2
+      },
+      "away": {
+        "possession": 76,
+        "fouls": 11,
+        "passes": 568,
+        "passAccuracy": 90,
+        "goalkeeperSaves": 1,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 12
+      }
+    },
+    "cards": [
+      {
+        "playerId": 328238,
+        "playerName": "Bradley Barcola",
+        "team": "FRA",
+        "type": "yellow",
+        "minute": 19
+      },
+      {
+        "playerId": 285226,
+        "playerName": "Manu Koné",
+        "team": "FRA",
+        "type": "yellow",
+        "minute": 81
+      },
+      {
+        "playerId": 286831,
+        "playerName": "Michael Olise",
+        "team": "FRA",
+        "type": "yellow",
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 231388,
+        "playerName": "Kylian Mbappé",
+        "assistId": null,
+        "assistName": null,
+        "team": "FRA",
+        "type": "PENALTY---SCORED",
+        "minute": 70,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "Lincoln Financial Field",
       "city": "Philadelphia, Pennsylvania",
