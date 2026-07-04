@@ -4328,9 +4328,118 @@
       "tla": "MAR",
       "name": "Morocco"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 44.6,
+        "fouls": 24,
+        "passes": 358,
+        "passAccuracy": 76,
+        "goalkeeperSaves": 1,
+        "yellowCards": 4,
+        "redCards": 0,
+        "corners": 11
+      },
+      "away": {
+        "possession": 55.4,
+        "fouls": 14,
+        "passes": 472,
+        "passAccuracy": 82,
+        "goalkeeperSaves": 3,
+        "yellowCards": 4,
+        "redCards": 0,
+        "corners": 1
+      }
+    },
+    "cards": [
+      {
+        "playerId": 328300,
+        "playerName": "Redouane Halhal",
+        "team": "MAR",
+        "type": "yellow",
+        "minute": 20
+      },
+      {
+        "playerId": 240233,
+        "playerName": "Achraf Hakimi",
+        "team": "MAR",
+        "type": "yellow",
+        "minute": 40
+      },
+      {
+        "playerId": 230626,
+        "playerName": "Richie Laryea",
+        "team": "CAN",
+        "type": "yellow",
+        "minute": 40
+      },
+      {
+        "playerId": 273499,
+        "playerName": "Jonathan David",
+        "team": "CAN",
+        "type": "yellow",
+        "minute": 43
+      },
+      {
+        "playerId": 291552,
+        "playerName": "Azzedine Ounahi",
+        "team": "MAR",
+        "type": "yellow",
+        "minute": 45
+      },
+      {
+        "playerId": 336595,
+        "playerName": "Bilal El Khannouss",
+        "team": "MAR",
+        "type": "yellow",
+        "minute": 45
+      },
+      {
+        "playerId": 365345,
+        "playerName": "Luc de Fougerolles",
+        "team": "CAN",
+        "type": "yellow",
+        "minute": 49
+      },
+      {
+        "playerId": 205024,
+        "playerName": "Cyle Larin",
+        "team": "CAN",
+        "type": "yellow",
+        "minute": 67
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 291552,
+        "playerName": "Azzedine Ounahi",
+        "assistId": 240233,
+        "assistName": "Achraf Hakimi",
+        "team": "MAR",
+        "type": "GOAL",
+        "minute": 50,
+        "injuryTime": null
+      },
+      {
+        "playerId": 291552,
+        "playerName": "Azzedine Ounahi",
+        "assistId": 246532,
+        "assistName": "Brahim Díaz",
+        "team": "MAR",
+        "type": "GOAL",
+        "minute": 82,
+        "injuryTime": null
+      },
+      {
+        "playerId": 276139,
+        "playerName": "Soufiane Rahimi",
+        "assistId": 246532,
+        "assistName": "Brahim Díaz",
+        "team": "MAR",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "NRG Stadium",
       "city": "Houston, Texas",
