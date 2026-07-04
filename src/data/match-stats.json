@@ -4373,6 +4373,24 @@
       "country": "Mexico"
     }
   },
+  "537379": {
+    "homeTeam": {
+      "tla": "POR",
+      "name": "Portugal"
+    },
+    "awayTeam": {
+      "tla": "ESP",
+      "name": "Spain"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "AT&T Stadium",
+      "city": "Arlington, Texas",
+      "country": "USA"
+    }
+  },
   "537380": {
     "homeTeam": {
       "tla": "USA",
@@ -4389,6 +4407,42 @@
       "name": "Lumen Field",
       "city": "Seattle, Washington",
       "country": "USA"
+    }
+  },
+  "537381": {
+    "homeTeam": {
+      "tla": "ARG",
+      "name": "Argentina"
+    },
+    "awayTeam": {
+      "tla": "EGY",
+      "name": "Egypt"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "Mercedes-Benz Stadium",
+      "city": "Atlanta, Georgia",
+      "country": "USA"
+    }
+  },
+  "537382": {
+    "homeTeam": {
+      "tla": "SUI",
+      "name": "Switzerland"
+    },
+    "awayTeam": {
+      "tla": "COL",
+      "name": "Colombia"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "BC Place",
+      "city": "Vancouver",
+      "country": "Canada"
     }
   },
   "537391": {
