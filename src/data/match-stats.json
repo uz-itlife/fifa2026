@@ -7501,9 +7501,96 @@
       "tla": "CPV",
       "name": "Cape Verde Islands"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 63.6,
+        "fouls": 13,
+        "passes": 850,
+        "passAccuracy": 92,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 8
+      },
+      "away": {
+        "possession": 36.4,
+        "fouls": 12,
+        "passes": 476,
+        "passAccuracy": 86,
+        "goalkeeperSaves": 8,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 8
+      }
+    },
+    "cards": [
+      {
+        "playerId": 327173,
+        "playerName": "Kevin Pina",
+        "team": "CPV",
+        "type": "yellow",
+        "minute": 68
+      },
+      {
+        "playerId": 228262,
+        "playerName": "Gonzalo Montiel",
+        "team": "ARG",
+        "type": "yellow",
+        "minute": 115
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 45843,
+        "playerName": "Lionel Messi",
+        "assistId": 233937,
+        "assistName": "Lisandro Martínez",
+        "team": "ARG",
+        "type": "GOAL",
+        "minute": 29,
+        "injuryTime": null
+      },
+      {
+        "playerId": 246442,
+        "playerName": "Deroy Duarte",
+        "assistId": 135216,
+        "assistName": "Ryan Mendes",
+        "team": "CPV",
+        "type": "GOAL",
+        "minute": 59,
+        "injuryTime": null
+      },
+      {
+        "playerId": 233937,
+        "playerName": "Lisandro Martínez",
+        "assistId": 249299,
+        "assistName": "Alexis Mac Allister",
+        "team": "ARG",
+        "type": "GOAL",
+        "minute": 92,
+        "injuryTime": null
+      },
+      {
+        "playerId": 332394,
+        "playerName": "Sidny Lopes Cabral",
+        "assistId": 101251,
+        "assistName": "Yannick Semedo",
+        "team": "CPV",
+        "type": "GOAL",
+        "minute": 103,
+        "injuryTime": null
+      },
+      {
+        "playerId": 214683,
+        "playerName": "Diney Borges",
+        "assistId": null,
+        "assistName": null,
+        "team": "ARG",
+        "type": "OWN_GOAL",
+        "minute": 111,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "Hard Rock Stadium",
       "city": "Miami Gardens, Florida",
@@ -7669,9 +7756,77 @@
       "tla": "GHA",
       "name": "Ghana"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 60.6,
+        "fouls": 14,
+        "passes": 586,
+        "passAccuracy": 91,
+        "goalkeeperSaves": 0,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 3
+      },
+      "away": {
+        "possession": 39.4,
+        "fouls": 10,
+        "passes": 377,
+        "passAccuracy": 83,
+        "goalkeeperSaves": 7,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 2
+      }
+    },
+    "cards": [
+      {
+        "playerId": 239566,
+        "playerName": "Jhon Arias",
+        "team": "COL",
+        "type": "yellow",
+        "minute": 12
+      },
+      {
+        "playerId": 387659,
+        "playerName": "Caleb Yirenkyi",
+        "team": "GHA",
+        "type": "yellow",
+        "minute": 49
+      },
+      {
+        "playerId": 318680,
+        "playerName": "Fatawu Issahaku",
+        "team": "GHA",
+        "type": "yellow",
+        "minute": 66
+      },
+      {
+        "playerId": 305669,
+        "playerName": "Alidu Seidu",
+        "team": "GHA",
+        "type": "yellow",
+        "minute": 76
+      },
+      {
+        "playerId": 301520,
+        "playerName": "Richard Ríos",
+        "team": "COL",
+        "type": "yellow",
+        "minute": 78
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 239566,
+        "playerName": "Jhon Arias",
+        "assistId": 272722,
+        "assistName": "Luis Suárez",
+        "team": "COL",
+        "type": "GOAL",
+        "minute": 14,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "GEHA Field at Arrowhead Stadium",
       "city": "Kansas City, Missouri",
