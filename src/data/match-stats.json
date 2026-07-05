@@ -4608,6 +4608,24 @@
       "country": "Canada"
     }
   },
+  "537383": {
+    "homeTeam": {
+      "tla": "FRA",
+      "name": "France"
+    },
+    "awayTeam": {
+      "tla": "MAR",
+      "name": "Morocco"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "Gillette Stadium",
+      "city": "Foxborough, Massachusetts",
+      "country": "USA"
+    }
+  },
   "537391": {
     "homeTeam": {
       "tla": "FRA",
