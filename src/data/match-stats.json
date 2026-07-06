@@ -4727,9 +4727,63 @@
       "tla": "ESP",
       "name": "Spain"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 44.5,
+        "fouls": 9,
+        "passes": 426,
+        "passAccuracy": 84,
+        "goalkeeperSaves": 5,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 3
+      },
+      "away": {
+        "possession": 55.5,
+        "fouls": 13,
+        "passes": 531,
+        "passAccuracy": 88,
+        "goalkeeperSaves": 2,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 7
+      }
+    },
+    "cards": [
+      {
+        "playerId": 199833,
+        "playerName": "Bernardo Silva",
+        "team": "POR",
+        "type": "yellow",
+        "minute": 89
+      },
+      {
+        "playerId": 337011,
+        "playerName": "Renato Veiga",
+        "team": "POR",
+        "type": "yellow",
+        "minute": 90
+      },
+      {
+        "playerId": 265869,
+        "playerName": "Ferran Torres",
+        "team": "ESP",
+        "type": "yellow",
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 209581,
+        "playerName": "Mikel Merino",
+        "assistId": 265869,
+        "assistName": "Ferran Torres",
+        "team": "ESP",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "AT&T Stadium",
       "city": "Arlington, Texas",
