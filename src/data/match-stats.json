@@ -4587,9 +4587,131 @@
       "tla": "ENG",
       "name": "England"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 66.8,
+        "fouls": 14,
+        "passes": 455,
+        "passAccuracy": 92,
+        "goalkeeperSaves": 2,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 12
+      },
+      "away": {
+        "possession": 33.2,
+        "fouls": 7,
+        "passes": 244,
+        "passAccuracy": 80,
+        "goalkeeperSaves": 3,
+        "yellowCards": 4,
+        "redCards": 1,
+        "corners": 2
+      }
+    },
+    "cards": [
+      {
+        "playerId": 238262,
+        "playerName": "Declan Rice",
+        "team": "ENG",
+        "type": "yellow",
+        "minute": 1
+      },
+      {
+        "playerId": 298524,
+        "playerName": "Jarell Quansah",
+        "team": "ENG",
+        "type": "red",
+        "minute": 54
+      },
+      {
+        "playerId": 265907,
+        "playerName": "Marc Guéhi",
+        "team": "ENG",
+        "type": "yellow",
+        "minute": 68
+      },
+      {
+        "playerId": 178746,
+        "playerName": "Jorge Sánchez",
+        "team": "MEX",
+        "type": "yellow",
+        "minute": 71
+      },
+      {
+        "playerId": 328464,
+        "playerName": "Nico O'Reilly",
+        "team": "ENG",
+        "type": "yellow",
+        "minute": 72
+      },
+      {
+        "playerId": 259975,
+        "playerName": "Johan Vásquez",
+        "team": "MEX",
+        "type": "yellow",
+        "minute": 90
+      },
+      {
+        "playerId": 127262,
+        "playerName": "Jordan Henderson",
+        "team": "ENG",
+        "type": "yellow",
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 291281,
+        "playerName": "Jude Bellingham",
+        "assistId": 280555,
+        "assistName": "Bukayo Saka",
+        "team": "ENG",
+        "type": "GOAL---HEADER",
+        "minute": 36,
+        "injuryTime": null
+      },
+      {
+        "playerId": 291281,
+        "playerName": "Jude Bellingham",
+        "assistId": 142200,
+        "assistName": "Harry Kane",
+        "team": "ENG",
+        "type": "GOAL",
+        "minute": 38,
+        "injuryTime": null
+      },
+      {
+        "playerId": 233075,
+        "playerName": "Julián Quiñones",
+        "assistId": null,
+        "assistName": null,
+        "team": "MEX",
+        "type": "GOAL",
+        "minute": 42,
+        "injuryTime": null
+      },
+      {
+        "playerId": 142200,
+        "playerName": "Harry Kane",
+        "assistId": null,
+        "assistName": null,
+        "team": "ENG",
+        "type": "PENALTY---SCORED",
+        "minute": 60,
+        "injuryTime": null
+      },
+      {
+        "playerId": 167060,
+        "playerName": "Raúl Jiménez",
+        "assistId": null,
+        "assistName": null,
+        "team": "MEX",
+        "type": "PENALTY---SCORED",
+        "minute": 69,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "Estadio Banorte",
       "city": "Mexico City",
