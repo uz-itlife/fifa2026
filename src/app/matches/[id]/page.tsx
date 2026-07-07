@@ -129,8 +129,9 @@ export default function MatchDetailPage() {
           {/* Score */}
           <div className="text-center shrink-0">
             {(() => {
-              const hasET = match.score.extraTime?.home != null
-              const hasPen = match.score.penalties?.home != null
+              const dur = match.score.duration
+              const hasET = (dur === 'EXTRA_TIME' || dur === 'PENALTY_SHOOTOUT') && match.score.extraTime?.home != null
+              const hasPen = dur === 'PENALTY_SHOOTOUT' && match.score.penalties?.home != null
               const mainScore = hasET ? match.score.extraTime! : match.score.fullTime
               return (
                 <>

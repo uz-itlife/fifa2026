@@ -72,8 +72,9 @@ function KOMatchCard({ match, slot }: { match: Match | null; slot: number }) {
               <>
                 <div className="flex items-center gap-1 text-xl font-bold tabular-nums">
                   {(() => {
-                    const hasET = match.score.extraTime?.home != null
-                    const hasPen = match.score.penalties?.home != null
+                    const dur = match.score.duration
+                    const hasET = (dur === 'EXTRA_TIME' || dur === 'PENALTY_SHOOTOUT') && match.score.extraTime?.home != null
+                    const hasPen = dur === 'PENALTY_SHOOTOUT' && match.score.penalties?.home != null
                     const s = hasET ? match.score.extraTime! : match.score.fullTime
                     return (
                       <>
@@ -86,7 +87,7 @@ function KOMatchCard({ match, slot }: { match: Match | null; slot: number }) {
                     )
                   })()}
                 </div>
-                {match.score.penalties?.home != null && (
+                {match.score.duration === 'PENALTY_SHOOTOUT' && match.score.penalties?.home != null && (
                   <div className="text-[10px] text-gray-500 tabular-nums">
                     пен. {match.score.penalties.home}:{match.score.penalties.away}
                   </div>

@@ -142,8 +142,9 @@ export function NextLastMatchCard() {
                 name={teamRu(m.homeTeam.tla, m.homeTeam.shortName)} />
               <div className="text-center shrink-0 px-2">
                 {(() => {
-                  const hasET = m.score.extraTime?.home != null
-                  const hasPen = m.score.penalties?.home != null
+                  const dur = m.score.duration
+                  const hasET = (dur === 'EXTRA_TIME' || dur === 'PENALTY_SHOOTOUT') && m.score.extraTime?.home != null
+                  const hasPen = dur === 'PENALTY_SHOOTOUT' && m.score.penalties?.home != null
                   const s = hasET ? m.score.extraTime! : m.score.fullTime
                   return (
                     <>
