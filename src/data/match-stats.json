@@ -5023,8 +5023,65 @@
       "tla": "COL",
       "name": "Colombia"
     },
-    "stats": null,
-    "cards": [],
+    "stats": {
+      "home": {
+        "possession": 53.2,
+        "fouls": 22,
+        "passes": 626,
+        "passAccuracy": 87,
+        "goalkeeperSaves": 3,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 3
+      },
+      "away": {
+        "possession": 46.8,
+        "fouls": 21,
+        "passes": 548,
+        "passAccuracy": 83,
+        "goalkeeperSaves": 2,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 7
+      }
+    },
+    "cards": [
+      {
+        "playerId": 149981,
+        "playerName": "Granit Xhaka",
+        "team": "SUI",
+        "type": "yellow",
+        "minute": 51
+      },
+      {
+        "playerId": 222628,
+        "playerName": "Denis Zakaria",
+        "team": "SUI",
+        "type": "yellow",
+        "minute": 59
+      },
+      {
+        "playerId": 272722,
+        "playerName": "Luis Suárez",
+        "team": "COL",
+        "type": "yellow",
+        "minute": 60
+      },
+      {
+        "playerId": 197105,
+        "playerName": "Davinson Sánchez",
+        "team": "COL",
+        "type": "yellow",
+        "minute": 95
+      },
+      {
+        "playerId": 243626,
+        "playerName": "Miro Muheim",
+        "team": "SUI",
+        "type": "yellow",
+        "minute": 105
+      }
+    ],
     "goals": [],
     "venue": {
       "name": "BC Place",
