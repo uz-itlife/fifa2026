@@ -7,7 +7,7 @@ import { StaleDataBanner } from '@/components/ui/StaleDataBanner'
 import { teamRu, stageRu, cityRu } from '@/lib/russian-teams'
 import { TeamFlag } from '@/components/ui/TeamFlag'
 import { LiveBadge } from '@/components/ui/LiveBadge'
-import { scoreClass } from '@/lib/match-utils'
+import { scoreClass, resolveScore } from '@/lib/match-utils'
 import type { Match } from '@/types/football'
 
 const LATE = new Set(['LAST_16', 'ROUND_OF_16', 'QUARTER_FINALS', 'SEMI_FINALS', 'THIRD_PLACE', 'FINAL'])
@@ -68,32 +68,25 @@ function KOMatchCard({ match, slot }: { match: Match | null; slot: number }) {
             <TeamFlag tla={match.homeTeam.tla} name={homeRu} crest={match.homeTeam.crest} size="sm" />
           </div>
           <div className="flex flex-col items-center justify-center shrink-0 w-20 gap-0.5">
-            {hasScore ? (
-              <>
-                <div className="flex items-center gap-1 text-xl font-bold tabular-nums">
-                  {(() => {
-                    const dur = match.score.duration
-                    const hasET = (dur === 'EXTRA_TIME' || dur === 'PENALTY_SHOOTOUT') && match.score.extraTime?.home != null
-                    const hasPen = dur === 'PENALTY_SHOOTOUT' && match.score.penalties?.home != null
-                    const s = hasET ? match.score.extraTime! : match.score.fullTime
-                    return (
-                      <>
-                        <span className={`w-6 text-right ${scoreClass(match.score.winner, 'HOME')}`}>{s.home}</span>
-                        <span className="text-gray-500 text-base">:</span>
-                        <span className={`w-6 text-left ${scoreClass(match.score.winner, 'AWAY')}`}>{s.away}</span>
-                        {hasPen && <span className="text-[10px] font-bold text-blue-400 ml-0.5">СП</span>}
-                        {hasET && !hasPen && <span className="text-[10px] font-bold text-amber-400 ml-0.5">ДВ</span>}
-                      </>
-                    )
-                  })()}
-                </div>
-                {match.score.duration === 'PENALTY_SHOOTOUT' && match.score.penalties?.home != null && (
-                  <div className="text-[10px] text-gray-500 tabular-nums">
-                    пен. {match.score.penalties.home}:{match.score.penalties.away}
+            {hasScore ? (() => {
+              const { main, hasPen, hasET, pen } = resolveScore(match.score)
+              return (
+                <>
+                  <div className="flex items-center gap-1 text-xl font-bold tabular-nums">
+                    <span className={`w-6 text-right ${scoreClass(match.score.winner, 'HOME')}`}>{main.home}</span>
+                    <span className="text-gray-500 text-base">:</span>
+                    <span className={`w-6 text-left ${scoreClass(match.score.winner, 'AWAY')}`}>{main.away}</span>
+                    {hasPen && <span className="text-[10px] font-bold text-blue-400 ml-0.5">СП</span>}
+                    {hasET && !hasPen && <span className="text-[10px] font-bold text-amber-400 ml-0.5">ДВ</span>}
                   </div>
-                )}
-              </>
-            ) : (
+                  {hasPen && pen && (
+                    <div className="text-[10px] text-gray-500 tabular-nums">
+                      пен. {pen.home}:{pen.away}
+                    </div>
+                  )}
+                </>
+              )
+            })() : (
               <span className="text-gray-500 text-sm">vs</span>
             )}
           </div>

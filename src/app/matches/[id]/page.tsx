@@ -7,6 +7,7 @@ import { LiveBadge } from '@/components/ui/LiveBadge'
 import { WatchBanner } from '@/components/uzbekistan/WatchBanner'
 import { teamRu, stageRu, cityRu, countryRu } from '@/lib/russian-teams'
 import { playerRu } from '@/lib/player-names-ru'
+import { resolveScore } from '@/lib/match-utils'
 
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 
@@ -129,23 +130,20 @@ export default function MatchDetailPage() {
           {/* Score */}
           <div className="text-center shrink-0">
             {(() => {
-              const dur = match.score.duration
-              const hasET = (dur === 'EXTRA_TIME' || dur === 'PENALTY_SHOOTOUT') && match.score.extraTime?.home != null
-              const hasPen = dur === 'PENALTY_SHOOTOUT' && match.score.penalties?.home != null
-              const mainScore = hasET ? match.score.extraTime! : match.score.fullTime
+              const { main, reg90, hasPen, hasET, pen } = resolveScore(match.score)
               return (
                 <>
                   <div className="text-5xl font-black text-gold tabular-nums leading-none">
-                    {mainScore.home ?? '–'} : {mainScore.away ?? '–'}
+                    {main.home ?? '–'} : {main.away ?? '–'}
                   </div>
-                  {hasPen && (
+                  {hasPen && pen && (
                     <div className="text-xs font-bold text-blue-400 mt-1">
-                      По пенальти {match.score.penalties!.home}:{match.score.penalties!.away}
+                      По пенальти {pen.home}:{pen.away}
                     </div>
                   )}
-                  {hasET && (
+                  {reg90 && (
                     <div className="text-xs text-gray-500 mt-1">
-                      90 мин: {match.score.fullTime.home}:{match.score.fullTime.away}
+                      90 мин: {reg90.home}:{reg90.away}
                     </div>
                   )}
                   {match.score.halfTime.home !== null && (

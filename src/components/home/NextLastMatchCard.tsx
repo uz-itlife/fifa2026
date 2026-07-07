@@ -6,6 +6,7 @@ import { useMatches } from '@/hooks/useMatches'
 import type { Match, CachedResponse, Goal, Booking } from '@/types/football'
 import { teamRu } from '@/lib/russian-teams'
 import { playerRu } from '@/lib/player-names-ru'
+import { resolveScore } from '@/lib/match-utils'
 
 const fetcher = (url: string) => fetch(url).then(r => r.json())
 
@@ -142,18 +143,15 @@ export function NextLastMatchCard() {
                 name={teamRu(m.homeTeam.tla, m.homeTeam.shortName)} />
               <div className="text-center shrink-0 px-2">
                 {(() => {
-                  const dur = m.score.duration
-                  const hasET = (dur === 'EXTRA_TIME' || dur === 'PENALTY_SHOOTOUT') && m.score.extraTime?.home != null
-                  const hasPen = dur === 'PENALTY_SHOOTOUT' && m.score.penalties?.home != null
-                  const s = hasET ? m.score.extraTime! : m.score.fullTime
+                  const { main, hasPen, hasET, pen } = resolveScore(m.score)
                   return (
                     <>
                       <p className="text-3xl font-black text-gold">
-                        {s.home ?? '–'} : {s.away ?? '–'}
+                        {main.home ?? '–'} : {main.away ?? '–'}
                       </p>
                       <p className="text-xs mt-0.5">
-                        {hasPen
-                          ? <span className="text-blue-400 font-bold">СП · пен. {m.score.penalties!.home}:{m.score.penalties!.away}</span>
+                        {hasPen && pen
+                          ? <span className="text-blue-400 font-bold">СП · пен. {pen.home}:{pen.away}</span>
                           : hasET
                           ? <span className="text-amber-400 font-bold">ДВ</span>
                           : <span className="text-gray-500">Завершён</span>
