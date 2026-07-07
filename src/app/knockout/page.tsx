@@ -67,16 +67,30 @@ function KOMatchCard({ match, slot }: { match: Match | null; slot: number }) {
           <div className="flex-1 min-w-0">
             <TeamFlag tla={match.homeTeam.tla} name={homeRu} crest={match.homeTeam.crest} size="sm" />
           </div>
-          <div className="flex items-center justify-center gap-1 text-xl font-bold tabular-nums shrink-0 w-16">
+          <div className="flex flex-col items-center justify-center shrink-0 w-20 gap-0.5">
             {hasScore ? (
               <>
-                <span className={`w-6 text-right ${scoreClass(match.score.winner, 'HOME')}`}>
-                  {match.score.fullTime.home}
-                </span>
-                <span className="text-gray-500 text-base">:</span>
-                <span className={`w-6 text-left ${scoreClass(match.score.winner, 'AWAY')}`}>
-                  {match.score.fullTime.away}
-                </span>
+                <div className="flex items-center gap-1 text-xl font-bold tabular-nums">
+                  {(() => {
+                    const hasET = match.score.extraTime?.home != null
+                    const hasPen = match.score.penalties?.home != null
+                    const s = hasET ? match.score.extraTime! : match.score.fullTime
+                    return (
+                      <>
+                        <span className={`w-6 text-right ${scoreClass(match.score.winner, 'HOME')}`}>{s.home}</span>
+                        <span className="text-gray-500 text-base">:</span>
+                        <span className={`w-6 text-left ${scoreClass(match.score.winner, 'AWAY')}`}>{s.away}</span>
+                        {hasPen && <span className="text-[10px] font-bold text-blue-400 ml-0.5">СП</span>}
+                        {hasET && !hasPen && <span className="text-[10px] font-bold text-amber-400 ml-0.5">ДВ</span>}
+                      </>
+                    )
+                  })()}
+                </div>
+                {match.score.penalties?.home != null && (
+                  <div className="text-[10px] text-gray-500 tabular-nums">
+                    пен. {match.score.penalties.home}:{match.score.penalties.away}
+                  </div>
+                )}
               </>
             ) : (
               <span className="text-gray-500 text-sm">vs</span>

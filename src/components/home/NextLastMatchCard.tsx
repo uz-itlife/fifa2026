@@ -141,10 +141,26 @@ export function NextLastMatchCard() {
               <CrestBadge tla={m.homeTeam.tla} crest={m.homeTeam.crest}
                 name={teamRu(m.homeTeam.tla, m.homeTeam.shortName)} />
               <div className="text-center shrink-0 px-2">
-                <p className="text-3xl font-black text-gold">
-                  {m.score.fullTime.home ?? '–'} : {m.score.fullTime.away ?? '–'}
-                </p>
-                <p className="text-xs text-gray-500 mt-0.5">Завершён</p>
+                {(() => {
+                  const hasET = m.score.extraTime?.home != null
+                  const hasPen = m.score.penalties?.home != null
+                  const s = hasET ? m.score.extraTime! : m.score.fullTime
+                  return (
+                    <>
+                      <p className="text-3xl font-black text-gold">
+                        {s.home ?? '–'} : {s.away ?? '–'}
+                      </p>
+                      <p className="text-xs mt-0.5">
+                        {hasPen
+                          ? <span className="text-blue-400 font-bold">СП · пен. {m.score.penalties!.home}:{m.score.penalties!.away}</span>
+                          : hasET
+                          ? <span className="text-amber-400 font-bold">ДВ</span>
+                          : <span className="text-gray-500">Завершён</span>
+                        }
+                      </p>
+                    </>
+                  )
+                })()}
               </div>
               <CrestBadge tla={m.awayTeam.tla} crest={m.awayTeam.crest}
                 name={teamRu(m.awayTeam.tla, m.awayTeam.shortName)} />
