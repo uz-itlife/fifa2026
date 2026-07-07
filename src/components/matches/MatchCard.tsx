@@ -39,21 +39,24 @@ export function MatchCard({ match }: Props) {
           <div className="flex flex-col items-center justify-center shrink-0 w-24 gap-0.5">
             {hasScore ? (() => {
               const { main, hasPen, hasET, pen } = resolveScore(match.score)
-              return (
+              if (hasPen && pen) return (
                 <>
+                  <div className="text-[11px] text-gray-400 tabular-nums">{main.home}:{main.away}</div>
                   <div className="flex items-center gap-1 text-xl font-bold tabular-nums">
-                    <span className={`w-6 text-right ${scoreClass(match.score.winner, 'HOME')}`}>{main.home}</span>
+                    <span className={`w-6 text-right ${scoreClass(match.score.winner, 'HOME')}`}>{pen.home}</span>
                     <span className="text-gray-600">:</span>
-                    <span className={`w-6 text-left ${scoreClass(match.score.winner, 'AWAY')}`}>{main.away}</span>
-                    {hasPen && <span className="text-[10px] font-bold text-blue-400 ml-0.5">СП</span>}
-                    {hasET && !hasPen && <span className="text-[10px] font-bold text-amber-400 ml-0.5">ДВ</span>}
+                    <span className={`w-6 text-left ${scoreClass(match.score.winner, 'AWAY')}`}>{pen.away}</span>
+                    <span className="text-[10px] font-bold text-blue-400 ml-0.5">СП</span>
                   </div>
-                  {hasPen && pen && (
-                    <div className="text-[11px] text-gray-500 tabular-nums">
-                      пен. {pen.home}:{pen.away}
-                    </div>
-                  )}
                 </>
+              )
+              return (
+                <div className="flex items-center gap-1 text-xl font-bold tabular-nums">
+                  <span className={`w-6 text-right ${scoreClass(match.score.winner, 'HOME')}`}>{main.home}</span>
+                  <span className="text-gray-600">:</span>
+                  <span className={`w-6 text-left ${scoreClass(match.score.winner, 'AWAY')}`}>{main.away}</span>
+                  {hasET && <span className="text-[10px] font-bold text-amber-400 ml-0.5">ДВ</span>}
+                </div>
               )
             })() : (
               <span className="text-gray-500 text-sm text-center">{date}</span>

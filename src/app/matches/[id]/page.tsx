@@ -133,18 +133,27 @@ export default function MatchDetailPage() {
               const { main, reg90, hasPen, hasET, pen } = resolveScore(match.score)
               return (
                 <>
-                  <div className="text-5xl font-black text-gold tabular-nums leading-none">
-                    {main.home ?? '–'} : {main.away ?? '–'}
-                  </div>
-                  {hasPen && pen && (
-                    <div className="text-xs font-bold text-blue-400 mt-1">
-                      По пенальти {pen.home}:{pen.away}
-                    </div>
-                  )}
-                  {reg90 && (
-                    <div className="text-xs text-gray-500 mt-1">
-                      90 мин: {reg90.home}:{reg90.away}
-                    </div>
+                  {hasPen && pen ? (
+                    <>
+                      <div className="text-xs text-gray-400 mt-1">
+                        Осн.{hasET ? '+ДВ' : ''}: {main.home}:{main.away}
+                      </div>
+                      <div className="text-5xl font-black text-blue-400 tabular-nums leading-none">
+                        {pen.home} : {pen.away}
+                      </div>
+                      <div className="text-xs font-bold text-blue-400 mt-1">По пенальти</div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="text-5xl font-black text-gold tabular-nums leading-none">
+                        {main.home ?? '–'} : {main.away ?? '–'}
+                      </div>
+                      {reg90 && (
+                        <div className="text-xs text-gray-500 mt-1">
+                          90 мин: {reg90.home}:{reg90.away}
+                        </div>
+                      )}
+                    </>
                   )}
                   {match.score.halfTime.home !== null && (
                     <div className="text-xs text-gray-500 mt-1">

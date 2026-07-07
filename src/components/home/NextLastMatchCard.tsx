@@ -144,15 +144,20 @@ export function NextLastMatchCard() {
               <div className="text-center shrink-0 px-2">
                 {(() => {
                   const { main, hasPen, hasET, pen } = resolveScore(m.score)
+                  if (hasPen && pen) return (
+                    <>
+                      <p className="text-xs text-gray-400 tabular-nums">{main.home} : {main.away}</p>
+                      <p className="text-3xl font-black text-gold">{pen.home} : {pen.away}</p>
+                      <p className="text-xs mt-0.5"><span className="text-blue-400 font-bold">СП</span></p>
+                    </>
+                  )
                   return (
                     <>
                       <p className="text-3xl font-black text-gold">
                         {main.home ?? '–'} : {main.away ?? '–'}
                       </p>
                       <p className="text-xs mt-0.5">
-                        {hasPen && pen
-                          ? <span className="text-blue-400 font-bold">СП · пен. {pen.home}:{pen.away}</span>
-                          : hasET
+                        {hasET
                           ? <span className="text-amber-400 font-bold">ДВ</span>
                           : <span className="text-gray-500">Завершён</span>
                         }

@@ -7,6 +7,7 @@ import { TeamFlag } from '@/components/ui/TeamFlag'
 import { StaleDataBanner } from '@/components/ui/StaleDataBanner'
 import { teamRu } from '@/lib/russian-teams'
 import { playerRu } from '@/lib/player-names-ru'
+import { resolveScore } from '@/lib/match-utils'
 import { getBest8ThirdPlace } from '@/lib/standings-utils'
 import fifaRankingData from '@/data/fifa-ranking.json'
 import matchStatsData from '@/data/match-stats.json'
@@ -73,18 +74,17 @@ function MatchStatRow({ entry, statKey, suffix }: {
   )
 }
 
-function MatchStatTable({ statKey, suffix, emptyLabel }: {
+function MatchStatTable({ statKey, suffix, items }: {
   statKey: keyof TeamMatchStats
   suffix?: string
-  emptyLabel: string
+  items: Array<typeof matchStatsList[number]>
 }) {
-  const entries = matchStatsList.filter(e => e.stats?.home != null || e.stats?.away != null)
-  if (entries.length === 0) return <PendingSync label={emptyLabel} />
+  if (items.length === 0) return <PendingSync label="Нет данных" />
   return (
     <div className="glass rounded-xl border border-light-border dark:border-dark-border overflow-hidden">
       <table className="w-full text-sm">
         <tbody>
-          {entries.map(entry => (
+          {items.map(entry => (
             <MatchStatRow key={entry.id} entry={entry} statKey={statKey} suffix={suffix} />
           ))}
         </tbody>
@@ -147,8 +147,9 @@ export default function StatsPage() {
       const rank = STAGE_RANK[m.stage] ?? 0
       const homeWon = m.score.winner === 'HOME_TEAM'
       const awayWon = m.score.winner === 'AWAY_TEAM'
-      const hg = m.score.fullTime.home ?? 0
-      const ag = m.score.fullTime.away ?? 0
+      const { main: sc } = resolveScore(m.score)
+      const hg = sc.home ?? 0
+      const ag = sc.away ?? 0
       const h = get(m.homeTeam); h.gf += hg; h.ga += ag
       const a = get(m.awayTeam); a.gf += ag; a.ga += hg
       if (rank > h.maxRank) h.maxRank = rank
@@ -183,6 +184,22 @@ export default function StatsPage() {
     const teams = [...byTeam.values()].sort((a, b) => (b.red * 2 + b.yellow) - (a.red * 2 + a.yellow))
     return { players, teams }
   })()
+
+  const mergedItems = allMatches
+    .filter(m => m.status === 'FINISHED')
+    .sort((a, b) => new Date(a.utcDate).getTime() - new Date(b.utcDate).getTime())
+    .map(m => {
+      const espn = matchStats[String(m.id)]
+      return espn
+        ? { id: String(m.id), ...espn }
+        : {
+            id: String(m.id),
+            homeTeam: { tla: m.homeTeam.tla, name: m.homeTeam.shortName },
+            awayTeam: { tla: m.awayTeam.tla, name: m.awayTeam.shortName },
+            stats: { home: null, away: null } as { home: TeamMatchStats | null; away: TeamMatchStats | null },
+            cards: [] as MatchStatsEntry['cards'],
+          }
+    })
 
   return (
     <div>
@@ -465,10 +482,10 @@ export default function StatsPage() {
         )
       )}
 
-      {tab === 'fouls' && <MatchStatTable statKey="fouls" emptyLabel="Нарушения" />}
-      {tab === 'keepers' && <MatchStatTable statKey="goalkeeperSaves" emptyLabel="Сэйвы вратарей" />}
-      {tab === 'possession' && <MatchStatTable statKey="possession" suffix="%" emptyLabel="Владение мячом" />}
-      {tab === 'passes' && <MatchStatTable statKey="passAccuracy" suffix="%" emptyLabel="Точность передач" />}
+      {tab === 'fouls' && <MatchStatTable statKey="fouls" items={mergedItems} />}
+      {tab === 'keepers' && <MatchStatTable statKey="goalkeeperSaves" items={mergedItems} />}
+      {tab === 'possession' && <MatchStatTable statKey="possession" suffix="%" items={mergedItems} />}
+      {tab === 'passes' && <MatchStatTable statKey="passAccuracy" suffix="%" items={mergedItems} />}
     </div>
   )
 }
