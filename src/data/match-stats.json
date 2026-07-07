@@ -4799,9 +4799,96 @@
       "tla": "BEL",
       "name": "Belgium"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 56.2,
+        "fouls": 11,
+        "passes": 527,
+        "passAccuracy": 87,
+        "goalkeeperSaves": 3,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 3
+      },
+      "away": {
+        "possession": 43.8,
+        "fouls": 9,
+        "passes": 410,
+        "passAccuracy": 81,
+        "goalkeeperSaves": 1,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 5
+      }
+    },
+    "cards": [
+      {
+        "playerId": 256715,
+        "playerName": "Weston McKennie",
+        "team": "USA",
+        "type": "yellow",
+        "minute": 35
+      },
+      {
+        "playerId": 301416,
+        "playerName": "Malik Tillman",
+        "team": "USA",
+        "type": "yellow",
+        "minute": 69
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 296319,
+        "playerName": "Charles De Ketelaere",
+        "assistId": 260027,
+        "assistName": "Nicolas Raskin",
+        "team": "BEL",
+        "type": "GOAL",
+        "minute": 9,
+        "injuryTime": null
+      },
+      {
+        "playerId": 301416,
+        "playerName": "Malik Tillman",
+        "assistId": null,
+        "assistName": null,
+        "team": "USA",
+        "type": "GOAL---FREE-KICK",
+        "minute": 31,
+        "injuryTime": null
+      },
+      {
+        "playerId": 296319,
+        "playerName": "Charles De Ketelaere",
+        "assistId": 174980,
+        "assistName": "Leandro Trossard",
+        "team": "BEL",
+        "type": "GOAL---HEADER",
+        "minute": 33,
+        "injuryTime": null
+      },
+      {
+        "playerId": 193849,
+        "playerName": "Hans Vanaken",
+        "assistId": 296319,
+        "assistName": "Charles De Ketelaere",
+        "team": "BEL",
+        "type": "GOAL",
+        "minute": 57,
+        "injuryTime": null
+      },
+      {
+        "playerId": 139437,
+        "playerName": "Romelu Lukaku",
+        "assistId": 193849,
+        "assistName": "Hans Vanaken",
+        "team": "BEL",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "Lumen Field",
       "city": "Seattle, Washington",
