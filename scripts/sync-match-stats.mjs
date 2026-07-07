@@ -113,14 +113,16 @@ async function syncMatch(match, event) {
     .filter(e => e.scoringPlay === true)
     .map(e => {
       const { minute, injury } = parseMinute(e.clock)
-      const isOwnGoal = /own goal/i.test(e.type?.text || '')
+      const typeText = e.type?.text || ''
+      const isOwnGoal = /own goal/i.test(typeText)
+      const isPenalty = !isOwnGoal && /penalty/i.test(typeText)
       return {
         playerId: e.participants?.[0]?.athlete?.id ? Number(e.participants[0].athlete.id) : null,
         playerName: e.participants?.[0]?.athlete?.displayName || e.shortText || 'Unknown',
         assistId: e.participants?.[1]?.athlete?.id ? Number(e.participants[1].athlete.id) : null,
         assistName: e.participants?.[1]?.athlete?.displayName || null,
         team: tlaByTeamId[e.team?.id] || null,
-        type: isOwnGoal ? 'OWN_GOAL' : (e.type?.type || 'goal').toUpperCase(),
+        type: isOwnGoal ? 'OWN_GOAL' : isPenalty ? 'PENALTY' : 'GOAL',
         minute,
         injuryTime: injury,
       }
@@ -154,10 +156,12 @@ async function main() {
   const store = fs.existsSync(DATA_FILE) ? JSON.parse(fs.readFileSync(DATA_FILE, 'utf8')) : {}
   let synced = 0
 
+  const ONE_WEEK_AGO = Date.now() - 7 * 24 * 60 * 60 * 1000
   for (const match of matches) {
     const existing = store[match.id]
-    // Skip only if goals or stats already synced (venue-only entries still need full sync)
-    if (existing?.goals?.length > 0 || (existing?.stats?.home !== null && existing?.stats?.home !== undefined)) continue
+    const isRecent = new Date(match.utcDate).getTime() > ONE_WEEK_AGO
+    // Always re-sync recent matches; skip older ones only if goals already present
+    if (!isRecent && existing?.goals?.length > 0) continue
     console.log(`Syncing match ${match.id}: ${match.homeTeam.tla} vs ${match.awayTeam.tla}`)
     try {
       const event = await findEvent(match)

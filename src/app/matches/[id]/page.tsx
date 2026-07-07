@@ -128,14 +128,33 @@ export default function MatchDetailPage() {
 
           {/* Score */}
           <div className="text-center shrink-0">
-            <div className="text-5xl font-black text-gold tabular-nums leading-none">
-              {match.score.fullTime.home ?? '–'} : {match.score.fullTime.away ?? '–'}
-            </div>
-            {match.score.halfTime.home !== null && (
-              <div className="text-xs text-gray-500 mt-2">
-                Перерыв {match.score.halfTime.home} : {match.score.halfTime.away}
-              </div>
-            )}
+            {(() => {
+              const hasET = match.score.extraTime?.home != null
+              const hasPen = match.score.penalties?.home != null
+              const mainScore = hasET ? match.score.extraTime! : match.score.fullTime
+              return (
+                <>
+                  <div className="text-5xl font-black text-gold tabular-nums leading-none">
+                    {mainScore.home ?? '–'} : {mainScore.away ?? '–'}
+                  </div>
+                  {hasPen && (
+                    <div className="text-xs font-bold text-blue-400 mt-1">
+                      По пенальти {match.score.penalties!.home}:{match.score.penalties!.away}
+                    </div>
+                  )}
+                  {hasET && (
+                    <div className="text-xs text-gray-500 mt-1">
+                      90 мин: {match.score.fullTime.home}:{match.score.fullTime.away}
+                    </div>
+                  )}
+                  {match.score.halfTime.home !== null && (
+                    <div className="text-xs text-gray-500 mt-1">
+                      Перерыв {match.score.halfTime.home}:{match.score.halfTime.away}
+                    </div>
+                  )}
+                </>
+              )
+            })()}
           </div>
 
           {/* Away */}
@@ -168,6 +187,11 @@ export default function MatchDetailPage() {
               const minuteStr = `${item.minute}${item.injury ? `+${item.injury}` : ''}'`
 
               if (item.kind === 'goal') {
+                const isPen = item.goal.type === 'PENALTY'
+                const isOG = item.goal.type === 'OWN_GOAL'
+                const scorerLabel = isOG
+                  ? `${item.goal.scorer ? playerRu(item.goal.scorer.name) : '?'} (авт.)`
+                  : item.goal.scorer ? playerRu(item.goal.scorer.name) : '?'
                 return (
                   <div key={i} className="grid grid-cols-[1fr_48px_1fr] items-center px-4 py-2.5 hover:bg-black/5 dark:hover:bg-white/5">
                     {/* Home side */}
@@ -177,12 +201,11 @@ export default function MatchDetailPage() {
                           <span className="text-sm font-semibold text-gray-900 dark:text-white inline-flex items-center gap-1.5">
                             <BallIcon />
                             <span className="text-[10px] font-bold text-gold tracking-wide">ГОЛ</span>
-                            {item.goal.scorer ? playerRu(item.goal.scorer.name) : 'Автогол'}
+                            {isPen && <span className="text-[10px] font-bold text-blue-400">(П)</span>}
+                            {scorerLabel}
                           </span>
                           {item.goal.assist && (
-                            <div className="text-[11px] text-gray-500">
-                              Пас: {playerRu(item.goal.assist.name)}
-                            </div>
+                            <div className="text-[11px] text-gray-500">Пас: {playerRu(item.goal.assist.name)}</div>
                           )}
                         </div>
                       )}
@@ -195,12 +218,11 @@ export default function MatchDetailPage() {
                         <div>
                           <span className="text-sm font-semibold text-gray-900 dark:text-white inline-flex items-center gap-1.5">
                             <span className="text-[10px] font-bold text-gold tracking-wide">ГОЛ</span>
-                            {item.goal.scorer ? playerRu(item.goal.scorer.name) : 'Автогол'} <BallIcon />
+                            {isPen && <span className="text-[10px] font-bold text-blue-400">(П)</span>}
+                            {scorerLabel} <BallIcon />
                           </span>
                           {item.goal.assist && (
-                            <div className="text-[11px] text-gray-500">
-                              Пас: {playerRu(item.goal.assist.name)}
-                            </div>
+                            <div className="text-[11px] text-gray-500 text-right">Пас: {playerRu(item.goal.assist.name)}</div>
                           )}
                         </div>
                       )}

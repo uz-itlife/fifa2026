@@ -32,8 +32,11 @@ export interface Team {
 
 export interface Score {
   winner: 'HOME_TEAM' | 'AWAY_TEAM' | 'DRAW' | null
+  duration?: 'REGULAR' | 'EXTRA_TIME' | 'PENALTY_SHOOTOUT' | null
   fullTime: { home: number | null; away: number | null }
   halfTime: { home: number | null; away: number | null }
+  extraTime?: { home: number | null; away: number | null } | null
+  penalties?: { home: number | null; away: number | null } | null
 }
 
 export interface Goal {
