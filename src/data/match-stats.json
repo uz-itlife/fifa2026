@@ -4904,9 +4904,110 @@
       "tla": "EGY",
       "name": "Egypt"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 63.6,
+        "fouls": 13,
+        "passes": 602,
+        "passAccuracy": 90,
+        "goalkeeperSaves": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 6
+      },
+      "away": {
+        "possession": 36.4,
+        "fouls": 11,
+        "passes": 349,
+        "passAccuracy": 83,
+        "goalkeeperSaves": 4,
+        "yellowCards": 4,
+        "redCards": 0,
+        "corners": 1
+      }
+    },
+    "cards": [
+      {
+        "playerId": 308915,
+        "playerName": "Mostafa Shoubir",
+        "team": "EGY",
+        "type": "yellow",
+        "minute": 90
+      },
+      {
+        "playerId": 285057,
+        "playerName": "Hamdy Fathy",
+        "team": "EGY",
+        "type": "yellow",
+        "minute": 90
+      },
+      {
+        "playerId": 357112,
+        "playerName": "Marawan Attia",
+        "team": "EGY",
+        "type": "yellow",
+        "minute": 90
+      },
+      {
+        "playerId": 276440,
+        "playerName": "Haissem Hassan",
+        "team": "EGY",
+        "type": "yellow",
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 265417,
+        "playerName": "Yasser Ibrahim",
+        "assistId": 357112,
+        "assistName": "Marawan Attia",
+        "team": "EGY",
+        "type": "GOAL",
+        "minute": 15,
+        "injuryTime": null
+      },
+      {
+        "playerId": 378495,
+        "playerName": "Mostafa Zico",
+        "assistId": 276440,
+        "assistName": "Haissem Hassan",
+        "team": "EGY",
+        "type": "GOAL",
+        "minute": 67,
+        "injuryTime": null
+      },
+      {
+        "playerId": 96970,
+        "playerName": "Cristian Romero",
+        "assistId": 45843,
+        "assistName": "Lionel Messi",
+        "team": "ARG",
+        "type": "GOAL",
+        "minute": 79,
+        "injuryTime": null
+      },
+      {
+        "playerId": 45843,
+        "playerName": "Lionel Messi",
+        "assistId": 228262,
+        "assistName": "Gonzalo Montiel",
+        "team": "ARG",
+        "type": "GOAL",
+        "minute": 83,
+        "injuryTime": null
+      },
+      {
+        "playerId": 285450,
+        "playerName": "Enzo Fernández",
+        "assistId": 219713,
+        "assistName": "Lautaro Martínez",
+        "team": "ARG",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "Mercedes-Benz Stadium",
       "city": "Atlanta, Georgia",
