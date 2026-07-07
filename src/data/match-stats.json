@@ -4949,6 +4949,24 @@
       "country": "USA"
     }
   },
+  "537384": {
+    "homeTeam": {
+      "tla": "ESP",
+      "name": "Spain"
+    },
+    "awayTeam": {
+      "tla": "BEL",
+      "name": "Belgium"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "SoFi Stadium",
+      "city": "Inglewood, California",
+      "country": "USA"
+    }
+  },
   "537385": {
     "homeTeam": {
       "tla": "NOR",
