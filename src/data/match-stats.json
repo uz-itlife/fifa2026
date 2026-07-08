@@ -5143,6 +5143,24 @@
       "country": "USA"
     }
   },
+  "537386": {
+    "homeTeam": {
+      "tla": "ARG",
+      "name": "Argentina"
+    },
+    "awayTeam": {
+      "tla": "SUI",
+      "name": "Switzerland"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "GEHA Field at Arrowhead Stadium",
+      "city": "Kansas City, Missouri",
+      "country": "USA"
+    }
+  },
   "537391": {
     "homeTeam": {
       "tla": "FRA",
