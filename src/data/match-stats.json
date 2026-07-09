@@ -5098,9 +5098,59 @@
       "tla": "MAR",
       "name": "Morocco"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 48.1,
+        "fouls": 10,
+        "passes": 485,
+        "passAccuracy": 89,
+        "goalkeeperSaves": 1,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 5
+      },
+      "away": {
+        "possession": 51.9,
+        "fouls": 13,
+        "passes": 524,
+        "passAccuracy": 86,
+        "goalkeeperSaves": 6,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 5
+      }
+    },
+    "cards": [
+      {
+        "playerId": 230963,
+        "playerName": "Issa Diop",
+        "team": "MAR",
+        "type": "yellow",
+        "minute": 63
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 231388,
+        "playerName": "Kylian Mbappé",
+        "assistId": 336388,
+        "assistName": "Désiré Doué",
+        "team": "FRA",
+        "type": "GOAL",
+        "minute": 60,
+        "injuryTime": null
+      },
+      {
+        "playerId": 229744,
+        "playerName": "Ousmane Dembélé",
+        "assistId": 231388,
+        "assistName": "Kylian Mbappé",
+        "team": "FRA",
+        "type": "GOAL",
+        "minute": 66,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "Gillette Stadium",
       "city": "Foxborough, Massachusetts",
