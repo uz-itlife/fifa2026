@@ -5166,9 +5166,90 @@
       "tla": "BEL",
       "name": "Belgium"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 67.8,
+        "fouls": 13,
+        "passes": 665,
+        "passAccuracy": 90,
+        "goalkeeperSaves": 1,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 5
+      },
+      "away": {
+        "possession": 32.2,
+        "fouls": 18,
+        "passes": 314,
+        "passAccuracy": 78,
+        "goalkeeperSaves": 6,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 1
+      }
+    },
+    "cards": [
+      {
+        "playerId": 368992,
+        "playerName": "Pau Cubarsí",
+        "team": "ESP",
+        "type": "yellow",
+        "minute": 43
+      },
+      {
+        "playerId": 134947,
+        "playerName": "Kevin De Bruyne",
+        "team": "BEL",
+        "type": "yellow",
+        "minute": 85
+      },
+      {
+        "playerId": 159317,
+        "playerName": "Aymeric Laporte",
+        "team": "ESP",
+        "type": "yellow",
+        "minute": 90
+      },
+      {
+        "playerId": 164895,
+        "playerName": "Axel Witsel",
+        "team": "BEL",
+        "type": "yellow",
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 214596,
+        "playerName": "Fabián Ruiz",
+        "assistId": null,
+        "assistName": null,
+        "team": "ESP",
+        "type": "GOAL",
+        "minute": 30,
+        "injuryTime": null
+      },
+      {
+        "playerId": 296319,
+        "playerName": "Charles De Ketelaere",
+        "assistId": 197163,
+        "assistName": "Timothy Castagne",
+        "team": "BEL",
+        "type": "GOAL",
+        "minute": 41,
+        "injuryTime": null
+      },
+      {
+        "playerId": 209581,
+        "playerName": "Mikel Merino",
+        "assistId": null,
+        "assistName": null,
+        "team": "ESP",
+        "type": "GOAL",
+        "minute": 88,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "SoFi Stadium",
       "city": "Inglewood, California",
