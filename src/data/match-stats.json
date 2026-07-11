@@ -5292,6 +5292,24 @@
       "country": "USA"
     }
   },
+  "537387": {
+    "homeTeam": {
+      "tla": "FRA",
+      "name": "France"
+    },
+    "awayTeam": {
+      "tla": "ESP",
+      "name": "Spain"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "AT&T Stadium",
+      "city": "Arlington, Texas",
+      "country": "USA"
+    }
+  },
   "537391": {
     "homeTeam": {
       "tla": "FRA",
