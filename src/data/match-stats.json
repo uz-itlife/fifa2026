@@ -5345,9 +5345,9 @@
     },
     "stats": {
       "home": {
-        "possession": 59.1,
+        "possession": 59,
         "fouls": 14,
-        "passes": 692,
+        "passes": 691,
         "passAccuracy": 89,
         "goalkeeperSaves": 4,
         "yellowCards": 3,
@@ -5355,7 +5355,7 @@
         "corners": 8
       },
       "away": {
-        "possession": 40.9,
+        "possession": 41,
         "fouls": 18,
         "passes": 474,
         "passAccuracy": 84,
@@ -5465,6 +5465,24 @@
     "venue": {
       "name": "AT&T Stadium",
       "city": "Arlington, Texas",
+      "country": "USA"
+    }
+  },
+  "537388": {
+    "homeTeam": {
+      "tla": "ENG",
+      "name": "England"
+    },
+    "awayTeam": {
+      "tla": "ARG",
+      "name": "Argentina"
+    },
+    "stats": null,
+    "cards": [],
+    "goals": [],
+    "venue": {
+      "name": "Mercedes-Benz Stadium",
+      "city": "Atlanta, Georgia",
       "country": "USA"
     }
   },
