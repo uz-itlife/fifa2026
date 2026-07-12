@@ -5265,9 +5265,69 @@
       "tla": "ENG",
       "name": "England"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 47.6,
+        "fouls": 10,
+        "passes": 576,
+        "passAccuracy": 85,
+        "goalkeeperSaves": 6,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 7
+      },
+      "away": {
+        "possession": 52.4,
+        "fouls": 8,
+        "passes": 628,
+        "passAccuracy": 91,
+        "goalkeeperSaves": 3,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 4
+      }
+    },
+    "cards": [
+      {
+        "playerId": 206173,
+        "playerName": "Kristoffer Ajer",
+        "team": "NOR",
+        "type": "yellow",
+        "minute": 117
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 313415,
+        "playerName": "Andreas Schjelderup",
+        "assistId": 203669,
+        "assistName": "Martin Ødegaard",
+        "team": "NOR",
+        "type": "GOAL",
+        "minute": 36,
+        "injuryTime": null
+      },
+      {
+        "playerId": 291281,
+        "playerName": "Jude Bellingham",
+        "assistId": 268782,
+        "assistName": "Anthony Gordon",
+        "team": "ENG",
+        "type": "GOAL",
+        "minute": 45,
+        "injuryTime": null
+      },
+      {
+        "playerId": 291281,
+        "playerName": "Jude Bellingham",
+        "assistId": null,
+        "assistName": null,
+        "team": "ENG",
+        "type": "GOAL",
+        "minute": 93,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "Hard Rock Stadium",
       "city": "Miami Gardens, Florida",
