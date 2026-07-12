@@ -5269,8 +5269,8 @@
       "home": {
         "possession": 47.6,
         "fouls": 10,
-        "passes": 576,
-        "passAccuracy": 85,
+        "passes": 577,
+        "passAccuracy": 86,
         "goalkeeperSaves": 6,
         "yellowCards": 1,
         "redCards": 0,
@@ -5280,7 +5280,7 @@
         "possession": 52.4,
         "fouls": 8,
         "passes": 628,
-        "passAccuracy": 91,
+        "passAccuracy": 90,
         "goalkeeperSaves": 3,
         "yellowCards": 0,
         "redCards": 0,
@@ -5343,9 +5343,107 @@
       "tla": "SUI",
       "name": "Switzerland"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 59.1,
+        "fouls": 14,
+        "passes": 692,
+        "passAccuracy": 89,
+        "goalkeeperSaves": 4,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 8
+      },
+      "away": {
+        "possession": 40.9,
+        "fouls": 18,
+        "passes": 474,
+        "passAccuracy": 84,
+        "goalkeeperSaves": 4,
+        "yellowCards": 1,
+        "redCards": 1,
+        "corners": 2
+      }
+    },
+    "cards": [
+      {
+        "playerId": 202099,
+        "playerName": "Breel Embolo",
+        "team": "SUI",
+        "type": "yellow",
+        "minute": 44
+      },
+      {
+        "playerId": 202099,
+        "playerName": "Breel Embolo",
+        "team": "SUI",
+        "type": "red",
+        "minute": 72
+      },
+      {
+        "playerId": 277208,
+        "playerName": "Thiago Almada",
+        "team": "ARG",
+        "type": "yellow",
+        "minute": 97
+      },
+      {
+        "playerId": 219713,
+        "playerName": "Lautaro Martínez",
+        "team": "ARG",
+        "type": "yellow",
+        "minute": 98
+      },
+      {
+        "playerId": 311743,
+        "playerName": "José Manuel López",
+        "team": "ARG",
+        "type": "yellow",
+        "minute": 114
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 249299,
+        "playerName": "Alexis Mac Allister",
+        "assistId": 45843,
+        "assistName": "Lionel Messi",
+        "team": "ARG",
+        "type": "GOAL",
+        "minute": 10,
+        "injuryTime": null
+      },
+      {
+        "playerId": 275842,
+        "playerName": "Dan Ndoye",
+        "assistId": 136865,
+        "assistName": "Ricardo Rodríguez",
+        "team": "SUI",
+        "type": "GOAL",
+        "minute": 67,
+        "injuryTime": null
+      },
+      {
+        "playerId": 277206,
+        "playerName": "Julián Álvarez",
+        "assistId": 311743,
+        "assistName": "José Manuel López",
+        "team": "ARG",
+        "type": "GOAL",
+        "minute": 112,
+        "injuryTime": null
+      },
+      {
+        "playerId": 219713,
+        "playerName": "Lautaro Martínez",
+        "assistId": null,
+        "assistName": null,
+        "team": "ARG",
+        "type": "GOAL",
+        "minute": 120,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "GEHA Field at Arrowhead Stadium",
       "city": "Kansas City, Missouri",
