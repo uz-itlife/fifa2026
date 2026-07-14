@@ -5459,9 +5459,73 @@
       "tla": "ESP",
       "name": "Spain"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 49.1,
+        "fouls": 11,
+        "passes": 472,
+        "passAccuracy": 84,
+        "goalkeeperSaves": 0,
+        "yellowCards": 2,
+        "redCards": 0,
+        "corners": 7
+      },
+      "away": {
+        "possession": 50.9,
+        "fouls": 12,
+        "passes": 500,
+        "passAccuracy": 86,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 1
+      }
+    },
+    "cards": [
+      {
+        "playerId": 176203,
+        "playerName": "Adrien Rabiot",
+        "team": "FRA",
+        "type": "yellow",
+        "minute": 9
+      },
+      {
+        "playerId": 259910,
+        "playerName": "Marc Cucurella",
+        "team": "ESP",
+        "type": "yellow",
+        "minute": 31
+      },
+      {
+        "playerId": 231388,
+        "playerName": "Kylian Mbappé",
+        "team": "FRA",
+        "type": "yellow",
+        "minute": 86
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 229018,
+        "playerName": "Mikel Oyarzabal",
+        "assistId": null,
+        "assistName": null,
+        "team": "ESP",
+        "type": "PENALTY",
+        "minute": 22,
+        "injuryTime": null
+      },
+      {
+        "playerId": 268533,
+        "playerName": "Pedro Porro",
+        "assistId": 227765,
+        "assistName": "Dani Olmo",
+        "team": "ESP",
+        "type": "GOAL",
+        "minute": 58,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "AT&T Stadium",
       "city": "Arlington, Texas",
