@@ -5473,8 +5473,8 @@
       "away": {
         "possession": 50.9,
         "fouls": 12,
-        "passes": 500,
-        "passAccuracy": 86,
+        "passes": 502,
+        "passAccuracy": 85,
         "goalkeeperSaves": 3,
         "yellowCards": 1,
         "redCards": 0,
