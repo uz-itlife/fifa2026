@@ -5541,9 +5541,90 @@
       "tla": "ARG",
       "name": "Argentina"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 35.7,
+        "fouls": 11,
+        "passes": 325,
+        "passAccuracy": 84,
+        "goalkeeperSaves": 3,
+        "yellowCards": 1,
+        "redCards": 0,
+        "corners": 2
+      },
+      "away": {
+        "possession": 64.3,
+        "fouls": 15,
+        "passes": 590,
+        "passAccuracy": 91,
+        "goalkeeperSaves": 1,
+        "yellowCards": 3,
+        "redCards": 0,
+        "corners": 6
+      }
+    },
+    "cards": [
+      {
+        "playerId": 238472,
+        "playerName": "Elliot Anderson",
+        "team": "ENG",
+        "type": "yellow",
+        "minute": 37
+      },
+      {
+        "playerId": 233937,
+        "playerName": "Lisandro Martínez",
+        "team": "ARG",
+        "type": "yellow",
+        "minute": 42
+      },
+      {
+        "playerId": 96970,
+        "playerName": "Cristian Romero",
+        "team": "ARG",
+        "type": "yellow",
+        "minute": 51
+      },
+      {
+        "playerId": 174466,
+        "playerName": "Rodrigo De Paul",
+        "team": "ARG",
+        "type": "yellow",
+        "minute": 90
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 268782,
+        "playerName": "Anthony Gordon",
+        "assistId": 265653,
+        "assistName": "Morgan Rogers",
+        "team": "ENG",
+        "type": "GOAL",
+        "minute": 55,
+        "injuryTime": null
+      },
+      {
+        "playerId": 285450,
+        "playerName": "Enzo Fernández",
+        "assistId": 45843,
+        "assistName": "Lionel Messi",
+        "team": "ARG",
+        "type": "GOAL",
+        "minute": 85,
+        "injuryTime": null
+      },
+      {
+        "playerId": 219713,
+        "playerName": "Lautaro Martínez",
+        "assistId": 45843,
+        "assistName": "Lionel Messi",
+        "team": "ARG",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "Mercedes-Benz Stadium",
       "city": "Atlanta, Georgia",
