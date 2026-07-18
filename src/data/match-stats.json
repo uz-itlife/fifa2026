@@ -5640,9 +5640,131 @@
       "tla": "ENG",
       "name": "England"
     },
-    "stats": null,
+    "stats": {
+      "home": {
+        "possession": 45.9,
+        "fouls": 14,
+        "passes": 444,
+        "passAccuracy": 91,
+        "goalkeeperSaves": 4,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 3
+      },
+      "away": {
+        "possession": 54.1,
+        "fouls": 8,
+        "passes": 517,
+        "passAccuracy": 91,
+        "goalkeeperSaves": 5,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 4
+      }
+    },
     "cards": [],
-    "goals": [],
+    "goals": [
+      {
+        "playerId": 238262,
+        "playerName": "Declan Rice",
+        "assistId": null,
+        "assistName": null,
+        "team": "ENG",
+        "type": "GOAL",
+        "minute": 3,
+        "injuryTime": null
+      },
+      {
+        "playerId": 231859,
+        "playerName": "Ezri Konsa",
+        "assistId": 238262,
+        "assistName": "Declan Rice",
+        "team": "ENG",
+        "type": "GOAL",
+        "minute": 18,
+        "injuryTime": null
+      },
+      {
+        "playerId": 280555,
+        "playerName": "Bukayo Saka",
+        "assistId": 230945,
+        "assistName": "Marcus Rashford",
+        "team": "ENG",
+        "type": "GOAL",
+        "minute": 37,
+        "injuryTime": null
+      },
+      {
+        "playerId": 280555,
+        "playerName": "Bukayo Saka",
+        "assistId": 251400,
+        "assistName": "Eberechi Eze",
+        "team": "ENG",
+        "type": "GOAL",
+        "minute": 45,
+        "injuryTime": null
+      },
+      {
+        "playerId": 231388,
+        "playerName": "Kylian Mbappé",
+        "assistId": 286831,
+        "assistName": "Michael Olise",
+        "team": "FRA",
+        "type": "GOAL",
+        "minute": 48,
+        "injuryTime": null
+      },
+      {
+        "playerId": 328238,
+        "playerName": "Bradley Barcola",
+        "assistId": 231388,
+        "assistName": "Kylian Mbappé",
+        "team": "FRA",
+        "type": "GOAL",
+        "minute": 54,
+        "injuryTime": null
+      },
+      {
+        "playerId": 231388,
+        "playerName": "Kylian Mbappé",
+        "assistId": 286831,
+        "assistName": "Michael Olise",
+        "team": "FRA",
+        "type": "GOAL",
+        "minute": 66,
+        "injuryTime": null
+      },
+      {
+        "playerId": 280555,
+        "playerName": "Bukayo Saka",
+        "assistId": null,
+        "assistName": null,
+        "team": "ENG",
+        "type": "PENALTY",
+        "minute": 87,
+        "injuryTime": null
+      },
+      {
+        "playerId": 229744,
+        "playerName": "Ousmane Dembélé",
+        "assistId": 222793,
+        "assistName": "Dayot Upamecano",
+        "team": "FRA",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
+      },
+      {
+        "playerId": 291281,
+        "playerName": "Jude Bellingham",
+        "assistId": null,
+        "assistName": null,
+        "team": "ENG",
+        "type": "GOAL",
+        "minute": 90,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "Hard Rock Stadium",
       "city": "Miami Gardens, Florida",
