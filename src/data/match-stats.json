@@ -5644,7 +5644,7 @@
       "home": {
         "possession": 45.9,
         "fouls": 14,
-        "passes": 444,
+        "passes": 445,
         "passAccuracy": 91,
         "goalkeeperSaves": 4,
         "yellowCards": 0,
@@ -5654,7 +5654,7 @@
       "away": {
         "possession": 54.1,
         "fouls": 8,
-        "passes": 517,
+        "passes": 518,
         "passAccuracy": 91,
         "goalkeeperSaves": 5,
         "yellowCards": 0,
