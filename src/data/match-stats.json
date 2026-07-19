@@ -5780,9 +5780,84 @@
       "tla": "ARG",
       "name": "Argentina"
     },
-    "stats": null,
-    "cards": [],
-    "goals": [],
+    "stats": {
+      "home": {
+        "possession": 65.1,
+        "fouls": 21,
+        "passes": 852,
+        "passAccuracy": 89,
+        "goalkeeperSaves": 0,
+        "yellowCards": 0,
+        "redCards": 0,
+        "corners": 9
+      },
+      "away": {
+        "possession": 34.9,
+        "fouls": 25,
+        "passes": 464,
+        "passAccuracy": 77,
+        "goalkeeperSaves": 11,
+        "yellowCards": 4,
+        "redCards": 1,
+        "corners": 4
+      }
+    },
+    "cards": [
+      {
+        "playerId": 233937,
+        "playerName": "Lisandro Martínez",
+        "team": "ARG",
+        "type": "yellow",
+        "minute": 41
+      },
+      {
+        "playerId": 153115,
+        "playerName": "Leandro Paredes",
+        "team": "ARG",
+        "type": "yellow",
+        "minute": 52
+      },
+      {
+        "playerId": 285450,
+        "playerName": "Enzo Fernández",
+        "team": "ARG",
+        "type": "yellow",
+        "minute": 82
+      },
+      {
+        "playerId": 96970,
+        "playerName": "Cristian Romero",
+        "team": "ARG",
+        "type": "yellow",
+        "minute": 90
+      },
+      {
+        "playerId": 285450,
+        "playerName": "Enzo Fernández",
+        "team": "ARG",
+        "type": "red",
+        "minute": 90
+      },
+      {
+        "playerId": 249299,
+        "playerName": "Alexis Mac Allister",
+        "team": "ARG",
+        "type": "yellow",
+        "minute": 111
+      }
+    ],
+    "goals": [
+      {
+        "playerId": 265869,
+        "playerName": "Ferran Torres",
+        "assistId": 312146,
+        "assistName": "Nico Williams",
+        "team": "ESP",
+        "type": "GOAL",
+        "minute": 106,
+        "injuryTime": null
+      }
+    ],
     "venue": {
       "name": "MetLife Stadium",
       "city": "East Rutherford, New Jersey",
